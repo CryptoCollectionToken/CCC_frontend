@@ -1,0 +1,133 @@
+[
+    {
+        "name": "比特币",
+        "cointype": "BIT",
+        "logourl": "../../static/pic/22种纪念币logo/比特币LOGO.png"
+    }
+    ,
+    {
+        "name": "以太币",
+        "cointype": "ETH",
+        "logourl": "../../static/pic/22种纪念币logo/以太币LOGO.png"
+    }
+    ,
+    {
+        "name": "莱特币",
+        "cointype": "LT",
+        "logourl": "../../static/pic/22种纪念币logo/莱特币LOGO.png"
+    }
+    ,
+    {
+        "name": "币安币",
+        "cointype": "BA",
+        "logourl": "../../static/pic/22种纪念币logo/币安币LOGO.png"
+    }
+    ,
+    {
+        "name": "韭菜币",
+        "cointype": "RI",
+        "logourl": "../../static/pic/22种纪念币logo/韭菜币LOGO.png"
+    }
+    ,
+    {
+        "name": "嫩模币",
+        "cointype": "OG",
+        "logourl": "../../static/pic/22种纪念币logo/嫩模币LOGO.png"
+    }
+    ,
+    {
+        "name": "阿姨币",
+        "cointype": "AE",
+        "logourl": "../../static/pic/22种纪念币logo/阿姨币LOGO.png"
+    }
+    ,
+    {
+        "name": "小蚁币",
+        "cointype": "AS",
+        "logourl": "../../static/pic/22种纪念币logo/小蚁币LOGO.png"
+    }
+    ,
+    {
+        "name": "泰达币",
+        "cointype": "UD",
+        "logourl": "../../static/pic/22种纪念币logo/泰达币LOGO.png"
+    }
+    ,
+    {
+        "name": "石油币",
+        "cointype": "PT",
+        "logourl": "../../static/pic/22种纪念币logo/石油币LOGO.png"
+    }
+    ,
+    {
+        "name": "门罗币",
+        "cointype": "MO",
+        "logourl": "../../static/pic/22种纪念币logo/门罗币LOGO.png"
+    }
+    ,
+    {
+        "name": "量子币",
+        "cointype": "QT",
+        "logourl": "../../static/pic/22种纪念币logo/量子币LOGO.png"
+    }
+    ,
+    {
+        "name": "比原币",
+        "cointype": "BTM",
+        "logourl": "../../static/pic/22种纪念币logo/比原币LOGO.png"
+    }
+    ,
+    {
+        "name": "火币通证",
+        "cointype": "HT",
+        "logourl": "../../static/pic/22种纪念币logo/火币通证LOGO.png"
+    }
+    ,
+    {
+        "name": "柚子币",
+        "cointype": "EOS",
+        "logourl": "../../static/pic/22种纪念币logo/柚子币LOGO.png"
+    }
+    ,
+    {
+        "name": "埃欧塔币",
+        "cointype": "IO",
+        "logourl": "../../static/pic/22种纪念币logo/埃欧塔币LOGO.png"
+    }
+    ,
+    {
+        "name": "中币",
+        "cointype": "ZB",
+        "logourl": "../../static/pic/22种纪念币logo/中币LOGO.png"
+    }
+    ,
+    {
+        "name": "恒星币",
+        "cointype": "XLM",
+        "logourl": "../../static/pic/22种纪念币logo/恒星币LOGO.png"
+    }
+    ,
+    {
+        "name": "艾达币",
+        "cointype": "ADA",
+        "logourl": "../../static/pic/22种纪念币logo/艾达币LOGO.png"
+    }
+    ,
+    {
+        "name": "狗币",
+        "cointype": "DG",
+        "logourl": "../../static/pic/22种纪念币logo/狗币LOGO.png"
+    }
+    ,
+    {
+        "name": "瑞波币",
+        "cointype": "RP",
+        "logourl": "../../static/pic/22种纪念币logo/瑞波币LOGO.png"
+    }
+    ,
+    {
+        "name": "波场币",
+        "cointype": "TR",
+        "logourl": "../../static/pic/22种纪念币logo/波场币LOGO.png"
+    }
+]

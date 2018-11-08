@@ -1,0 +1,37 @@
+[
+    {
+        "sellid": "1",
+        "sellvalue": "4.2",
+        "sellgas": "0.735",
+        "sellallvalue": "4.2735",
+        "selltoken": "4.2",
+        "selltime": "3:32",
+        "name": "1元比特币",
+        "id": "4",
+        "owner": "deasosososos",
+        "type": "1",
+        "value": "1",
+        "cointype": "BIT",
+        "number": "0001",
+        "coinnumber": "BITA0001",
+        "url": "../../../static/pic/白皮书图.png"
+    }
+    ,
+    {
+        "sellid": "2",
+        "sellvalue": "5.2",
+        "sellgas": "0.735",
+        "sellallvalue": "5.2735",
+        "selltoken": "5.2",
+        "selltime": "2:01",
+        "name": "5元比特币",
+        "id": "3",
+        "owner": "deasosososos",
+        "type": "1",
+        "value": "1",
+        "cointype": "BIT",
+        "number": "0002",
+        "coinnumber": "BITD0002",
+        "url": "../../../static/pic/白皮书图.png"
+    }
+]
