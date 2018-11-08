@@ -13,13 +13,13 @@
           <div class="select" style="margin-top:5px">
             <select v-model="introductionval">
               <option selected>纪念币介绍</option>
-              <option v-for="coin in coins" :value="coin.name">{{coin.name}}</option>
+              <option v-for="coin in coins" :value="coin.cointype">{{coin.name}}</option>
             </select>
           </div>
           <div class="select" style="margin-top:5px">
             <select v-model="rewardval">
               <option selected>奖励</option>
-              <option v-for="reward in rewards" :value="reward">{{reward}}</option>
+              <option v-for="(reward,index) in rewards" :key="index" :value="rewardpage[index]">{{reward}}</option>
             </select>
           </div>
           <!-- <router-link
@@ -85,14 +85,17 @@ export default {
       rewards: ["市值排行奖励","组合奖励","衔级奖励"],
       introductionval: "纪念币介绍",
       rewardval: "奖励",
+      rewardpage: ["rankreward","combinereward/1","gloryreward/1"],
       coins: allcoins,
     }
   }, 
   watch: { 
     introductionval: function(val) {
       console.log(val);
+      this.$router.push({ path: `/introduction/${val}`});
     },
     rewardval: function(val) {
+      this.$router.push({ path: `/${val}`});
       console.log(val);
     } 
   }
