@@ -11,14 +11,15 @@
             </router-link>
           </div>
           <div class="select" style="margin-top:5px">
-            <select>
+            <select v-model="introductionval">
+              <option selected>纪念币介绍</option>
+              <option v-for="coin in coins" :value="coin.name">{{coin.name}}</option>
+            </select>
+          </div>
+          <div class="select" style="margin-top:5px">
+            <select v-model="rewardval">
               <option selected>奖励</option>
-              <option>
-                <router-link
-                  class="navbar-item"
-                                :to="{ name: pages[6]}">
-                </router-link>市值排行奖励
-              </option>
+              <option v-for="reward in rewards" :value="reward">{{reward}}</option>
             </select>
           </div>
           <!-- <router-link
@@ -74,14 +75,26 @@
 </template>
 
 <script>
-
+const allcoins = require("./assets/coins.json");
 export default {
   name: 'Header',
   data () {
     return {
       pages: ["HomePage", "Prepare", "Introduction", "Mining", "Mine", "Transaction", "RankReward", "CombineReward", "GloryReward", "Proof", "Refer"],
-      routes: ["首页","怎么玩","纪念币介绍","挖矿","我的纪念币","纪念币交易","市值排行奖励","组合奖励","衔级奖励","通证","推荐计划"]
+      routes: ["首页","怎么玩","纪念币介绍","挖矿","我的纪念币","纪念币交易","市值排行奖励","组合奖励","衔级奖励","通证","推荐计划"],
+      rewards: ["市值排行奖励","组合奖励","衔级奖励"],
+      introductionval: "纪念币介绍",
+      rewardval: "奖励",
+      coins: allcoins,
     }
+  }, 
+  watch: { 
+    introductionval: function(val) {
+      console.log(val);
+    },
+    rewardval: function(val) {
+      console.log(val);
+    } 
   }
 }
 </script>
