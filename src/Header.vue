@@ -3,66 +3,65 @@
     <nav class="navbar">
       <section class="section1">
         <div class="navbar-brand">
-          <div v-for="(page, index) in pages" :key="index">
-            <router-link
+          <!-- <div v-for="(page, index) in pages" :key="index"> -->
+            <!-- <router-link
               class="navbar-item"
                             :to="{ name: page , params:{page: 1}}">
                   {{routes[index]}}
-            </router-link>
-          </div>
-          <div class="select" style="margin-top:5px">
-            <select>
-              <option selected>奖励</option>
-              <option>
-                <router-link
-                  class="navbar-item"
-                                :to="{ name: pages[6]}">
-                </router-link>市值排行奖励
-              </option>
-            </select>
-          </div>
-          <!-- <router-link
-            class="navbar-item"
-                          :to="{ name: pages[0]}">首页
+            </router-link> -->
+          <!-- </div> -->
+          <router-link
+              class="navbar-item"
+                            :to="{ name: pages[0]}">
+                  {{routes[0]}}
           </router-link>
           <router-link
-            class="navbar-item"
-                          :to="{ name: pages[1]}">怎么玩
+              class="navbar-item"
+                            :to="{ name: pages[1]}">
+                  {{routes[1]}}
           </router-link>
           <div class="select" style="margin-top:5px">
-            <select>
+            <select v-model="introductionval">
               <option selected>纪念币介绍</option>
-              <option>比特币</option>
+              <option v-for="coin in coins" :value="coin.cointype">{{coin.name}}</option>
             </select>
           </div>
           <router-link
-            class="navbar-item"
-                          :to="{ name: pages[3]}">挖矿
+              class="navbar-item"
+                            :to="{ name: pages[3]}">
+                  {{routes[3]}}
           </router-link>
           <router-link
-            class="navbar-item"
-                          :to="{ name: pages[4]}">我的纪念币
+              class="navbar-item"
+                            :to="{ name: pages[4]}">
+                  {{routes[4]}}
           </router-link>
           <router-link
-            class="navbar-item"
-                          :to="{ name: pages[5]}">纪念币交易
+              class="navbar-item"
+                            :to="{ name: pages[5]}">
+                  {{routes[5]}}
           </router-link>
           <div class="select" style="margin-top:5px">
-            <select>
+            <select v-model="rewardval">
               <option selected>奖励</option>
-              <option>
-                <router-link
-                  class="navbar-item"
-                                :to="{ name: pages[6]}">
-                </router-link>市值排行奖励
-              </option>
+              <option v-for="(reward,index) in rewards" :key="index" :value="rewardpage[index]">{{reward}}</option>
             </select>
-          </div> -->
-          <!-- <router-link
-        class="navbar-item"
-                      :to="{ name: 'Transaction', params:{address: me.address} }">
-            玩前准备
-          </router-link> -->
+          </div>
+          <router-link
+              class="navbar-item"
+                            :to="{ name: pages[9]}">
+                  {{routes[9]}}
+          </router-link>
+          <router-link
+              class="navbar-item"
+                            :to="{ name: pages[10]}">
+                  {{routes[10]}}
+          </router-link>
+          <router-link
+              class="navbar-item"
+                            :to="{ name: pages[11]}">
+                  {{routes[11]}}
+          </router-link>
         </div>
         <div class="navbar-end">
           <div class="navbar-item">
@@ -74,26 +73,34 @@
 </template>
 
 <script>
-
+const allcoins = require("./assets/coins.json");
 export default {
   name: 'Header',
   data () {
     return {
       pages: ["HomePage", "Prepare", "Introduction", "Mining", "Mine", "Transaction", "RankReward", "CombineReward", "GloryReward", "Proof", "Refer"],
-      routes: ["首页","怎么玩","纪念币介绍","挖矿","我的纪念币","纪念币交易","市值排行奖励","组合奖励","衔级奖励","通证","推荐计划"]
+      routes: ["首页","怎么玩","纪念币介绍","挖矿","我的纪念币","纪念币交易","市值排行奖励","组合奖励","衔级奖励","通证","推荐计划"],
+      rewards: ["市值排行奖励","组合奖励","衔级奖励"],
+      introductionval: "纪念币介绍",
+      rewardval: "奖励",
+      rewardpage: ["rankreward","combinereward/1","gloryreward/1"],
+      coins: allcoins,
     }
+  }, 
+  watch: { 
+    introductionval: function(val) {
+      console.log(val);
+      this.$router.push({ path: `/introduction/${val}`});
+    },
+    rewardval: function(val) {
+      this.$router.push({ path: `/${val}`});
+      console.log(val);
+    } 
   }
 }
 </script>
 
 <style scoped>
-.notification {
-  margin-bottom: 0;
-  font-size: 0.8rem;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  word-break: break-all;
-}
 header {
   position: relative;
 }
@@ -101,9 +108,9 @@ header {
   background-color: #000000;
   /*background: none;
   position: absolute; */
-  top: 0;
+  /* top: 0;
   left: 0;
-  right: 0;
+  right: 0; */
   /* padding-left: 30px; */
 }
 /* .sig-home-header .navbar {
@@ -115,6 +122,7 @@ header {
 } */
 
 .navbar-item {
+  display:inline;
   font-weight: 700;
   padding: 0.7rem;
   /* margin: 0.5rem 2rem; */
