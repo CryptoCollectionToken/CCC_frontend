@@ -10,7 +10,7 @@
                   {{routes[index]}}
             </router-link> -->
           <!-- </div> -->
-          <router-link
+          <router-link 
               class="navbar-item"
                             :to="{ name: pages[0]}">
                   {{routes[0]}}
