@@ -1,8 +1,8 @@
 <template>
   <header>
-    <nav class="navbar">
+    <!-- <nav class="navbar">
       <section class="section1">
-        <div class="navbar-brand">
+        <div class="navbar-brand"> -->
           <!-- <div v-for="(page, index) in pages" :key="index"> -->
             <!-- <router-link
               class="navbar-item"
@@ -10,65 +10,93 @@
                   {{routes[index]}}
             </router-link> -->
           <!-- </div> -->
-          <router-link 
-              class="navbar-item"
-                            :to="{ name: pages[0]}">
-                  {{routes[0]}}
-          </router-link>
-          <router-link
-              class="navbar-item"
-                            :to="{ name: pages[1]}">
-                  {{routes[1]}}
-          </router-link>
-          <div class="select" style="margin-top:5px">
-            <select v-model="introductionval">
-              <option selected>纪念币介绍</option>
-              <option v-for="coin in coins" :value="coin.cointype">{{coin.name}}</option>
-            </select>
+      <section class="section1">
+        <nav class="level">
+          <!-- Left side -->
+          <div class="level-left">
+            <div class="level-item">
+              <router-link 
+                  class="navbar-item"
+                                :to="{ name: pages[0]}">
+                      {{routes[0]}}
+              </router-link>
+              <router-link
+                  class="navbar-item"
+                                :to="{ name: pages[1]}">
+                      {{routes[1]}}
+              </router-link>
+              <div class="select" style="margin-top:5px">
+                <select v-model="introductionval">
+                  <option selected>纪念币介绍</option>
+                  <option v-for="coin in coins" :value="coin.cointype">{{coin.name}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="level-item">
+              <router-link
+                  class="navbar-item"
+                                :to="{ name: pages[3]}">
+                      {{routes[3]}}
+              </router-link>
+              <router-link
+                  class="navbar-item"
+                                :to="{ name: pages[4]}">
+                      {{routes[4]}}
+              </router-link>
+              <router-link
+                  class="navbar-item"
+                                :to="{ name: pages[5]}">
+                      {{routes[5]}}
+              </router-link>
+            </div>
+            <div class="level-item">
+              <div class="select" style="margin-top:5px">
+                <select v-model="rewardval">
+                  <option selected>奖励</option>
+                  <option v-for="(reward,index) in rewards" :key="index" :value="rewardpage[index]">{{reward}}</option>
+                </select>
+              </div>
+              <router-link
+                  class="navbar-item"
+                                :to="{ name: pages[9]}">
+                      {{routes[9]}}
+              </router-link>
+              <router-link
+                  class="navbar-item"
+                                :to="{ name: pages[10]}">
+                      {{routes[10]}}
+              </router-link>
+              <router-link
+                  class="navbar-item"
+                                :to="{ name: pages[11]}">
+                      {{routes[11]}}
+              </router-link>
+            </div>
           </div>
-          <router-link
-              class="navbar-item"
-                            :to="{ name: pages[3]}">
-                  {{routes[3]}}
-          </router-link>
-          <router-link
-              class="navbar-item"
-                            :to="{ name: pages[4]}">
-                  {{routes[4]}}
-          </router-link>
-          <router-link
-              class="navbar-item"
-                            :to="{ name: pages[5]}">
-                  {{routes[5]}}
-          </router-link>
-          <div class="select" style="margin-top:5px">
-            <select v-model="rewardval">
-              <option selected>奖励</option>
-              <option v-for="(reward,index) in rewards" :key="index" :value="rewardpage[index]">{{reward}}</option>
-            </select>
+            <!-- Right side -->
+          <div class="level-right">
+            <div class="level-item">
+              <div class="navbar-item">
+                cryptojinian
+              </div>
+              <div class="select" style="margin-top:5px;">
+                <select v-model="$i18n.locale" :placeholder="$t('switch_lang')">
+                  <option value="en">{{$t('English')}}</option>
+                  <option value="zh">{{$t('Chinese')}}</option>
+                  <option value="ja">{{$t('Japanese')}}</option>
+                </select>
+              </div>
+            </div>
           </div>
-          <router-link
-              class="navbar-item"
-                            :to="{ name: pages[9]}">
-                  {{routes[9]}}
-          </router-link>
-          <router-link
-              class="navbar-item"
-                            :to="{ name: pages[10]}">
-                  {{routes[10]}}
-          </router-link>
-          <router-link
-              class="navbar-item"
-                            :to="{ name: pages[11]}">
-                  {{routes[11]}}
-          </router-link>
-        </div>
-        <div class="navbar-end">
+        </nav>
+      </section>
+        <!-- </div> -->
+        <!-- <div class="navbar-end">
           <div class="navbar-item">
           </div>
-        </div>
-      </section>
-    </nav>
+        </div> -->
+      <!-- </section>
+    </nav> -->
   </header>
 </template>
 
@@ -89,10 +117,12 @@ export default {
   }, 
   watch: { 
     introductionval: function(val) {
+      if(val === "纪念币介绍") return;
       console.log(val);
       this.$router.push({ path: `/introduction/${val}`});
     },
     rewardval: function(val) {
+      if(val === "奖励") return;
       this.$router.push({ path: `/${val}`});
       console.log(val);
     } 
@@ -142,6 +172,7 @@ a.navbar-item:hover {
   max-height: 2.9rem;
 }
 .section1 {
+  padding-top: 400px;
   background-image: url("../static/pic/主页图.png");
   background-size: 100%;
   width: 100%;
