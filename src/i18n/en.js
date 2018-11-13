@@ -109,6 +109,7 @@ export default {
   mine_trading_fee:'Trading fee',
   mine_net_income:'Net income',
   mine_auction_cycle:'Auction cycle',
+  mine_time:'Hour',
   mine_sell_now:'Sell Now',
   mine_floating_auction_price:'Floating auction price',
   mine_initial_price:'Initial price',

@@ -6,29 +6,29 @@
       <br/>
       <div style="text-align: center;">{{coin.name}}</div>
       <img style="width: 30%;margin-left: 35%;" :src="coin.url" alt="" />
-      <div style="text-align: center;">编号：{{coin.coinnumber}}</div>
+      <div style="text-align: center;">{{$t('mine_serial_number')}}{{coin.coinnumber}}</div>
       <br/>
-      <div style="text-align: center;">恒定价格出售</div>
+      <div style="text-align: center;">{{$t('mine_constant_auction_price')}}</div>
       <br/>
       <div>
         <div class="sellplane">
           <div>
-            <div class="selltextleft line1">出售价格</div>
-            <div class="selltextleft line2">交易费用</div>
-            <div class="selltextleft line3">净收入</div>
-            <div class="selltextleft line4">交易周期</div>
-            <div class="selltextright line1"><input class="input is-small" style="width:90px" type="text" placeholder="输入数量">EOS</div>
+            <div class="selltextleft line1">{{$t('mine_trading_price')}}</div>
+            <div class="selltextleft line2">{{$t('mine_trading_fee')}}</div>
+            <div class="selltextleft line3">{{$t('mine_net_income')}}</div>
+            <div class="selltextleft line4">{{$t('mine_auction_cycle')}}</div>
+            <div class="selltextright line1"><input class="input is-small" style="width:90px" type="text" placeholder="">EOS</div>
             <div class="selltextright line2">1.0000 EOS</div>
             <div class="selltextright line3">3.0000 EOS</div>
             <div class="selltextright line4">
               <span class="control">
                 <div class="select is-small" style="width:86px;">
                   <select>
-                    <option selected>选择时间</option>
-                    <option>2</option>
+                    <option selected>2</option>
+                    <option>4</option>
                   </select>
                 </div>
-              </span>小时
+              </span>{{$t('mine_time')}}
             </div>
             <img src="../../../static/pic/我的纪念币面和纪念币交易页面拍卖显示框.png" class="sellpic" alt="" />
           </div>
@@ -36,7 +36,7 @@
         <br/>
         <div class="div1">
           <a @click="gotoCoinPage(item)">
-            <span class="span1">立即出售</span>
+            <span class="span1">{{$t('mine_sell_now')}}</span>
             <img src="../../../static/pic/我的纪念币页面按钮图.png" class="img1" alt="" />
           </a>
         </div>
@@ -45,14 +45,14 @@
       <div>
         <div class="sellplane">
           <div>
-            <div class="selltextleft line1">初始价格</div>
-            <div class="selltextleft line2">结束价格</div>
-            <div class="selltextleft line3">交易费用</div>
-            <div class="selltextleft line4">净收入</div>
-            <div class="selltextleft line5">小时降价</div>
-            <div class="selltextleft line6">拍卖周期</div>
-            <div class="selltextright line1"><input class="input is-small" style="width:90px" type="text" placeholder="输入数量">EOS</div>
-            <div class="selltextright line2"><input class="input is-small" style="width:90px" type="text" placeholder="输入数量">EOS</div>
+            <div class="selltextleft line1">{{$t('mine_initial_price')}}</div>
+            <div class="selltextleft line2">{{$t('mine_end_price')}}</div>
+            <div class="selltextleft line3">{{$t('mine_trading_fee')}}</div>
+            <div class="selltextleft line4">{{$t('mine_net_income')}}</div>
+            <div class="selltextleft line5">{{$t('mine_descent')}}</div>
+            <div class="selltextleft line6">{{$t('mine_auction_cycle')}}</div>
+            <div class="selltextright line1"><input class="input is-small" style="width:90px" type="text" placeholder="">EOS</div>
+            <div class="selltextright line2"><input class="input is-small" style="width:90px" type="text" placeholder="">EOS</div>
             <div class="selltextright line3">1.0000 EOS</div>
             <div class="selltextright line4">3.0000 EOS</div>
             <div class="selltextright line5">2.0000 EOS</div>
@@ -60,11 +60,11 @@
               <span class="control">
                 <div class="select is-small" style="width:86px;">
                   <select>
-                    <option selected>选择时间</option>
-                    <option>2</option>
+                    <option selected>2</option>
+                    <option>4</option>
                   </select>
                 </div>
-              </span>小时
+              </span>{{$t('mine_time')}}
             </div>
             <img src="../../../static/pic/我的纪念币面和纪念币交易页面拍卖显示框.png" class="sellpic6l" alt="" />
           </div>
@@ -72,7 +72,7 @@
         <br/>
         <div class="div1">
           <a @click="gotoCoinPage(item)">
-            <span class="span1">立即出售</span>
+            <span class="span1">{{$t('mine_sell_now')}}</span>
             <img src="../../../static/pic/我的纪念币页面按钮图.png" class="img1" alt="" />
           </a>
         </div>

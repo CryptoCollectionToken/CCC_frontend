@@ -127,12 +127,6 @@ export default {
       if(val === this.$t("reward")) return;
       this.$router.push({ path: `/${val}`});
       console.log(val);
-    },
-    locale: function(val){
-      console.log('yuyanbianhua');
-    },
-    $t: function(val){
-      console.log("$tchanged");
     }
   }
 }

@@ -3,59 +3,79 @@
     <img style="margin-left:30%;" alt="" width="40%" srcset="../../../static/pic/我的纪念币页面主图.png"/>
     <!-- <img style="margin-left:35%;" alt="" width="30%" srcset="../../../static/pic/我的纪念币页面按钮图.png"/> -->
     <div v-for="(cointype, index) in cointypes" :key="index">
-      <div class="columns is-mobile is-gapless">
-        <div class="column" style="text-align:center;">
+      <div class="columns is-mobile">
+        <div class="column">
           <div>
-            <img alt="" style="max-height:150px" :srcset="cointype.coinurl"/>
-            <div>
-              <label class="checkbox">
-                <input type="checkbox">
-              </label>
-              <br>
-              <span class="control">
-                <div class="select is-small" style="width:86px;">
-                  <select>
-                    <option selected>兑换数量</option>
-                    <option>With options</option>
-                  </select>
+            <nav class="level is-mobile">
+              <div class="level-item has-text-centered">
+                <img alt="" width="100px" :srcset="cointype.coinurl"/>
+                <div>
+                  <label class="checkbox">
+                    <input type="checkbox">
+                  </label>
+                  <div class="columns is-mobile is-gapless">
+                    <div class="column">
+                      <div class="control">
+                        <div class="select is-small" style="width:90px;">
+                          <select>
+                            <option selected>{{$t('mine_exchange_quantity')}}</option>
+                            <option>1</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="column">
+                      <div class="control">
+                        <div class="select is-small" style="width:90px;">
+                          <select>
+                            <option selected>{{$t('mine_serial_number_selection')}}</option>
+                            <option>1</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </span>
-              <span class="control">
-                <div class="select is-small" style="width:86px;">
-                  <select>
-                    <option selected>编号选择</option>
-                    <option>With options</option>
-                  </select>
-                </div>
-              </span>
-            </div>
+                <!-- <img alt="" width="40%" :srcset="cointype.coinurl"/> -->
+              </div>
+            </nav>
           </div>
         </div>
-        <div class="column" style="text-align:center;">
+        <div class="column">
           <div>
-            <img alt="" style="max-height:150px" :srcset="cointype.coinurl"/>
-            <div>
-              <label class="checkbox">
-                <input type="checkbox">
-              </label>
-              <br>
-              <span class="control">
-                <div class="select is-small" style="width:86px;">
-                  <select>
-                    <option selected>兑换数量</option>
-                    <option>With options</option>
-                  </select>
+            <nav class="level is-mobile">
+              <div class="level-item has-text-centered">
+                <img alt="" width="100px" :srcset="cointype.coinurl"/>
+                <div>
+                  <label class="checkbox">
+                    <input type="checkbox">
+                  </label>
+                  <div class="columns is-mobile is-gapless">
+                    <div class="column">
+                      <div class="control">
+                        <div class="select is-small" style="width:90px;">
+                          <select>
+                            <option selected>{{$t('mine_exchange_quantity')}}</option>
+                            <option>1</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="column">
+                      <div class="control">
+                        <div class="select is-small" style="width:90px;">
+                          <select>
+                            <option selected>{{$t('mine_serial_number_selection')}}</option>
+                            <option>1</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </span>
-              <span class="control">
-                <div class="select is-small" style="width:86px;">
-                  <select>
-                    <option selected>编号选择</option>
-                    <option>With options</option>
-                  </select>
-                </div>
-              </span>
-            </div>
+                <!-- <img alt="" width="40%" :srcset="cointype.coinurl"/> -->
+              </div>
+            </nav>
           </div>
         </div>
       </div>
@@ -63,7 +83,7 @@
     <br>
     <div class="div1">
       <a @click="enter()">
-        <span class="span1">确认兑换</span>
+        <span class="span1">{{$t('mine_exchange_confirmation')}}</span>
         <img src="../../../static/pic/我的纪念币页面按钮图.png" class="img1" alt="" />
       </a>
     </div>

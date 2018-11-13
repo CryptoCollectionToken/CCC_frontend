@@ -4,7 +4,7 @@
     <!-- <img style="margin-left:35%;" alt="" width="30%" srcset="../../../static/pic/我的纪念币页面按钮图.png"/> -->
     <div class="div1">
         <a @click="gotoExchangePage(type)">
-          <span class="span1">兑换</span>
+          <span class="span1">{{$t('mine_exchange')}}</span>
           <img src="../../../static/pic/我的纪念币页面按钮图.png" class="img1" alt="" />
         </a>
       </div>
@@ -12,10 +12,10 @@
       <br/>
       <div style="text-align: center;">{{coin.name}}</div>
       <img style="width: 30%;margin-left: 35%;" :src="coin.url" alt="" />
-      <div style="text-align: center;">编号：{{coin.coinnumber}}</div>
+      <div style="text-align: center;">{{$t('mine_serial_number')}}{{coin.coinnumber}}</div>
       <div class="div2">
         <a @click="gotoSellPage(coin.coinnumber)">
-          <span class="span1">出售</span>
+          <span class="span1">{{$t('mine_sell')}}</span>
           <img src="../../../static/pic/我的纪念币页面按钮图.png" class="img1" alt="" />
         </a>
       </div>
