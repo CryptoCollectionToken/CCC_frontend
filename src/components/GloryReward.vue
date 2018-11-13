@@ -1,51 +1,51 @@
 <template>
   <div>
     <div style="margin-left:10%;margin-right:10%;" v-if="page == 1">
-      <div class="titletext">矿工衔级</div>
-      <div class="button" style="margin-left:5px">您的衔级：黄金级</div>
-      <div class="button" style="margin-left:5px">您的挖矿次数：1254</div>
+      <div class="titletext">{{$t('gloryreward_miner_level')}}</div>
+      <div class="button" style="margin-left:5px">{{$t('gloryreward_your_level')}} {{$t('gloryreward_gold')}}</div>
+      <div class="button" style="margin-left:5px">{{$t('gloryreward_mining_times')}} 1254</div>
       <div class="columns is-mobile">
         <div class="column is-one-quarter">
           <img src="../../static/pic/白皮书图.png" class="img1" alt="" />
         </div>
         <div class="column is-one-quarter">
           <div style="padding-top:25%;">
-            草根级矿工
+            {{$t('gloryreward_grassroots')}}
           </div>
         </div>
         <div class="column is-one-quarter">
           <div style="padding-top:25%;">
-            挖矿10次
+            {{$t('gloryreward_mining_times_before')}}10{{$t('gloryreward_mining_times_after')}}
           </div>
         </div>
         <div class="column is-one-quarter">
           <div style="padding-top:25%;">
-            <a class="button" @click="">领取10通证奖励</a>
+            <a class="button" @click="">{{$t('gloryreward_mining_award_before')}}10{{$t('gloryreward_mining_award_after')}}</a>
           </div>
         </div>
       </div>
     </div>
     <div style="margin-left:10%;margin-right:10%;" v-if="page == 2">
-      <div class="titletext">交易衔级</div>
-      <div class="button" style="margin-left:5px">您的衔级：少将级</div>
-      <div class="button" style="margin-left:5px">您的交易次数：590</div>
+      <div class="titletext">{{$t('gloryreward_trade_level')}}</div>
+      <div class="button" style="margin-left:5px">{{$t('gloryreward_your_trade_level')}} {{$t('gloryreward_major_genera')}}</div>
+      <div class="button" style="margin-left:5px">{{$t('gloryreward_your_buy_times')}} 590</div>
       <div class="columns is-mobile">
         <div class="column is-one-quarter">
           <img src="../../static/pic/白皮书图.png" class="img1" alt="" />
         </div>
         <div class="column is-one-quarter">
           <div style="padding-top:25%;">
-            少尉级买家
+            {{$t('gloryreward_second_lieutenant')}}
           </div>
         </div>
         <div class="column is-one-quarter">
           <div style="padding-top:25%;">
-            购买纪念币5次
+            {{$t('gloryreward_trade_times_before')}}5{{$t('gloryreward_trade_times_after')}}
           </div>
         </div>
         <div class="column is-one-quarter">
           <div style="padding-top:25%;">
-            <a class="button" @click="">领取20通证奖励</a>
+            <a class="button" @click="">{{$t('gloryreward_trade_award_before')}}20{{$t('gloryreward_trade_award_after')}}</a>
           </div>
         </div>
       </div>
@@ -67,16 +67,16 @@
 
     <div>
       <br/>
-      规则说明：<br/>
-      由于通证数量固定且永不增发，当系统中通证数量不足时，收藏家可等到系统中有通证时再领取相应奖励，游戏设置了通证回购机制，每24小时回购一次，北京时间晚上12:00回购。<br/>
+      {{$t('gloryreward_rule')}}<br/>
+      {{$t('gloryreward_rule_1')}}<br/>
       <br/>
     </div>
 
     <div v-if="page == 1" style="text-align:center">
-      <a class="button" @click="gotopage(2)">下一页</a>
+      <a class="button" @click="gotopage(2)">{{$t('gloryreward_nextpage')}}</a>
     </div>
     <div v-if="page == 2" style="text-align:center">
-      <a class="button" @click="gotopage(1)">上一页</a>
+      <a class="button" @click="gotopage(1)">{{$t('gloryreward_prevpage')}}</a>
     </div>
   </div>
 </template>

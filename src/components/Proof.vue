@@ -1,44 +1,45 @@
 <template>
   <div>
     <div style="text-align:center;">
-      <div class="button" style="margin-left:5px;">我的通证数量：12781</div>
-      <div class="button" style="margin-left:5px;">我的通证累积获得收益：675.27 EOS</div>
+      <div class="button" style="margin-left:5px;">{{$t('proof_my')}} 12781</div>
+      <div class="button" style="margin-left:5px;">{{$t('proof_accumulation')}} 675.27 EOS</div>
     </div>
-    <div class="titletext">系统中目前通证数量：21315726</div>
-    <div class="titletext">今日目前收益：7417.426 EOS</div>
-    <div class="titletext">今日目前收益奖励所有通证持有者：4450.4556 EOS</div>
-    <div class="titletext">今日目前所有持有者持有量：8684274</div>
-    <div class="titletext">今日目前通证持有者收益：0.0005 EOS/通证</div>
-    <div class="titletext">今日目前累加收益奖励整版纪念币收藏家：741.7426 EOS</div>
-    <div class="titletext">目前集齐整版纪念币累计奖池：8428.2462 EOS</div>
-    <div class="titletext">今日目前收益用于回购通证：2225.2278 EOS</div>
-    <div class="titletext">今日目前需回购通证数量：179251 EOS</div>
-    <div class="titletext">今日目前通证回购价格：0.0124 EOS/通证</div>
+    <div class="titletext">{{$t('proof_amount')}} 21315726</div>
+    <div class="titletext">{{$t('proof_income')}} 7417.426 EOS</div>
+    <div class="titletext">{{$t('proof_reward_for_all')}} 4450.4556 EOS</div>
+    <div class="titletext">{{$t('proof_hold')}} 8684274</div>
+    <div class="titletext">{{$t('proof_reward_for_holder')}} 0.0005 EOS/通证</div>
+    <div class="titletext">{{$t('proof_whole_edition_players')}} 741.7426 EOS</div>
+    <div class="titletext">{{$t('proof_whole_edition_pool')}} 8428.2462 EOS</div>
+    <div class="titletext">{{$t('proof_repurchase')}} 2225.2278 EOS</div>
+    <div class="titletext">{{$t('proof_need')}} 179251 EOS</div>
+    <div class="titletext">{{$t('proof_price')}} 0.0124 EOS/通证</div>
     <div style="text-align:center;" class="columns">
       <div class="column">
       </div>
       <div class="column">
-        出售数量：
+        {{$t('proof_sell_amount')}}
         <input class="input is-small" style="width:90px" type="text" placeholder="输入数量">
         <div>
-          <a class="button" style="margin-left:5px">出售通证</a>
+          <a class="button" style="margin-left:5px">{{$t('proof_sell_token')}}</a>
         </div>
       </div>
       <div class="column">
-        转让数量：
+        {{$t('proof_transfer_reward')}}
         <input class="input is-small" style="width:90px" type="text" placeholder="输入数量">
         <div>
-          <a class="button" style="margin-left:5px">转让通证</a>
+          <a class="button" style="margin-left:5px">{{$t('proof_transfer_token')}}</a>
         </div>
       </div>
       <div class="column">
       </div>
     </div>
-    说明：<br/>
-    1.通证总量：300,000,000;<br/>
-    2.通证分配：<br/>
-    <br/>
-    3.通证收益发放、集齐整版纪念币奖励发放和通证回购均于北京时间晚12:00执行;<br/>
+    {{$t('proof_introduction')}}<br/>
+    {{$t('proof_introduction_1')}}<br/>
+    {{$t('proof_introduction_2')}}<br/>
+    {{$t('proof_introduction_3')}}<br/>
+    {{$t('proof_introduction_4')}}<br/>
+    {{$t('proof_introduction_5')}}<br/>
   </div>
 </template>
 
