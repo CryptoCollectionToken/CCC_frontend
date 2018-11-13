@@ -87,6 +87,10 @@
         <img src="../../../static/pic/我的纪念币页面按钮图.png" class="img1" alt="" />
       </a>
     </div>
+    <br/>{{$t('mine_rule')}}
+    <br/>{{$t('mine_rule_1')}}
+    <br/>{{$t('mine_rule_2')}}
+    <br/>{{$t('mine_rule_3')}}
   </div>
 </template>
 

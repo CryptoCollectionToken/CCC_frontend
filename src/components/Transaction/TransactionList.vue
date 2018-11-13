@@ -5,20 +5,20 @@
     <nav class="has-text-centered" style="margin-left:30%;margin-right:30%;">
       <span class="select">
         <select>
-          <option selected>排序</option>
+          <option selected>{{$t('transaction_sorting')}}</option>
           <option>id</option>
         </select>
       </span>
       <span class="select">
         <select>
-          <option selected>价格</option>
+          <option selected>{{$t('transaction_price')}}</option>
           <option>id</option>
         </select>
       </span>
       <span class="select">
         <select>
-          <option selected>由高到低</option>
-          <option>由低到高</option>
+          <option selected>{{$t('transaction_high_to_low')}}</option>
+          <option>{{$t('transaction_low_to_high')}}</option>
         </select>
       </span>
     </nav>
@@ -27,10 +27,10 @@
       <div v-for="(coin,key) in coins" key="index" class="column is-one-quarter">
         <span style="padding:5px;">
           <div><img alt="" width="100%" :srcset="coin.url"/></div>
-          <div style="margin-left:10%;">卖家：{{coin.owner}}</div>
-          <div style="margin-left:10%;">价格：{{coin.sellvalue}}</div>
-          <div style="margin-left:10%;">编号：{{coin.coinnumber}}</div>
-          <div style="margin-left:10%;">此价格倒计时：{{coin.selltime}}</div>
+          <div style="margin-left:10%;">{{$t('transaction_seller')}}{{coin.owner}}</div>
+          <div style="margin-left:10%;">{{$t('transaction_price')}}{{coin.sellvalue}}</div>
+          <div style="margin-left:10%;">{{$t('transaction_serial_number')}}{{coin.coinnumber}}</div>
+          <div style="margin-left:10%;">{{$t('transaction_countdown')}}{{coin.selltime}}</div>
           <div style="text-align:center">
             <a class="button is-rounded"  @click="enter(coin.sellid)">购买</a>
           </div>

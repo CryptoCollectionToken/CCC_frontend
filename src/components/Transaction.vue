@@ -4,11 +4,11 @@
     <nav class="level" style="margin-left:20%;width:60%;">
       <div class="level-item">
         <input class="input is-rounded" style="width:100%;" type="text" placeholder="例：1元比特币 500元狗币 1元以太币硬币">
-        <a class="button" style="margin-left:5px">提交</a>
-        <a class="button" style="margin-left:5px">取消</a>
+        <a class="button" style="margin-left:5px">{{$t('transaction_submit')}}</a>
+        <a class="button" style="margin-left:5px">{{$t('transaction_cancel')}}</a>
       </div>
     </nav>
-    <a class="button is-rounded" style="margin-left:30%;width:40%;" @click="toalltype()">查看可搜索纪念币</a>
+    <a class="button is-rounded" style="margin-left:30%;width:40%;" @click="toalltype()">{{$t('transaction_found')}}</a>
     <div class="columns is-multiline is-mobile" style="padding-left:20%;padding-right:20%;">
       <a @click="toselect(coin.cointype)" v-for="(coin,key) in coins" key="index" class="column is-one-quarter">
         <span style="padding:5px;">

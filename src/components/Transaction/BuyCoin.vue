@@ -11,10 +11,10 @@
       <div>
         <div class="sellplane">
           <div>
-            <div class="selltextleft line1">购买价格</div>
-            <div class="selltextleft line2">交易费用</div>
-            <div class="selltextleft line3">支付总额</div>
-            <div class="selltextleft line4">通证奖励</div>
+            <div class="selltextleft line1">{{$t('transaction_price')}}</div>
+            <div class="selltextleft line2">{{$t('transaction_fee')}}</div>
+            <div class="selltextleft line3">{{$t('transaction_total')}}</div>
+            <div class="selltextleft line4">{{$t('transaction_reward')}}</div>
             <div class="selltextright line1">2.0000 EOS</div>
             <div class="selltextright line2">1.0000 EOS</div>
             <div class="selltextright line3">3.0000 EOS</div>
@@ -25,7 +25,7 @@
         <br/>
         <div class="div1">
           <a @click="gotoCoinPage(item)">
-            <span class="span1">立即购买</span>
+            <span class="span1">{{$t('transaction_buy_now')}}</span>
             <img src="../../../static/pic/我的纪念币页面按钮图.png" class="img1" alt="" />
           </a>
         </div>
