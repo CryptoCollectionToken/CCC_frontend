@@ -2,7 +2,8 @@ export default {
   switch_lang: '切换语言',
   English: '英语',
   Chinese: '中文',
-  
+  //{{$t('')}}
+
   //coins
   BTC: '比特币',
   ETH: '以太坊',
@@ -13,7 +14,7 @@ export default {
   AE: '阿姨币',
   NEO: '小蚁币',
   USDT: '泰达币',
-  PETROCOIN: '石油币',
+  PTR: '石油币',
   XMR: '门罗币',
   QTUM: '量子币',
   BTM: '比原币',
@@ -62,12 +63,13 @@ export default {
   prepare_instruction: '玩法说明',
   prepare_mining: '挖矿',
   prepare_excel_1: '一.上线时收藏家可以使用1EOS直接进行一次加密货币纪念币挖矿，收藏家可根据挖矿支出的EOS数量1:10获得数量相对应的TOKEN，直到所有TOKEN被分配完，发行量基本参照了现实中加密货币的发行量等比例发行，上线时可挖矿总量为429,600张，每当总量递减5%，挖矿成本将比上一轮挖矿成本递增10%，具体如下表:',
-  prepare_excel_2: '二、可抽中的纪念币、总量和概率如下表：',
   prepare_excel_1_remain_before: '剩余总量为',
   prepare_excel_1_remain_after: '张时',
   prepare_excel_1_mining_before: '挖矿成本为',
   prepare_excel_1_mining_after: '进行一次挖矿',
-  prepare_excel_2_1: '1元面值比特币纪念币（纸币版）',
+  prepare_excel_2: '二、可抽中的纪念币、总量和概率如下表：',
+  prepare_excel_2_1_before: '1元面值',
+  prepare_excel_2_1_after: '纪念币（纸币版）',
   prepare_excel_2_2: '张',
   prepare_excel_2_3: '约',
   prepare_excel_3: '三、',
@@ -90,7 +92,7 @@ export default {
   mining_canmine_before: '目前币池可挖数量：',
   mining_canmine_after: '，纪念币限量，先到先得',
   mining_cost_before: '目前挖矿1次成本：',
-  mining_cost_after: '',
+  mining_cost_after: '每张',
   mining_1time: '挖一次',
   mining_2time: '挖两次',
   mining_5time: '挖五次',
@@ -131,6 +133,7 @@ export default {
   transaction_view:'纪念币交易',
   transaction_submit:'提交',
   transaction_cancel:'取消',
+  transaction_found:'查看可搜索纪念币',
   transaction_all:'全部可搜索纪念币',
   transaction_sorting:'排序',
   transaction_price:'价格',
@@ -197,7 +200,7 @@ export default {
   proof_amount: '系统中目前通证数量',
   proof_income: '今日目前收益',
   proof_reward_for_all: '今日目前收益奖励所有通证持有者',
-  proof_hold: '今日目前通证持有者持有量：',
+  proof_hold: '今日目前通证持有者持有量',
   proof_reward_for_holder: '今日目前通证持有者收益',
   proof_whole_edition_players: '今日目前累加收益奖励集齐整版纪念币收藏家',
   proof_whole_edition_pool: '目前集齐整版纪念币累计奖池',
@@ -217,6 +220,7 @@ export default {
   proof_introduction_5: '游戏玩家：53%+上线前未预售完部分，即15,900,000股+上线前未预售完部分',
 
   //refer
+  refer_title: '推荐计划',
   refer_collectors: '累计邀请有效收藏家',
   refer_reward: '奖励',
   refer_link: '您的邀请链接',
@@ -227,6 +231,6 @@ export default {
   refer_note: '注明:',
   refer_note_1: '"有效收藏家"指被邀请的玩家至少在游戏中进行过一次纪念币挖矿或一次纪念币交易',
 
-  transaction: '纪念币交易',
+  // transaction: '纪念币交易',
   
 };
