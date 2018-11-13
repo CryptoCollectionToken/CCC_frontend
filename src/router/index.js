@@ -38,7 +38,7 @@ import Description from '@/components/Description';
 createroute(Description, "Description");
 
 import Introduction from '@/components/Introduction';
-createrouteaddid(Introduction, "Mining", "Introduction/:cointype");
+createrouteaddid(Introduction, "Introduction", "Introduction/:cointype");
 
 import Mining from '@/components/Mining';
 createroute(Mining, "Mining");

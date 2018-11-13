@@ -18,17 +18,17 @@
               <router-link 
                   class="navbar-item"
                                 :to="{ name: pages[0]}">
-                      {{routes[0]}}
+                      {{$t(routes[0])}}
               </router-link>
               <router-link
                   class="navbar-item"
                                 :to="{ name: pages[1]}">
-                      {{routes[1]}}
+                      {{$t(routes[1])}}
               </router-link>
               <div class="select" style="margin-top:5px">
                 <select v-model="introductionval">
-                  <option selected>纪念币介绍</option>
-                  <option v-for="coin in coins" :value="coin.cointype">{{coin.name}}</option>
+                  <option selected>{{$t('introduction')}}</option>
+                  <option v-for="coin in coins" :value="coin.cointype">{{$t(coin.cointype)}}</option>
                 </select>
               </div>
             </div>
@@ -36,40 +36,40 @@
               <router-link
                   class="navbar-item"
                                 :to="{ name: pages[3]}">
-                      {{routes[3]}}
+                      {{$t(routes[3])}}
               </router-link>
               <router-link
                   class="navbar-item"
                                 :to="{ name: pages[4]}">
-                      {{routes[4]}}
+                      {{$t(routes[4])}}
               </router-link>
               <router-link
                   class="navbar-item"
                                 :to="{ name: pages[5]}">
-                      {{routes[5]}}
+                      {{$t(routes[5])}}
               </router-link>
             </div>
             <div class="level-item">
               <div class="select" style="margin-top:5px">
                 <select v-model="rewardval">
-                  <option selected>奖励</option>
-                  <option v-for="(reward,index) in rewards" :key="index" :value="rewardpage[index]">{{reward}}</option>
+                  <option selected>{{$t('reward')}}</option>
+                  <option v-for="(reward,index) in rewards" :key="index" :value="rewardpage[index]">{{$t(reward)}}</option>
                 </select>
               </div>
               <router-link
                   class="navbar-item"
                                 :to="{ name: pages[9]}">
-                      {{routes[9]}}
+                      {{$t(routes[9])}}
               </router-link>
               <router-link
                   class="navbar-item"
                                 :to="{ name: pages[10]}">
-                      {{routes[10]}}
+                      {{$t(routes[10])}}
               </router-link>
               <router-link
                   class="navbar-item"
                                 :to="{ name: pages[11]}">
-                      {{routes[11]}}
+                      {{$t(routes[11])}}
               </router-link>
             </div>
           </div>
@@ -107,25 +107,33 @@ export default {
   data () {
     return {
       pages: ["HomePage", "Prepare", "Introduction", "Mining", "Mine", "Transaction", "RankReward", "CombineReward", "GloryReward", "Proof", "Refer"],
-      routes: ["首页","怎么玩","纪念币介绍","挖矿","我的纪念币","纪念币交易","市值排行奖励","组合奖励","衔级奖励","通证","推荐计划"],
-      rewards: ["市值排行奖励","组合奖励","衔级奖励"],
-      introductionval: "纪念币介绍",
-      rewardval: "奖励",
+      // routes: ["首页","怎么玩","纪念币介绍","挖矿","我的纪念币","纪念币交易","市值排行奖励","组合奖励","衔级奖励","通证","推荐计划"],
+      routes: ["homepage", "prepare", "introduction", "mining", "mine", "transaction", "rankreward", "combinereward", "gloryreward", "proof", "refer"],
+      // rewards: ["市值排行奖励","组合奖励","衔级奖励"],
+      rewards: ["rankreward","combinereward","gloryreward"],
+      introductionval: this.$t("introduction"),
+      rewardval: this.$t('reward'),
       rewardpage: ["rankreward","combinereward/1","gloryreward/1"],
       coins: allcoins,
     }
   }, 
   watch: { 
     introductionval: function(val) {
-      if(val === "纪念币介绍") return;
+      if(val === this.$t("introduction")) return;
       console.log(val);
       this.$router.push({ path: `/introduction/${val}`});
     },
     rewardval: function(val) {
-      if(val === "奖励") return;
+      if(val === this.$t("reward")) return;
       this.$router.push({ path: `/${val}`});
       console.log(val);
-    } 
+    },
+    locale: function(val){
+      console.log('yuyanbianhua');
+    },
+    $t: function(val){
+      console.log("$tchanged");
+    }
   }
 }
 </script>

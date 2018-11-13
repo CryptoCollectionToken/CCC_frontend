@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <img style="margin-left:40%;" alt="" width="20%" :srcset="coin.logourl"/>
+      <img style="margin-left:45%;" alt="" width="10%" :srcset="coin.logourl"/>
     </div>
     <div v-if="this.$i18n.locale == languagezh">
       <div class="introtext" v-if="cointype === coins[0].cointype">

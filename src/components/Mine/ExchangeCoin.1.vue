@@ -19,7 +19,7 @@
                         <div class="select is-small" style="width:90px;">
                           <select>
                             <option selected>兑换数量</option>
-                            <option>With options</option>
+                            <option>1</option>
                           </select>
                         </div>
                       </div>
@@ -29,7 +29,7 @@
                         <div class="select is-small" style="width:90px;">
                           <select>
                             <option selected>编号选择</option>
-                            <option>With options</option>
+                            <option>1</option>
                           </select>
                         </div>
                       </div>
@@ -56,7 +56,7 @@
                         <div class="select is-small" style="width:90px;">
                           <select>
                             <option selected>兑换数量</option>
-                            <option>With options</option>
+                            <option>1</option>
                           </select>
                         </div>
                       </div>
@@ -66,7 +66,7 @@
                         <div class="select is-small" style="width:90px;">
                           <select>
                             <option selected>编号选择</option>
-                            <option>With options</option>
+                            <option>1</option>
                           </select>
                         </div>
                       </div>
