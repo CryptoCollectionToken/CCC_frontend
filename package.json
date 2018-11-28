@@ -14,7 +14,8 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "buefy": "^0.6.6",
+    "@babel/runtime": "^7.1.5",
+    "buefy": "^0.7.0",
     "bulma": "^0.7.1",
     "eosjs": "^16.0.9",
     "postcss": "^6.0.23",
