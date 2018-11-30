@@ -76,21 +76,22 @@
             <!-- Right side -->
           <div class="level-right">
             <div class="level-item">
-              <div class="navbar-item">
-                cryptojinian
+              <div class="navbar-item" style="margin-top:5px;">
+                <button @click="loginScatterAsync" v-if="isScatterConnected && !scatterAccount" class="button">{{$t('login')}}</button>
+                <div v-if="isScatterConnected && scatterAccount">{{scatterAccount.name}}</div>
               </div>
               <div class="select" style="margin-top:5px;">
                 <select v-model="$i18n.locale" :placeholder="$t('switch_lang')">
                   <option value="en">{{$t('English')}}</option>
                   <option value="zh">{{$t('Chinese')}}</option>
-                  <option value="ja">{{$t('Japanese')}}</option>
+                  <!-- <option value="ja">{{$t('Japanese')}}</option> -->
                 </select>
               </div>
             </div>
           </div>
         </nav>
       </section>
-        <!-- </div> -->
+        <!-- </div> @click="loginScatterAsync"  :disabled="isScatterLoggingIn"-->
         <!-- <div class="navbar-end">
           <div class="navbar-item">
           </div>
@@ -101,6 +102,8 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex';
+import API from '@/util/api';
 const allcoins = require("./assets/coins.json");
 export default {
   name: 'Header',
@@ -127,7 +130,13 @@ export default {
       if(val === this.$t("reward")) return;
       this.$router.push({ path: `/${val}`});
       console.log(val);
-    }
+    },
+  },
+  methods: {
+    ...mapActions(['loginScatterAsync']),
+  },
+  computed: {
+    ...mapState(['isScatterConnected', 'scatterAccount', 'isScatterLoggingIn']),
   }
 }
 </script>

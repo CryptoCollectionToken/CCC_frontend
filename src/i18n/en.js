@@ -30,6 +30,7 @@ export default {
   coin: '(Coin Version)',
 
   //header
+  login: 'Login',
   homepage: 'Home',
   prepare: 'Prepare',
   introduction: 'Introduction',

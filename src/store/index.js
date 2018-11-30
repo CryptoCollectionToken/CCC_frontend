@@ -117,6 +117,7 @@ export default new Vuex.Store({
       commit('setIsScatterLoggingIn', true);
       try {
         const identity = await API.loginScatterAsync();
+        console.log("logging..");
         if (!identity) {
           commit('setScatterAccount', null);
           return;

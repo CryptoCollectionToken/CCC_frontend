@@ -31,6 +31,7 @@ export default {
   coin: '硬币',
 
   //header
+  login: '登录',
   homepage: '首页',
   prepare: '怎么玩',
   introduction: '纪念币介绍',

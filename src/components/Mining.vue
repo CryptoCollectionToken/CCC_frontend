@@ -5,21 +5,38 @@
       <div style="padding-left:30%">{{$t('mining_canmine_before')}}1000{{$t('mining_canmine_after')}}</div>
       <div style="padding-left:30%">{{$t('mining_cost_before')}}1.0000EOS{{$t('mining_cost_after')}}</div>
       </br>
-      <img class="minebutton" alt="" srcset="../../static/pic/挖矿页面按钮图1.png"/>
-      <img class="minebutton" alt="" srcset="../../static/pic/挖矿页面按钮图2.png"/>
-      <img class="minebutton" alt="" srcset="../../static/pic/挖矿页面按钮图3.png"/>
-      <img class="minebutton" alt="" srcset="../../static/pic/挖矿页面按钮图4.png"/>
+      <a @click="mining(1)"><img class="minebutton" alt="" srcset="../../static/pic/挖矿页面按钮图1.png"/></a>
+      <a @click="mining(2)"><img class="minebutton" alt="" srcset="../../static/pic/挖矿页面按钮图2.png"/></a>
+      <a @click="mining(5)"><img class="minebutton" alt="" srcset="../../static/pic/挖矿页面按钮图3.png"/></a>
+      <a @click="mining(10)"><img class="minebutton" alt="" srcset="../../static/pic/挖矿页面按钮图4.png"/></a>
     </section>
   </div>
 </template>
 
 <script>
+import { mapActions, mapState } from 'vuex';
+import API, { eos } from '@/util/api';
 export default {
   name: 'mining',
   data () {
     return {
 
     }
+  },
+  methods: {
+    ...mapActions(['connectScatterAsync', 'scatterAccount']),
+    mining: async function (times) {
+      // console.log(e.toElement.innerText);
+      await API.transferTokenAsync({
+        from: this.scatterAccount.name,
+        to: 'cryptomeetup',
+        memo: 'mining',
+        amount: times + ".0000 EOS",
+      });
+    }
+  },
+  mounted(){
+    this.connectScatterAsync();
   }
 }
 </script>
