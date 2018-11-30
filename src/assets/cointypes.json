@@ -1,9 +1,10 @@
 {
-    "BIT":{
+    "BTC":{
+        "numbertype":"BTC",
         "types":[
             {
                 "name":"1元比特币",
-                "cointype":"BIT",
+                "cointype":"BTC",
                 "type":"1",
                 "value":"1",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/中本聪纸币1.png"
@@ -11,7 +12,7 @@
             ,
             {
                 "name":"1元比特币硬币",
-                "cointype":"BIT",
+                "cointype":"BTC",
                 "type":"2",
                 "value":"1",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/硬币比特币1.png"
@@ -19,7 +20,7 @@
             ,
             {
                 "name":"2元比特币",
-                "cointype":"BIT",
+                "cointype":"BTC",
                 "type":"1",
                 "value":"2",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/中本聪纸币2.png"
@@ -27,7 +28,7 @@
             ,
             {
                 "name":"5元比特币",
-                "cointype":"BIT",
+                "cointype":"BTC",
                 "type":"1",
                 "value":"5",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/中本聪纸币5.png"
@@ -35,7 +36,7 @@
             ,
             {
                 "name":"10元比特币",
-                "cointype":"BIT",
+                "cointype":"BTC",
                 "type":"1",
                 "value":"10",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/中本聪纸币10.png"
@@ -44,6 +45,7 @@
     }
     ,
     "ETH":{
+        "numbertype":"ETH",
         "types":[
             {
                 "name":"1元以太币",
@@ -87,11 +89,12 @@
         ]
     }
     ,
-    "LT":{
+    "LTC":{
+        "numbertype":"LT",
         "types":[
             {
                 "name":"1元莱特币",
-                "cointype":"LT",
+                "cointype":"LTC",
                 "type":"1",
                 "value":"1",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/莱特币1.png"
@@ -99,7 +102,7 @@
             ,
             {
                 "name":"1元莱特币硬币",
-                "cointype":"LT",
+                "cointype":"LTC",
                 "type":"2",
                 "value":"1",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/硬币莱特币1.png"
@@ -107,7 +110,7 @@
             ,
             {
                 "name":"2元莱特币",
-                "cointype":"LT",
+                "cointype":"LTC",
                 "type":"1",
                 "value":"2",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/莱特币2.png"
@@ -115,7 +118,7 @@
             ,
             {
                 "name":"5元莱特币",
-                "cointype":"LT",
+                "cointype":"LTC",
                 "type":"1",
                 "value":"5",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/莱特币5.png"
@@ -123,7 +126,7 @@
             ,
             {
                 "name":"10元莱特币",
-                "cointype":"LT",
+                "cointype":"LTC",
                 "type":"1",
                 "value":"10",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/莱特币10.png"
@@ -131,11 +134,12 @@
         ]
     }
     ,
-    "BA":{
+    "BNB":{
+        "numbertype":"BA",
         "types":[
             {
                 "name":"1元币安币",
-                "cointype":"BA",
+                "cointype":"BNB",
                 "type":"1",
                 "value":"1",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/币安币1.png"
@@ -143,7 +147,7 @@
             ,
             {
                 "name":"1元币安币硬币",
-                "cointype":"BA",
+                "cointype":"BNB",
                 "type":"2",
                 "value":"1",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/硬币币安币1.png"
@@ -151,7 +155,7 @@
             ,
             {
                 "name":"5元币安币",
-                "cointype":"BA",
+                "cointype":"BNB",
                 "type":"1",
                 "value":"5",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/币安币5.png"
@@ -159,7 +163,7 @@
             ,
             {
                 "name":"10元币安币",
-                "cointype":"BA",
+                "cointype":"BNB",
                 "type":"1",
                 "value":"10",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/币安币10.png"
@@ -167,7 +171,7 @@
             ,
             {
                 "name":"50元币安币",
-                "cointype":"BA",
+                "cointype":"BNB",
                 "type":"1",
                 "value":"50",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/币安币50.png"
@@ -175,7 +179,7 @@
             ,
             {
                 "name":"100元币安币",
-                "cointype":"BA",
+                "cointype":"BNB",
                 "type":"1",
                 "value":"100",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/币安币100.png"
@@ -183,11 +187,12 @@
         ]
     }
     ,
-    "RI":{
+    "RIC":{
+        "numbertype":"RI",
         "types":[
             {
                 "name":"1元韭菜币",
-                "cointype":"RI",
+                "cointype":"RIC",
                 "type":"1",
                 "value":"1",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/韭菜币1.png"
@@ -195,7 +200,7 @@
             ,
             {
                 "name":"1元韭菜币硬币",
-                "cointype":"RI",
+                "cointype":"RIC",
                 "type":"2",
                 "value":"1",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/硬币韭菜币1.png"
@@ -203,7 +208,7 @@
             ,
             {
                 "name":"5元韭菜币",
-                "cointype":"RI",
+                "cointype":"RIC",
                 "type":"1",
                 "value":"5",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/韭菜币5.png"
@@ -211,7 +216,7 @@
             ,
             {
                 "name":"10元韭菜币",
-                "cointype":"RI",
+                "cointype":"RIC",
                 "type":"1",
                 "value":"10",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/韭菜币10.png"
@@ -219,7 +224,7 @@
             ,
             {
                 "name":"20元韭菜币",
-                "cointype":"RI",
+                "cointype":"RIC",
                 "type":"1",
                 "value":"20",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/韭菜币20.png"
@@ -227,7 +232,7 @@
             ,
             {
                 "name":"50元韭菜币",
-                "cointype":"RI",
+                "cointype":"RIC",
                 "type":"1",
                 "value":"50",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/韭菜币50.png"
@@ -235,11 +240,12 @@
         ]
     }
     ,
-    "OG":{
+    "OMG":{
+        "numbertype":"OG",
         "types":[
             {
                 "name":"1元嫩模币",
-                "cointype":"OG",
+                "cointype":"OMG",
                 "type":"1",
                 "value":"1",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/嫩模币1.png"
@@ -247,7 +253,7 @@
             ,
             {
                 "name":"1元嫩模币硬币",
-                "cointype":"OG",
+                "cointype":"OMG",
                 "type":"2",
                 "value":"1",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/硬币嫩模币1.png"
@@ -255,7 +261,7 @@
             ,
             {
                 "name":"2元嫩模币",
-                "cointype":"OG",
+                "cointype":"OMG",
                 "type":"1",
                 "value":"2",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/嫩模币2.png"
@@ -263,7 +269,7 @@
             ,
             {
                 "name":"5元嫩模币",
-                "cointype":"OG",
+                "cointype":"OMG",
                 "type":"1",
                 "value":"5",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/嫩模币5.png"
@@ -271,7 +277,7 @@
             ,
             {
                 "name":"10元嫩模币",
-                "cointype":"OG",
+                "cointype":"OMG",
                 "type":"1",
                 "value":"10",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/嫩模币10.png"
@@ -280,6 +286,7 @@
     }
     ,
     "AE":{
+        "numbertype":"AE",
         "types":[
             {
                 "name":"1元阿姨币",
@@ -331,11 +338,12 @@
         ]
     }
     ,
-    "AS":{
+    "NEO":{
+        "numbertype":"AS",
         "types":[
             {
                 "name":"1元小蚁币",
-                "cointype":"AS",
+                "cointype":"NEO",
                 "type":"1",
                 "value":"1",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/NEO1.png"
@@ -343,7 +351,7 @@
             ,
             {
                 "name":"1元小蚁币硬币",
-                "cointype":"AS",
+                "cointype":"NEO",
                 "type":"2",
                 "value":"1",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/硬币NEO1.png"
@@ -351,7 +359,7 @@
             ,
             {
                 "name":"2元小蚁币",
-                "cointype":"AS",
+                "cointype":"NEO",
                 "type":"1",
                 "value":"2",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/NEO2.png"
@@ -359,7 +367,7 @@
             ,
             {
                 "name":"5元小蚁币",
-                "cointype":"AS",
+                "cointype":"NEO",
                 "type":"1",
                 "value":"5",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/NEO5.png"
@@ -367,7 +375,7 @@
             ,
             {
                 "name":"10元小蚁币",
-                "cointype":"AS",
+                "cointype":"NEO",
                 "type":"1",
                 "value":"10",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/NEO10.png"
@@ -375,11 +383,12 @@
         ]
     }
     ,
-    "UD":{
+    "USDT":{
+        "numbertype":"UD",
         "types":[
             {
                 "name":"1元泰达币",
-                "cointype":"UD",
+                "cointype":"USDT",
                 "type":"1",
                 "value":"1",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/泰达币1.png"
@@ -387,7 +396,7 @@
             ,
             {
                 "name":"1元泰达币硬币",
-                "cointype":"UD",
+                "cointype":"USDT",
                 "type":"2",
                 "value":"1",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/硬币美元币1.png"
@@ -395,7 +404,7 @@
             ,
             {
                 "name":"2元泰达币",
-                "cointype":"UD",
+                "cointype":"USDT",
                 "type":"1",
                 "value":"2",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/泰达币2.png"
@@ -403,7 +412,7 @@
             ,
             {
                 "name":"5元泰达币",
-                "cointype":"UD",
+                "cointype":"USDT",
                 "type":"1",
                 "value":"5",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/泰达币5.png"
@@ -411,7 +420,7 @@
             ,
             {
                 "name":"10元泰达币",
-                "cointype":"UD",
+                "cointype":"USDT",
                 "type":"1",
                 "value":"10",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/泰达币10.png"
@@ -419,7 +428,7 @@
             ,
             {
                 "name":"20元泰达币",
-                "cointype":"UD",
+                "cointype":"USDT",
                 "type":"1",
                 "value":"20",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/泰达币20.png"
@@ -427,7 +436,7 @@
             ,
             {
                 "name":"50元泰达币",
-                "cointype":"UD",
+                "cointype":"USDT",
                 "type":"1",
                 "value":"50",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/泰达币50.png"
@@ -435,7 +444,7 @@
             ,
             {
                 "name":"100元泰达币",
-                "cointype":"UD",
+                "cointype":"USDT",
                 "type":"1",
                 "value":"100",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/泰达币100.png"
@@ -443,11 +452,12 @@
         ]
     }
     ,
-    "PT":{
+    "PTR":{
+        "numbertype":"PT",
         "types":[
             {
                 "name":"1元石油币",
-                "cointype":"PT",
+                "cointype":"PTR",
                 "type":"1",
                 "value":"1",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/石油币1.png"
@@ -455,7 +465,7 @@
             ,
             {
                 "name":"1元石油币硬币",
-                "cointype":"PT",
+                "cointype":"PTR",
                 "type":"2",
                 "value":"1",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/硬币1石油币.png"
@@ -463,7 +473,7 @@
             ,
             {
                 "name":"2元石油币",
-                "cointype":"PT",
+                "cointype":"PTR",
                 "type":"1",
                 "value":"2",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/石油币2.png"
@@ -471,7 +481,7 @@
             ,
             {
                 "name":"5元石油币",
-                "cointype":"PT",
+                "cointype":"PTR",
                 "type":"1",
                 "value":"5",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/石油币5.png"
@@ -479,7 +489,7 @@
             ,
             {
                 "name":"10元石油币",
-                "cointype":"PT",
+                "cointype":"PTR",
                 "type":"1",
                 "value":"10",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/石油币10.png"
@@ -487,11 +497,12 @@
         ]
     }
     ,
-    "MO":{
+    "XMR":{
+        "numbertype":"MO",
         "types":[
             {
                 "name":"1元门罗币",
-                "cointype":"MO",
+                "cointype":"XMR",
                 "type":"1",
                 "value":"1",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/门罗币1.png"
@@ -499,7 +510,7 @@
             ,
             {
                 "name":"1元门罗币硬币",
-                "cointype":"MO",
+                "cointype":"XMR",
                 "type":"2",
                 "value":"1",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/硬币门罗币1.png"
@@ -507,7 +518,7 @@
             ,
             {
                 "name":"2元门罗币",
-                "cointype":"MO",
+                "cointype":"XMR",
                 "type":"1",
                 "value":"2",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/门罗币2.png"
@@ -515,7 +526,7 @@
             ,
             {
                 "name":"5元门罗币",
-                "cointype":"MO",
+                "cointype":"XMR",
                 "type":"1",
                 "value":"5",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/门罗币5.png"
@@ -523,7 +534,7 @@
             ,
             {
                 "name":"10元门罗币",
-                "cointype":"MO",
+                "cointype":"XMR",
                 "type":"1",
                 "value":"10",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/门罗币10.png"
@@ -531,11 +542,12 @@
         ]
     }
     ,
-    "QT":{
+    "QTUM":{
+        "numbertype":"QT",
         "types":[
             {
                 "name":"1元量子币",
-                "cointype":"QT",
+                "cointype":"QTUM",
                 "type":"1",
                 "value":"1",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/量子币1.png"
@@ -543,7 +555,7 @@
             ,
             {
                 "name":"1元量子币硬币",
-                "cointype":"QT",
+                "cointype":"QTUM",
                 "type":"2",
                 "value":"1",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/硬币量子币1.png"
@@ -551,7 +563,7 @@
             ,
             {
                 "name":"2元量子币",
-                "cointype":"QT",
+                "cointype":"QTUM",
                 "type":"1",
                 "value":"2",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/量子币2.png"
@@ -559,7 +571,7 @@
             ,
             {
                 "name":"5元量子币",
-                "cointype":"QT",
+                "cointype":"QTUM",
                 "type":"1",
                 "value":"5",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/量子币5.png"
@@ -567,7 +579,7 @@
             ,
             {
                 "name":"10元量子币",
-                "cointype":"QT",
+                "cointype":"QTUM",
                 "type":"1",
                 "value":"10",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/量子币10.png"
@@ -576,6 +588,7 @@
     }
     ,
     "BTM":{
+        "numbertype":"BTM",
         "types":[
             {
                 "name":"5元比原币",
@@ -628,6 +641,7 @@
     }
     ,
     "HT":{
+        "numbertype":"HT",
         "types":[
             {
                 "name":"5元火币通证",
@@ -672,6 +686,7 @@
     }
     ,
     "EOS":{
+        "numbertype":"EOS",
         "types":[
             {
                 "name":"5元EOS币",
@@ -723,11 +738,12 @@
         ]
     }
     ,
-    "IO":{
+    "IOTA":{
+        "numbertype":"IO",
         "types":[
             {
                 "name":"10元埃欧塔币",
-                "cointype":"IO",
+                "cointype":"IOTA",
                 "type":"1",
                 "value":"10",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/埃欧塔币10.png"
@@ -735,7 +751,7 @@
             ,
             {
                 "name":"10元埃欧塔币硬币",
-                "cointype":"IO",
+                "cointype":"IOTA",
                 "type":"2",
                 "value":"10",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/硬币埃欧塔10.png"
@@ -743,7 +759,7 @@
             ,
             {
                 "name":"20元埃欧塔币",
-                "cointype":"IO",
+                "cointype":"IOTA",
                 "type":"1",
                 "value":"20",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/埃欧塔币20.png"
@@ -751,7 +767,7 @@
             ,
             {
                 "name":"50元埃欧塔币",
-                "cointype":"IO",
+                "cointype":"IOTA",
                 "type":"1",
                 "value":"50",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/埃欧塔币50.png"
@@ -759,7 +775,7 @@
             ,
             {
                 "name":"100元埃欧塔币",
-                "cointype":"IO",
+                "cointype":"IOTA",
                 "type":"1",
                 "value":"100",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/埃欧塔币100.png"
@@ -768,6 +784,7 @@
     }
     ,
     "ZB":{
+        "numbertype":"ZB",
         "types":[
             {
                 "name":"10元中币",
@@ -812,6 +829,7 @@
     }
     ,
     "XLM":{
+        "numbertype":"XLM",
         "types":[
             {
                 "name":"50元恒星币",
@@ -864,6 +882,7 @@
     }
     ,
     "ADA":{
+        "numbertype":"ADA",
         "types":[
             {
                 "name":"100元艾达币",
@@ -907,11 +926,12 @@
         ]
     }
     ,
-    "DG":{
+    "DOGE":{
+        "numbertype":"DG",
         "types":[
             {
                 "name":"500元狗币",
-                "cointype":"DG",
+                "cointype":"DOGE",
                 "type":"1",
                 "value":"500",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/500 狗币.png"
@@ -919,7 +939,7 @@
             ,
             {
                 "name":"500元狗币",
-                "cointype":"DG",
+                "cointype":"DOGE",
                 "type":"2",
                 "value":"500",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/硬币500狗币.png"
@@ -927,7 +947,7 @@
             ,
             {
                 "name":"1000元狗币",
-                "cointype":"DG",
+                "cointype":"DOGE",
                 "type":"1",
                 "value":"1000",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/1000 狗币.png"
@@ -935,7 +955,7 @@
             ,
             {
                 "name":"2000元狗币",
-                "cointype":"DG",
+                "cointype":"DOGE",
                 "type":"1",
                 "value":"2000",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/2000 狗币.png"
@@ -943,7 +963,7 @@
             ,
             {
                 "name":"5000元狗币",
-                "cointype":"DG",
+                "cointype":"DOGE",
                 "type":"1",
                 "value":"5000",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/5000 狗币.png"
@@ -951,11 +971,12 @@
         ]
     }
     ,
-    "RP":{
+    "RIPPLE":{
+        "numbertype":"RP",
         "types":[
             {
                 "name":"500元瑞波币",
-                "cointype":"RP",
+                "cointype":"RIPPLE",
                 "type":"1",
                 "value":"500",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/瑞波币500.png"
@@ -963,7 +984,7 @@
             ,
             {
                 "name":"500元瑞波币",
-                "cointype":"RP",
+                "cointype":"RIPPLE",
                 "type":"2",
                 "value":"500",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/硬币瑞波币500.png"
@@ -971,7 +992,7 @@
             ,
             {
                 "name":"1000元瑞波币",
-                "cointype":"RP",
+                "cointype":"RIPPLE",
                 "type":"1",
                 "value":"1000",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/瑞波币1000.png"
@@ -979,7 +1000,7 @@
             ,
             {
                 "name":"2000元瑞波币",
-                "cointype":"RP",
+                "cointype":"RIPPLE",
                 "type":"1",
                 "value":"2000",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/瑞波币2000.png"
@@ -987,7 +1008,7 @@
             ,
             {
                 "name":"5000元瑞波币",
-                "cointype":"RP",
+                "cointype":"RIPPLE",
                 "type":"1",
                 "value":"5000",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/瑞波币5000.png"
@@ -995,11 +1016,12 @@
         ]
     }
     ,
-    "TR":{
+    "TRX":{
+        "numbertype":"TR",
         "types":[
             {
                 "name":"500元波场币",
-                "cointype":"TR",
+                "cointype":"TRX",
                 "type":"1",
                 "value":"500",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/波场500.png"
@@ -1007,7 +1029,7 @@
             ,
             {
                 "name":"500元波场币",
-                "cointype":"TR",
+                "cointype":"TRX",
                 "type":"2",
                 "value":"500",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/硬币波场500.png"
@@ -1015,7 +1037,7 @@
             ,
             {
                 "name":"1000元波场币",
-                "cointype":"TR",
+                "cointype":"TRX",
                 "type":"1",
                 "value":"1000",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/波场1000.png"
@@ -1023,7 +1045,7 @@
             ,
             {
                 "name":"2000元波场币",
-                "cointype":"TR",
+                "cointype":"TRX",
                 "type":"1",
                 "value":"2000",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/波场2000.png"
@@ -1031,7 +1053,7 @@
             ,
             {
                 "name":"5000元波场币",
-                "cointype":"TR",
+                "cointype":"TRX",
                 "type":"1",
                 "value":"5000",
                 "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/波场5000.png"

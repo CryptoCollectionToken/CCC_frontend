@@ -358,7 +358,7 @@ export default {
     return {
       coins: allcoins,
       coin: {},
-      cointype: "BIT",
+      cointype: "BTC",
       languagezh: "zh",
       languageen: "en",
     }

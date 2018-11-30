@@ -2,8 +2,8 @@
   <div>
     <img style="margin-left:30%;" alt="" width="40%" srcset="../../static/pic/挖矿页面.png"/>
     <section class="section2">
-      <div style="padding-left:30%">{{$t('mining_canmine_before')}}1000{{$t('mining_canmine_after')}}</div>
-      <div style="padding-left:30%">{{$t('mining_cost_before')}}1.0000EOS{{$t('mining_cost_after')}}</div>
+      <div style="padding-left:30%">{{$t('mining_canmine_before')}}{{remainamount}}{{$t('mining_canmine_after')}}</div>
+      <div style="padding-left:30%">{{$t('mining_cost_before')}}{{needeos}}EOS{{$t('mining_cost_after')}}</div>
       </br>
       <a @click="mining(1)"><img class="minebutton" alt="" srcset="../../static/pic/挖矿页面按钮图1.png"/></a>
       <a @click="mining(2)"><img class="minebutton" alt="" srcset="../../static/pic/挖矿页面按钮图2.png"/></a>
@@ -20,23 +20,57 @@ export default {
   name: 'mining',
   data () {
     return {
-
+      remainamount: 429600,
+      needeos: 1.000,
+      mininglist: [
+        [429600,1.0000],
+        [408120,1.1000],
+        [386640,1.2100],
+        [365160,1.3310],
+        [343680,1.4640],
+        [322200,1.6110],
+        [279240,1.7720],
+        [408120,1.9490],
+        [257760,2.1440],
+        [236280,2.3580],
+        [214800,2.5940],
+        [193320,2.8530],
+        [171840,3.1380],
+        [150360,3.4520],
+        [128880,3.7970],
+        [107400,4.1770],
+        [85920,4.5950],
+        [64440,5.0540],
+        [42960,5.5600],
+        [21480,6.1160]],
     }
   },
   methods: {
     ...mapActions(['connectScatterAsync', 'scatterAccount']),
     mining: async function (times) {
       // console.log(e.toElement.innerText);
-      await API.transferTokenAsync({
+      const need = this.needeos * times * 10000;
+      console.log(need);
+      await API.transferEOSAsync({
         from: this.scatterAccount.name,
         to: 'cryptomeetup',
         memo: 'mining',
-        amount: times + ".0000 EOS",
+        amount: need,
       });
     }
   },
-  mounted(){
-    this.connectScatterAsync();
+  async mounted(){
+    await this.connectScatterAsync();
+    this.remainamount = await API.getRemainAmountAsync({ accountName: 'ceshiyongeos' });
+    for(const index in this.mininglist){
+      if(this.mininglist[index][0] <= this.remainamount){
+        this.needeos = this.mininglist[index][1];
+        break;
+      }else{
+        this.needeos = this.mininglist[index][1];
+      }
+    }
+    console.log("next:"+this.needeos);
   }
 }
 </script>

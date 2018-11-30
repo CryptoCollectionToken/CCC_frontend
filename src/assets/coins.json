@@ -1,7 +1,7 @@
 [
     {
         "name": "比特币",
-        "cointype": "BIT",
+        "cointype": "BTC",
         "logourl": "../../static/pic/22种纪念币logo/比特币LOGO.png"
     }
     ,
@@ -13,25 +13,25 @@
     ,
     {
         "name": "莱特币",
-        "cointype": "LT",
+        "cointype": "LTC",
         "logourl": "../../static/pic/22种纪念币logo/莱特币LOGO.png"
     }
     ,
     {
         "name": "币安币",
-        "cointype": "BA",
+        "cointype": "BNB",
         "logourl": "../../static/pic/22种纪念币logo/币安币LOGO.png"
     }
     ,
     {
         "name": "韭菜币",
-        "cointype": "RI",
+        "cointype": "RIC",
         "logourl": "../../static/pic/22种纪念币logo/韭菜币LOGO.png"
     }
     ,
     {
         "name": "嫩模币",
-        "cointype": "OG",
+        "cointype": "OMG",
         "logourl": "../../static/pic/22种纪念币logo/嫩模币LOGO.png"
     }
     ,
@@ -43,31 +43,31 @@
     ,
     {
         "name": "小蚁币",
-        "cointype": "AS",
+        "cointype": "NEO",
         "logourl": "../../static/pic/22种纪念币logo/小蚁币LOGO.png"
     }
     ,
     {
         "name": "泰达币",
-        "cointype": "UD",
+        "cointype": "USDT",
         "logourl": "../../static/pic/22种纪念币logo/泰达币LOGO.png"
     }
     ,
     {
         "name": "石油币",
-        "cointype": "PT",
+        "cointype": "PTR",
         "logourl": "../../static/pic/22种纪念币logo/石油币LOGO.png"
     }
     ,
     {
         "name": "门罗币",
-        "cointype": "MO",
+        "cointype": "XMR",
         "logourl": "../../static/pic/22种纪念币logo/门罗币LOGO.png"
     }
     ,
     {
         "name": "量子币",
-        "cointype": "QT",
+        "cointype": "QTUM",
         "logourl": "../../static/pic/22种纪念币logo/量子币LOGO.png"
     }
     ,
@@ -91,7 +91,7 @@
     ,
     {
         "name": "埃欧塔币",
-        "cointype": "IO",
+        "cointype": "IOTA",
         "logourl": "../../static/pic/22种纪念币logo/埃欧塔币LOGO.png"
     }
     ,
@@ -115,19 +115,19 @@
     ,
     {
         "name": "狗币",
-        "cointype": "DG",
+        "cointype": "DOGE",
         "logourl": "../../static/pic/22种纪念币logo/狗币LOGO.png"
     }
     ,
     {
         "name": "瑞波币",
-        "cointype": "RP",
+        "cointype": "RIPPLE",
         "logourl": "../../static/pic/22种纪念币logo/瑞波币LOGO.png"
     }
     ,
     {
         "name": "波场币",
-        "cointype": "TR",
+        "cointype": "TRX",
         "logourl": "../../static/pic/22种纪念币logo/波场币LOGO.png"
     }
 ]

@@ -11,55 +11,36 @@ const eos = () => ScatterJS.scatter.eos(config.network, Eos, { expireInSeconds: 
 const currentEOSAccount = () => ScatterJS.scatter.identity.accounts.find(x => x.blockchain === 'eos');
 
 const API = {
-  async getMyStakedInfoAsync({ accountName }) {
+  async getPlayerAsync({ accountName }) {
     const { rows } = await eos().getTableRows({
       json: true,
-      code: 'cryptomeetup',
+      code: 'ceshiyongeos',
       scope: accountName,
-      table: 'voters',
+      table: 'player',
       limit: 1024,
     });
     return rows;
   },
-  async getPlayerInfoAsync({ accountName }) {
+  async getCoinAsync({ accountName }) {
     const { rows } = await eos().getTableRows({
       json: true,
-      code: 'cryptomeetup',
+      code: 'ceshiyongeos',
       scope: accountName,
-      table: 'players',
+      table: 'coin',
       limit: 1024,
     });
     return rows;
   },
-  async getLandsInfoAsync() {
+  async getRemainAmountAsync({ accountName }) {
     const { rows } = await eos().getTableRows({
       json: true,
-      code: 'cryptomeetup',
-      scope: 'cryptomeetup',
-      table: 'land',
-      limit: 256,
-    });
-    return rows;
-  },
-  async getGlobalInfoAsync() {
-    const { rows } = await eos().getTableRows({
-      json: true,
-      code: 'cryptomeetup',
-      scope: 'cryptomeetup',
+      code: 'ceshiyongeos',
+      scope: accountName,
       table: 'global',
-      limit: 256,
+      limit: 1024,
     });
-    return rows;
-  },
-  async getMarketInfoAsync() {
-    const { rows } = await eos().getTableRows({
-      json: true,
-      code: 'cryptomeetup',
-      scope: 'cryptomeetup',
-      table: 'market',
-      limit: 256,
-    });
-    return rows;
+    console.log(rows);
+    return rows[0].remainamount;
   },
   async getBalancesByContract({ tokenContract = 'eosio.token', accountName, symbol }) {
     return eos().getCurrencyBalance(tokenContract, accountName, symbol);
