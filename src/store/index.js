@@ -4,6 +4,8 @@ import { Toast } from 'buefy/dist/components/toast';
 // import Geo from '@/util/geo';
 import API from '@/util/api';
 import ui from './ui';
+const allcoins = require("../assets/coins.json");
+const allcointypes = require("../assets/cointypes.json");
 
 Vue.use(Vuex);
 
@@ -23,7 +25,34 @@ export default new Vuex.Store({
     landInfo: {},
     landInfoUpdateAt: null,
     marketInfo: {},
-    stakedInfo: {}
+    stakedInfo: {},
+    existcoins: [],
+    coinvalues: [
+      [1,1,2,5,10],   //btc
+      [1,1,2,5,10],   //eth
+      [1,1,2,5,10],   //lt
+      [1,1,5,10,50,100],   //ba
+      [1,1,5,10,20,50],   //ri
+      [1,1,2,5,10],   //og
+      [1,1,2,5,10,20],   //ae
+      [1,1,2,5,10],   //as
+      [1,1,2,5,10,20,50,100],   //ud
+      [1,1,2,5,10],   //pt
+      [1,1,2,5,10],   //mo
+      [1,1,2,5,10],   //qt
+      [5,5,10,20,50,100],   //bt
+      [5,5,10,20,50],   //ht
+      [5,5,10,20,50,100],   //eos
+      [10,10,20,50,100],   //io
+      [10,10,20,50,100],   //zb
+      [50,50,100,200,500,1000],   //xlma
+      [100,100,200,500,1000],   //ada
+      [500,500,1000,2000,5000],   //dg
+      [500,500,1000,2000,5000],   //rp
+      [500,500,1000,2000,5000]    //tr
+    ],
+    coins: allcoins,
+    cointypes: allcointypes,
   },
   mutations: {
     setLandInfo(state, landInfo) {
@@ -35,6 +64,9 @@ export default new Vuex.Store({
     },
     setStakedInfo(state, stakedInfo) {
       state.stakedInfo = stakedInfo;
+    },
+    setCoins(state, Coins){
+      state.existcoins = Coins;
     },
     setIsScatterLoggingIn(state, isScatterLoggingIn) {
       state.isScatterLoggingIn = isScatterLoggingIn;
@@ -130,7 +162,7 @@ export default new Vuex.Store({
           queue: false,
         });
         dispatch('getMyBalances');
-        dispatch('getMyStakedInfo');
+        // dispatch('getMyStakedInfo');
       } catch (err) {
         console.error('Failed to login Scatter', err);
         Toast.open({
@@ -154,6 +186,37 @@ export default new Vuex.Store({
         type: 'is-success',
         queue: false,
       });
+    },
+    async getCoins({ commit }) {
+      try {
+        const CoinList = await API.getCoinsAsync({accountName: 'ceshiyongeos'});
+        const existcoinlist = [];
+        for(const index in CoinList){
+          const contractone = CoinList[index];
+          const cointypenum = contractone.type % 100 - 1;
+          const coinvaluenum = (contractone.type / 100).toFixed(0);
+          const onecoin = {};
+          const _A_ = "A";
+          onecoin.id = contractone.id;
+          onecoin.owner = contractone.owner;
+          onecoin.contracttype = contractone.type;
+          onecoin.type = cointypenum + 1;
+          onecoin.cointype = this.state.coins[cointypenum].cointype;
+          onecoin.value = this.state.coinvalues[cointypenum][coinvaluenum];
+          onecoin.number = contractone.number;
+          onecoin.coinnumber = onecoin.cointype + String.fromCharCode(parseInt(_A_.charCodeAt()) + parseInt(coinvaluenum)) + onecoin.number;
+          onecoin.url = this.state.cointypes[onecoin.cointype].types[coinvaluenum].coinurl;
+          existcoinlist.push(onecoin);
+        }
+        console.log(existcoinlist);
+        if (existcoinlist[0] == null) {
+          commit('setCoins', []);
+        } else {
+          commit('setCoins', existcoinlist);
+        }
+      } catch (err) {
+        console.error('Failed to fetch coins', err);
+      }
     },
   },
 });

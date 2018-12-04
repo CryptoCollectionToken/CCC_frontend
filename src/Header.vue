@@ -105,6 +105,7 @@
 import { mapState, mapActions } from 'vuex';
 import API from '@/util/api';
 const allcoins = require("./assets/coins.json");
+
 export default {
   name: 'Header',
   data () {
@@ -133,10 +134,14 @@ export default {
     },
   },
   methods: {
-    ...mapActions(['loginScatterAsync']),
+    ...mapActions(['connectScatterAsync', 'loginScatterAsync', 'getCoins']),
   },
   computed: {
     ...mapState(['isScatterConnected', 'scatterAccount', 'isScatterLoggingIn']),
+  },
+  mounted(){
+    this.connectScatterAsync();
+    this.getCoins();
   }
 }
 </script>

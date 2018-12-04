@@ -97,18 +97,17 @@ const API = {
       },
     );
   },
-  async stakeCMUAsync({
-    to,
+  async SellCoinAsync(
+    amount = '',
     memo = '',
-    amount = 0,
-    tokenContract = 'dacincubator',
-  }) {
-    const contract = await eos().contract(tokenContract);
-    return contract.transfer(
+  ){
+    console.log(currentEOSAccount().name);
+    const contract = await eos().contract('ceshiyongeos');
+    await contract.pushorder(
       currentEOSAccount().name,
-      to,
-      amount,
-      memo, {
+      PriceFormatter.formatPrice(amount),
+      memo,
+      {
         authorization: [`${currentEOSAccount().name}@${currentEOSAccount().authority}`],
       },
     );
@@ -129,12 +128,12 @@ const API = {
       { authorization: [`${currentEOSAccount().name}@${currentEOSAccount().authority}`] },
     );
   },
-  async getMyCheckInStatus({ accountName }) {
+  async getCoinsAsync({ accountName }) {
     const { rows } = await eos().getTableRows({
       json: true,
-      code: 'cryptomeetup',
+      code: 'ceshiyongeos',
       scope: accountName,
-      table: 'checkins',
+      table: 'coin',
       limit: 1024,
     });
     return rows;

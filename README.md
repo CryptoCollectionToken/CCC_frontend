@@ -1,5 +1,11 @@
 # somecoin
 
+# coutions
+
+  在前端，type永远-1
+
+# introduction
+
 > A Vue.js project
 
 ## Build Setup

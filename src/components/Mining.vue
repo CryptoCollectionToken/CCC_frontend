@@ -46,21 +46,20 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['connectScatterAsync', 'scatterAccount']),
+    ...mapActions(['scatterAccount']),
     mining: async function (times) {
       // console.log(e.toElement.innerText);
       const need = this.needeos * times * 10000;
       console.log(need);
       await API.transferEOSAsync({
         from: this.scatterAccount.name,
-        to: 'cryptomeetup',
+        to: 'ceshiyongeos',
         memo: 'mining',
         amount: need,
       });
     }
   },
   async mounted(){
-    await this.connectScatterAsync();
     this.remainamount = await API.getRemainAmountAsync({ accountName: 'ceshiyongeos' });
     for(const index in this.mininglist){
       if(this.mininglist[index][0] <= this.remainamount){

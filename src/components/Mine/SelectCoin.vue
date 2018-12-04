@@ -13,6 +13,7 @@
 
 <script>
 const allcointypes = require("../../assets/cointypes.json");
+
 export default {
   name: 'airdrop',
   data () {
@@ -22,17 +23,12 @@ export default {
     }
   },
   created: function () {
-    console.log('cteated 钩子执行...');
-    console.log(this)
-    console.log(this.cointypes);
-    console.log(this.$route.params.type);
     this.cointypes = allcointypes[this.$route.params.type].types;
     this.type = this.$route.params.type;
-    console.log(this.cointypes);
   },
   methods:{
     gotoCoinPage(type, cointype, value){
-      this.$router.push({ path: `/mycoin/${cointype}/${type}/${value}`});
+      this.$router.push({ path: `/mycoin/${type}/${cointype}/${value}`});
     }
   }
 }

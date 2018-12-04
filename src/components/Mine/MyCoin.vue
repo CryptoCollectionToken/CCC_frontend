@@ -24,7 +24,7 @@
 </template>
 
 <script>
-const allcoins = require("../../assets/existcoinlist.json");
+import { mapActions, mapState } from 'vuex';
 export default {
   name: 'airdrop',
   data () {
@@ -34,19 +34,17 @@ export default {
     }
   },
   created: function () {
-    console.log(allcoins);
-    console.log(this.$route.params.type+this.$route.params.cointype+this.$route.params.value);
+    const allcoins = this.existcoins;
     this.type = this.$route.params.type;
     for(const coinid in allcoins){
       const coin = allcoins[coinid];
-      console.log(coin);
-      if(this.$route.params.type === coin.type &&
-        this.$route.params.cointype === coin.cointype &&
-        this.$route.params.value === coin.value){
+      console.log(this.$route.params.type + "," + coin.type + "," + this.$route.params.cointype + "," + coin.cointype + "," + this.$route.params.value + "," + coin.value);
+      if(this.$route.params.type == coin.type &&
+        this.$route.params.cointype == coin.cointype &&
+        this.$route.params.value == coin.value){
           this.coins.push(coin);
         }
     }
-    console.log(this.coins);
   },
   methods:{
     gotoExchangePage(type){
@@ -55,7 +53,10 @@ export default {
     gotoSellPage(coinnumber){
       this.$router.push({ path: `/sellcoin/${coinnumber}`});
     }
-  }
+  },
+  computed: {
+    ...mapState(['existcoins']),
+  },
 }
 </script>
 
