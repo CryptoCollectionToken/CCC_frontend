@@ -27,6 +27,7 @@ export default new Vuex.Store({
     marketInfo: {},
     stakedInfo: {},
     existcoins: [],
+    transactions: [],
     coinvalues: [
       [1,1,2,5,10],   //btc
       [1,1,2,5,10],   //eth
@@ -67,6 +68,9 @@ export default new Vuex.Store({
     },
     setCoins(state, Coins){
       state.existcoins = Coins;
+    },
+    setTransactions(state, Transactions){
+      state.transactions = Transactions;
     },
     setIsScatterLoggingIn(state, isScatterLoggingIn) {
       state.isScatterLoggingIn = isScatterLoggingIn;
@@ -195,7 +199,7 @@ export default new Vuex.Store({
           const contractone = CoinList[index];
           const cointypenum = contractone.type % 100 - 1;
           const coinvaluenum = (contractone.type / 100).toFixed(0);
-          const onecoin = {};
+          var onecoin = {};
           const _A_ = "A";
           onecoin.id = contractone.id;
           onecoin.owner = contractone.owner;
@@ -208,12 +212,32 @@ export default new Vuex.Store({
           onecoin.url = this.state.cointypes[onecoin.cointype].types[coinvaluenum].coinurl;
           existcoinlist.push(onecoin);
         }
+        console.log("existcoinlist");
         console.log(existcoinlist);
-        if (existcoinlist[0] == null) {
-          commit('setCoins', []);
-        } else {
-          commit('setCoins', existcoinlist);
+        commit('setCoins', existcoinlist);
+        const TransactionList = await API.getTransactionsAsync({accountName: 'ceshiyongeos'});
+        const transactionlist = [];
+        for(const index in TransactionList){
+          const transaction = TransactionList[index];
+          transaction.value = parseFloat(transaction.bid.substring(0,6));
+          var onetransaction = {};
+          for(const eindex in existcoinlist){
+            if(existcoinlist[eindex].id == transaction.the_coins_for_sell[0]){
+              onetransaction = existcoinlist[eindex];
+              break;
+            }
+          }
+          onetransaction.sellid = transaction.id;
+          onetransaction.sellvalue = (transaction.value / 0.9825 * 0.965).toFixed(4);
+          onetransaction.sellallvalue = (transaction.value).toFixed(4);
+          onetransaction.sellgas = (onetransaction.sellallvalue / 0.9825 * 0.0175).toFixed(4);
+          onetransaction.selltoken = onetransaction.sellvalue;
+          onetransaction.selltime = "0";
+          transactionlist.push(onetransaction);
         }
+        console.log("transactionlist");
+        console.log(transactionlist);
+        commit('setTransactions', transactionlist);
       } catch (err) {
         console.error('Failed to fetch coins', err);
       }

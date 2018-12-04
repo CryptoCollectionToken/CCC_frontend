@@ -25,8 +25,9 @@
 
 <script>
 import { mapActions, mapState } from 'vuex';
+
 export default {
-  name: 'airdrop',
+  name: 'mycoin',
   data () {
     return {
       coins: [],

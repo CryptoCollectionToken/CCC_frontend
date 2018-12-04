@@ -16,8 +16,9 @@
 <script>
 // const alltransactions = require("../assets/transactions.json");
 const allcointypes = require("../../assets/cointypes.json");
+
 export default {
-  name: 'mine',
+  name: 'alltype',
   data () {
     return {
         cointypes: [],

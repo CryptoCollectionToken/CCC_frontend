@@ -94,7 +94,7 @@ import { mapActions, mapState } from 'vuex';
 import API, { eos } from '@/util/api';
 
 export default {
-  name: 'airdrop',
+  name: 'sellcoin',
   data () {
     return {
       coins: [],

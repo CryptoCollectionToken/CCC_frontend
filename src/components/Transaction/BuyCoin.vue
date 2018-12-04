@@ -15,16 +15,16 @@
             <div class="selltextleft line2">{{$t('transaction_fee')}}</div>
             <div class="selltextleft line3">{{$t('transaction_total')}}</div>
             <div class="selltextleft line4">{{$t('transaction_reward')}}</div>
-            <div class="selltextright line1">2.0000 EOS</div>
-            <div class="selltextright line2">1.0000 EOS</div>
-            <div class="selltextright line3">3.0000 EOS</div>
-            <div class="selltextright line4">4.2    TOKEN</div>
+            <div class="selltextright line1">{{coin.sellvalue}} EOS</div>
+            <div class="selltextright line2">{{coin.sellgas}}</div>
+            <div class="selltextright line3">{{coin.sellallvalue}}</div>
+            <div class="selltextright line4">{{coin.selltoken}} TOKEN</div>
             <img src="../../../static/pic/我的纪念币面和纪念币交易页面拍卖显示框.png" class="sellpic" alt="" />
           </div>
         </div>
         <br/>
         <div class="div1">
-          <a @click="gotoCoinPage(item)">
+          <a @click="Buy(coin)">
             <span class="span1">{{$t('transaction_buy_now')}}</span>
             <img src="../../../static/pic/我的纪念币页面按钮图.png" class="img1" alt="" />
           </a>
@@ -35,30 +35,33 @@
 </template>
 
 <script>
-const allcoins = require("../../assets/transactions.json");
+// const allcoins = require("../../assets/transactions.json");
+import { mapActions, mapState } from 'vuex';
+
 export default {
-  name: 'airdrop',
+  name: 'buycoin',
   data () {
     return {
       coins: [],
     }
   },
   created: function () {
-    console.log(allcoins);
+    const allcoins = this.transactions;
     for(const coinid in allcoins){
       const coin = allcoins[coinid];
-      console.log(coin);
-      if(this.$route.params.sellid === coin.sellid){
+      if(this.$route.params.sellid == coin.sellid){
           this.coins.push(coin);
         }
     }
-    console.log(this.coins);
   },
   methods:{
-    Sell(){
+    Buy(){
 
     }
-  }
+  },
+  computed: {
+    ...mapState(['transactions']),
+  },
 }
 </script>
 

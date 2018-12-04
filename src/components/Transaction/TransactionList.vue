@@ -42,9 +42,11 @@
 
 <script>
 // const alltransactions = require("../assets/transactions.json");
-const allcoins = require("../../assets/transactions.json");
+// const allcoins = require("../../assets/transactions.json");
+import { mapActions, mapState } from 'vuex';
+
 export default {
-  name: 'mine',
+  name: 'transactionlist',
   data () {
     return {
         coins: [],
@@ -53,14 +55,15 @@ export default {
     }
   },
   created: function () {
+    const allcoins = this.transactions;
+    console.log("----");
+    console.log(allcoins);
     this.type = this.$route.params.type;
     for(const coinid in allcoins){
       const coin = allcoins[coinid];
-      console.log(coin);
-      console.log(this.$route.params.type + "," + coin.type  + "," + this.$route.params.cointype + "," + coin.cointype + "," + this.$route.params.value + "," + coin.value);
-      if(this.$route.params.type === coin.type &&
-        this.$route.params.cointype === coin.cointype &&
-        this.$route.params.value === coin.value){
+      if(this.$route.params.type == coin.type &&
+        this.$route.params.cointype == coin.cointype &&
+        this.$route.params.value == coin.value){
           this.coins.push(coin);
           this.name = coin.name;
         }
@@ -71,7 +74,10 @@ export default {
         // console.log(e.toElement.innerText);
         this.$router.push({ path: `/buycoin/${sellid}`});
     }
-  }
+  },
+  computed: {
+    ...mapState(['transactions']),
+  },
 }
 </script>
 

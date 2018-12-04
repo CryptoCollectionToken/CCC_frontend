@@ -138,6 +138,16 @@ const API = {
     });
     return rows;
   },
+  async getTransactionsAsync({ accountName }) {
+    const { rows } = await eos().getTableRows({
+      json: true,
+      code: 'ceshiyongeos',
+      scope: accountName,
+      table: 'order',
+      limit: 1024,
+    });
+    return rows;
+  },
 };
 
 export default API;

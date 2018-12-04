@@ -15,7 +15,7 @@
 const allcointypes = require("../../assets/cointypes.json");
 
 export default {
-  name: 'airdrop',
+  name: 'selectcoin',
   data () {
     return {
       cointypes: [],
