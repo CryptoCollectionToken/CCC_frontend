@@ -1,0 +1,57 @@
+[
+    {
+        "name": "gloryreward_second_lieutenant",
+        "logourl": "http://www.deaso40.com/jmjnb/军衔级图/少尉级图.png",
+        "value": 5
+    },
+    {
+        "name": "gloryreward_first_lieutenant",
+        "logourl": "http://www.deaso40.com/jmjnb/军衔级图/中尉级图.png",
+        "value": 8
+    },
+    {
+        "name": "gloryreward_captain",
+        "logourl": "http://www.deaso40.com/jmjnb/军衔级图/上尉级图.png",
+        "value": 15
+    },
+    {
+        "name": "gloryreward_major",
+        "logourl": "http://www.deaso40.com/jmjnb/军衔级图/少校级图.png",
+        "value": 50
+    },
+    {
+        "name": "gloryreward_lieutenant_colonel",
+        "logourl": "http://www.deaso40.com/jmjnb/军衔级图/中校级图.png",
+        "value": 80
+    },
+    {
+        "name": "gloryreward_colonel",
+        "logourl": "http://www.deaso40.com/jmjnb/军衔级图/上校级图.png",
+        "value": 100
+    },
+    {
+        "name": "gloryreward_brigadier_general",
+        "logourl": "http://www.deaso40.com/jmjnb/军衔级图/准将级图.png",
+        "value": 300
+    },
+    {
+        "name": "gloryreward_major_general",
+        "logourl": "http://www.deaso40.com/jmjnb/军衔级图/少将级图.png",
+        "value": 500
+    },
+    {
+        "name": "gloryreward_lieutenant_general",
+        "logourl": "http://www.deaso40.com/jmjnb/军衔级图/中将级图.png",
+        "value": 700
+    },
+    {
+        "name": "gloryreward_four_star_general",
+        "logourl": "http://www.deaso40.com/jmjnb/军衔级图/四星上将级图.png",
+        "value": 1000
+    },
+    {
+        "name": "gloryreward_five_star_general",
+        "logourl": "http://www.deaso40.com/jmjnb/军衔级图/五星上将级图.png",
+        "value": 1500
+    }
+]

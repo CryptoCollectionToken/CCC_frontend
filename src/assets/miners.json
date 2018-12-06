@@ -1,0 +1,57 @@
+[
+    {
+        "name": "gloryreward_grassroots",
+        "logourl": "http://www.deaso40.com/jmjnb/矿工衔级图/草根级矿工图.png",
+        "value": 10
+    },
+    {
+        "name": "gloryreward_entry",
+        "logourl": "http://www.deaso40.com/jmjnb/矿工衔级图/入门级矿工图.png",
+        "value": 25
+    },
+    {
+        "name": "gloryreward_rock",
+        "logourl": "http://www.deaso40.com/jmjnb/矿工衔级图/岩石级矿工图.png",
+        "value": 50
+    },
+    {
+        "name": "gloryreward_blackiron",
+        "logourl": "http://www.deaso40.com/jmjnb/矿工衔级图/黑铁级矿工图.png",
+        "value": 100
+    },
+    {
+        "name": "gloryreward_steel",
+        "logourl": "http://www.deaso40.com/jmjnb/矿工衔级图/精钢级矿工图.png",
+        "value": 200
+    },
+    {
+        "name": "gloryreward_bronze",
+        "logourl": "http://www.deaso40.com/jmjnb/矿工衔级图/青铜级矿工图.png",
+        "value": 333
+    },
+    {
+        "name": "gloryreward_silver",
+        "logourl": "http://www.deaso40.com/jmjnb/矿工衔级图/白银级矿工图.png",
+        "value": 666
+    },
+    {
+        "name": "gloryreward_gold",
+        "logourl": "http://www.deaso40.com/jmjnb/矿工衔级图/黄金级矿工图.png",
+        "value": 999
+    },
+    {
+        "name": "gloryreward_platnum",
+        "logourl": "http://www.deaso40.com/jmjnb/矿工衔级图/珀金级矿工图.png",
+        "value": 1500
+    },
+    {
+        "name": "gloryreward_diamond",
+        "logourl": "http://www.deaso40.com/jmjnb/矿工衔级图/钻石级矿工图.png",
+        "value": 2000
+    },
+    {
+        "name": "gloryreward_imperial",
+        "logourl": "http://www.deaso40.com/jmjnb/矿工衔级图/玉玺级矿工图.png",
+        "value": 4000
+    }
+]

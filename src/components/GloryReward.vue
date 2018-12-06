@@ -4,51 +4,55 @@
       <div class="titletext">{{$t('gloryreward_miner_level')}}</div>
       <div class="button" style="margin-left:5px">{{$t('gloryreward_your_level')}} {{$t('gloryreward_gold')}}</div>
       <div class="button" style="margin-left:5px">{{$t('gloryreward_mining_times')}} 1254</div>
-      <div class="columns is-mobile">
-        <div class="column is-one-quarter">
-          <img src="../../static/pic/白皮书图.png" class="img1" alt="" />
-        </div>
-        <div class="column is-one-quarter">
-          <div style="padding-top:25%;">
-            {{$t('gloryreward_grassroots')}}
+      <div v-for="(miner,key) in miners" key="index">
+        <div class="columns is-mobile">
+          <div class="column is-one-quarter">
+            <img :src="miner.logourl" class="img1" alt="" />
+          </div>
+          <div class="column is-one-quarter">
+            <div style="padding-top:25%;">
+              {{$t(miner.name)}}
+            </div>
+          </div>
+          <div class="column is-one-quarter">
+            <div style="padding-top:25%;">
+              {{$t('gloryreward_mining_times_before')}}{{miner.value}}{{$t('gloryreward_mining_times_after')}}
+            </div>
+          </div>
+          <div class="column is-one-quarter">
+            <div style="padding-top:25%;">
+              <a class="button" @click="">{{$t('gloryreward_mining_award_before')}}10{{$t('gloryreward_mining_award_after')}}</a>
+            </div>
           </div>
         </div>
-        <div class="column is-one-quarter">
-          <div style="padding-top:25%;">
-            {{$t('gloryreward_mining_times_before')}}10{{$t('gloryreward_mining_times_after')}}
-          </div>
-        </div>
-        <div class="column is-one-quarter">
-          <div style="padding-top:25%;">
-            <a class="button" @click="">{{$t('gloryreward_mining_award_before')}}10{{$t('gloryreward_mining_award_after')}}</a>
-          </div>
-        </div>
-      </div>
+      </div><!-- for -->
     </div>
     <div style="margin-left:10%;margin-right:10%;" v-if="page == 2">
       <div class="titletext">{{$t('gloryreward_trade_level')}}</div>
       <div class="button" style="margin-left:5px">{{$t('gloryreward_your_trade_level')}} {{$t('gloryreward_major_genera')}}</div>
       <div class="button" style="margin-left:5px">{{$t('gloryreward_your_buy_times')}} 590</div>
-      <div class="columns is-mobile">
-        <div class="column is-one-quarter">
-          <img src="../../static/pic/白皮书图.png" class="img1" alt="" />
-        </div>
-        <div class="column is-one-quarter">
-          <div style="padding-top:25%;">
-            {{$t('gloryreward_second_lieutenant')}}
+      <div v-for="(transactor,key) in transactors" key="index">
+        <div class="columns is-mobile">
+          <div class="column is-one-quarter">
+            <img :src="transactor.logourl" class="img1" alt="" />
+          </div>
+          <div class="column is-one-quarter">
+            <div style="padding-top:25%;">
+              {{$t(transactor.name)}}
+            </div>
+          </div>
+          <div class="column is-one-quarter">
+            <div style="padding-top:25%;">
+              {{$t('gloryreward_trade_times_before')}}{{transactor.value}}{{$t('gloryreward_trade_times_after')}}
+            </div>
+          </div>
+          <div class="column is-one-quarter">
+            <div style="padding-top:25%;">
+              <a class="button" @click="">{{$t('gloryreward_trade_award_before')}}20{{$t('gloryreward_trade_award_after')}}</a>
+            </div>
           </div>
         </div>
-        <div class="column is-one-quarter">
-          <div style="padding-top:25%;">
-            {{$t('gloryreward_trade_times_before')}}5{{$t('gloryreward_trade_times_after')}}
-          </div>
-        </div>
-        <div class="column is-one-quarter">
-          <div style="padding-top:25%;">
-            <a class="button" @click="">{{$t('gloryreward_trade_award_before')}}20{{$t('gloryreward_trade_award_after')}}</a>
-          </div>
-        </div>
-      </div>
+      </div><!-- for -->
     </div>
 
     <div class="sellplane">
@@ -83,12 +87,19 @@
 
 <script>
 const allranks = require("../assets/playerrank.json");
+const allminers = require("../assets/miners.json");
+const alltransactors = require("../assets/transactors.json")
+
 export default {
   name: 'gloryreward',
   data () {
     return {
       page: 1,
       ranks: allranks,
+      miners: allminers,
+      transactors: alltransactors,
+      minetimes: 0,
+      transacttimes: 0
     }
   },
   created: function(){

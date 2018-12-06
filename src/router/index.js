@@ -34,9 +34,6 @@ createroute(HomePage, "HomePage");
 import Prepare from '@/components/Prepare';
 createroute(Prepare, "Prepare");
 
-import Description from '@/components/Description';
-createroute(Description, "Description");
-
 import Introduction from '@/components/Introduction';
 createrouteaddid(Introduction, "Introduction", "Introduction/:cointype");
 
@@ -87,9 +84,6 @@ createroute(Proof, "Proof");
 
 import Refer from '@/components/Refer';
 createroute(Refer, "Refer");
-
-import Airdrop from '@/components/Airdrop';
-createroute(Airdrop, "Airdrop");
 
 const path = require('path');
 
