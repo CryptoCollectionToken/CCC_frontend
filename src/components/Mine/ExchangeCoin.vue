@@ -10,14 +10,11 @@
               <div class="level-item has-text-centered">
                 <img alt="" width="100px" :srcset="cointype.coinurl"/>
                 <div>
-                  <label class="checkbox">
-                    <input type="checkbox">
-                  </label>
                   <div class="columns is-mobile is-gapless">
                     <div class="column">
                       <div class="control">
                         <div class="select is-small" style="width:90px;">
-                          <select>
+                          <select v-model="amount">
                             <option selected>{{$t('mine_exchange_quantity')}}</option>
                             <option>1</option>
                           </select>
@@ -26,8 +23,8 @@
                     </div>
                     <div class="column">
                       <div class="control">
-                        <div class="select is-small" style="width:90px;">
-                          <select>
+                        <div class="select is-small is-multiple" style="width:90px;">
+                          <select multiple size="4" v-model="numbers[index]">
                             <option selected>{{$t('mine_serial_number_selection')}}</option>
                             <option>1</option>
                           </select>
@@ -47,31 +44,9 @@
               <div class="level-item has-text-centered">
                 <img alt="" width="100px" :srcset="cointype.coinurl"/>
                 <div>
-                  <label class="checkbox">
+                  <label class="checkbox" style="padding-left:8px">
                     <input type="checkbox">
                   </label>
-                  <div class="columns is-mobile is-gapless">
-                    <div class="column">
-                      <div class="control">
-                        <div class="select is-small" style="width:90px;">
-                          <select>
-                            <option selected>{{$t('mine_exchange_quantity')}}</option>
-                            <option>1</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="column">
-                      <div class="control">
-                        <div class="select is-small" style="width:90px;">
-                          <select>
-                            <option selected>{{$t('mine_serial_number_selection')}}</option>
-                            <option>1</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
                 <!-- <img alt="" width="40%" :srcset="cointype.coinurl"/> -->
               </div>
@@ -102,7 +77,9 @@ export default {
   data () {
     return {
       cointypes: [],
-      type: ""
+      type: "",
+      amount: this.$t('mine_exchange_quantity'),
+      numbers: [[],[],[],[],[],[],[],[],[],[]],
     }
   },
   created: function () {
@@ -110,10 +87,19 @@ export default {
     this.type = this.$route.params.type;
   },
   methods:{
-    enter(){
-
+    changed(){
+      console.log(this.amount);
+      console.log(this.numbers);
     }
-  }
+  },
+  watch: { 
+    amount: function(val) {
+      this.changed();
+    },
+    numbers: function(val) {
+      this.changed();
+    },
+  },
 }
 </script>
 

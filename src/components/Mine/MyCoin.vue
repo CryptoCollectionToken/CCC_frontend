@@ -36,7 +36,7 @@ export default {
   },
   created: function () {
     const allcoins = this.existcoins;
-    this.type = this.$route.params.type;
+    this.type = this.$route.params.cointype;
     for(const coinid in allcoins){
       const coin = allcoins[coinid];
       console.log(this.$route.params.type + "," + coin.type + "," + this.$route.params.cointype + "," + coin.cointype + "," + this.$route.params.value + "," + coin.value);

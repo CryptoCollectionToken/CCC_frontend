@@ -2,6 +2,7 @@ export default {
   switch_lang: 'Switch Lang.',
   English: 'English',
   Chinese: 'Chinese',
+  Korean: 'Korean',
   
   //coins
   BTC: 'BTC',

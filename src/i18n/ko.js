@@ -1,8 +1,8 @@
 export default {
-  switch_lang: '切换语言',
-  English: '英语',
-  Chinese: '中文',
-  Korean: '韩文',
+  switch_lang: '언어 변경',
+  English: '영어',
+  Chinese: '중국어',
+  Korean: '한글',
   //{{$t('')}}
 
   //coins
