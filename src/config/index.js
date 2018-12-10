@@ -4,6 +4,8 @@ export const appScatterName = 'CryptoMeetup';
 
 export const network = networks.eosasia;
 
+export const history = networks.history;
+
 export const i18n = [
   {
     locale: 'zh',

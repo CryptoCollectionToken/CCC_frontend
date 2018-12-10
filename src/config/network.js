@@ -16,6 +16,11 @@ export const eosOptions = {
     verbose: true,
     chainId: 'cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f',
   },
+  history: {
+    httpEndpoint: 'https://geo.eosasia.one',
+    verbose: true,
+    chainId: 'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906',
+  }
 };
 
 // Use CryptoKylin for Testnet
@@ -40,6 +45,13 @@ export const networks = {
     protocol: 'https',
     blockchain: 'eos',
     host: 'api.eosbeijing.one',
+    port: 443,
+    chainId: 'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906',
+  },
+  history: {
+    protocol: 'https',
+    blockchain: 'eos',
+    host: 'geo.eosasia.one',
     port: 443,
     chainId: 'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906',
   },

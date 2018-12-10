@@ -8,6 +8,8 @@ ScatterJS.plugins(new ScatterEOS());
 
 // @trick: use function to lazy eval Scatter eos, in order to avoid no ID problem.
 const eos = () => ScatterJS.scatter.eos(config.network, Eos, { expireInSeconds: 60 });
+const historyeos = () => ScatterJS.scatter.eos(config.history, Eos, { expireInSeconds: 60 });
+
 const currentEOSAccount = () => ScatterJS.scatter.identity.accounts.find(x => x.blockchain === 'eos');
 
 const API = {
@@ -146,6 +148,7 @@ const API = {
       table: 'order',
       limit: 1024,
     });
+    console.log(await historyeos().getActions({account_name: "ceshiyongeos", pos: -1, offset: -100}));
     return rows;
   },
 };
