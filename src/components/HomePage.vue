@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="back">
     <div>{{$t('homepage_introduction')}}</div>
     <br/><div style="text-align: center;">{{$t('BTC')}}1{{$t('value')}}{{$t('coin')}}</div><br/>
     <img style="width: 30%;margin-left: 35%;" src="http://www.deaso40.com/jmjnb/纪念币图png/硬币比特币1.png" alt="" /><br/>
@@ -31,5 +31,10 @@ export default {
 </script>
 
 <style scoped>
-
+.back{
+  background-image:url("http://www.deaso40.com/jmjnb/background/backgrounds/首页/纪念币首页GIF.gif");
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-size: 100%;
+}
 </style>

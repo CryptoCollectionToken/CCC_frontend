@@ -28,12 +28,12 @@ export default {
 // @import 'buefy/lib/buefy.css';
 </script>
 <style lang="postcss">
-.view {
+/*.view {
   margin-top: 2rem;
   margin-bottom: 2rem;
   margin-left: 1rem;
   margin-right: 1rem;
-}
+}*/
 /*@media screen and (max-width: 768px) {
   .view {
     margin-left: 1rem;
