@@ -1,14 +1,25 @@
 <template>
   <div>
+    <!-- <img alt="" width="100%" style="padding-top: 0px" srcset="../../static/pic/头部条框.png"/>
+    <img alt="" width="100%" style="padding-top: 0px;padding-bottom:0px" srcset="../../static/pic/条框1.png"/>
+    <img alt="" width="100%" style="" srcset="../../static/pic/条框2.png"/>
+    <img alt="" width="100%" style="" srcset="../../static/pic/底部条框.png"/> -->
     <img style="margin-left:10%;margin-top:-40%;" alt="" width="80%" srcset=""/>
-      <div class="sellplane">
+      <!-- <div class="sellplane"> -->
+      <div>
         <div>
           <div v-for="(rank, index) in ranks" :key="index">
-            <div class="selltextleft" :style="{'top': gettop(index)}">
-              <img alt="" width="30px" :srcset="rank.logourl"/>
-              {{rank.name}}({{rank.cointype}})
+            <div class="columns is-mobile" style="text-align: center; height: 100px">
+              <div class="column">
+                <div v-show="index == 0"><img alt="" width="20%" srcset="../../static/pic/金牌.png"/></div>
+                <div v-show="index == 1"><img alt="" width="20%" srcset="../../static/pic/银牌.png"/></div>
+                <div v-show="index == 2"><img alt="" width="20%" srcset="../../static/pic/铜牌.png"/></div>
+              </div>
+              <div class="column"><img alt="" width="30px" :srcset="rank.logourl"/></div>
+              <div class="column">{{rank.name}}({{rank.cointype}})</div>
+              <div class="column">{{rank.value}}</div>
             </div>
-            <div class="selltextright" :style="{'top': gettop(index)}">{{rank.value}}</div>
+            <!-- <div class="selltextright" :style="{'top': gettop(index)}">{{rank.value}}</div> -->
           </div>
           <!-- <img src="../../static/pic/43市值排行.png" class="sellpic" alt="" /> -->
         </div>
@@ -29,18 +40,39 @@
 </template>
 
 <script>
-const allranks = require("../assets/rank.json");
+import axios from 'axios';
+const allcoins = require("../assets/coins.json");
+
 export default {
   name: 'rankreward',
   data () {
     return {
-      ranks: allranks,
+      ranks: [],
+      coins: allcoins,
+      maxvalue: 0,
+      minvalue: 0
     }
   },
   methods:{
-    gettop: function(index){
-      return (222 + index*28)+"px";
+
+  },
+  async mounted(){
+    for(const index in this.coins){
+      const onecoin = this.coins[index];
+      const num = index + 1;
+      const body = (await axios.get(
+        `http://127.0.0.1:8080/api/getmarketvalue/${num}`
+      )).data;
+      this.ranks.push({
+        name: onecoin.name,
+        cointype: onecoin.cointype,
+        logourl: onecoin.logourl,
+        value: body.result.marketvalue
+      })
     }
+    this.ranks.sort({
+      function(a,b){return b.value-a.value}
+    })
   }
 }
 </script>

@@ -148,7 +148,18 @@ const API = {
       table: 'order',
       limit: 1024,
     });
-    console.log(await historyeos().getActions({account_name: "ceshiyongeos", pos: -1, offset: -100}));
+    console.log(await eos().getTableRows({
+      json: true,
+      code: 'ceshiyongeos',
+      scope: 'ceshiyongeos',
+      table: 'usedcoins',
+      limit: 1024,
+    }));
+    console.log(await historyeos().getActions({
+      account_name: "ceshiyongeos", 
+      pos: -1, 
+      offset: -100
+    }));
     return rows;
   },
 };

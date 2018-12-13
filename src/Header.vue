@@ -84,6 +84,7 @@
                 <select v-model="$i18n.locale" :placeholder="$t('switch_lang')">
                   <option value="en">{{$t('English')}}</option>
                   <option value="zh">{{$t('Chinese')}}</option>
+                  <option value="ko">{{$t('Korean')}}</option>
                   <!-- <option value="ja">{{$t('Japanese')}}</option> -->
                 </select>
               </div>

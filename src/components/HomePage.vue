@@ -32,7 +32,7 @@ export default {
 
 <style scoped>
 .back{
-  background-image:url("http://www.deaso40.com/jmjnb/background/backgrounds/首页/纪念币首页GIF.gif");
+  background-image:url("http://www.deaso40.com/jmjnb/background/backgrounds/new/tenor(1).gif");
   background-repeat:no-repeat;
   background-attachment:fixed;
   background-size: 100%;
