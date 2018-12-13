@@ -2,8 +2,8 @@
   <div>
     <div style="margin-left:10%;margin-right:10%;" v-if="page == 1">
       <div class="titletext">{{$t('gloryreward_miner_level')}}</div>
-      <div class="button" style="margin-left:5px">{{$t('gloryreward_your_level')}} {{$t('gloryreward_gold')}}</div>
-      <div class="button" style="margin-left:5px">{{$t('gloryreward_mining_times')}} 1254</div>
+      <div class="button" style="margin-left:5px">{{$t('gloryreward_your_level')}} {{$t(minelevel)}}</div>
+      <div class="button" style="margin-left:5px">{{$t('gloryreward_mining_times')}}{{minetimes}}</div>
       <div v-for="(miner,key) in miners" key="index">
         <div class="columns is-mobile">
           <div class="column is-one-quarter">
@@ -21,7 +21,7 @@
           </div>
           <div class="column is-one-quarter">
             <div style="padding-top:25%;">
-              <a class="button" @click="">{{$t('gloryreward_mining_award_before')}}10{{$t('gloryreward_mining_award_after')}}</a>
+              <a class="button" @click="">{{$t('gloryreward_mining_award_before')}}{{miner.reward}}{{$t('gloryreward_mining_award_after')}}</a>
             </div>
           </div>
         </div>
@@ -29,8 +29,8 @@
     </div>
     <div style="margin-left:10%;margin-right:10%;" v-if="page == 2">
       <div class="titletext">{{$t('gloryreward_trade_level')}}</div>
-      <div class="button" style="margin-left:5px">{{$t('gloryreward_your_trade_level')}} {{$t('gloryreward_major_genera')}}</div>
-      <div class="button" style="margin-left:5px">{{$t('gloryreward_your_buy_times')}} 590</div>
+      <div class="button" style="margin-left:5px">{{$t('gloryreward_your_trade_level')}} {{$t(buylevel)}}</div>
+      <div class="button" style="margin-left:5px">{{$t('gloryreward_your_buy_times')}} {{buytimes}}</div>
       <div v-for="(transactor,key) in transactors" key="index">
         <div class="columns is-mobile">
           <div class="column is-one-quarter">
@@ -48,21 +48,35 @@
           </div>
           <div class="column is-one-quarter">
             <div style="padding-top:25%;">
-              <a class="button" @click="">{{$t('gloryreward_trade_award_before')}}20{{$t('gloryreward_trade_award_after')}}</a>
+              <a class="button" @click="">{{$t('gloryreward_trade_award_before')}}{{transactor.reward}}{{$t('gloryreward_trade_award_after')}}</a>
             </div>
           </div>
         </div>
       </div><!-- for -->
     </div>
 
-    <div class="sellplane">
+    <div class="sellplane" v-if="page == 1">
       <div>
-        <div v-for="(rank, index) in ranks" :key="index">
+        <div v-for="(rank, index) in mineranks" :key="index">
           <div class="selltext t2" :style="{'top': gettop(index)}">
             <img alt="" width="30px" :srcset="rank.logourl"/>
             {{rank.name}}
           </div>
-          <div class="selltext t3" :style="{'top': gettop(index)}">{{rank.level}}</div>
+          <div class="selltext t3" :style="{'top': gettop(index)}">{{$t(rank.level)}}</div>
+          <div class="selltext t4" :style="{'top': gettop(index)}">{{rank.buyamount}}</div>
+        </div>
+        <img src="../../static/pic/衔级奖励页面排名图.png" class="sellpic" alt="" />
+      </div>
+    </div>
+
+    <div class="sellplane" v-if="page == 2">
+      <div>
+        <div v-for="(rank, index) in buyranks" :key="index">
+          <div class="selltext t2" :style="{'top': gettop(index)}">
+            <img alt="" width="30px" :srcset="rank.logourl"/>
+            {{rank.name}}
+          </div>
+          <div class="selltext t3" :style="{'top': gettop(index)}">{{$t(rank.level)}}</div>
           <div class="selltext t4" :style="{'top': gettop(index)}">{{rank.buyamount}}</div>
         </div>
         <img src="../../static/pic/衔级奖励页面排名图.png" class="sellpic" alt="" />
@@ -86,6 +100,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+import { mapActions, mapState } from 'vuex';
 const allranks = require("../assets/playerrank.json");
 const allminers = require("../assets/miners.json");
 const alltransactors = require("../assets/transactors.json")
@@ -95,11 +111,14 @@ export default {
   data () {
     return {
       page: 1,
-      ranks: allranks,
+      minelevel: '',
+      minetimes: 0,
+      buylevel: '',
+      buytimes: 0,
+      mineranks: [],
+      buyranks: [],
       miners: allminers,
       transactors: alltransactors,
-      minetimes: 0,
-      transacttimes: 0
     }
   },
   created: function(){
@@ -111,6 +130,60 @@ export default {
     },
     gettop: function(index){
       return (156 + index*30)+"px";
+    },
+    minetimetolevel: function(input){
+      for(const level in allminers){
+        if (input < allminers[level].value) return allminers[level].name;
+      }
+    },
+    buytimetolevel: function(input){
+      for(const level in alltransactors){
+        if (input < alltransactors[level].value) return alltransactors[level].name;
+      }
+    },
+
+  },
+  computed: {
+    ...mapState(['scatterAccount']),
+  },
+  async mounted(){
+    console.log(this.scatterAccount);
+    if(this.scatterAccount){
+      console.log("getting mine times.." + this.scatterAccount.name)
+      const body = (await axios.get(
+          `http://127.0.0.1:8080/api/getplayer/${this.scatterAccount.name}`
+        )).data.result;
+      console.log(body);
+      this.minetimes = body.minetimes;
+      this.minelevel = this.minetimetolevel(this.minetimes);
+      this.buytimes = body.buytimes;
+      this.buylevel = this.buytimetolevel(this.buytimes);
+    }
+    console.log("getting mine ranks..")
+    const mineranks = (await axios.get(
+          `http://127.0.0.1:8080/api/getplayermineorder`
+        )).data.result;
+    console.log(mineranks);
+    for(const index in mineranks){
+      const rank = mineranks[index];
+      this.mineranks.push({
+        name: rank.owner,
+        buyamount: rank.minetimes,
+        level: this.minetimetolevel(rank.minetimes),
+      });
+    }
+    console.log("getting buy times..")
+    const buyranks = (await axios.get(
+          `http://127.0.0.1:8080/api/getplayerbuyorder`
+        )).data.result;
+    console.log(buyranks);
+    for(const index in buyranks){
+      const rank = buyranks[index];
+      this.buyranks.push({
+        name: rank.owner,
+        buyamount: rank.buytimes,
+        level: this.buytimetolevel(rank.buytimes),
+      });
     }
   }
 }
