@@ -124,14 +124,13 @@ export default {
   }, 
   watch: { 
     introductionval: function(val) {
+      console.log(isScatterConnected + " " + scatterAccount);
       if(val === this.$t("introduction")) return;
-      console.log(val);
       this.$router.push({ path: `/introduction/${val}`});
     },
     rewardval: function(val) {
       if(val === this.$t("reward")) return;
       this.$router.push({ path: `/${val}`});
-      console.log(val);
     },
   },
   methods: {

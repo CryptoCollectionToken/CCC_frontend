@@ -1,5 +1,17 @@
 # somecoin
 
+  https://github.com/flyq/somecoin
+
+  这是前端
+
+  https://github.com/flyq/cryptocoin-contracts
+
+  这是合约
+
+  https://github.com/Deasoso/cryptocoin-backend
+
+  这是后端
+  
 # coutions
 
   在前端，type永远-1

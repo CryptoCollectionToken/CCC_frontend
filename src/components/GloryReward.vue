@@ -124,8 +124,12 @@ export default {
   created: function(){
     this.page = this.$route.params.page;
   },
+  computed: {
+    ...mapState(['scatterAccount']),
+  },
   methods:{
     gotopage: function(page){
+      console.log(this);
       this.$router.push({ path: `/gloryreward/${page}`});
     },
     gettop: function(index){
@@ -141,12 +145,9 @@ export default {
         if (input < alltransactors[level].value) return alltransactors[level].name;
       }
     },
-
-  },
-  computed: {
-    ...mapState(['scatterAccount']),
   },
   async mounted(){
+    console.log(this);
     console.log(this.scatterAccount);
     if(this.scatterAccount){
       console.log("getting mine times.." + this.scatterAccount.name)

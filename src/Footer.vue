@@ -2,16 +2,8 @@
   <footer class="footer">
     <div class="columns content has-text-centered">
       <div class="column">
-        <div>Wechat</div>
-        <img width="30%" src="../static/pic/微信图.png" class="img1" alt="" />
-      </div>
-      <div class="column">
-        <div>Discord</div>
-        <img width="30%" src="../static/pic/discord标志.png" class="img1" alt="" />
-      </div>
-      <div class="column">
-        <div>Github</div>
-        <img width="30%" src="../static/pic/开源代码标志.png" class="img1" alt="" />
+        <div>Telegram.jpg</div>
+        <img width="30%" src="../static/pic/telegram.jpg" class="img1" alt="" />
       </div>
       <div class="column">
         <div>White Paper</div>
