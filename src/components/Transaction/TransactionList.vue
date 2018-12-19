@@ -32,7 +32,7 @@
           <div style="margin-left:10%;">{{$t('transaction_serial_number')}}{{coin.coinnumber}}</div>
           <div style="margin-left:10%;">{{$t('transaction_countdown')}}{{coin.selltime}}</div>
           <div style="text-align:center">
-            <a class="button is-rounded"  @click="enter(coin.sellid)">购买</a>
+            <a class="button is-rounded"  @click="enter(coin.sellid)">{{$t('transaction_buy')}}</a>
           </div>
         </span>
       </div>

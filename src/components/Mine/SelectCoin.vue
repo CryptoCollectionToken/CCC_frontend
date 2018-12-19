@@ -4,7 +4,7 @@
     <!-- <img style="margin-left:35%;" alt="" width="30%" srcset="../../../static/pic/我的纪念币页面按钮图.png"/> -->
     <div class="div1" v-for="(cointype, index) in cointypes" :key="index">
       <a @click="gotoCoinPage(type, cointype.type, cointype.value)">
-        <span class="span1">{{cointype.name}}</span>
+        <span class="span1">{{cointype.value}}{{$t('value')}}{{$t(cointype.cointype)}}<span v-if="cointype.type == 2">{{$t('coin')}}</span></span>
         <img src="../../../static/pic/我的纪念币页面按钮图.png" class="img1" alt="" />
       </a>
     </div>

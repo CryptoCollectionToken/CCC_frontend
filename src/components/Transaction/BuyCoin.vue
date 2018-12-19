@@ -37,6 +37,7 @@
 <script>
 // const allcoins = require("../../assets/transactions.json");
 import { mapActions, mapState } from 'vuex';
+import API, { eos } from '@/util/api';
 
 export default {
   name: 'buycoin',
@@ -55,8 +56,12 @@ export default {
     }
   },
   methods:{
-    Buy(){
-
+    async Buy(coin){
+      await API.transferEOSAsync({
+        to: 'chainbankeos',
+        memo: 'mining',
+        amount: need,
+      });
     }
   },
   computed: {

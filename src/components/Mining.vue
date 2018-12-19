@@ -21,28 +21,28 @@ export default {
   data () {
     return {
       remainamount: 429600,
-      needeos: 1.000,
+      needeos: 2.0000,
       mininglist: [
-        [429600,1.0000],
-        [408120,1.1000],
-        [386640,1.2100],
-        [365160,1.3310],
-        [343680,1.4640],
-        [322200,1.6110],
-        [279240,1.7720],
-        [257760,1.9490],
-        [236280,2.1440],
-        [214800,2.3580],
-        [193320,2.5940],
-        [171840,2.8530],
-        [150360,3.1380],
-        [128880,3.4520],
-        [107400,3.7970],
-        [85920,4.1770],
-        [64440,4.5950],
-        [42960,5.0540],
-        [21480,5.5600],
-        [0,6.1160]],
+        [429600,2.0000],
+        [408120,2.2000],
+        [386640,2.4200],
+        [365160,2.6620],
+        [343680,2.9280],
+        [322200,3.2220],
+        [279240,3.5440],
+        [257760,3.8980],
+        [236280,4.2880],
+        [214800,4.7160],
+        [193320,5.1880],
+        [171840,5.7060],
+        [150360,6.2760],
+        [128880,6.9040],
+        [107400,7.5940],
+        [85920,8.3540],
+        [64440,9.1900],
+        [42960,10.1080],
+        [21480,11.1200],
+        [0,12.2320]],
     }
   },
   methods: {
@@ -51,14 +51,14 @@ export default {
       const need = this.needeos * times * 10000;
       console.log(need);
       await API.transferEOSAsync({
-        to: 'ceshiyongeos',
+        to: 'chainbankeos',
         memo: 'mining',
         amount: need,
       });
     }
   },
   async mounted(){
-    this.remainamount = await API.getRemainAmountAsync({ accountName: 'ceshiyongeos' });
+    this.remainamount = await API.getRemainAmountAsync({ accountName: 'chainbankeos' });
     for(const index in this.mininglist){
       if(this.mininglist[index][0] <= this.remainamount){
         this.needeos = this.mininglist[index][1];

@@ -6,7 +6,7 @@
       <a @click="enter(cointype)" v-for="(cointype,key) in cointypes" key="index" class="column is-one-fifth">
         <span style="padding:5px;">
           <!-- <div style="text-align:center">{{cointype.name}}</div> -->
-          <div class="button is-rounded">{{cointype.name}}</div>
+          <div class="button is-rounded has-text-centered">{{cointype.value}}{{$t('value')}}{{$t(cointype.cointype)}}<span v-if="cointype.type == 2">{{$t('coin')}}</span></div>
         </span>
       </a>
     </div>

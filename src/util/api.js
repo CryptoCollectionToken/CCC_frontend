@@ -16,7 +16,7 @@ const API = {
   async getPlayerAsync({ accountName }) {
     const { rows } = await eos().getTableRows({
       json: true,
-      code: 'ceshiyongeos',
+      code: 'chainbankeos',
       scope: accountName,
       table: 'player',
       limit: 1024,
@@ -26,7 +26,7 @@ const API = {
   async getCoinAsync({ accountName }) {
     const { rows } = await eos().getTableRows({
       json: true,
-      code: 'ceshiyongeos',
+      code: 'chainbankeos',
       scope: accountName,
       table: 'coin',
       limit: 1024,
@@ -36,7 +36,7 @@ const API = {
   async getRemainAmountAsync({ accountName }) {
     const { rows } = await eos().getTableRows({
       json: true,
-      code: 'ceshiyongeos',
+      code: 'chainbankeos',
       scope: accountName,
       table: 'global',
       limit: 1024,
@@ -104,7 +104,7 @@ const API = {
     memo = '',
   ){
     console.log(currentEOSAccount().name);
-    const contract = await eos().contract('ceshiyongeos');
+    const contract = await eos().contract('chainbankeos');
     await contract.pushorder(
       currentEOSAccount().name,
       PriceFormatter.formatPrice(amount),
@@ -133,7 +133,7 @@ const API = {
   async getCoinsAsync({ accountName }) {
     const { rows } = await eos().getTableRows({
       json: true,
-      code: 'ceshiyongeos',
+      code: 'chainbankeos',
       scope: accountName,
       table: 'coin',
       limit: 1024,
@@ -143,20 +143,20 @@ const API = {
   async getTransactionsAsync({ accountName }) {
     const { rows } = await eos().getTableRows({
       json: true,
-      code: 'ceshiyongeos',
+      code: 'chainbankeos',
       scope: accountName,
       table: 'order',
       limit: 1024,
     });
     console.log(await eos().getTableRows({
       json: true,
-      code: 'ceshiyongeos',
-      scope: 'ceshiyongeos',
+      code: 'chainbankeos',
+      scope: 'chainbankeos',
       table: 'player',
       limit: 1024,
     }));
     // console.log(await historyeos().getActions({
-    //   account_name: "ceshiyongeos", 
+    //   account_name: "chainbankeos", 
     //   pos: -1, 
     //   offset: -100
     // }));

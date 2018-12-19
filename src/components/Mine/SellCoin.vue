@@ -126,10 +126,10 @@ export default {
   },
   methods:{
     const_sell(coin){
-      API.SellCoinAsync(this.const_input * 9825, coin.contracttype + " " + 1);
+      API.SellCoinAsync(this.const_input * 10000, 1 + " " + coin.contracttype + " " + 1);
     },
     change_sell(){
-      API.SellCoinAsync(this.const_input * 9825, coin.contracttype + " " + 1);
+      API.SellCoinAsync(this.const_input * 10000, 2 + " " + coin.contracttype + " " + 1);
     },
     const_input_changed(){
       // console.log(this.const_input*0.0175);

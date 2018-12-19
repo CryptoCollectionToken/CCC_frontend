@@ -193,7 +193,7 @@ export default new Vuex.Store({
     },
     async getCoins({ commit }) {
       try {
-        const CoinList = await API.getCoinsAsync({accountName: 'ceshiyongeos'});
+        const CoinList = await API.getCoinsAsync({accountName: 'chainbankeos'});
         const existcoinlist = [];
         for(const index in CoinList){
           const contractone = CoinList[index];
@@ -204,18 +204,18 @@ export default new Vuex.Store({
           onecoin.id = contractone.id;
           onecoin.owner = contractone.owner;
           onecoin.contracttype = contractone.type;
-          onecoin.type = cointypenum + 1;
           onecoin.cointype = this.state.coins[cointypenum].cointype;
           onecoin.value = this.state.coinvalues[cointypenum][coinvaluenum];
           onecoin.number = contractone.number;
           onecoin.coinnumber = onecoin.cointype + String.fromCharCode(parseInt(_A_.charCodeAt()) + parseInt(coinvaluenum)) + onecoin.number;
+          onecoin.type = this.state.cointypes[onecoin.cointype].types[coinvaluenum].type;
           onecoin.url = this.state.cointypes[onecoin.cointype].types[coinvaluenum].coinurl;
           existcoinlist.push(onecoin);
         }
         console.log("existcoinlist");
         console.log(existcoinlist);
         commit('setCoins', existcoinlist);
-        const TransactionList = await API.getTransactionsAsync({accountName: 'ceshiyongeos'});
+        const TransactionList = await API.getTransactionsAsync({accountName: 'chainbankeos'});
         const transactionlist = [];
         for(const index in TransactionList){
           const transaction = TransactionList[index];
