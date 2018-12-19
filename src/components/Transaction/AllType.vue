@@ -33,7 +33,7 @@ export default {
         for(const typeid in coin.types){
             const type = coin.types[typeid];
             // type.url = "../" + type.
-            console.log(type);
+            // console.log(type);
             this.cointypes.push(type);
         }
     }
