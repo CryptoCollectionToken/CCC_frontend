@@ -231,7 +231,7 @@ export default new Vuex.Store({
           onetransaction.sellvalue = (transaction.value / 0.9825 * 0.965).toFixed(4);
           onetransaction.sellallvalue = (transaction.value).toFixed(4);
           onetransaction.sellgas = (onetransaction.sellallvalue / 0.9825 * 0.0175).toFixed(4);
-          onetransaction.selltoken = onetransaction.sellvalue;
+          onetransaction.selltoken = onetransaction.sellallvalue;
           onetransaction.selltime = "0";
           transactionlist.push(onetransaction);
         }

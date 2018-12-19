@@ -59,8 +59,8 @@ export default {
     async Buy(coin){
       await API.transferEOSAsync({
         to: 'chainbankeos',
-        memo: 'mining',
-        amount: need,
+        memo: 'take_order' + ' ' + coin.sellid,
+        amount: coin.sellallvalue,
       });
     }
   },

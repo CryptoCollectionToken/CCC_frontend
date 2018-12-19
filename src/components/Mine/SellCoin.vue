@@ -44,7 +44,7 @@
         </div>
         <br/>
       </div>
-      <div>
+      <!-- <div>
         <div class="sellplane">
           <div>
             <div class="selltextleft line1">{{$t('mine_initial_price')}}</div>
@@ -82,7 +82,7 @@
             <img src="../../../static/pic/我的纪念币页面按钮图.png" class="img1" alt="" />
           </a>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -126,7 +126,7 @@ export default {
   },
   methods:{
     const_sell(coin){
-      API.SellCoinAsync(this.const_input * 10000, 1 + " " + coin.contracttype + " " + 1);
+      API.SellCoinAsync(this.const_input * 10000, const_time + " " + coin.contracttype + " " + 1);
     },
     change_sell(){
       API.SellCoinAsync(this.const_input * 10000, 2 + " " + coin.contracttype + " " + 1);
@@ -139,7 +139,7 @@ export default {
     change_input_changed(){
       this.change_fee = PriceFormatter.formatPrice(this.change_input_start * 175)+"~"+PriceFormatter.formatPrice(this.change_input_end * 175);
       this.change_income = PriceFormatter.formatPrice(this.change_input_start * 9650)+"~"+PriceFormatter.formatPrice(this.change_input_end * 9650);
-      this.change_down_perhour = PriceFormatter.formatPrice((this.change_input_end-this.change_input_start)/this.change_time*10000);
+      this.change_down_perhour = PriceFormatter.formatPrice((this.change_input_start-this.change_input_end)/this.change_time*10000);
     }
   },
   watch: { 

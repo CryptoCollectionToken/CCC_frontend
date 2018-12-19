@@ -6,6 +6,22 @@
         <td>{{$t('refer_users_before')}}1-10{{$t('refer_users_after')}}</td>
         <td>{{$t('refer_reward_for_each_user_before')}}30{{$t('refer_reward_for_each_user_after')}}</td>
       </tr>
+      <tr>
+        <td>{{$t('refer_users_before')}}11-30{{$t('refer_users_after')}}</td>
+        <td>{{$t('refer_reward_for_each_user_before')}}40{{$t('refer_reward_for_each_user_after')}}</td>
+      </tr>
+      <tr>
+        <td>{{$t('refer_users_before')}}31-70{{$t('refer_users_after')}}</td>
+        <td>{{$t('refer_reward_for_each_user_before')}}50{{$t('refer_reward_for_each_user_after')}}</td>
+      </tr>
+      <tr>
+        <td>{{$t('refer_users_before')}}71-100{{$t('refer_users_after')}}</td>
+        <td>{{$t('refer_reward_for_each_user_before')}}60{{$t('refer_reward_for_each_user_after')}}</td>
+      </tr>
+      <tr>
+        <td>{{$t('refer_users_before')}}>101{{$t('refer_users_after')}}</td>
+        <td>{{$t('refer_reward_for_each_user_before')}}80{{$t('refer_reward_for_each_user_after')}}</td>
+      </tr>
     </table>
     <br/>
     <br/>

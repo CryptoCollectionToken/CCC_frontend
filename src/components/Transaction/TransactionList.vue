@@ -28,7 +28,7 @@
         <span style="padding:5px;">
           <div><img alt="" width="100%" :srcset="coin.url"/></div>
           <div style="margin-left:10%;">{{$t('transaction_seller')}}{{coin.owner}}</div>
-          <div style="margin-left:10%;">{{$t('transaction_price')}}{{coin.sellvalue}}</div>
+          <div style="margin-left:10%;">{{$t('transaction_price')}}{{coin.sellallvalue}}</div>
           <div style="margin-left:10%;">{{$t('transaction_serial_number')}}{{coin.coinnumber}}</div>
           <div style="margin-left:10%;">{{$t('transaction_countdown')}}{{coin.selltime}}</div>
           <div style="text-align:center">
@@ -61,6 +61,7 @@ export default {
     this.type = this.$route.params.type;
     for(const coinid in allcoins){
       const coin = allcoins[coinid];
+      console.log(this.$route.params.type + "," + coin.type + "," + this.$route.params.cointype + "," + coin.cointype + "," + this.$route.params.value + "," + coin.value);
       if(this.$route.params.type == coin.type &&
         this.$route.params.cointype == coin.cointype &&
         this.$route.params.value == coin.value){

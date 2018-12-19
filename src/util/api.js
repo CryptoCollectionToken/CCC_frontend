@@ -152,7 +152,7 @@ const API = {
       json: true,
       code: 'chainbankeos',
       scope: 'chainbankeos',
-      table: 'player',
+      table: 'order',
       limit: 1024,
     }));
     // console.log(await historyeos().getActions({
