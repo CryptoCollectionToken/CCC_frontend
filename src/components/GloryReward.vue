@@ -9,21 +9,21 @@
           <div class="column is-one-quarter">
             <img :src="miner.logourl" class="img1" alt="" />
           </div>
-          <div class="column is-one-quarter">
+          <div class="column is-mobile">
             <div style="padding-top:25%;">
               {{$t(miner.name)}}
             </div>
           </div>
-          <div class="column is-one-quarter">
+          <div class="column is-mobile">
             <div style="padding-top:25%;">
               {{$t('gloryreward_mining_times_before')}}{{miner.value}}{{$t('gloryreward_mining_times_after')}}
             </div>
           </div>
-          <div class="column is-one-quarter">
+          <!-- <div class="column is-mobile">
             <div style="padding-top:25%;">
               <a class="button" @click="">{{$t('gloryreward_mining_award_before')}}{{miner.reward}}{{$t('gloryreward_mining_award_after')}}</a>
             </div>
-          </div>
+          </div> -->
         </div>
       </div><!-- for -->
     </div>

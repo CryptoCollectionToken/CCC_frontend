@@ -5,6 +5,10 @@
       <div style="padding-left:30%">{{$t('mining_canmine_before')}}{{remainamount}}{{$t('mining_canmine_after')}}</div>
       <div style="padding-left:30%">{{$t('mining_cost_before')}}{{needeos}}EOS{{$t('mining_cost_after')}}</div>
       </br>
+      <div style="text-align:center;">
+        {{$t('refer_link')}} <input class="input is-small" style="width:80%" type="text" placeholder="" v-model="input">
+      </div>
+      </br>
       <a @click="mining(1)"><img class="minebutton" alt="" srcset="../../static/pic/挖矿页面按钮图1.png"/></a>
       <a @click="mining(2)"><img class="minebutton" alt="" srcset="../../static/pic/挖矿页面按钮图2.png"/></a>
       <a @click="mining(5)"><img class="minebutton" alt="" srcset="../../static/pic/挖矿页面按钮图3.png"/></a>
@@ -43,6 +47,7 @@ export default {
         [42960,10.1080],
         [21480,11.1200],
         [0,12.2320]],
+      input: '',
     }
   },
   methods: {
@@ -50,11 +55,19 @@ export default {
       // console.log(e.toElement.innerText);
       const need = this.needeos * times * 10000;
       console.log(need);
-      await API.transferEOSAsync({
-        to: 'chainbankeos',
-        memo: 'mining',
-        amount: need,
-      });
+      if (this.input == ''){
+        await API.transferEOSAsync({
+          to: 'chainbankeos',
+          memo: 'mining',
+          amount: need,
+        });
+      }else{
+        await API.transferEOSAsync({
+          to: 'chainbankeos',
+          memo: 'mining ref ' + this.input,
+          amount: need,
+        });
+      }
     }
   },
   async mounted(){

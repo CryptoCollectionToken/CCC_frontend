@@ -59,6 +59,9 @@ const API = {
       },
     });
   },
+  getmyself(){
+    return currentEOSAccount().name;
+  },
   connectScatterAsync() {
     return ScatterJS.scatter.connect(config.appScatterName, { initTimeout: 2000 });
   },
@@ -140,6 +143,16 @@ const API = {
     });
     return rows;
   },
+  async getPlayersAsync({ accountName }) {
+    const { rows } = await eos().getTableRows({
+      json: true,
+      code: 'chainbankeos',
+      scope: accountName,
+      table: 'player',
+      limit: 1024,
+    });
+    return rows;
+  },
   async getTransactionsAsync({ accountName }) {
     const { rows } = await eos().getTableRows({
       json: true,
@@ -152,7 +165,7 @@ const API = {
       json: true,
       code: 'chainbankeos',
       scope: 'chainbankeos',
-      table: 'order',
+      table: 'player',
       limit: 1024,
     }));
     // console.log(await historyeos().getActions({
