@@ -11,7 +11,7 @@
       </div>
       </br>
       <div class="div1">
-        <a @click="gotoCoinPage(item)">
+        <a @click="getreward(28)">
           <span class="span1">{{$t('conbinereward_take')}}</span>
           <img src="../../static/pic/我的纪念币页面按钮图.png" class="img1" alt="" />
         </a>
@@ -21,28 +21,40 @@
     <div v-if="page == 2">
       <img style="margin-left:40%;" alt="" width="20%" srcset="../../static/pic/组合奖励主图.png"/>
       <div class="titletext">{{$t('combinereward_thematic')}}</div></br>
-      <div style="text-align:center;">
-        {{$t('combinereward_thematic_1')}}
+      <!-- <div v-for="(cointype, index) in cointypes" :key="index"> -->
+      <div v-for="(special, index) in specials" :key="index">
+        <div style="text-align:center;">
+          {{$t(special)}}
+          </br>
+        </div>
+        </br>
+        <div class="div1">
+          <a @click="getreward(22 + index)">
+            <span class="span1">{{$t('conbinereward_take')}}</span>
+            <img src="../../static/pic/我的纪念币页面按钮图.png" class="img1" alt="" />
+          </a>
+        </div>
         </br>
       </div>
       </br>
-      <div class="div1">
-        <a @click="gotoCoinPage(item)">
-          <span class="span1">{{$t('conbinereward_take')}}</span>
-          <img src="../../static/pic/我的纪念币页面按钮图.png" class="img1" alt="" />
-        </a>
-      </div>
-      </br>
-      <div style="text-align:center;">
-        {{$t('combinereward_thematic_2')}}
+    </div>
+    <div v-if="page == 3">
+      <img style="margin-left:40%;" alt="" width="20%" srcset="../../static/pic/组合奖励主图.png"/>
+      <div class="titletext">{{$t('combinereward_thematic')}}</div></br>
+      <div v-for="(coin, index) in coins" :key="index">
+        <div style="text-align:center;">
+          <div><img alt="" width="10%" :srcset="coin.logourl"/></div>
+          {{$t(coin.cointype)}}：{{coin_rewards[index]}}{{$t('proof')}}
+          </br>
+        </div>
         </br>
-      </div>
-      </br>
-      <div class="div1">
-        <a @click="gotoCoinPage(item)">
-          <span class="span1">{{$t('conbinereward_take')}}</span>
-          <img src="../../static/pic/我的纪念币页面按钮图.png" class="img1" alt="" />
-        </a>
+        <div class="div1">
+          <a @click="getreward(index)">
+            <span class="span1">{{$t('conbinereward_take')}}</span>
+            <img src="../../static/pic/我的纪念币页面按钮图.png" class="img1" alt="" />
+          </a>
+        </div>
+        </br>
       </div>
       </br>
     </div>
@@ -69,11 +81,18 @@
 </template>
 
 <script>
+const allcoins = require("../assets/coins.json");
+import API, { eos } from '@/util/api';
+
 export default {
   name: 'combinereward',
   data () {
     return {
-      page: 1
+      page: 1,
+      specials: ['combinereward_thematic_1','combinereward_thematic_2','combinereward_thematic_3','combinereward_thematic_4','combinereward_thematic_5','combinereward_thematic_6'],
+      spacial_rewards: [20000, 14000, 12000, 4500, 4000, 2500],
+      coin_rewards: [10000, 2200, 2500, 10000, 2000, 1500, 1000, 1800, 3000, 1800, 10000, 1800, 1500, 1800, 2800, 1400, 1200, 1000, 1000, 1000, 1000, 1000],
+      coins: allcoins,
     }
   },
   created: function(){
@@ -90,6 +109,9 @@ export default {
     },
     thispage: function(page){
       if(this.page == page) return "is-current";
+    },
+    getreward: async function(index){
+      await API.CollClaimAsync(index);
     }
   }
 }

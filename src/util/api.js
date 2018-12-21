@@ -44,6 +44,28 @@ const API = {
     console.log(rows);
     return rows[0].remainamount;
   },
+  async getCCCAsync() {
+    const { rows } = await eos().getTableRows({
+      json: true,
+      code: 'chainbankeos',
+      scope: 'CCC',
+      table: 'stat',
+      limit: 1024,
+    });
+    console.log(rows);
+    return rows[0];
+  },
+  async getPoolAsync(){
+    const { rows } = await eos().getTableRows({
+      json: true,
+      code: 'chainbankeos',
+      scope: 'chainbankeos',
+      table: 'dividend',
+      limit: 1024,
+    });
+    console.log(rows);
+    return rows[0];
+  },
   async getBalancesByContract({ tokenContract = 'eosio.token', accountName, symbol }) {
     return eos().getCurrencyBalance(tokenContract, accountName, symbol);
   },
@@ -117,6 +139,32 @@ const API = {
       },
     );
   },
+  async CollClaimAsync(
+    type = 0,
+  ){
+    console.log(currentEOSAccount().name);
+    const contract = await eos().contract('chainbankeos');
+    await contract.collclaim(
+      currentEOSAccount().name,
+      type,
+      {
+        authorization: [`${currentEOSAccount().name}@${currentEOSAccount().authority}`],
+      },
+    );
+  },
+  async BuyBackAsync(
+    amount = 0,
+  ){
+    console.log(currentEOSAccount().name);
+    const contract = await eos().contract('chainbankeos');
+    await contract.joinbuybackq(
+      currentEOSAccount().name,
+      PriceFormatter.formatPriceToCCC(amount),
+      {
+        authorization: [`${currentEOSAccount().name}@${currentEOSAccount().authority}`],
+      },
+    );
+  },
   async getCheckInRedeemCodeAsync() {
     const sha256lib = await import('js-sha256');
     const token = String(Math.floor(Math.random() * 0xFFFFFF));
@@ -173,6 +221,10 @@ const API = {
     //   pos: -1, 
     //   offset: -100
     // }));
+    console.log(2**32);
+    console.log(parseInt('0xa3703d0a000000000000000000000000'));
+    const ss = '0xa3703d0a000000000000000000000000';
+    console.log(parseInt((ss.substr(2).match(/.{1,2}/g).reverse().join(''), 16)/4294967296) || 0)
     return rows;
   },
 };
