@@ -41,7 +41,6 @@ const API = {
       table: 'global',
       limit: 1024,
     });
-    console.log(rows);
     return rows[0].remainamount;
   },
   async getCCCAsync() {
@@ -52,7 +51,6 @@ const API = {
       table: 'stat',
       limit: 1024,
     });
-    console.log(rows);
     return rows[0];
   },
   async getPoolAsync(){
@@ -63,8 +61,27 @@ const API = {
       table: 'dividend',
       limit: 1024,
     });
-    console.log(rows);
     return rows[0];
+  },
+  async getMyCCCAsync(){
+    const { rows } = await eos().getTableRows({
+      json: true,
+      code: 'chainbankeos',
+      scope: currentEOSAccount().name,
+      table: 'accounts',
+      limit: 1024,
+    });
+    return rows[0];
+  },
+  async getBuyBackAsync(){
+    const { rows } = await eos().getTableRows({
+      json: true,
+      code: 'chainbankeos',
+      scope: 'chainbankeos',
+      table: 'buybackqueue',
+      limit: 1024,
+    });
+    return rows;
   },
   async getBalancesByContract({ tokenContract = 'eosio.token', accountName, symbol }) {
     return eos().getCurrencyBalance(tokenContract, accountName, symbol);
@@ -221,10 +238,6 @@ const API = {
     //   pos: -1, 
     //   offset: -100
     // }));
-    console.log(2**32);
-    console.log(parseInt('0xa3703d0a000000000000000000000000'));
-    const ss = '0xa3703d0a000000000000000000000000';
-    console.log(parseInt((ss.substr(2).match(/.{1,2}/g).reverse().join(''), 16)/4294967296) || 0)
     return rows;
   },
 };

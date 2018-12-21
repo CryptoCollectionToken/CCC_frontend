@@ -1,19 +1,19 @@
 <template>
   <div>
     <div style="text-align:center;">
-      <div class="button" style="margin-left:5px;">{{$t('proof_my')}} 12781</div>
-      <div class="button" style="margin-left:5px;">{{$t('proof_accumulation')}} 675.27 EOS</div>
+      <div class="button" style="margin-left:5px;">{{$t('proof_my')}} {{myCCC}}</div>
+      <!-- <div class="button" style="margin-left:5px;">{{$t('proof_accumulation')}} 675.27 EOS</div> -->
     </div>
-    <div class="titletext">{{$t('proof_amount')}} 21315726</div>
-    <div class="titletext">{{$t('proof_income')}} 7417.426 EOS</div>
-    <div class="titletext">{{$t('proof_reward_for_all')}} 4450.4556 EOS</div>
-    <div class="titletext">{{$t('proof_hold')}} 8684274</div>
-    <div class="titletext">{{$t('proof_reward_for_holder')}} 0.0005 EOS/通证</div>
-    <div class="titletext">{{$t('proof_whole_edition_players')}} 741.7426 EOS</div>
-    <div class="titletext">{{$t('proof_whole_edition_pool')}} 8428.2462 EOS</div>
-    <div class="titletext">{{$t('proof_repurchase')}} 2225.2278 EOS</div>
-    <div class="titletext">{{$t('proof_need')}} 179251 EOS</div>
-    <div class="titletext">{{$t('proof_price')}} 0.0124 EOS/通证</div>
+    <div class="titletext">{{$t('proof_amount')}} 30000000 CCC</div>
+    <div class="titletext">{{$t('proof_income')}} {{shareamount*allCCC+buybackamount+collectionamount}}</div>
+    <!-- <div class="titletext">{{$t('proof_reward_for_all')}} 4450.4556 EOS</div> -->
+    <div class="titletext">{{$t('proof_hold')}} {{allCCC}}</div>
+    <div class="titletext">{{$t('proof_reward_for_holder')}} {{shareamount}}/{{$t('proof')}}</div>
+    <!-- <div class="titletext">{{$t('proof_whole_edition_players')}} 741.7426 EOS</div> -->
+    <div class="titletext">{{$t('proof_whole_edition_pool')}} {{collectionamount}}</div>
+    <div class="titletext">{{$t('proof_repurchase')}} {{buybackamount}}</div>
+    <div class="titletext">{{$t('proof_need')}} {{allbuyback}}</div>
+    <div class="titletext">{{$t('proof_price')}} {{buybackamount/allbuyback}}/{{$t('proof')}}</div>
     <div style="text-align:center;">
       <!-- <div class="column class="columns"">
       </div>
@@ -51,13 +51,35 @@ export default {
   data () {
     return {
       amount: 0,
+      allCCC: 0,
+      myCCC: 0,
+      shareamount: 0,
+      buybackamount: 0,
+      collectionamount: 0,
+      allbuyback: 0
     }
+  },
+  created: async function(){
+    // = parseFloat(transaction.bid.substring(0,6));
+    this.myCCC = parseFloat((await API.getMyCCCAsync()).balance.substring(0,6));
+    this.allCCC = parseFloat((await API.getCCCAsync()).supply.substring(0,6));
+    const pool = await API.getPoolAsync();
+    this.shareamount = (parseInt((pool.earnings_per_share.substr(2).match(/.{1,2}/g).reverse().join(''), 16)/4294967296)/this.allCCC || 0);
+    this.buybackamount = pool.earnings_for_buyback / 10000; 
+    this.collectionamount = pool.earnings_for_collection / 10000;
+    const buybacks = await API.getBuyBackAsync();
+    var allbuyback = 0;
+    console.log(buybacks);
+    for(const buyback in buybacks){
+      allbuyback += parseFloat(buybacks[buyback].limit.substring(0,6));
+    }
+    this.allbuyback = allbuyback;
   },
   methods:{
     buyback: async function(amount){
-      await API.BuyBackAsync(amount);
+      await API.BuyBackAsync(amount * 10000);
     },
-  }
+  },
 }
 </script>
 
