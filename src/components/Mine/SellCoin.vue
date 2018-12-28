@@ -126,7 +126,7 @@ export default {
   },
   methods:{
     const_sell(coin){
-      API.SellCoinAsync(this.const_input * 10000, const_time + " " + coin.contracttype + " " + 1);
+      API.SellCoinAsync(this.const_input * 10000, this.const_time + " " + coin.contracttype + " " + 1);
     },
     change_sell(){
       API.SellCoinAsync(this.const_input * 10000, 2 + " " + coin.contracttype + " " + 1);

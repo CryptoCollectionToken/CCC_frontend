@@ -1,4 +1,4 @@
-# somecoin
+# Crypto Collection Coin<
 
   https://github.com/flyq/somecoin
 

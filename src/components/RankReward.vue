@@ -61,7 +61,7 @@ export default {
       const onecoin = this.coins[index];
       const num = index + 1;
       const body = (await axios.get(
-        `http://127.0.0.1:8080/api/getmarketvalue/${num}`
+        `http://www.deaso40.com:8989/api/getmarketvalue/${num}`
       )).data;
       this.ranks.push({
         name: onecoin.name,

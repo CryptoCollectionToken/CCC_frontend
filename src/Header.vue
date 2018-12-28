@@ -77,8 +77,8 @@
           <div class="level-right">
             <div class="level-item">
               <div class="navbar-item" style="margin-top:5px;">
-                <button @click="loginScatterAsync" v-if="isScatterConnected && !scatterAccount" class="button">{{$t('login')}}</button>
-                <div v-if="isScatterConnected && scatterAccount">{{scatterAccount.name}}</div>
+                <button @click="loginScatterAsync" v-if="!scatterAccount" class="button">{{$t('login')}}</button>
+                <div v-if="scatterAccount">{{scatterAccount.name}}</div>
               </div>
               <div class="select" style="margin-top:5px;">
                 <select v-model="$i18n.locale" :placeholder="$t('switch_lang')">
@@ -124,7 +124,7 @@ export default {
   }, 
   watch: { 
     introductionval: function(val) {
-      console.log(isScatterConnected + " " + scatterAccount);
+      // console.log(isScatterConnected + " " + scatterAccount);
       if(val === this.$t("introduction")) return;
       this.$router.push({ path: `/introduction/${val}`});
     },

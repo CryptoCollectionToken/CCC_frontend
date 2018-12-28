@@ -73,11 +73,10 @@ export default {
   async mounted(){
     this.remainamount = await API.getRemainAmountAsync({ accountName: 'chainbankeos' });
     for(const index in this.mininglist){
-      if(this.mininglist[index][0] <= this.remainamount){
+      if(this.mininglist[index][0] >= this.remainamount){
         this.needeos = this.mininglist[index][1];
-        break;
       }else{
-        this.needeos = this.mininglist[index][1];
+        break;
       }
     }
     console.log("next:"+this.needeos);

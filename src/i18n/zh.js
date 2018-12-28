@@ -20,7 +20,7 @@ export default {
   QTUM: '量子币',
   BTM: '比原币',
   HT: '火币',
-  EOS: 'EOS',  
+  EOS: '柚子币',  
   IOTA: '埃欧塔币',
   ZB: '中币',
   XLM: '恒星币',

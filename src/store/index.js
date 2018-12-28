@@ -95,6 +95,8 @@ export default new Vuex.Store({
       console.log('Connect Scatter result: ', connected);
       if (connected) {
         commit('setIsScatterConnected', true);
+      }else{
+        commit('setIsScatterConnected', false);
       }
     },
     async getMyBalances({ commit, state }) {

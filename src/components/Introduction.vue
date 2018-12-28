@@ -347,6 +347,200 @@
 </br>Character Intro: Yuchen Sun was born in Xining, Qinghai province, and grew up in Huizhou, Guangdong province. In high school, he was ranked among the bottom ten students in the class for his literature addiction. And then, he studied harder in senior year, and won the chance of getting in Beijing University with special score preference by won the Ninth New Concept Composition Award. In 2011, he chose to go abroad and attend the University of Pennsylvania. He started to contact the Bitcoin community in 2012. In 2013, he joined Ripple and served as the Chief Representative of Ripple greater China. He helped Ripple successfully complete the IDG/Accel A round of $30 million in financing, and helped Ripple become the world's top three virtual currency system and a veteran of the global blockchain industry. In 2014, Yuchen Sun founded the voice-broadcast platform, the Accompanying Me APP, which has become the world's largest Chinese voice-controller community. Then he created the TRON. Thanks to his dazzling achievements, Yuchen Sun has been listed on Forbes' list of 30 entrepreneurs under 30 three times, and was elected as the world's outstanding youth in Davos BBS.             
       </div>
     </div>
+    <div v-if="this.$i18n.locale == languageko">
+      <div class="introtext" v-if="cointype === coins[0].cointype">
+</br>1.Bitcoin (BTC)
+</br>소개: A purely peer-to-peer version of electronic cash would allow online payments to be sent directly from one party to another without going through a financial institution. Digital signatures provide part of the solution, but the main benefits are lost if a trusted third party is still required to prevent double-spending. We propose a solution to the double-spending problem using a peer-to-peer network. The network timestamps transactions by hashing them into an ongoing chain of hash-based proof-of-work, forming a record that cannot be changed without redoing the proof-of-work. The longest chain not only serves as proof of the sequence of events witnessed, but proof that it came from the largest pool of CPU power. As long as a majority of CPU power is controlled by nodes that are not cooperating to attack the network, they'll generate the longest chain and outpace attackers. The network itself requires minimal structure. Messages are broadcast on a best effort basis, and nodes can leave and rejoin the network at will, accepting the longest proof-of-work chain as proof of what happened while they were gone.
+</br>기념화폐 인물: Satoshi Nakamoto
+</br>인물국적: 일본일 가능성 40%, 미국일 가능성 40%, 기타 나라일 가능성 20%
+</br>신분: Bitcoin 창시자
+</br>인물소개: Satoshi Nakamoto는 한 사람인지, 하나의 팀인지, 아니면 하나의 국가인지 현재 알수 없다. 현재 어떤 사람은 자신이 Satoshi Nakamoto라고 하지만 디테일한 검증을 거치지 못하였고 잠시만 그의 형상을 중본충으로 하였다. 그는 전세계 금융위기의 배경하에 Bitcoin을 창립하였고 하나의 탈중심화의 화폐 시스템을 시도하였다. 동시에 또 블록체인 기술을 세계에 가져다 주어 탈중심화의 이념이 사람들의 마음속에 자리잡게 하였다. 그가 가져온 블록체인 기술은 곧 새로운 과학기술 혁명을 불러일으킬것이고 그는 의심할바 없이 블록체인 창시자가 될것이다. 
+      </div>
+      <div class="introtext" v-if="cointype === coins[1].cointype">
+</br>2.Ethereum (ETH)
+</br>소개: The intent of Ethereum is to create an alternative protocol for building decentralized applications, providing a different set of tradeoffs that we believe will be very useful for a large class of decentralized applications, with particular emphasis on situations where rapid development time, security for small and rarely used applications, and the ability of different applications to very efficiently interact, are important. Ethereum does this by building what is essentially the ultimate abstract foundational layer: a block chain with a built-in Turing-complete programming language, allowing anyone to write smart contracts and decentralized applications where they can create their own arbitrary rules for ownership, transaction formats and state transition functions. A bare-bones version of Namecoin can be written in two lines of code, and other protocols like currencies and reputation systems can be built in under twenty. Smart contracts, cryptographic "boxes" that contain value and only unlock it if certain conditions are met, can also be built on top of the platform, with vastly more power than that offered by Bitcoin scripting because of the added powers of Turing-completeness, value-awareness, block chain-awareness and state.
+</br>기념화폐 인물: Vitalik Buterin
+</br>인물국적: 캐나다(출생지:러시아)
+</br>신분: Ethereum 창시자
+</br>인물소개: 1994년에 출생한 천재 프로그래머 신동이다. 4살에 컴퓨터를 알게 되였고 12살에 혼자 게임을 프로그래밍하였으며 17살에 Bitcoin을 알게 되였는데 그후 블록체인에 종교적으로 관심을 갖게 되였고 의연히 퇴학하여 블록체인 사업에 뛰여들었다. 20여명의 합작 파트너를 모집하고 자신의 젊음을 바쳐 10만 달러의 창업 장학급을 얻어 Ethereum 제국을 만들었고 그로부터 블록체인은 2.0 지능 계약시대로 들어섰다. 그는 꾸준하고 겸손하며 말이 거침이 없고 독특함을 추구하였다. 그는 모든 Ethereum 유저들이 성숙되도록 타이르고 Ethereum 사람들이 기회를 보며 돈을 불리는 “튤립”이 되는것을 바라지 않았다. 그는 Ethereum에 투자하여 부자가 된 사람들에게 만약 계속하여 Ethereum에 투자하여 번 돈을 자랑한다면 그는 Ethereum에서 탈퇴할것이라고 경고하였다. 
+      </div>
+      <div class="introtext" v-if="cointype === coins[2].cointype">
+</br>3.Litecoin (LTC)
+</br>소개: Litecoin is a peer-to-peer Internet currency that enables instant, near-zero cost payments to anyone in the world. Litecoin is an open source, global payment network that is fully decentralized without any central authorities. Mathematics secures the network and empowers individuals to control their own finances. Litecoin features faster transaction confirmation times and improved storage efficiency than the leading math-based currency. With substantial industry support, trade volume and liquidity, Litecoin is a proven medium of commerce complementary to Bitcoin.
+</br>기념화폐 인물: Charlie Lee
+</br>인물국적: 미국(출생지: 코트디부아르)
+</br>신분:Litecoin 창시자, COINBASE거래소 전 프로젝트총괄
+</br>인물소개: 메사추세츠학원의 수재이다. 처음에는 심층 웹을 소개하는 문장에서 Bitcoin을 알게 되였고 Bitcoin의 신기함을 느꼈고 자신만의 디지털 화폐를 개발할 결심을 내렸다. 디지털 화폐 창시자들이 우선 대량의 자신이 창시한 화폐를 채굴한후 시장에 투입하는 모드에 아주 불만이였다. 그는 공평한 모드로 자신의 디지털 화폐를 만들려고 하였다. 그는 “가상화폐는 결국 유동화폐의 작용을 실현할것이다.”라고 대담히 예언하였다. 그는 자선사업을 열심히 하였고 대량의 Litecoin을 자선 사업에 기부하였다. 그의 명언은 “Bitcoin은 금이고 Litecoin은 은이다.”이다
+      </div>
+      <div class="introtext" v-if="cointype === coins[3].cointype">
+</br>4.Binance Coin(BNB)
+</br>소개: Binance issued its own token called the Binance Coin, with BNB as the symbol. BNB runs natively on the Ethereum block chain and follows the ERC20 token standard. The token was established with a total supply of 200 million. As per our whitepaper, Binance plans to use 20% of our profits each Quarter to buyback and burn BNB, until 50% of the total BNB supply (100 million) is burned. The BNB token itself has multiple forms of utility, essentially being the underlying gas that powers the Binance Ecosystem. The current most prominent use cases include using BNB to Pay for trading fees on the exchange, obtaining the equivalent of a 50% discount on trades (during the first year). Monaco has included support for Binance’s BNB token to its platform which includes the Monaco Visa Card and mobile app. Uplive platform supports BNB to buy virtual gifts.
+</br>기념화폐 인물: 자오창펑
+</br>인물국적: 캐나다(출생지:중국)
+</br>신분: Binance거래소가 창시자
+</br>인물소개: 2018년 포브스 디지털 화폐 영역 부자 순위 3위이다. 그는 대담하고 집을 팔아 화폐에 투자하였고 거래소를 열었으며 6개월만 Binance 거래소가 세계 디지털 화폐 거래량 1위인 거래소로 되게 하였다. 프로그래머 출신으로 사람이 겸손하다. 어마어마한 재산을 보유한 자오창펑은 차, 보트나 명품시계가 전부 없다. 그는 영원히 Bitcoin을 가득 지니고 있고 은행카드에는 일상생활을 할 몇천원만 넣어두고 있다. 아프리카주 여러 나라의 정치대가들은 당지에서 블록체인 합작을 하려고 그를 요청하였다. 그의 명언은: “그 누구도 나의 생각을 개변할수 없다. 내가 그들을 개변시킬 가능성이 조금 더 많을지도 모르겠다.”
+      </div>
+      <div class="introtext" v-if="cointype === coins[4].cointype">
+</br>5.Retail Investors Coin(RIC)
+</br>소개: 현실에서 인물을 대표로 하는 암호화 화폐는 없다. 그러므로 이런 게임속에서의 광범위한 개인 고객을 주제로 한 기념화폐로 현실속의 부족함을 보충한다. 암호화 기념화폐 팀은 멀지않은 미래에 현실속에서도 인물을 주제로한 암호화 화폐가 발행되기를 바란다. 주식시장에서 부추를 베듯 투자자가 투자금을 잃고 떠나고 곧바로 또다른 새로운 투자자가 나타나는 일도 없고 큰손이 조작하는 일도 없기를 바란다. 
+</br>기념화폐 인물: 쇼하로인
+</br>인물국적: 중국
+</br>신분: 구조원
+</br>인물소개: 쇼하로인은 시체구조원이다. 왜 기념화폐 인물에는 대가만이 있어야 하는가. 우리의 부추도 반드시 한자리를 해야 한다. 쇼하로인은 많은 부추의 마음을 대표하였다. 그의 명언은 “쫄지 마라, 그냥 해라! 모두 손을 들라! 이기면 예쁜 소녀를 얻을것이고 지면 바다로 가서 일하면 된다.” 이미 유행어로 되였다. 우리같은 평범한 투자자들은 블록체인에서 인생의 희로애락을 모두 겪었다고 할수 있다. 블록체인 기술은 결국 광대한 투자자들에게 서비스할것이다. 쇼하노인의 전형적인 표정과 제스처는 이미 사람들의 마음속에 깊이 자리잡았다. 그는 많은 개인 고객의 대표가 되기에 부족함이 없다. 
+      </div>
+      <div class="introtext" v-if="cointype === coins[5].cointype">
+</br>6.OMISEGO (OMG)
+</br>소개: OmiseGO is building a decentralized exchange, liquidity provider mechanism, clearinghouse messaging network, and asset-backed blockchain gateway. OmiseGO is not owned by any single one party. Instead, it is an open distributed network of validators which enforce behavior of all participants. It uses the mechanism of a protocol token to create a proof-of-stake blockchain to enable enforcement of market activity amongst participants. This high-performant distributed network enforces exchange across as- set classes, from fiat-backed issuers to fully decentralized block chain tokens (ERC-20 style and native crypto currencies). Unlike nearly all other decentralized exchange platforms, this allows for decentralized exchange of other block chains and between multiple block chains directly without a trusted gateway token. Markets may be able to significantly reduce spreads and encourage market assurance via decentralizing custody and increased transparency of market activity. This is achieved using smart contracts, protocol tokens enforcing correct market behavior of orderbook matching, a new construction of Ethereum bonded external enforcement of clearinghouse activity, and commitments to historical exchange data for use with Ethereum smart contracts.
+</br>기념화폐 인물: Jun Hasegawa
+</br>인물국적: 일본
+</br>신분: OMISEGO창시자
+</br>인물소개: 그의 블록체인 프로젝트는 동남아시아 지구 모바일 지불의 시작을 열었고 은행의 독점을 타파하기로 결심하였다. 그들의 구호는 아주 간단하고 직설적이다. 더이상 은행이 필요없게 하겠다! 그는 이미 성공적으로 2개의 세계 500강 기업과 합작하였다. 태국의 맥도날드가 이미 앞장서서 OMISEGO의 지불 서비스를 받아들었다. 그외에도 그의 노력하에 OMISE는 중국 기업의 우두머리인 알리그룸과 함께 태국에서 지불 업무를 펼치고 있다. 
+      </div>
+      <div class="introtext" v-if="cointype === coins[6].cointype">
+</br>7.Aeternity (AE)
+</br>소개: The overreaching functional goal of Aeternity smart contracts is to be able to execute code on the chain. That is, code execution that is verified by a miner and which can alter the state of the chain.
+</br>The design and implementation of the Aeternity smart contracts also have the following non-functional goals in the following order:
+</br>Goal 1: Contract execution should be safe
+</br>With safe contracts we mean that you can specify and automatically prove properties of your contract.
+</br>In order to achieve this we have designed a new functional language Sophia and a new safe virtual machine FTWVM.
+</br>Goal 2: Contract execution should be efficient and scale
+</br>In order to achieve a scalable solution Æternity provides State Channels and a new consensus algorithm.
+</br>To get efficient contract execution Æternity provides a very high level language for blindingly fast execution of simple contracts. For more advanced contract the Sophia language can be used. Sophia is compiled to a virtual machine that is tailored for the execution of Sophia contracts. This machine is also high level machine with instructions for operating on the chain and on Sophia data structures without the need to do explicit stack and memory management.
+</br>Goal 3: Contract execution should be cheap
+</br>The price of contract execution will ultimately be determined by miners and users, but by providing State channels, efficient ways to execute contracts, and a simple flat rate high level contract language prices should be kept low.
+</br>Goal 4. There should be a simple way to migrate from Ethereum smart contracts
+</br>By providing a version of the EVM it is easy to migrate EVM contracts to Aeternity.
+</br>기념화폐 인물: Yanislav Malahov
+</br>인물국적: 스위스(출생지: 불가리아)
+</br>신분: Aeternity창시자, Ethereum 대부
+</br>인물소개: “Ethereum의 대부”라고 불리고 Ethereum 탄생하기 전에 이미 Vitalik Buterin과 함께 일하였다. Vitalik Buterin과의 사상 충돌에서 Ethereum의 초기 개념이 탄생하였다. 그가 없었으면 Ethereum은 더욱 늦게 탄생되였을수 있고 심지어 탄생되지 못했을수도 있다. 그의 aeternity는 유럽 버전의 Ethereum으로 불린다. 그는 “5년이내에 암호화 화폐는 승자가 나타날것이고 대부분의 디딤돌은 사라질것이다.”라고 대담히 예언하였다. 2018년 양화가 악화를 구축하여 그의 예언을 진일보 실현시켰다. 그는 금융위기를 겪은후 블록체인 기술은 사람들이 미래에 반드시 갈 길이라고 하였다. 
+      </div>
+      <div class="introtext" v-if="cointype === coins[7].cointype">
+</br>8.NEO
+</br>소개: NEO is a decentralized and distributed ledger protocol that digitalizes real-world assets into digital ones, enabling registration, depository, transfer, trading, clearing and settlement via a peer-to-peer network.
+</br>NEO uses e-contracts to keep record transfers of digital assets. In NEO, digital tokens generated by e-contracts function as a general underlying data that could be used for recording titles and assets like equities, creditor’s claims, securities, financial contracts, credit points, bills and currencies, and can be applied for equity crowdfunding, equity trading, employee stock ownership plans, peer-to-peer financing, loyalty programs, private equity funds, supply-chain financing, etc.
+</br>기념화페 인물: 다홍페이
+</br>인물국적: 중국
+</br>신분: NEO창시자
+</br>인물소개: 업계 사람들은 다아저씨라고 부르고 본명은 송환평이다. 그는 2011년에 Bitcoin을 알았고 2013년에 블록체인 기술의 창의성, 디지털 화폐 지역사회 일에 뛰여들었고 공동하여 “비트 창업진영”을 창립하였다. 창업자, 투자자, 소비 업데이트 애호가가 하나인 블록체인 대가이다. 그는 블록체인 1.0시대, 블록체인 2.0시대를 제기하였다. 2014년에 네오를 창립하였다. 2015년부터“네오”프로젝트를 주관하기 시작하였고 블록체인 기술로 평범한 회사도 “디지털 IPO”, 주식 발행, 주식거래를 할수 있게 하였다. 그는 우선 블록체인은 반드시 신분인증과 결합하여야만 합법적으로 실제 세계의 재산권리와 맞물릴수 있고 주류 응용으로 될수 있다고 하였다. 또 그후 블록체인이 공개 투명성을 유지하는 동시에 반드시 유저의 프라이버시를 지켜야만 유저들에게 받아들여진다고 하였다.
+      </div>
+      <div class="introtext" v-if="cointype === coins[8].cointype">
+</br>9.USDT
+</br>소개: A digital token backed by fiat currency provides individuals and organizations with a robust and decentralized method of exchanging value while using a familiar accounting unit. The innovation of block chains is an auditable and cryptographically secured global ledger. Asset backed token issuers and other market participants can take advantage of block chain technology, along with embedded consensus systems, to transact in familiar, less volatile currencies and assets. In order to maintain accountability and to ensure stability in exchange price, we propose a method to maintain a one to one reserve ratio between a crypto currency token, called tethers, and its associated real world asset, fiat currency. This method uses the Bitcoin block chain, Proof of Reserves, and other audit methods to prove that issued tokens are fully backed and reserved at all times.
+</br>기념화폐 인물: Craig Sellars
+</br>인물국적: 미국
+</br>신분: Tether회사 공동 창시자 겸 CTO
+</br>인물소개: 달러를 이서로 하고 그의 테더 회사의 매 하나의 USDT는 일달러에 대응된다. 현실 화폐를 디지털 화폐의 세계에 가져오기에 어떤 정도에서는 중심화의 중앙은행의 캐릭터를 담담하고 있으며 화폐권도 가끔은 일정한 중심화가 필요하다. 투자는 법정 화폐 Bitcoin과 Ethereum을 법정화폐로 하였을때의 가격 파동을 걱정할 필요가 없고 USDT는 명실상부의 안정적인 화폐이고 피난처이다. 그는 명실상부의 법정 화폐 디지털화의 시조이고 법정화폐 전세계 360도 원할한 유통을 위하여 기초를 닦았다. 
+      </div>
+      <div class="introtext" v-if="cointype === coins[9].cointype">
+</br>10.Petrocoin(PTR)
+</br>소개: Petrocoin is the first crypto currency issued by a sovereign state and supported by natural resources, and will be used for international payments, becoming a new way for Venezuela to finance internationally. The crypto currency would help Venezuela improve its economic difficulties and break the U.S. financial blockade. Each has a barrel of Venezuelan crude as collateral. Venezuela's plans for Petrocoin have drawn a lot of attention at home and abroad, from markets to politics.
+</br>기념화폐 인물: Nicolás Maduro Moros
+</br>인물국적: 베네수엘라
+</br>신분: 베네수엘라 대통령, 석유화폐 발기인
+</br>석유화폐 소개: 석유화폐는 처음으로 주권국가에서 발행하고 자연자원으로 지탱하하는 암호화 디지털 화폐이고 국제 지불에 사용되여 베네수엘라가 국제상의 융자로 되는 하나의 새로운 방식이다. 이 디지털 화폐는 베네수엘라를 도와 경제위기를 극복해 줄것이며 미국의 금융봉쇠를 타파할것이다. 매 석유코인에는 모두 베네수엘라의 한통의 원유를 실물로 저당한다. 베네수엘라의 석유 코인계획이 진행되면서 시장으로부터 정치계까지 국내외의 적지 않는 시선을 끌었다. 
+</br>인물소개: 베네수엘라 경제폭락, 통화팽창, 부채가 많은 상황에서 블록체인의 출현은 그에게는 지푸라기로 보였다. 타력배중의는 베네수엘라가 석유화폐를 발행하고 융자한 최초의 디지털 화폐를 발행한 국가로 되였다. 하나의 화폐는 한통의 석유와 같다. 석유화폐가 발행한 첫날 베네수엘라는 7.35억달러를 융자하였다. 그의 위대한 실천은 블록체인이 하나의 국가를 구할수 있다는 희망을 증명하였다. 동시에 그의 집정 기간에 전세계 인민들을 초대하여 채굴하게 하였고 게다가 저렴한 전기료와 정부 보조금은 광부들이 우선적으로 선택하는 채굴지로 되게 하였다. 
+      </div>
+      <div class="introtext" v-if="cointype === coins[10].cointype">
+</br>11. Monero (XMR)
+</br>소개: Monero is cash for a connected world. It’s fast, private, and secure. With Monero, you are your own bank. You can spend safely, knowing that others cannot see your balances or track your activity.
+</br>  Monero is a decentralized crypto currency, meaning it is secure digital cash operated by a network of users. Transactions are confirmed by distributed consensus and then immutably recorded on the block chain. Third-parties do not need to be trusted to keep your Monero safe.
+</br>  Monero uses ring signatures, ring confidential transactions, and stealth addresses to obfuscate the origins, amounts, and destinations of all transactions. Monero provides all the benefits of a decentralized crypto currency, without any of the typical privacy concessions.
+</br>  Monero is untraceable. Sending and receiving addresses as well as transacted amounts are obfuscated by default. Transactions on the Monero block chain cannot be linked to a particular user or real-world identity.
+</br>  Monero is fungible because it is private by default. Units of Monero cannot be blacklisted by vendors or exchanges due to their association in previous transactions.
+</br>기념화폐 인물: Riccardo Spagni
+</br>인물국적: 남아프리카 공화국
+</br>신분: Monero 창시자
+</br>인물소개: Riccardo Spagni는정보학과 물류학을 배운 배경이 있고 예전에 소프트웨어 개발과 수출입 무역을 한적이 있다. 2011년에 Bitcoin을 알게 되였고 2012년부터 블록체인 프로젝트 개발에 종사하였다. 흥취가 광범위하고 다재다능하며 바다에서 래프팅하는것을 즐기며 동물을 좋아하여 강아지 6마리를 키운다. 또 바다표범과 입맞추고 자신이 제작한 무인기와 무인기로 항공 촬영하는것을 즐기며 그외에도 열기구를 좋아한다. 그는 유저의 프라이버시와 익명성을 보호하는것을 아주 중요시 하기에 그가 개발한 모네로 코인은 자연히 생겨난것이다. 
+      </div>
+      <div class="introtext" v-if="cointype === coins[11].cointype">
+</br>12. Qtum
+</br>소개: Block chain enabled smart contracts that employ proof-of-stake validation for transactions, promise significant performance advantages compared to proof-of-work solutions. For broad industry adoption, other important requirements must be met in addition. For example, stable backwards compatible smart contract systems must automate cross organizational information logistics orchestration with lite mobile wallets that support simple payment verification (SPV) techniques. The currently leading smart contract solution Ethereum, uses computationally expensive proof-of-work validation, is expected to hard fork multiple times in the future and requires downloading the entire block chain. Consequently, Ethereum smart contracts have limited utility and lack formal semantics, which is a security issue. This whitepaper fills the gap in the state of the art by presenting the Qtum smart-contract framework that aims for sociotechnical application suitability, the adoption of formal semantics language expressiveness, and the provision of smart contract template libraries for rapid best-practice industry deployment. We discuss the Qtum utility advantages compared to the Ethereum alternative and present Qtum smart-contract future development plans for industry- cases applications.
+</br>기념화폐 인물: 패트릭
+</br>인물국적: 중국
+</br>신분: Qtum창시자
+</br>인물소개: 블록체인의 열렬한 신도이고 박사를 중퇴하였으며 알리를 떠난후 자신만의 블록체인 사업을 창립하였다. Bitcoin 창립 초기에 그는Bitcoin과 블록체인 카페에서 대량으로 댓글을 달았고 누적 댓글수가 만을 넘었다. “0부터 1까지 자신의 블록체인을 건립하다”라는 개발 수첩을 저술하였다. 인터넷 세계의 탑 블록체인 대가는Qtum을 창립한후 Vitalik Buterin에 의해 “중국 심지어 아시아주 최고의 블록체인 팀”으라고 불렸다. 2017년에 포브스 중국 30세이하 엘리트 순위에 들었다. 그의 패기있는 명언은 “만약 역사에서 Satoshi Nakamoto와 대적할수 있는 사람을 찾는다면 아마 그사람은 뉴톤이나 섀넌일것이다.”이다.
+      </div>
+      <div class="introtext" v-if="cointype === coins[12].cointype">
+</br>13.Bytom (BTM)
+</br>소개: Bytom is an interactive protocol of multiple byte assets. Heterogeneous byte-assets (indigenous digital currency, digital assets) that operate in different forms on the Bytom block chain and atomic assets (warrants, securities, dividends, bonds, intelligence information, forecasting information and other information that exist in the physical world) can be registered, exchanged, gambled and engaged in other more complicated and contract-based interoperations via Bytom.
+</br>기념화폐 인물: 장검(본명: 유지봉)
+</br>인물국적: 중국
+</br>신분: Bytom창시자, 8BTC 카폐 창시자겸 CEO, 블록체인 이론 연구자, 지질 공정사, 공상과학소설 작가
+</br>인물소개: 크로스 오버 다중 신분이 있고공상과학작가, 지질 공정사가 블록체인과 결합할것을 상상하기 힘들것이다. 그가 개발한 바이텀 화폐권 시가 순위가 50위안이다. 그가 창립한 바비터 카페는 중국 최대의 블록체인과 디지털 화폐 카폐로 되였고 내용이 풍부하고 인기가 아주 많으며 그의공상과학소설은 연속 3년간 중국 공상과학최고상인 “은하상”을 얻었다. 블록체인과공상과학소설 영역의 이중신분은 그로 하여금 지루하고 어렵고 무미건조한 블록체인 이념을 생동하고 활발하게 변하게 하였고 블록체인도 가끔은공상과학가 윤색할 필요가 있다. 식견이 높아 2011년 대학생 투자자들에게 “비트코인을 사서 지갑안에 파일을 잘 보관한후 이 일을 잊어버려. 그리고 5년후에 다시 열어봐”라고 건의하였다. 
+      </div>
+      <div class="introtext" v-if="cointype === coins[13].cointype">
+</br>14. Huobi Token (HT)
+</br>소개: HT (Huobi Token) is a block chain powered loyalty point system. It is the only token that Huobi officially launched. HT supports Huobi Global business and all products, such as VIP discount, HT exclusive events, trading against popular coins and "let your voice be heard".
+</br>기념화폐 인물: 이림
+</br>인물국적: 중국
+</br>신분: Huobi Token (HT) 거래소 창시자 
+</br>인물소개: 이림,동제대학 본과, 청화대학 석사로 갑골문 회사에 다닌적이 있었다. 그는 2011년에 처음으로 Bitcoin 백서를 읽고 그중의 원리에 홀딱 반하였다. 중국버전의 페이스북 “우의넷”을 창립하려고 시도하였으나 실패하였다. 그에 굴하지 않고 가이드 웹사이트 “런런저”를 창반하여 작은 성과를 보았다. 이에 힘입어 사업기회를 잡아 암호화 화폐 거래소 Huobi넷을 개설하는데 성공하였다. 그의 노력하에 Huobi 거래소는 거래량이 안정적으로 10위안에 들고 있다. 그의 명언은 “창업은 다른 사람이 하지 못하는 일을 하는것이다.”이다. 
+      </div>
+      <div class="introtext" v-if="cointype === coins[14].cointype">
+</br>15.EOS   
+</br>소개: The EOS.IO software introduces a new block chain architecture designed to enable vertical and horizontal scaling of decentralized applications. This is achieved by creating an operating system-like construct upon which applications can be built. The software provides accounts, authentication, databases, asynchronous communication, and the scheduling of applications across many of CPU cores or clusters. The resulting technology is a block chain architecture that may ultimately scale to millions of transactions per second, eliminates user fees, and allows for quick and easy deployment and maintenance of decentralized applications, in the context of a governed block chain.
+</br>기념화폐 인물: BM(Dan Larimer)
+</br>인물국적: 미국
+</br>신분: EOS 창시자, BTS창시자, Steem창시자
+</br>인물소개: BM은 블록체인 기술 천재로 체인권에서 최초로 연속으로 개발한 3개 블록체인 프로젝트 시가가 모두 50위안에 있다. 특히 세번째 프로젝트 EOS는 출시하기 전에 이미 시가가 5이안에 들었고 팬들의 지지를 받았다. 그는 EOS21 노두 경선제를 디자인 하여 의회제와 비슷하고 인류의 우월한 민주 정치제도와 블록체인을 서로 결합한 위대한 창의이다. 그는 자유주의자로 자유가 극치에 달하고 전형적인 호객형 인격이다.  Satoshi Nakamoto의 패기어린 답변을 받았다. 즉 알아보지 못하면 말아라, 너를 상대할 시간이 없어이다. 그는 자신에게 유토피아적인 사명 즉 나의 인생목표는 여러분의 생명, 자유와 재산안전을 보장할수 있는 자유시장 해결방안을 찾는것이란 사명을 세웠다. 그의 위대한 이념에 진심으로 좋아요를 주고 싶다. 
+      </div>
+      <div class="introtext" v-if="cointype === coins[15].cointype">
+</br>16.IOTA
+</br>소개:IOTA is a crypto currency for the Internet-of-Things (IoT) industry. The main feature of this novel crypto currency is the tangle, a directed acyclic graph (DAG) for storing transactions. The tangle naturally succeeds the block chain as its next evolutionary step, and offers features that are required to establish a machine- to-machine micropayment system. An essential contribution of this paper is a family of Markov Chain Monte Carlo (MCMC) algorithms. These algorithms select attachment sites on the tangle for a transaction that has just arrived
+</br>기념화폐 인물: David Sonstebo
+</br>인물국적: 노르웨이
+</br>신분: IOTA 창시자 
+</br>인물소개: David Sonstebo의 얼굴에 수염이 많은 모습은 19세기로 돌아간듯한 느낌을 주지만 그는 오히려 미래주의자이다. 외형과 속은 완전히 반대되는 사람이다. 그는 기술은 이타주의의 각도에서 세계를 개선하는 최고의 방법이라고 믿는다. 그는 인류 사회를 진보시키는 임의의 기술에 아주 큰 열정을 갖고 있고 이런 열정이 그로 하여금 과학기술의 광핀이 되게 하였다. 그의 열정은 사물인터넷, 분포식 장부, 블록체인, 지혜도시, 디지털 신분, 정부관리 전자화, 하드웨어 디자인 영역으로 분포되여 있다. 
+      </div>
+      <div class="introtext" v-if="cointype === coins[16].cointype">
+</br>17.ZB 
+</br>소개: ZB는ZB Block Chain 기금회를 기초로 블록체인을 발행한 생태화폐로 ZB생태의 여러 장소에서 사용하고 유통할수 있고 유저는 ZB 생태 시스템에서 더욱 많은 이익을 얻을수 있으며 ZB 생태 모든 산업의 서비스를 개통하였다. 구체적인 응용은 투표, 공중 사탕을 접수, 회원 구매, 수수로 할인을 받을수 있다. 환매 체제는 ZB가치를 안정시켰다. 
+</br>기념화폐 인물: 이대위
+</br>인물국적: 중국
+</br>신분: ZB 거래소 공동 창시자, ZB 자본 CEO
+</br>인물소개: “화폐권 원로 간부”라는 별칭이 있다. 대학 졸업후 이대위는 세계 500위 기업에서 일을 시작하였고 그후에도 여러 500위 기업에서 관리직을 맡았다. 대기업의 기업화 훈련은 그에게 풍부한 최첨단 기업 관리경험을 누적시켰다. 2012년에 우연히 인터넷에서 Bitcoin 소개를 보았다. 비록 알아보기 힘든 백서였지만 뒤의 기술이 가져다주는 거대한 시장을 무의식적으로 느꼈다. 2013년에 의연히 사직하여 화폐권에 들어갔다. 기타 블록체인 종사자들이 자유롭게 입는것과 달리 이대위는 슈트 가죽 구두를 좋아하였다. 그는 놀이같이 ZB 거래소를 홍보하는것을 중시하지 않았고 실속있는 도로를 선택하였고 유저 서비스에 공을 들였다. 그는 공개적으로 “블록체인 대가의 플랫폼이 좋은 프로젝트라고 보장할수 없다.”고 강조하였다. 
+      </div>
+      <div class="introtext" v-if="cointype === coins[17].cointype">
+</br>18.Stellar
+</br>소개:Stellar is an open-source protocol for exchanging money or tokens using block chain technology. The platform's source code is hosted on Github. The Stellar network can quickly exchange tokens including government-based currencies with 2 to 5 second processing times. The platform is a distributed ledger maintained by a consensus algorithm, which allows for decentralized control, flexible trust, low latency, and asymptotic security. It contains an integrated Distributed Exchange for trading of assets called the SDEX
+</br>기념화폐 인물: Jed McCaleb
+</br>인물국적: 미국 
+</br>인물소개: Jed 어려서부터 프래밍을 좋아했다. 그는 프래밍은 마치 평지에서 건물을 짓는것과 같이 아무것도 없는것에서 하나의 생각을 하나의 미묘한 완성품으로 만드는것이라고 하였다. 그의 주변에는 신경 과학과 인공지능 방면의 서적이 많았다. 그에게 세계는 미묘한것이고 많은 사람들의 “코드 농민”들이 “방에만 있는” 편견적인 모습과 많이 다르다. 대학에서 물리전업을 선택하였고 그는 1년만에 모든 수업을 다 배웠다. 그에게 이런 지식을 배우는것은 4년의 시간이 필요없었기에 나머지 3년이란 시간을 낭비하는 것보다 시간을 내어 더욱 의의있는 일에 쓰고 싶어서 퇴학을 선택하였다. 그의 창업 경험은 아주 풍부하고 대채로웠다. 1998년에 VeryCD를 창건한 준비를 하였고 2010년에 게임 회사를 창립하였으며 2011년에 Bitcoin 거래소를 창립하였고 2012년에 Ripple을 창립하였는데 Ripple CEO와 의견이 달라 2014년에 Stellar를 창립하였다. 
+      </div>
+      <div class="introtext" v-if="cointype === coins[18].cointype">
+</br>19. Cardano (ADA) 
+</br>소개: ADA presents “Ouroboros”, the first block chain protocol based on proof of stake with rigorous security guarantees. ADA establishes security properties for the protocol comparable to those achieved by the bitcoin block chain protocol. As the protocol provides a “proof of stake” block chain discipline, it offers qualitative efficiency advantages over blockchains based on proof of physical resources (e.g., proof of work). ADA also presents a novel reward mechanism for incentivizing Proof of Stake protocols and we prove that, given this mechanism, honest behavior is an approximate Nash equilibrium, thus neutralizing attacks such as selfish mining. ADA also presents initial evidence of the practicality of our protocol in real world settings by providing experimental results on transaction confirmation and processing.
+</br>기념화폐 인물: Charles Hoskinson
+</br>인물국적: 미국
+</br>신분: Cardano (ADA)창시자
+</br>인물소개:블록체인 스타 프로젝트 3임 원로, Ethereum,Cardano와Bitshares 개발자이다. 그가 Bitcoin을 안후 의연히 수입이 큰 일자리를 사직하고 블록체인 교육사업에 뛰여들었다. 당시 주변인들은 그가 미쳤다고 하였다. 그는VitalikButerin 공동으로 Ethereum을 개발한적이 있었는데VitalikButerin 의견이 맞지 않아 독립하였다. Bitcoin과 Ethereum의 우세를 흡수하여 Cardano를 창시하였고 디지털 화폐(Bitcoin, Litecoin)과 지능 계약(예로 Ethereum, EOS)의 블록체인 생태 시스템을 통합하였다. 그는 월가에서 결국 수만억 달러의 자금을 가지고 암호화 화폐 시장으로 들어갈것이고 미래가 아주 밝다는 확고한 생각을 가졌다.
+      </div>
+      <div class="introtext" v-if="cointype === coins[19].cointype">
+</br>20.Dogecoin 
+</br>소개:Dogecoin은 자신만의 책략이 있다. 이것은 Bitcoin의 돈 버는 노선을 가지 않고 미국의 “팁 문화”을 잘 이용하였다. 이런것은 서비스 업계 종사자에 대한 기부나 숭배의 겸손한 자태로 보고 인터넷에서 광범위하게 사용되고 있다. 비싼 Bitcoin과 비할때 Dogecoin은 문턱이 낮고 더욱 귀엽다. 시스템이 출시된지 1주일후 Dogecoin은 이미 미국 인터넷중 두번째로 환영받는 “팁 전자 화폐”로 되였다. 
+</br>Dogecoin은 아주 특별하다. 인터넷 풀뿌리 문화에서 귀엽고 엽기적은 모습때문에 하루밤 사이에 유명해졌다. 갈소록 팽창하는 전자 화폐 시장에서 Dogecoin은 니치마케팅으로 정의할수 있다. 
+</br>기념화폐 인물: Jackson Palmer
+</br>인물국적: 오스트랄리아
+</br>신분: Dogecoin 공동 창시자, 전 ADOBE 회사 제품경리
+</br>인물소개: 그는 신선급 시장 마케팅 전문가이다. 본적도 없었던 미국 프로그래머와 합이 척척 맞아 Dogecoin을 창립하여 화폐권 팁 화폐의 공백을 채웠을 뿐만아니라 동시에 Dogecoin을 통하여 블록체인과 자선, 동물보호의 완벽한 결합시켜 인기가 순식간에 폭발하였다. 그의 Dogecoin은 보기에 웃기고 부르기에도 웃겨서 어려운 블록체인 기술에 유머감을 추가하였다. 페이스북도 Dogecoin에게 러브콜을 보내 Dogecoin이 페이스북에서의 합법적 지위를 승인받았다. Dogecoin의 시가의 최고봉은 10억 달러였고 그의 성공은 다시 한번 노력하고 창의적이면 지푸라기도 대가가 될수있다는것을 증명하였다. 
+      </div>
+      <div class="introtext" v-if="cointype === coins[20].cointype">
+</br>21.Ripple(XPR)
+</br>소개: While several consensus algorithms exist for the Byzantine Generals Problem, specifically as it pertains to distributed payment systems, many suffer from high latency induced by the requirement that all nodes within the network communicate synchronously. In this work, Ripple presents a novel consensus algorithm that circumvents this requirement by utilizing collectively-trusted subnetworks within the larger network. Ripple shows that the “trust” required of these subnetworks is in fact minimal and can be further reduced with principled choice of the member nodes. In addition, Ripple shows that minimal connectivity is required to maintain agreement throughout the whole network. The result is a low-latency consensus algorithm which still maintains robustness in the face of Byzantine failures. We present this algorithm in its embodiment in the Ripple Protocol.
+</br>기념화폐 인물: Chris Larsen
+</br>신분: Ripple 공동 창시자 겸 CEO
+</br>인물소개: 그는 스탬퍼드 대학 MBA학위를 갖고 있고 대출 회사에서 일한적이 있다. 2017년 Ripple 가격이 제일 높을때 그의 개인 자산은 570억 달러에 도달하여 하루 아침에 포브스 세계 순위 9위의 부자로 되였다. 재부가 증가하는데 소요되는 시간은 포브스의 모든 부자들을 초과하였고 진정으로 “화폐권에서의 하루밤은 인간계에서의 1년이다”라는 명언을 검증하였다. 기타유형의 암호화 화폐는 모두 은행의 중심화 농단을 타파하기를 시도하였으나 그의 Ripple은 오히려 반대로 향했다. 즉 은행과 합작하기를 시도하였고 은행 계좌이체 지불을 촉진하엿으며 체인권의 하나의 걸작이다!
+      </div>
+      <div class="introtext" v-if="cointype === coins[21].cointype">
+</br>22.Tron(TRX)
+</br>소개: Decentralize the Web TRON is dedicated to building the infrastructure for a truly decentralized Internet. The TRON Protocol, one of the largest block chain-based operating systems in the world which offers scalability, high-availability, and high-throughput computing (HTC) support that serves as the foundation for all decentralized applications in the TRON ecosystem. It also provides better compatibility for Ethereum smart contracts through an innovative, pluggable smart contract platform. Since July 24th, 2018, TRON acquired BitTorrent Inc. which is an Internet technology company based in San Francisco. It designs distributed technologies that scale efficiently, keep intelligence at the edge, and keep creators and consumers in control of their content and data. Every month more than 170 million people use BitTorrent Inc. developed products. Its protocols move as much as 40% of the world's Internet traffic on a daily basis. Now TRON is one of the largest block chain-based operating systems in the world with over 100M users.
+</br>기념화폐 인물: 손우진
+</br>국적: 중국
+</br>신분: Tron 창시자 
+</br>인물소개:손우진은 1990년에 청해 서녕에서 태여났고 광동 혜주에서 자랐으며 고중때 문학에 따져 마지막으로 10위안에 들었다. 후에 고삼때 용감히 추격하여 제9회 신개념 작문에서 동기를 얻어 북대 점수를 낮추어 모집하는 기회를 얻어 북대에 들어갔다. 2011년 그는 출국하여 빈석법니아 대학에서 공부하였다. 2012년 Bitcoin 사회를 알게 되였고 2013년에 Ripple에 가입하여 Ripple 대중화구역 수석대표를 맡아 Ripple을 도와 IDG/Accel A 3000만 달러 융자를 완성하였다. 또한 Ripple이 전세계 3위안의 가상화폐 시스템으로 되는것을 도왔고 전세계 블록체인 업계의 원로이다. 2014년 소우진은 또 언어 직캠 플로폼 페이워 앱을 창립하였다. 현재에는 이미 세계 최대의 중국어 성우 소리 제어 사회를 형성하였다. 그후 그는 또Tron을 창립하였다. 여러가지 눈부신 성과로 인하여 손우진은 선후로 3번 포보스 30명 30세 이하의 창립자 순위에 올랐고 다보스 카세 전세계 걸출한 청년으로 당선되였다.
+      </div>
+    </div>
   </div>
 </template>
 
@@ -361,6 +555,7 @@ export default {
       cointype: "BTC",
       languagezh: "zh",
       languageen: "en",
+      languageko: "ko",
     }
   },
   created: function(){
