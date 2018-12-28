@@ -275,7 +275,7 @@
 </br>Character Intro: He, a fervent believer of block chain, dropped out of school and left Alibaba to start his own block chain career. In the early days of the establishment of Bitcoin, he posted a lot of posts on Bitcoin and block chain BBS, with a total of more than 10,000 posts, and wrote the development manual of Establishing Own Block Chain From 0 to 1. Snagging the world's top block chain masters, creating the quantum chain (Qtum), which was called "the best block chain team in China and even Asia" by Vitalik Buterin. He entered Forbes China's elite list of 30 years old in 2017. His domineering motto is that "if you look for a person in history to be Satoshi Nakamoto, I think that person should be Newton or Shannon."            
       </div>
       <div class="introtext" v-if="cointype === coins[12].cointype">
-</br>Introduction of Qtum:The Qtum Block chain (“Qtum”) is committed to develop an open source ecosystem for the block chain community different from that of Bitcoin and Ethereum. It utilizes a Value Transfer Protocol (“VTP”) to achieve the transferring of value from peer to peer and to build up a decentralized application platform, which brings blockchain technology into the financial services, Internet of Things (“IoT”), supply chain management, social media, gaming and other industries. Innovative technology, comprehensive governance structure and board applications give Qtum advantages over Bitcoin and Ethereum as a public blockchain
+</br>Introduction of BTM: Bytom is an interactive protocol of multiple byte assets. Heterogeneous byte-assets (indigenous digital currency, digital assets) that operate in different forms on the Bytom block chain and atomic assets (warrants, securities, dividends, bonds, intelligence information, forecasting information and other information that exist in the physical world) can be registered, exchanged, gambled and engaged in other more complicated and contract-based interoperations via Bytom.
 </br>Crypto Commemorative TOKEN’s Character: Jia Chang (Real name: Zhipeng Liu)
 </br>Character Nationality: China
 </br>Character Identity:Bytom Founder, Founder and CEO of 8BTC, Theoretical Researcher of block chain, Geological Engineer and Science Fiction Writer
@@ -541,16 +541,31 @@
 </br>인물소개:손우진은 1990년에 청해 서녕에서 태여났고 광동 혜주에서 자랐으며 고중때 문학에 따져 마지막으로 10위안에 들었다. 후에 고삼때 용감히 추격하여 제9회 신개념 작문에서 동기를 얻어 북대 점수를 낮추어 모집하는 기회를 얻어 북대에 들어갔다. 2011년 그는 출국하여 빈석법니아 대학에서 공부하였다. 2012년 Bitcoin 사회를 알게 되였고 2013년에 Ripple에 가입하여 Ripple 대중화구역 수석대표를 맡아 Ripple을 도와 IDG/Accel A 3000만 달러 융자를 완성하였다. 또한 Ripple이 전세계 3위안의 가상화폐 시스템으로 되는것을 도왔고 전세계 블록체인 업계의 원로이다. 2014년 소우진은 또 언어 직캠 플로폼 페이워 앱을 창립하였다. 현재에는 이미 세계 최대의 중국어 성우 소리 제어 사회를 형성하였다. 그후 그는 또Tron을 창립하였다. 여러가지 눈부신 성과로 인하여 손우진은 선후로 3번 포보스 30명 30세 이하의 창립자 순위에 올랐고 다보스 카세 전세계 걸출한 청년으로 당선되였다.
       </div>
     </div>
+    <div v-for="(coin, index) in cointypes[cointype].types" :key="index">
+      <div class="intro_text">
+        {{coin.value}}{{$t('value')}}{{$t(coin.cointype)}}{{"       "}}{{$t('amount')}}:{{coin.amount}}
+      </div>
+      <div class="intro_picture" v-if="coin.type == 1">
+        <img :src="coin.coinurl" alt="" />
+      </div>
+      <div class="intro_picture_coin" v-if="coin.type == 2">
+        <img :src="coin.coinurl" alt="" />
+      </div>
+    </div>
+    <br/>
   </div>
 </template>
 
 <script>
 const allcoins = require("../assets/coins.json");
+const allcointypes = require("../assets/cointypes.json");
+
 export default {
   name: 'introduction',
   data () {
     return {
       coins: allcoins,
+      cointypes: allcointypes,
       coin: {},
       cointype: "BTC",
       languagezh: "zh",
@@ -571,7 +586,24 @@ export default {
 </script>
 
 <style scoped>
-.introtext{
-  /* text-align:center */
+.back{
+  background-image:url("http://www.deaso40.com/jmjnb/background/backgrounds/new/tenor(1).gif");
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-size: 100%;
+  text-shadow:1px 1px 1px #000;
+  color:#fff;
+}
+.intro_text{
+  text-align:center;
+  font-size: 26px;
+}
+.intro_picture{
+  width: 80%;
+  margin-left: 10%;
+}
+.intro_picture_coin{
+  width: 40%;
+  margin-left: 30%;
 }
 </style>

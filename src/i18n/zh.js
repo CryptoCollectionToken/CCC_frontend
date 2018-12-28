@@ -30,6 +30,7 @@ export default {
   TRX: '波场币',
   value: '元',
   coin: '硬币',
+  amount: '总发行量',
 
   //header
   login: '登录',

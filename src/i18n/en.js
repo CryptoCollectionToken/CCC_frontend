@@ -29,6 +29,7 @@ export default {
   TRX: 'TRX',
   value: ' Face Value ',
   coin: '(Coin Version)',
+  amount: 'Circulation',
 
   //header
   login: 'Login',

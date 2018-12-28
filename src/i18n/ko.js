@@ -30,6 +30,7 @@ export default {
   TRX: 'TRX',
   value: '액면가',
   coin: '동전',
+  amount: '총 발행량',
 
   //header
   login: '로그인',
