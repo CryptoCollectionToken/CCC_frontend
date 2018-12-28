@@ -188,17 +188,13 @@ a.navbar-item:hover {
   max-height: 2.9rem;
 }
 .section1 {
-  padding-top: 400px;
-  background-image: url("../static/pic/主页图.png");
+  padding-top: 780px;
+  background-image: url("http://www.deaso40.com/jmjnb/修改图/主页图.png");
   background-size: 100%;
   width: 100%;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-color: #000;
   background-size:auto;
   background-position-x: 50%
-  /* @media (max-width: 800px) {
-    background-size: cover;
-    padding-left: 1000px;
-  } */
 }
 </style>

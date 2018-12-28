@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="back">
     <div>
     <div class="titletext">{{$t('prepare_preparation')}}</div>
     <div class="titletext">{{$t('prepare_PC')}}</div>
@@ -21,11 +21,11 @@
         <table border="1" style="width:60%;margin-left:20%;text-align:center;">
           <tr>
             <td>{{$t('prepare_excel_1_remain_before')}}429,600{{$t('prepare_excel_1_remain_after')}}</td>
-            <td>{{$t('prepare_excel_1_mining_before_1')}}1.000EOS{{$t('prepare_excel_1_mining_after')}}</td>
+            <td>{{$t('prepare_excel_1_mining_before_1')}}2.000EOS{{$t('prepare_excel_1_mining_after')}}</td>
           </tr>
           <tr v-for="(mining,index) in mininglist" :key="index">
             <td>{{$t('prepare_excel_1_remain_before')}}{{mining[0]}}{{$t('prepare_excel_1_remain_after')}}</td>
-            <td>{{$t('prepare_excel_1_mining_before')}}{{mining[1]}}{{$t('prepare_excel_1_mining_after')}}</td>
+            <td>{{$t('prepare_excel_1_mining_before')}}{{(mining[1]*2).toFixed(4)}}EOS{{$t('prepare_excel_1_mining_after')}}</td>
           </tr>
         </table>
         {{$t('prepare_excel_2')}}
@@ -60,25 +60,25 @@ export default {
   data () {
     return {
       mininglist:[
-        ["408,120","1.100EOS"],
-        ["386,640","1.210EOS"],
-        ["365,160","1.331EOS"],
-        ["343,680","1.464EOS"],
-        ["322,200","1.611EOS"],
-        ["279,240","1.772EOS"],
-        ["408,120","1.949EOS"],
-        ["257,760","2.144EOS"],
-        ["236,280","2.358EOS"],
-        ["214,800","2.594EOS"],
-        ["193,320","2.853EOS"],
-        ["171,840","3.138EOS"],
-        ["150,360","3.452EOS"],
-        ["128,880","3.797EOS"],
-        ["107,400","4.177EOS"],
-        [" 85,920","4.595EOS"],
-        [" 64,440","5.054EOS"],
-        [" 42,960","5.560EOS"],
-        [" 21,480","6.116EOS"]],
+        ["408,120",1.100],
+        ["386,640",1.210],
+        ["365,160",1.331],
+        ["343,680",1.464],
+        ["322,200",1.611],
+        ["279,240",1.772],
+        ["408,120",1.949],
+        ["257,760",2.144],
+        ["236,280",2.358],
+        ["214,800",2.594],
+        ["193,320",2.853],
+        ["171,840",3.138],
+        ["150,360",3.452],
+        ["128,880",3.797],
+        ["107,400",4.177],
+        [" 85,920",4.595],
+        [" 64,440",5.054],
+        [" 42,960",5.560],
+        [" 21,480",6.116]],
       miningcoinlist:[	  
         [1,"BTC","2,100","0.49%"],
         [1,"ETH","10,000","2.32%"],
@@ -112,5 +112,13 @@ export default {
   text-align:center;
   font-weight:bold;
   font-size:30px
+}
+.back{
+  background-image:url("http://www.deaso40.com/jmjnb/修改图/怎么玩背景.gif");
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-size: 100%;
+  text-shadow:1px 1px 1px #000;
+  color:#fff;
 }
 </style>
