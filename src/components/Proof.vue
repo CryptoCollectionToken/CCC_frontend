@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="back">
+    <br/>
     <div style="text-align:center;">
       <div class="button" style="margin-left:5px;">{{$t('proof_my')}} {{myCCC}}</div>
       <!-- <div class="button" style="margin-left:5px;">{{$t('proof_accumulation')}} 675.27 EOS</div> -->
@@ -10,7 +11,7 @@
     <div class="titletext">{{$t('proof_hold')}} {{allCCC}}</div>
     <div class="titletext">{{$t('proof_reward_for_holder')}} {{shareamount}}/{{$t('proof')}}</div>
     <!-- <div class="titletext">{{$t('proof_whole_edition_players')}} 741.7426 EOS</div> -->
-    <div class="titletext">{{$t('proof_whole_edition_pool')}} {{collectionamount}}</div>
+    <div class="titletext">{{$t('proof_whole_edition_pool')}} {{collectionamount}}EOS</div>
     <div class="titletext">{{$t('proof_repurchase')}} {{buybackamount}}</div>
     <div class="titletext">{{$t('proof_need')}} {{allbuyback}}</div>
     <div class="titletext">{{$t('proof_price')}} {{buybackamount/allbuyback}}/{{$t('proof')}}</div>
@@ -21,6 +22,7 @@
         {{$t('proof_sell_amount')}}
         <input class="input is-small" style="width:90px" type="text" placeholder="" v-model="amount">
         <div>
+          <br/>
           <a @click="buyback(amount)" class="button" style="margin-left:5px">{{$t('proof_sell_token')}}</a>
         </div>
       </div>
@@ -90,5 +92,13 @@ export default {
   margin-top:10px;
   margin-bottom:10px;
   font-size:24px
+}
+.back{
+  background-image:url("http://www.deaso40.com/jmjnb/修改图/通证页.gif");
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-size: 100%;
+  text-shadow:1px 1px 1px #000;
+  color:#fff;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- <img style="margin-left:40%;" alt="" width="20%" srcset="../../../static/pic/纪念币交易页面拍卖主图.png"/> -->
-    <div class="title" style="padding-left:10%;padding-right:10%;">{{$t('transaction_all')}}</div>
+    <div class="title" style="padding-left:10%;padding-right:10%;padding-top:20px;">{{$t('transaction_all')}}</div>
     <div class="columns is-multiline is-mobile" style="padding-left:10%;padding-right:10%;">
       <a @click="enter(cointype)" v-for="(cointype,key) in cointypes" key="index" class="column is-one-fifth">
         <span style="padding:5px;">
@@ -10,6 +10,7 @@
         </span>
       </a>
     </div>
+    <br/>
   </div>
 </template>
 

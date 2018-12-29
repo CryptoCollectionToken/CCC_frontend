@@ -1,6 +1,7 @@
 <template>
   <div>
     <img style="margin-left:30%;" alt="" width="40%" srcset="../../static/pic/挖矿页面.png"/>
+    <img alt="" width="100%" srcset="http://www.deaso40.com/jmjnb/修改图/挖矿页.gif"/>
     <section class="section2">
       <div style="padding-left:30%">{{$t('mining_canmine_before')}}{{remainamount}}{{$t('mining_canmine_after')}}</div>
       <div style="padding-left:30%">{{$t('mining_cost_before')}}{{needeos}}EOS{{$t('mining_cost_after')}}</div>
@@ -9,10 +10,30 @@
         {{$t('refer_link')}} <input class="input is-small" style="width:80%" type="text" placeholder="" v-model="input">
       </div>
       </br>
-      <a @click="mining(1)"><img class="minebutton" alt="" srcset="../../static/pic/挖矿页面按钮图1.png"/></a>
-      <a @click="mining(2)"><img class="minebutton" alt="" srcset="../../static/pic/挖矿页面按钮图2.png"/></a>
-      <a @click="mining(5)"><img class="minebutton" alt="" srcset="../../static/pic/挖矿页面按钮图3.png"/></a>
-      <a @click="mining(10)"><img class="minebutton" alt="" srcset="../../static/pic/挖矿页面按钮图4.png"/></a>
+      <div class="div1">
+        <a @click="mining(1)">
+          <span class="span1">{{$t('mining_1time')}}</span>
+          <img src="http://www.deaso40.com/jmjnb/修改图/挖矿空白1.png" class="img1" alt="" />
+        </a>
+      </div>
+      <div class="div1">
+        <a @click="mining(2)">
+          <span class="span1">{{$t('mining_2time')}}</span>
+          <img src="http://www.deaso40.com/jmjnb/修改图/挖矿空白2.png" class="img1" alt="" />
+        </a>
+      </div>
+      <div class="div1">
+        <a @click="mining(5)">
+          <span class="span1">{{$t('mining_5time')}}</span>
+          <img src="http://www.deaso40.com/jmjnb/修改图/挖矿空白3.png" class="img1" alt="" />
+        </a>
+      </div>
+      <div class="div1">
+        <a @click="mining(10)">
+          <span class="span1">{{$t('mining_10time')}}</span>
+          <img src="http://www.deaso40.com/jmjnb/修改图/挖矿空白4.png" class="img1" alt="" />
+        </a>
+      </div>
     </section>
   </div>
 </template>
@@ -85,6 +106,32 @@ export default {
 </script>
 
 <style scoped>
+/* button */
+.div1{
+    position: relative;/*相对定位*/
+    width: 20%;
+    margin-left: 40%;
+}
+.div2{
+    position: relative;/*相对定位*/
+    width: 12%;
+    margin-left: 44%;
+}
+/*图片部分的设置*/
+.img1{
+    /*position: static;默认定位,可以省略*/
+    width: 100%;
+    height: 100px;
+}
+/*文字的设置*/
+.span1{
+    position: absolute;/*绝对定位*/
+    width: 100%;
+    bottom: 50px;/*离底下0像素*/
+    left: 0px;/*离左边0像素*/
+    text-align: center;
+    font-size: 28px;
+}
 .section1 {
   background-image: url("../../static/pic/挖矿页面.png");
   background-size: 100%;

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img style="margin-left:40%;" alt="" width="20%" srcset="../../../static/pic/纪念币交易页面拍卖主图.png"/>
+    <img style="margin-left:40%;padding-top:20px;" alt="" width="20%" srcset="../../../static/pic/纪念币交易页面拍卖主图.png"/>
     <div style="text-align: center;">{{name}}</div>
     <nav class="has-text-centered" style="margin-left:30%;margin-right:30%;">
       <span class="select">
@@ -27,10 +27,10 @@
       <div v-for="(coin,key) in coins" key="index" class="column is-one-quarter">
         <span style="padding:5px;">
           <div><img alt="" width="100%" :srcset="coin.url"/></div>
-          <div style="margin-left:10%;">{{$t('transaction_seller')}}{{coin.owner}}</div>
-          <div style="margin-left:10%;">{{$t('transaction_price')}}{{coin.sellallvalue}}</div>
-          <div style="margin-left:10%;">{{$t('transaction_serial_number')}}{{coin.coinnumber}}</div>
-          <div style="margin-left:10%;">{{$t('transaction_countdown')}}{{coin.selltime}}</div>
+          <div style="text-align:center;">{{$t('transaction_seller')}}：{{coin.owner}}</div>
+          <div style="text-align:center;">{{$t('transaction_price')}}：{{coin.sellallvalue}}</div>
+          <div style="text-align:center;">{{$t('transaction_serial_number')}}：{{coin.coinnumber}}</div>
+          <div style="text-align:center;">{{$t('transaction_countdown')}}：{{coin.selltime}}</div>
           <div style="text-align:center">
             <a class="button is-rounded"  @click="enter(coin.sellid)">{{$t('transaction_buy')}}</a>
           </div>

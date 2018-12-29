@@ -4,9 +4,9 @@
       <img style="margin-left:40%;" alt="" width="20%" srcset="../../static/pic/组合奖励主图.png"/>
       <div class="titletext">{{$t('combinereward_edition')}}</div></br>
       <div style="margin-left:20%;" width="60%">
-  {{$t('combinereward_edition_1_before')}}20.0000{{$t('combinereward_edition_1_after')}}</br>
+  {{$t('combinereward_edition_1_before')}}2.0000EOS{{$t('combinereward_edition_1_after')}}</br>
   {{$t('combinereward_edition_2')}}</br>
-  {{$t('combinereward_edition_3_before')}}3{{$t('combinereward_edition_3_after')}}</br>
+  {{$t('combinereward_edition_3_before')}}0{{$t('combinereward_edition_3_after')}}</br>
   {{$t('combinereward_edition_4')}}</br>
       </div>
       </br>

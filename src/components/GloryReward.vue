@@ -5,16 +5,16 @@
       <div class="button" style="margin-left:5px">{{$t('gloryreward_your_level')}} {{$t(minelevel)}}</div>
       <div class="button" style="margin-left:5px">{{$t('gloryreward_mining_times')}}{{minetimes}}</div>
       <div v-for="(miner,key) in miners" key="index">
-        <div class="columns is-mobile">
-          <div class="column is-one-quarter">
+        <div class="columns is-mobile" style="text-align: center;">
+          <div class="column">
             <img :src="miner.logourl" class="img1" alt="" />
           </div>
-          <div class="column is-mobile">
+          <div class="column">
             <div style="padding-top:25%;">
               {{$t(miner.name)}}
             </div>
           </div>
-          <div class="column is-mobile">
+          <div class="column">
             <div style="padding-top:25%;">
               {{$t('gloryreward_mining_times_before')}}{{miner.value}}{{$t('gloryreward_mining_times_after')}}
             </div>
@@ -32,25 +32,25 @@
       <div class="button" style="margin-left:5px">{{$t('gloryreward_your_trade_level')}} {{$t(buylevel)}}</div>
       <div class="button" style="margin-left:5px">{{$t('gloryreward_your_buy_times')}} {{buytimes}}</div>
       <div v-for="(transactor,key) in transactors" key="index">
-        <div class="columns is-mobile">
-          <div class="column is-one-quarter">
+        <div class="columns is-mobile" style="text-align: center;">
+          <div class="column">
             <img :src="transactor.logourl" class="img1" alt="" />
           </div>
-          <div class="column is-one-quarter">
+          <div class="column">
             <div style="padding-top:25%;">
               {{$t(transactor.name)}}
             </div>
           </div>
-          <div class="column is-one-quarter">
+          <div class="column">
             <div style="padding-top:25%;">
               {{$t('gloryreward_trade_times_before')}}{{transactor.value}}{{$t('gloryreward_trade_times_after')}}
             </div>
           </div>
-          <div class="column is-one-quarter">
+          <!-- <div class="column is-one-quarter">
             <div style="padding-top:25%;">
               <a class="button" @click="">{{$t('gloryreward_trade_award_before')}}{{transactor.reward}}{{$t('gloryreward_trade_award_after')}}</a>
             </div>
-          </div>
+          </div> -->
         </div>
       </div><!-- for -->
     </div>

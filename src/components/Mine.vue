@@ -4,7 +4,7 @@
     <div class="columns is-multiline is-mobile" style="padding-left:20%;padding-right:20%;">
       <a @click="enter(coin.cointype)" v-for="(coin,key) in coins" key="index" class="column is-one-quarter">
         <span style="padding:5px;">
-          <div><img alt="" width="100%" :srcset="coin.logourl"/></div>
+          <div><img alt="" width="100%" style="height:160px" :srcset="coin.logourl"/></div>
           <div style="text-align:center">{{$t(coin.cointype)}}</div>
         </span>
       </a>

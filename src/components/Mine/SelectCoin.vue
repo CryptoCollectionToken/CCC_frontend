@@ -8,6 +8,7 @@
         <img src="../../../static/pic/我的纪念币页面按钮图.png" class="img1" alt="" />
       </a>
     </div>
+    <br/>
   </div>
 </template>
 

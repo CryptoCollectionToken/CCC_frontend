@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img style="margin-left:40%;" alt="" width="20%" srcset="../../../static/pic/纪念币交易页面拍卖主图.png"/>
+    <img style="margin-left:40%;padding-top:20px;" alt="" width="20%" srcset="../../../static/pic/纪念币交易页面拍卖主图.png"/>
     <div style="padding-left:40%;padding-right:40%;">
       <a @click="enter(cointype)" v-for="(cointype,key) in cointypes" key="index">
         <span style="padding:5px;">
