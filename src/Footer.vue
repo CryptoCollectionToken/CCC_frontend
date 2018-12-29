@@ -25,6 +25,8 @@
       </div>
       <div class="column">
         <div>Mail</div>
+        <br/>
+        <br/>
         <div>support@crypto-collection.io</div>
       </div>
     </div>
@@ -46,6 +48,7 @@
   background-color: #000;
   background-image: url("../static/pic/网页底部图.png");
   background-size: 100%;
+  font-weight: bold;
   height: 300px;
 }
 
@@ -54,6 +57,7 @@
 }
 
 .img1{
-  max-width: 80px;
+  max-width: 160px;
+  height: 100px;
 }
 </style>

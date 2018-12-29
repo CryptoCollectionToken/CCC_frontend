@@ -1,5 +1,6 @@
 <template>
   <div>
+    <br/>
     <table border="1" style="width:60%;margin-left:20%;text-align:center;">
       <tr><td>{{$t('refer_collectors')}}</td><td>{{$t('refer_collectors')}}</td></tr>
       <tr>
