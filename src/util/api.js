@@ -83,6 +83,16 @@ const API = {
     });
     return rows;
   },
+  async getCollectionAsync(){
+    const { rows } = await eos().getTableRows({
+      json: true,
+      code: 'chainbankeos',
+      scope: 'chainbankeos',
+      table: 'collection',
+      limit: 1024,
+    });
+    return rows;
+  },
   async getBalancesByContract({ tokenContract = 'eosio.token', accountName, symbol }) {
     return eos().getCurrencyBalance(tokenContract, accountName, symbol);
   },

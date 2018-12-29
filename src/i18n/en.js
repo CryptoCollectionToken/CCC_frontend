@@ -5,28 +5,28 @@ export default {
   Korean: 'Korean',
   
   //coins
-  BTC: 'BTC',
-  ETH: 'ETH',
-  LTC: 'LTC',
-  BNB: 'BNB',
-  RIC: 'RIC',
-  OMG: 'OMG',
-  AE: 'AE',
-  NEO: 'NEO',
-  USDT: 'USDT',
-  PTR: 'PTR',
-  XMR: 'XMR',
-  QTUM: 'QTUM',
-  BTM: 'BTM',
-  HT: 'HT',
-  EOS: 'EOS',  
-  IOTA: 'IOTA',
-  ZB: 'ZB',
-  XLM: 'XLM',
-  ADA: 'ADA',
-  DOGE: 'DOGE',
-  RIPPLE: 'RIPPLE',
-  TRX: 'TRX',
+  BTC: 'BTC',//0
+  ETH: 'ETH',//1
+  LTC: 'LTC',//2
+  BNB: 'BNB',//3
+  RIC: 'RIC',//4
+  OMG: 'OMG',//5
+  AE: 'AE',//6
+  NEO: 'NEO',//7
+  USDT: 'USDT',//8
+  PTR: 'PTR',//9
+  XMR: 'XMR',//10
+  QTUM: 'QTUM',//11
+  BTM: 'BTM',//12
+  HT: 'HT',//13
+  EOS: 'EOS',  //14
+  IOTA: 'IOTA',//15
+  ZB: 'ZB',//16
+  XLM: 'XLM',//17
+  ADA: 'ADA',//18
+  DOGE: 'DOGE',//19
+  RIPPLE: 'RIPPLE',//20
+  TRX: 'TRX',//21
   value: ' Face Value ',
   coin: '(Coin Version)',
   amount: 'Circulation',

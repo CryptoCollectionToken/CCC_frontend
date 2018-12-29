@@ -4,9 +4,9 @@
       <img style="margin-left:40%;" alt="" width="20%" srcset="../../static/pic/组合奖励主图.png"/>
       <div class="titletext">{{$t('combinereward_edition')}}</div></br>
       <div style="margin-left:20%;" width="60%">
-  {{$t('combinereward_edition_1_before')}}2.0000EOS{{$t('combinereward_edition_1_after')}}</br>
+  {{$t('combinereward_edition_1_before')}}{{collectionamount}}EOS{{$t('combinereward_edition_1_after')}}</br>
   {{$t('combinereward_edition_2')}}</br>
-  {{$t('combinereward_edition_3_before')}}0{{$t('combinereward_edition_3_after')}}</br>
+  {{$t('combinereward_edition_3_before')}}{{getters}}{{$t('combinereward_edition_3_after')}}</br>
   {{$t('combinereward_edition_4')}}</br>
       </div>
       </br>
@@ -23,6 +23,11 @@
       <div class="titletext">{{$t('combinereward_thematic')}}</div></br>
       <!-- <div v-for="(cointype, index) in cointypes" :key="index"> -->
       <div v-for="(special, index) in specials" :key="index">
+        <div style="text-align:center;">
+          <span v-for="(cointype, index2) in special_types[index]" :key="index2">
+            <img style="height:160px" alt="" width="10%" :srcset="coins[cointype].logourl"/>
+          </span>
+        </div>
         <div style="text-align:center;">
           {{$t(special)}}
           </br>
@@ -90,13 +95,20 @@ export default {
     return {
       page: 1,
       specials: ['combinereward_thematic_1','combinereward_thematic_2','combinereward_thematic_3','combinereward_thematic_4','combinereward_thematic_5','combinereward_thematic_6'],
+      special_types: [[0,2,10],[1,14,7,11,12,6,15,18,21],[3,13,16],[17,5,20],[9,8],[19,4]],
       spacial_rewards: [20000, 14000, 12000, 4500, 4000, 2500],
       coin_rewards: [10000, 2200, 2500, 10000, 2000, 1500, 1000, 1800, 3000, 1800, 10000, 1800, 1500, 1800, 2800, 1400, 1200, 1000, 1000, 1000, 1000, 1000],
       coins: allcoins,
+      collectionamount: 0,
+      getters: 0,
     }
   },
-  created: function(){
+  created: async function(){
     this.page = this.$route.params.page;
+    const pool = await API.getPoolAsync();
+    this.collectionamount = pool.earnings_for_collection / 10000;
+    const getters = await API.getCollectionAsync();
+    this.getters = getters.length;
   },
   methods:{
     gotopage: function(page){
