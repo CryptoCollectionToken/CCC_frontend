@@ -16,7 +16,7 @@
                         <div class="select is-small" style="width:90px;">
                           <select v-model="amount">
                             <option selected>{{$t('mine_exchange_quantity')}}</option>
-                            <option>1</option>
+                            <!-- <option>1</option> -->
                           </select>
                         </div>
                       </div>
@@ -26,7 +26,7 @@
                         <div class="select is-small is-multiple" style="width:90px;">
                           <select multiple size="4" v-model="numbers[index]">
                             <option selected>{{$t('mine_serial_number_selection')}}</option>
-                            <option>1</option>
+                            <!-- <option>1</option> -->
                           </select>
                         </div>
                       </div>

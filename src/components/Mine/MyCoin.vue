@@ -11,7 +11,7 @@
     <div v-for="(coin, index) in coins" :key="index">
       <br/>
       <div style="text-align: center;">{{coin.name}}</div>
-      <img style="width: 30%;margin-left: 35%;" :src="coin.url" alt="" />
+      <img style="width: 80%;margin-left: 10%;" :src="coin.url" alt="" />
       <div style="text-align: center;">{{$t('mine_serial_number')}}{{coin.coinnumber}}</div>
       <div class="div2">
         <a @click="gotoSellPage(coin.coinnumber)">

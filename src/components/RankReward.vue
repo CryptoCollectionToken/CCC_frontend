@@ -35,6 +35,8 @@
 {{$t('rankreward_rule_7')}}</br>
 {{$t('rankreward_rule_8')}}</br>
 {{$t('rankreward_rule_9')}}</br>
+{{$t('rankreward_rule_10')}}</br>
+{{$t('rankreward_rule_11')}}</br>
     </div>
   </div>
 </template>
