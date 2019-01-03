@@ -57,15 +57,33 @@ export default {
   },
   methods:{
     async Buy(coin){
-      await API.transferEOSAsync({
-        to: 'chainbankeos',
-        memo: 'take_order' + ' ' + coin.sellid,
-        amount: coin.sellallvalue,
-      });
+      try{
+        await API.transferEOSAsync({
+          from: this.scatterAccount,
+          to: 'chainbankeos',
+          memo: 'take_order' + ' ' + coin.sellid,
+          amount: coin.sellallvalue * 10000,
+        });
+      } catch (error) {
+        console.error(error);
+        let msg;
+        if (error.message === undefined) {
+          msg = JSON.parse(error).error.details[0].message;
+        } else {
+          msg = error.message;
+        }
+        this.$toast.open({
+          message: `Transaction failed: ${msg}`,
+          type: 'is-danger',
+          duration: 3000,
+          queue: false,
+          position: 'is-bottom',
+        });
+      }
     }
   },
   computed: {
-    ...mapState(['transactions']),
+    ...mapState(['transactions','scatterAccount']),
   },
 }
 </script>

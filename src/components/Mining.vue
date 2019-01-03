@@ -74,22 +74,46 @@ export default {
   methods: {
     mining: async function (times) {
       // console.log(e.toElement.innerText);
+      // alert("go mining");
+      // alert(this.scatterAccount);
       const need = this.needeos * times * 10000;
       console.log(need);
-      if (this.input == ''){
-        await API.transferEOSAsync({
-          to: 'chainbankeos',
-          memo: 'mining',
-          amount: need,
-        });
-      }else{
-        await API.transferEOSAsync({
-          to: 'chainbankeos',
-          memo: 'mining ref ' + this.input,
-          amount: need,
+      try{
+        if (this.input == ''){
+          await API.transferEOSAsync({
+            from: this.scatterAccount,
+            to: 'chainbankeos',
+            memo: 'mining',
+            amount: need,
+          });
+        }else{
+          await API.transferEOSAsync({
+            from: this.scatterAccount,
+            to: 'chainbankeos',
+            memo: 'mining ref ' + this.input,
+            amount: need,
+          });
+        }
+      } catch (error) {
+        console.error(error);
+        let msg;
+        if (error.message === undefined) {
+          msg = JSON.parse(error).error.details[0].message;
+        } else {
+          msg = error.message;
+        }
+        this.$toast.open({
+          message: `Transaction failed: ${msg}`,
+          type: 'is-danger',
+          duration: 3000,
+          queue: false,
+          position: 'is-bottom',
         });
       }
     }
+  },
+  computed: {
+    ...mapState(['scatterAccount'])
   },
   async mounted(){
     this.remainamount = await API.getRemainAmountAsync({ accountName: 'chainbankeos' });

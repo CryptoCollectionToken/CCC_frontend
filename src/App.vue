@@ -10,6 +10,7 @@
 <script>
 import Header from '@/Header';
 import Footer from '@/Footer';
+import 'buefy/dist/buefy.css';
 
 export default {
   name: 'App',
@@ -28,6 +29,7 @@ export default {
 // @import 'buefy/lib/buefy.css';
 </script>
 <style lang="postcss">
+
 /*.view {
   margin-top: 2rem;
   margin-bottom: 2rem;

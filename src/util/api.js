@@ -8,9 +8,9 @@ ScatterJS.plugins(new ScatterEOS());
 
 // @trick: use function to lazy eval Scatter eos, in order to avoid no ID problem.
 const eos = () => ScatterJS.scatter.eos(config.network, Eos, { expireInSeconds: 60 });
-const historyeos = () => ScatterJS.scatter.eos(config.history, Eos, { expireInSeconds: 60 });
+// const historyeos = () => ScatterJS.scatter.eos(config.history, Eos, { expireInSeconds: 60 });
 
-const currentEOSAccount = () => ScatterJS.scatter.identity.accounts.find(x => x.blockchain === 'eos');
+const currentEOSAccount = () => ScatterJS.scatter.identity && ScatterJS.scatter.identity.accounts.find(x => x.blockchain === 'eos');
 
 const API = {
   async getPlayerAsync({ accountName }) {
@@ -112,9 +112,11 @@ const API = {
     return currentEOSAccount().name;
   },
   connectScatterAsync() {
+    // alert("scatter connecting...");
     return ScatterJS.scatter.connect(config.appScatterName, { initTimeout: 2000 });
   },
   loginScatterAsync() {
+    // alert("scatter logging...");
     const requiredFields = { accounts: [config.network] };
     return ScatterJS.scatter.getIdentity(requiredFields);
   },
@@ -122,16 +124,26 @@ const API = {
     return ScatterJS.scatter.forgetIdentity();
   },
   transferEOSAsync({
+    from = currentEOSAccount(),
     to,
     memo = '',
     amount = 0,
   }) {
+    // alert(from.name);
+    // alert(from.authority);
+    // alert("api mining");
+    // try{
+      // alert(currentEOSAccount());
+      // alert(`${currentEOSAccount().name}@${currentEOSAccount().authority}`);
+    // }catch(e){
+    //   alert(e.message);
+    // }
     return eos().transfer(
-      currentEOSAccount().name,
+      from.name,
       to,
       PriceFormatter.formatPrice(amount),
       memo, {
-        authorization: [`${currentEOSAccount().name}@${currentEOSAccount().authority}`],
+        authorization: [`${from.name}@${from.authority}`],
       },
     );
   },

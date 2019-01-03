@@ -95,6 +95,9 @@ export default new Vuex.Store({
       console.log('Connect Scatter result: ', connected);
       if (connected) {
         commit('setIsScatterConnected', true);
+        if (currentEOSAccount()) {
+          commit('setScatterAccount', currentEOSAccount());
+        }
       }else{
         commit('setIsScatterConnected', false);
       }
