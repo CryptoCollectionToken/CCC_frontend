@@ -57,7 +57,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['existcoins']),
+    ...mapState(['existcoins','scatterAccount']),
   },
 }
 </script>

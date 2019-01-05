@@ -3,6 +3,7 @@ import Vuex from 'vuex';
 import { Toast } from 'buefy/dist/components/toast';
 // import Geo from '@/util/geo';
 import API from '@/util/api';
+import {currentEOSAccount} from '@/util/api';
 import ui from './ui';
 const allcoins = require("../assets/coins.json");
 const allcointypes = require("../assets/cointypes.json");

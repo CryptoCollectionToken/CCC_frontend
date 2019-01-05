@@ -61,10 +61,13 @@ export default {
   async mounted(){
     for(const index in this.coins){
       const onecoin = this.coins[index];
+      console.log(onecoin);
       const num = index + 1;
+      console.log(num);
       const body = (await axios.get(
         `http://www.deaso40.com:8989/api/getmarketvalue/${num}`
       )).data;
+      console.log(body);
       this.ranks.push({
         name: onecoin.name,
         cointype: onecoin.cointype,
@@ -72,9 +75,10 @@ export default {
         value: body.result.marketvalue
       })
     }
-    this.ranks.sort({
+    console.log("11");
+    this.ranks.sort(
       function(a,b){return b.value-a.value}
-    })
+    )
   }
 }
 </script>

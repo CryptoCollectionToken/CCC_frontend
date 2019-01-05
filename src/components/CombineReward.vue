@@ -86,6 +86,7 @@
 </template>
 
 <script>
+import { mapActions, mapState } from 'vuex';
 const allcoins = require("../assets/coins.json");
 import API, { eos } from '@/util/api';
 
@@ -123,9 +124,12 @@ export default {
       if(this.page == page) return "is-current";
     },
     getreward: async function(index){
-      await API.CollClaimAsync(index);
+      await API.CollClaimAsync(index, this.scatterAccount);
     }
-  }
+  },
+  computed: {
+    ...mapState(['existcoins','scatterAccount']),
+  },
 }
 </script>
 

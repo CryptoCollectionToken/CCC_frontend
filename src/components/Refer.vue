@@ -2,7 +2,7 @@
   <div>
     <br/>
     <table border="1" style="width:60%;margin-left:20%;text-align:center;">
-      <tr><td>{{$t('refer_collectors')}}</td><td>{{$t('refer_collectors')}}</td></tr>
+      <tr><td>{{$t('refer_collectors')}}</td><td>{{$t('refer_reward')}}</td></tr>
       <tr>
         <td>{{$t('refer_users_before')}}1-10{{$t('refer_users_after')}}</td>
         <td>{{$t('refer_reward_for_each_user_before')}}30{{$t('refer_reward_for_each_user_after')}}</td>

@@ -129,15 +129,6 @@ const API = {
     memo = '',
     amount = 0,
   }) {
-    // alert(from.name);
-    // alert(from.authority);
-    // alert("api mining");
-    // try{
-      // alert(currentEOSAccount());
-      // alert(`${currentEOSAccount().name}@${currentEOSAccount().authority}`);
-    // }catch(e){
-    //   alert(e.message);
-    // }
     return eos().transfer(
       from.name,
       to,
@@ -148,6 +139,7 @@ const API = {
     );
   },
   async transferTokenAsync({
+    from = currentEOSAccount(),
     to,
     memo = '',
     amount = 0,
@@ -155,52 +147,67 @@ const API = {
   }) {
     const contract = await eos().contract(tokenContract);
     return contract.transfer(
-      currentEOSAccount().name,
+      from.name,
       to,
       amount,
       memo, {
-        authorization: [`${currentEOSAccount().name}@${currentEOSAccount().authority}`],
+        authorization: [`${from.name}@${from.authority}`],
       },
     );
   },
   async SellCoinAsync(
     amount = '',
     memo = '',
+    from = currentEOSAccount(),
   ){
-    console.log(currentEOSAccount().name);
     const contract = await eos().contract('chainbankeos');
     await contract.pushorder(
-      currentEOSAccount().name,
+      from.name,
       PriceFormatter.formatPrice(amount),
       memo,
       {
-        authorization: [`${currentEOSAccount().name}@${currentEOSAccount().authority}`],
+        authorization: [`${from.name}@${from.authority}`],
+      },
+    );
+  },
+  async ExchangeCoinAsync(
+    memo = '',
+    from = currentEOSAccount(),
+  ){
+    alert(from.name);
+    alert(memo);
+    const contract = await eos().contract('chainbankeos');
+    await contract.exchange(
+      memo,
+      {
+        authorization: [`${from.name}@${from.authority}`],
       },
     );
   },
   async CollClaimAsync(
     type = 0,
+    from = currentEOSAccount(),
   ){
     console.log(currentEOSAccount().name);
     const contract = await eos().contract('chainbankeos');
     await contract.collclaim(
-      currentEOSAccount().name,
+      from.name,
       type,
       {
-        authorization: [`${currentEOSAccount().name}@${currentEOSAccount().authority}`],
+        authorization: [`${from.name}@${from.authority}`],
       },
     );
   },
   async BuyBackAsync(
     amount = 0,
+    from = currentEOSAccount(),
   ){
-    console.log(currentEOSAccount().name);
     const contract = await eos().contract('chainbankeos');
     await contract.joinbuybackq(
-      currentEOSAccount().name,
+      from.name,
       PriceFormatter.formatPriceToCCC(amount),
       {
-        authorization: [`${currentEOSAccount().name}@${currentEOSAccount().authority}`],
+        authorization: [`${from.name}@${from.authority}`],
       },
     );
   },

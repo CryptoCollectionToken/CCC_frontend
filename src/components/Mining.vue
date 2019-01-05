@@ -94,6 +94,13 @@ export default {
             amount: need,
           });
         }
+        this.$toast.open({
+          message: 'Transaction success!',
+          type: 'is-success',
+          duration: 3000,
+          queue: false,
+          position: 'is-bottom',
+        })
       } catch (error) {
         console.error(error);
         let msg;

@@ -47,6 +47,7 @@
 
 <script>
 import API, { eos } from '@/util/api';
+import { mapActions, mapState } from 'vuex';
 
 export default {
   name: 'proof',
@@ -79,8 +80,11 @@ export default {
   },
   methods:{
     buyback: async function(amount){
-      await API.BuyBackAsync(amount * 10000);
+      await API.BuyBackAsync(amount * 10000, this.scatterAccount);
     },
+  },
+  computed: {
+    ...mapState(['existcoins','scatterAccount']),
   },
 }
 </script>

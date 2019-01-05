@@ -16,6 +16,9 @@
                         <div class="select is-small" style="width:90px;">
                           <select v-model="amount">
                             <option selected>{{$t('mine_exchange_quantity')}}</option>
+                            <!-- <div class="div1" v-for="(number, index1) in numbers[index]" :key="index1">
+                              {{number}}
+                            </div> -->
                             <!-- <option>1</option> -->
                           </select>
                         </div>
@@ -24,8 +27,11 @@
                     <div class="column">
                       <div class="control">
                         <div class="select is-small is-multiple" style="width:90px;">
-                          <select multiple size="4" v-model="numbers[index]">
+                          <select multiple size="4" v-model="selectnumbers[index]">
                             <option selected>{{$t('mine_serial_number_selection')}}</option>
+                            <option class="div1" v-for="(number, index1) in numbers[index]" :key="index1">
+                              {{number}}
+                            </option>
                             <!-- <option>1</option> -->
                           </select>
                         </div>
@@ -57,7 +63,7 @@
     </div>
     <br>
     <div class="div1">
-      <a @click="enter()">
+      <a @click="exchange()">
         <span class="span1">{{$t('mine_exchange_confirmation')}}</span>
         <img src="../../../static/pic/我的纪念币页面按钮图.png" class="img1" alt="" />
       </a>
@@ -70,6 +76,8 @@
 </template>
 
 <script>
+import { mapActions, mapState } from 'vuex';
+import API, { eos } from '@/util/api';
 const allcointypes = require("../../assets/cointypes.json");
 
 export default {
@@ -80,16 +88,51 @@ export default {
       type: "",
       amount: this.$t('mine_exchange_quantity'),
       numbers: [[],[],[],[],[],[],[],[],[],[]],
+      selectnumbers: [[],[],[],[],[],[],[],[],[],[]],
     }
   },
   created: function () {
     this.cointypes = allcointypes[this.$route.params.type].types;
     this.type = this.$route.params.type;
+    const allcoins = this.existcoins;
+    for(const coinid in allcoins){
+      const coin = allcoins[coinid];
+      for(const cointypeid in this.cointypes){
+        const cointype = this.cointypes[cointypeid]
+        if(cointype.value == coin.value &&
+        cointype.type == coin.type){
+          this.numbers[cointypeid].push(coin.id);
+        }
+      }
+      console.log(this.$route.params.type);
+      console.log(coin);
+      if(this.$route.params.type == coin.type){
+          // this.coins.push(coin);
+        }
+    }
   },
   methods:{
     changed(){
       console.log(this.amount);
       console.log(this.numbers);
+    },
+    async exchange(){
+      console.log(this.selectnumbers);
+      var k = "";
+      for(const index1 in this.selectnumbers){
+        const selects = this.selectnumbers[index1];
+        for(const index2 in selects){
+          const select = selects[index2];
+          if(k == ""){
+            k += select;
+          }else{
+            k += ",";
+            k += select;
+          }
+        }
+      }
+      console.log(k);
+      await API.ExchangeCoinAsync(k, this.scatterAccount);
     }
   },
   watch: { 
@@ -99,6 +142,9 @@ export default {
     numbers: function(val) {
       this.changed();
     },
+  },
+  computed: {
+    ...mapState(['existcoins','scatterAccount']),
   },
 }
 </script>

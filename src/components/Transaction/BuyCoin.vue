@@ -64,6 +64,13 @@ export default {
           memo: 'take_order' + ' ' + coin.sellid,
           amount: coin.sellallvalue * 10000,
         });
+        this.$toast.open({
+          message: 'Transaction success!',
+          type: 'is-success',
+          duration: 3000,
+          queue: false,
+          position: 'is-bottom',
+        })
       } catch (error) {
         console.error(error);
         let msg;

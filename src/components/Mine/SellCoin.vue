@@ -111,7 +111,7 @@ export default {
       change_down_perhour: "0.0000 EOS",
       change_time: 2,
       
-      const_times:[4,6,8,10,12,14,16,18,20,22,24],
+      const_times:[4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48],
       change_times:[4,6,8,10,12,14,16,18,20,22,24],
     }
   },
@@ -125,11 +125,36 @@ export default {
     }
   },
   methods:{
-    const_sell(coin){
-      API.SellCoinAsync(this.const_input * 10000, this.const_time + " " + coin.contracttype + " " + 1);
+    async const_sell(coin){
+      try{
+        await API.SellCoinAsync(this.const_input * 10000, this.const_time + " " + coin.contracttype + " " + 1, this.scatterAccount);
+        console.log(this.const_input * 10000);
+        this.$toast.open({
+          message: 'Transaction success!',
+          type: 'is-success',
+          duration: 3000,
+          queue: false,
+          position: 'is-bottom',
+        })
+      } catch (error) {
+        console.error(error);
+        let msg;
+        if (error.message === undefined) {
+          msg = JSON.parse(error).error.details[0].message;
+        } else {
+          msg = error.message;
+        }
+        this.$toast.open({
+          message: `Transaction failed: ${msg}`,
+          type: 'is-danger',
+          duration: 3000,
+          queue: false,
+          position: 'is-bottom',
+        });
+      }
     },
     change_sell(){
-      API.SellCoinAsync(this.const_input * 10000, 2 + " " + coin.contracttype + " " + 1);
+      API.SellCoinAsync(this.const_input * 10000, 2 + " " + coin.contracttype + " " + 1, this.scatterAccount);
     },
     const_input_changed(){
       // console.log(this.const_input*0.0175);
@@ -160,7 +185,7 @@ export default {
     },
   },
   computed: {
-    ...mapState(['existcoins']),
+    ...mapState(['existcoins','scatterAccount']),
   },
 }
 </script>
