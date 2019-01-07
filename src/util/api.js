@@ -174,11 +174,23 @@ const API = {
     memo = '',
     from = currentEOSAccount(),
   ){
-    alert(from.name);
-    alert(memo);
     const contract = await eos().contract('chainbankeos');
     await contract.exchange(
       memo,
+      {
+        authorization: [`${from.name}@${from.authority}`],
+      },
+    );
+  },
+  async ExchangeCoinDownAsync(
+    id = 0,
+    goalid = 0,
+    from = currentEOSAccount(),
+  ){
+    const contract = await eos().contract('chainbankeos');
+    await contract.exchangedown(
+      id,
+      goalid,
       {
         authorization: [`${from.name}@${from.authority}`],
       },

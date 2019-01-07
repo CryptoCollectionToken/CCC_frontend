@@ -11,19 +11,19 @@
                 <img alt="" width="100px" :srcset="cointype.coinurl"/>
                 <div>
                   <div class="columns is-mobile is-gapless">
-                    <div class="column">
+                    <!-- <div class="column">
                       <div class="control">
                         <div class="select is-small" style="width:90px;">
                           <select v-model="amount">
                             <option selected>{{$t('mine_exchange_quantity')}}</option>
-                            <!-- <div class="div1" v-for="(number, index1) in numbers[index]" :key="index1">
+                            <div class="div1" v-for="(number, index1) in numbers[index]" :key="index1">
                               {{number}}
-                            </div> -->
-                            <!-- <option>1</option> -->
+                            </div>
+                            <option>1</option>
                           </select>
                         </div>
                       </div>
-                    </div>
+                    </div> -->
                     <div class="column">
                       <div class="control">
                         <div class="select is-small is-multiple" style="width:90px;">
@@ -51,7 +51,7 @@
                 <img alt="" width="100px" :srcset="cointype.coinurl"/>
                 <div>
                   <label class="checkbox" style="padding-left:8px">
-                    <input type="checkbox">
+                    <input type="checkbox" v-model="checkboxindex[index]">
                   </label>
                 </div>
                 <!-- <img alt="" width="40%" :srcset="cointype.coinurl"/> -->
@@ -79,16 +79,20 @@
 import { mapActions, mapState } from 'vuex';
 import API, { eos } from '@/util/api';
 const allcointypes = require("../../assets/cointypes.json");
+const allcoins = require("../../assets/coins.json");
 
 export default {
   name: 'exchangecoin',
   data () {
     return {
+      coins: allcoins,
       cointypes: [],
       type: "",
       amount: this.$t('mine_exchange_quantity'),
       numbers: [[],[],[],[],[],[],[],[],[],[]],
       selectnumbers: [[],[],[],[],[],[],[],[],[],[]],
+      checkboxindex: [],
+      typeid: 0,
     }
   },
   created: function () {
@@ -117,7 +121,40 @@ export default {
       console.log(this.numbers);
     },
     async exchange(){
+      var selectedgoal = 0;
+      var goalindex = 0;
+      for(const index in this.checkboxindex){
+        const selected = this.checkboxindex[index];
+        if(selected){
+          if(selectedgoal != 0){
+            this.$toast.open({
+              message: 'Selected Too More!',
+              type: 'is-success',
+              duration: 3000,
+              queue: false,
+              position: 'is-bottom',
+            })
+            return;
+          }else{
+            for(const typeid in this.coins){
+              const type = this.coins[typeid];
+              if(type.cointype == this.type){
+                this.typeid = parseInt(typeid) + 1;
+              }
+            }
+            console.log(this.typeid);
+            console.log(index);
+            selectedgoal = parseInt(this.typeid) + (parseInt(index) * 100);
+            goalindex = index;
+          }
+        }
+      }
+      console.log(goalindex);
+      console.log(this.checkboxindex);
       console.log(this.selectnumbers);
+      var is_down = true;
+      var k_index1 = 0;
+      var k_index2 = 0;
       var k = "";
       for(const index1 in this.selectnumbers){
         const selects = this.selectnumbers[index1];
@@ -125,14 +162,26 @@ export default {
           const select = selects[index2];
           if(k == ""){
             k += select;
+            k_index1 = index1;
+            k_index2 = index2;
           }else{
+            is_down = false;
             k += ",";
             k += select;
           }
         }
       }
+      if(is_down){
+        if(k_index1 > goalindex){
+          await API.ExchangeCoinDownAsync(k, selectedgoal, this.scatterAccount);
+        }else{
+          await API.ExchangeCoinAsync(k, this.scatterAccount);
+        }
+      }else{
+        await API.ExchangeCoinAsync(k, this.scatterAccount);
+      }
       console.log(k);
-      await API.ExchangeCoinAsync(k, this.scatterAccount);
+      
     }
   },
   watch: { 
@@ -141,7 +190,7 @@ export default {
     },
     numbers: function(val) {
       this.changed();
-    },
+    }
   },
   computed: {
     ...mapState(['existcoins','scatterAccount']),
