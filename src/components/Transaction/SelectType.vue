@@ -4,7 +4,7 @@
     <div style="padding-left:40%;padding-right:40%;">
       <a @click="enter(cointype)" v-for="(cointype,key) in cointypes" key="index">
         <span style="padding:5px;">
-          <div><img alt="" width="100%" :srcset="cointype.coinurl"/></div>
+          <div><img alt="" width="100%" :src="cointype.coinurl"/></div>
           <div style="text-align:center">{{cointype.value}}{{$t('value')}}{{$t(cointype.cointype)}}<span v-if="cointype.type == 2">{{$t('coin')}}</span></div>
         </span>
       </a>

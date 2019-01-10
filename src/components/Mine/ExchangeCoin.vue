@@ -8,7 +8,7 @@
           <div>
             <nav class="level is-mobile">
               <div class="level-item has-text-centered">
-                <img alt="" width="100px" :srcset="cointype.coinurl"/>
+                <img alt="" width="100px" :src="cointype.coinurl"/>
                 <div>
                   <div class="columns is-mobile is-gapless">
                     <!-- <div class="column">
@@ -29,8 +29,8 @@
                         <div class="select is-small is-multiple" style="width:90px;">
                           <select multiple size="4" v-model="selectnumbers[index]">
                             <option selected>{{$t('mine_serial_number_selection')}}</option>
-                            <option class="div1" v-for="(number, index1) in numbers[index]" :key="index1">
-                              {{number}}
+                            <option v-for="(number, index1) in numbers[index]" :key="index1" :value="number.id">
+                              {{number.coinnumber}}
                             </option>
                             <!-- <option>1</option> -->
                           </select>
@@ -39,7 +39,7 @@
                     </div>
                   </div>
                 </div>
-                <!-- <img alt="" width="40%" :srcset="cointype.coinurl"/> -->
+                <!-- <img alt="" width="40%" :src="cointype.coinurl"/> -->
               </div>
             </nav>
           </div>
@@ -48,13 +48,13 @@
           <div>
             <nav class="level is-mobile">
               <div class="level-item has-text-centered">
-                <img alt="" width="100px" :srcset="cointype.coinurl"/>
+                <img alt="" width="100px" :src="cointype.coinurl"/>
                 <div>
                   <label class="checkbox" style="padding-left:8px">
                     <input type="checkbox" v-model="checkboxindex[index]">
                   </label>
                 </div>
-                <!-- <img alt="" width="40%" :srcset="cointype.coinurl"/> -->
+                <!-- <img alt="" width="40%" :src="cointype.coinurl"/> -->
               </div>
             </nav>
           </div>
@@ -104,16 +104,15 @@ export default {
       for(const cointypeid in this.cointypes){
         const cointype = this.cointypes[cointypeid]
         if(cointype.value == coin.value &&
-        cointype.type == coin.type){
-          this.numbers[cointypeid].push(coin.id);
+          cointype.type == coin.type){
+          if(coin.cointype == this.type &&
+            coin.owner == this.scatterAccount.name){
+            this.numbers[cointypeid].push(coin);
+          }
         }
       }
-      console.log(this.$route.params.type);
-      console.log(coin);
-      if(this.$route.params.type == coin.type){
-          // this.coins.push(coin);
-        }
     }
+    console.log(this.cointypes);
   },
   methods:{
     changed(){
@@ -171,14 +170,45 @@ export default {
           }
         }
       }
-      if(is_down){
-        if(k_index1 > goalindex){
-          await API.ExchangeCoinDownAsync(k, selectedgoal, this.scatterAccount);
+      try{
+        if(is_down){
+          if(k_index1 > goalindex){
+            await API.ExchangeCoinDownAsync(k, selectedgoal, this.scatterAccount);
+            this.$toast.open({
+              message: 'Transaction success!',
+              type: 'is-success',
+              duration: 3000,
+              queue: false,
+              position: 'is-bottom',
+            })
+          }else{
+            await API.ExchangeCoinAsync(k, this.scatterAccount);
+          }
         }else{
           await API.ExchangeCoinAsync(k, this.scatterAccount);
         }
-      }else{
-        await API.ExchangeCoinAsync(k, this.scatterAccount);
+        this.$toast.open({
+          message: 'Transaction success!',
+          type: 'is-success',
+          duration: 3000,
+          queue: false,
+          position: 'is-bottom',
+        })
+      } catch (error) {
+        console.error(error);
+        let msg;
+        if (error.message === undefined) {
+          msg = JSON.parse(error).error.details[0].message;
+        } else {
+          msg = error.message;
+        }
+        this.$toast.open({
+          message: `Transaction failed: ${msg}`,
+          type: 'is-danger',
+          duration: 3000,
+          queue: false,
+          position: 'is-bottom',
+        });
       }
       console.log(k);
       

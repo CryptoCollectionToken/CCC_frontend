@@ -202,25 +202,30 @@ export default new Vuex.Store({
         const CoinList = await API.getCoinsAsync({accountName: 'chainbankeos'});
         const existcoinlist = [];
         for(const index in CoinList){
-          const contractone = CoinList[index];
-          const cointypenum = contractone.type % 100 - 1;
-          const coinvaluenum = (contractone.type / 100).toFixed(0);
-          var onecoin = {};
-          const _A_ = "A";
-          onecoin.id = contractone.id;
-          onecoin.owner = contractone.owner;
-          onecoin.contracttype = contractone.type;
-          onecoin.cointype = this.state.coins[cointypenum].cointype;
-          onecoin.value = this.state.coinvalues[cointypenum][coinvaluenum];
-          onecoin.number = contractone.number;
-          onecoin.coinnumber = onecoin.cointype + String.fromCharCode(parseInt(_A_.charCodeAt()) + parseInt(coinvaluenum)) + onecoin.number;
-          onecoin.type = this.state.cointypes[onecoin.cointype].types[coinvaluenum].type;
-          onecoin.url = this.state.cointypes[onecoin.cointype].types[coinvaluenum].coinurl;
-          existcoinlist.push(onecoin);
+          try{
+            const contractone = CoinList[index];
+            const cointypenum = contractone.type % 100 - 1;
+            const coinvaluenum = (contractone.type / 100).toFixed(0);
+            var onecoin = {};
+            const _A_ = "A";
+            onecoin.id = contractone.id;
+            onecoin.owner = contractone.owner;
+            onecoin.contracttype = contractone.type;
+            onecoin.cointype = this.state.coins[cointypenum].cointype;
+            onecoin.value = this.state.coinvalues[cointypenum][coinvaluenum];
+            onecoin.number = contractone.number;
+            onecoin.coinnumber = onecoin.cointype + String.fromCharCode(parseInt(_A_.charCodeAt()) + parseInt(coinvaluenum)) + onecoin.number;
+            onecoin.type = this.state.cointypes[onecoin.cointype].types[coinvaluenum].type;
+            onecoin.url = this.state.cointypes[onecoin.cointype].types[coinvaluenum].coinurl;
+            existcoinlist.push(onecoin);
+          }catch(e){
+
+          }
         }
         console.log("existcoinlist");
         console.log(existcoinlist);
         commit('setCoins', existcoinlist);
+        const timestamp = new Date().getTime() * 1000;
         const TransactionList = await API.getTransactionsAsync({accountName: 'chainbankeos'});
         const transactionlist = [];
         for(const index in TransactionList){
@@ -233,12 +238,29 @@ export default new Vuex.Store({
               break;
             }
           }
+          onetransaction.owner = transaction.account;
           onetransaction.sellid = transaction.id;
           onetransaction.sellvalue = (transaction.value / 0.9825 * 0.965).toFixed(4);
           onetransaction.sellallvalue = (transaction.value).toFixed(4);
           onetransaction.sellgas = (onetransaction.sellallvalue / 0.9825 * 0.0175).toFixed(4);
           onetransaction.selltoken = onetransaction.sellallvalue;
-          onetransaction.selltime = "0";
+          function formatDuring(msss){
+            // console.log(msss);
+            const mss = msss / 1000;
+            // console.log(mss);
+            var days = parseInt(mss / (1000 * 60 * 60 * 24));
+            var hours = parseInt((mss % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = parseInt((mss % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = (mss % (1000 * 60)) / 1000;
+            return days + " d " + hours + " h " + minutes + " m " + seconds + "s";
+          }
+          // console.log(timestamp);
+          // console.log(transaction.timestamp);
+          // console.log(timestamp - parseInt(transaction.timestamp));
+          // console.log(((parseInt(transaction.id))/1000000) * 3600000000);
+          // console.log(((parseInt(transaction.id))/1000000) * 3600000000) - (timestamp - parseInt(transaction.timestamp));
+          // onetransaction.selltime = formatDuring(timestamp - parseInt(transaction.timestamp));
+          onetransaction.selltime = formatDuring((((parseInt(transaction.id))/1000000) * 3600000000) - (timestamp - parseInt(transaction.timestamp)));
           transactionlist.push(onetransaction);
         }
         console.log("transactionlist");

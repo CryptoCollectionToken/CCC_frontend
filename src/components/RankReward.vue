@@ -62,7 +62,7 @@ export default {
     for(const index in this.coins){
       const onecoin = this.coins[index];
       console.log(onecoin);
-      const num = index + 1;
+      const num = parseInt(index) + 1;
       console.log(num);
       const body = (await axios.get(
         `http://www.deaso40.com:8989/api/getmarketvalue/${num}`

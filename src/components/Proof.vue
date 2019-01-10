@@ -5,9 +5,9 @@
       <div class="button" style="margin-left:5px;">{{$t('proof_my')}} {{myCCC}}</div>
       <!-- <div class="button" style="margin-left:5px;">{{$t('proof_accumulation')}} 675.27 EOS</div> -->
     </div>
-    <div class="titletext">{{$t('proof_amount')}} 30000000 CCC</div>
+    <div class="titletext">{{$t('proof_amount')}} {{30000000 - allCCC}}</div>
     <div class="titletext">{{$t('proof_income')}} {{shareamount*allCCC+buybackamount+collectionamount}}</div>
-    <!-- <div class="titletext">{{$t('proof_reward_for_all')}} 4450.4556 EOS</div> -->
+    <div class="titletext">{{$t('proof_reward_for_all')}} {{shareamount*allCCC}}</div>
     <div class="titletext">{{$t('proof_hold')}} {{allCCC}}</div>
     <div class="titletext">{{$t('proof_reward_for_holder')}} {{shareamount}}/{{$t('proof')}}</div>
     <!-- <div class="titletext">{{$t('proof_whole_edition_players')}} 741.7426 EOS</div> -->
@@ -67,20 +67,49 @@ export default {
     this.myCCC = parseFloat((await API.getMyCCCAsync()).balance.substring(0,6));
     this.allCCC = parseFloat((await API.getCCCAsync()).supply.substring(0,6));
     const pool = await API.getPoolAsync();
-    this.shareamount = (parseInt((pool.earnings_per_share.substr(2).match(/.{1,2}/g).reverse().join(''), 16)/4294967296)/this.allCCC || 0);
+    this.shareamount = (parseInt((pool.earnings_per_share.substr(2).match(/.{1,2}/g).reverse().join(''), 16)/4294967296)/this.allCCC || 0) * 10;
+    console.log("shareamount");
+    console.log(this.allCCC);
+    console.log(this.shareamount + "," + pool.earnings_for_buyback + "," + pool.earnings_for_collection);
     this.buybackamount = pool.earnings_for_buyback / 10000; 
     this.collectionamount = pool.earnings_for_collection / 10000;
     const buybacks = await API.getBuyBackAsync();
     var allbuyback = 0;
+    console.log("buybacks");
     console.log(buybacks);
     for(const buyback in buybacks){
+      console.log(buybacks[buyback]);
       allbuyback += parseFloat(buybacks[buyback].limit.substring(0,6));
     }
     this.allbuyback = allbuyback;
   },
   methods:{
     buyback: async function(amount){
-      await API.BuyBackAsync(amount * 10000, this.scatterAccount);
+      try{
+        await API.BuyBackAsync(amount * 10000, this.scatterAccount);
+        this.$toast.open({
+          message: 'Transaction success!',
+          type: 'is-success',
+          duration: 3000,
+          queue: false,
+          position: 'is-bottom',
+        })
+      } catch (error) {
+        console.error(error);
+        let msg;
+        if (error.message === undefined) {
+          msg = JSON.parse(error).error.details[0].message;
+        } else {
+          msg = error.message;
+        }
+        this.$toast.open({
+          message: `Transaction failed: ${msg}`,
+          type: 'is-danger',
+          duration: 3000,
+          queue: false,
+          position: 'is-bottom',
+        });
+      }
     },
   },
   computed: {

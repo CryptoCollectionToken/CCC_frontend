@@ -159,11 +159,11 @@ export default {
     const_input_changed(){
       // console.log(this.const_input*0.0175);
       this.const_fee = PriceFormatter.formatPrice(this.const_input * 175);
-      this.const_income = PriceFormatter.formatPrice(this.const_input * 9650);
+      this.const_income = PriceFormatter.formatPrice(this.const_input * 9825);
     },
     change_input_changed(){
       this.change_fee = PriceFormatter.formatPrice(this.change_input_start * 175)+"~"+PriceFormatter.formatPrice(this.change_input_end * 175);
-      this.change_income = PriceFormatter.formatPrice(this.change_input_start * 9650)+"~"+PriceFormatter.formatPrice(this.change_input_end * 9650);
+      this.change_income = PriceFormatter.formatPrice(this.change_input_start * 9825)+"~"+PriceFormatter.formatPrice(this.change_input_end * 9825);
       this.change_down_perhour = PriceFormatter.formatPrice((this.change_input_start-this.change_input_end)/this.change_time*10000);
     }
   },

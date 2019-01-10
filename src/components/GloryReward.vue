@@ -167,11 +167,13 @@ export default {
     console.log(mineranks);
     for(const index in mineranks){
       const rank = mineranks[index];
+      if(rank.owner == "") continue;
       this.mineranks.push({
         name: rank.owner,
         buyamount: rank.minetimes,
         level: this.minetimetolevel(rank.minetimes),
       });
+      if (index>=9) break;
     }
     console.log("getting buy times..")
     const buyranks = (await axios.get(
@@ -180,11 +182,13 @@ export default {
     console.log(buyranks);
     for(const index in buyranks){
       const rank = buyranks[index];
+      if(rank.owner == "") continue;
       this.buyranks.push({
         name: rank.owner,
         buyamount: rank.buytimes,
         level: this.buytimetolevel(rank.buytimes),
       });
+      if (index>=9) break;
     }
   }
 }

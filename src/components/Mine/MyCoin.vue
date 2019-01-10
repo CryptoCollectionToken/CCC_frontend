@@ -40,10 +40,11 @@ export default {
     this.type = this.$route.params.cointype;
     for(const coinid in allcoins){
       const coin = allcoins[coinid];
-      console.log(this.$route.params.type + "," + coin.type + "," + this.$route.params.cointype + "," + coin.cointype + "," + this.$route.params.value + "," + coin.value);
+      // console.log(this.$route.params.type + "," + coin.type + "," + this.$route.params.cointype + "," + coin.cointype + "," + this.$route.params.value + "," + coin.value);
       if(this.$route.params.type == coin.type &&
         this.$route.params.cointype == coin.cointype &&
-        this.$route.params.value == coin.value){
+        this.$route.params.value == coin.value &&
+        this.scatterAccount.name == coin.owner){
           this.coins.push(coin);
         }
     }
