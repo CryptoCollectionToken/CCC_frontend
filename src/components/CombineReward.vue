@@ -102,6 +102,7 @@ export default {
       coins: allcoins,
       collectionamount: 0,
       getters: 0,
+      Account: '',
     }
   },
   created: async function(){
@@ -110,6 +111,8 @@ export default {
     this.collectionamount = pool.earnings_for_collection / 10000;
     const getters = await API.getCollectionAsync();
     this.getters = getters.length;
+    this.Account = this.scatterAccount;
+    // alert(this.Account.name);
   },
   methods:{
     gotopage: function(page){
@@ -124,11 +127,35 @@ export default {
       if(this.page == page) return "is-current";
     },
     getreward: async function(index){
-      await API.CollClaimAsync(index, this.scatterAccount);
+      try{
+        await API.CollClaimAsync(index, this.Account);
+        this.$toast.open({
+          message: 'Transaction success!',
+          type: 'is-success',
+          duration: 3000,
+          queue: false,
+          position: 'is-bottom',
+        })
+      } catch (error) {
+        console.error(error);
+        let msg;
+        if (error.message === undefined) {
+          msg = JSON.parse(error).error.details[0].message;
+        } else {
+          msg = error.message;
+        }
+        this.$toast.open({
+          message: `Transaction failed: ${msg}`,
+          type: 'is-danger',
+          duration: 3000,
+          queue: false,
+          position: 'is-bottom',
+        });
+      }
     }
   },
   computed: {
-    ...mapState(['existcoins','scatterAccount']),
+    ...mapState(['scatterAccount']),
   },
 }
 </script>

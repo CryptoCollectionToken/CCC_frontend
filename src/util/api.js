@@ -93,6 +93,16 @@ const API = {
     });
     return rows;
   },
+  async getEOSAsync() {
+    const { rows } = await eos().getTableRows({
+      json: true,
+      code: 'eosio.token',
+      scope: 'chainbankeos',
+      table: 'accounts',
+      limit: 1024,
+    });
+    return rows[0];
+  },
   async getBalancesByContract({ tokenContract = 'eosio.token', accountName, symbol }) {
     return eos().getCurrencyBalance(tokenContract, accountName, symbol);
   },
@@ -200,7 +210,6 @@ const API = {
     type = 0,
     from = currentEOSAccount(),
   ){
-    console.log(currentEOSAccount().name);
     const contract = await eos().contract('chainbankeos');
     await contract.collclaim(
       from.name,

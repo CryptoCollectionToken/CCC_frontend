@@ -6,10 +6,10 @@
       <!-- <div class="button" style="margin-left:5px;">{{$t('proof_accumulation')}} 675.27 EOS</div> -->
     </div>
     <div class="titletext">{{$t('proof_amount')}} {{30000000 - allCCC}}</div>
-    <div class="titletext">{{$t('proof_income')}} {{shareamount*allCCC+buybackamount+collectionamount}}</div>
-    <div class="titletext">{{$t('proof_reward_for_all')}} {{shareamount*allCCC}}</div>
+    <div class="titletext">{{$t('proof_income')}} {{this.alleos}}</div>
+    <div class="titletext">{{$t('proof_reward_for_all')}} {{this.alleos - collectionamount - buybackamount}}</div>
     <div class="titletext">{{$t('proof_hold')}} {{allCCC}}</div>
-    <div class="titletext">{{$t('proof_reward_for_holder')}} {{shareamount}}/{{$t('proof')}}</div>
+    <div class="titletext">{{$t('proof_reward_for_holder')}} {{shareamount}}</div>
     <!-- <div class="titletext">{{$t('proof_whole_edition_players')}} 741.7426 EOS</div> -->
     <div class="titletext">{{$t('proof_whole_edition_pool')}} {{collectionamount}}EOS</div>
     <div class="titletext">{{$t('proof_repurchase')}} {{buybackamount}}</div>
@@ -59,7 +59,8 @@ export default {
       shareamount: 0,
       buybackamount: 0,
       collectionamount: 0,
-      allbuyback: 0
+      allbuyback: 0,
+      alleos: 0,
     }
   },
   created: async function(){
@@ -67,7 +68,11 @@ export default {
     this.myCCC = parseFloat((await API.getMyCCCAsync()).balance.substring(0,6));
     this.allCCC = parseFloat((await API.getCCCAsync()).supply.substring(0,6));
     const pool = await API.getPoolAsync();
-    this.shareamount = (parseInt((pool.earnings_per_share.substr(2).match(/.{1,2}/g).reverse().join(''), 16)/4294967296)/this.allCCC || 0) * 10;
+    // this.shareamount =  
+    console.log((await API.getEOSAsync()).balance);
+    this.alleos = (await API.getEOSAsync()).balance.substring(0,6);
+    // console.log((parseInt(pool.earnings_per_share.substr(2).match(/.{1,2}/g).reverse().join(''), 16)/4294967296) * this.allCCC);
+    this.shareamount = ((parseInt(pool.earnings_per_share.substr(2).match(/.{1,2}/g).reverse().join(''), 16)/4294967296) || 0);
     console.log("shareamount");
     console.log(this.allCCC);
     console.log(this.shareamount + "," + pool.earnings_for_buyback + "," + pool.earnings_for_collection);
