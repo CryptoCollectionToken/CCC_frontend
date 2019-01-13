@@ -1,8 +1,8 @@
 <template>
   <div>
     <img style="margin-left:40%;padding-top:20px;" alt="" width="20%" srcset="../../../static/pic/纪念币交易页面拍卖主图.png"/>
-    <div style="text-align: center;">{{name}}</div>
-    <nav class="has-text-centered" style="margin-left:30%;margin-right:30%;">
+    <div style="text-align: center;">{{cointype.value}}{{$t('value')}}{{$t(cointype.cointype)}}</div>
+    <!-- <nav class="has-text-centered" style="margin-left:30%;margin-right:30%;">
       <span class="select">
         <select>
           <option selected>{{$t('transaction_sorting')}}</option>
@@ -21,7 +21,7 @@
           <option>{{$t('transaction_low_to_high')}}</option>
         </select>
       </span>
-    </nav>
+    </nav> -->
     <br/>
     <div class="columns is-multiline" style="padding-left:10%;padding-right:10%;">
       <div v-for="(coin,key) in coins" key="index" class="column is-one-quarter">
@@ -50,7 +50,7 @@ export default {
   data () {
     return {
         coins: [],
-        name: "",
+        cointype: "",
     //   transactions: alltransactions,
     }
   },
@@ -66,9 +66,14 @@ export default {
         this.$route.params.cointype == coin.cointype &&
         this.$route.params.value == coin.value){
           this.coins.push(coin);
-          this.name = coin.name;
+          this.cointype = this.$route.params;
         }
     }
+    function sortNumber(a,b)
+    {
+      return a.sellvalue - b.sellvalue
+    }
+    this.coins = this.coins.sort(sortNumber);
   },
   methods: {
     enter: function (sellid) {

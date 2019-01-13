@@ -384,7 +384,7 @@
                 "cointype":"NEO",
                 "type":"1",
                 "value":"1",
-                "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/NEO1.png",
+                "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/NEO1 .png",
                 "amount": "10000"
             }
             ,
@@ -611,7 +611,7 @@
                 "cointype":"QTUM",
                 "type":"1",
                 "value":"1",
-                "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/量子币1.png",
+                "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/量子链1.png",
                 "amount": "10000"
             }
             ,
@@ -620,7 +620,7 @@
                 "cointype":"QTUM",
                 "type":"2",
                 "value":"1",
-                "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/硬币量子币1.png",
+                "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/硬币量子链1.png",
                 "amount": "5000"
             }
             ,
@@ -629,7 +629,7 @@
                 "cointype":"QTUM",
                 "type":"1",
                 "value":"2",
-                "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/量子币2.png",
+                "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/量子链2.png",
                 "amount": "4000"
             }
             ,
@@ -638,7 +638,7 @@
                 "cointype":"QTUM",
                 "type":"1",
                 "value":"5",
-                "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/量子币5.png",
+                "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/量子链5.png",
                 "amount": "1000"
             }
             ,
@@ -647,7 +647,7 @@
                 "cointype":"QTUM",
                 "type":"1",
                 "value":"10",
-                "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/量子币10.png",
+                "coinurl": "http://www.deaso40.com/jmjnb/纪念币图png/量子链10.png",
                 "amount": "400"
             }
         ]

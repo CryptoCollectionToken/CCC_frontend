@@ -210,6 +210,7 @@ const API = {
     type = 0,
     from = currentEOSAccount(),
   ){
+    type += 1;
     const contract = await eos().contract('chainbankeos');
     await contract.collclaim(
       from.name,

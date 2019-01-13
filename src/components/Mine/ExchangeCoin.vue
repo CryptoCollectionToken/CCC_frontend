@@ -128,7 +128,7 @@ export default {
           if(selectedgoal != 0){
             this.$toast.open({
               message: 'Selected Too More!',
-              type: 'is-success',
+              type: 'is-danger',
               duration: 3000,
               queue: false,
               position: 'is-bottom',
@@ -141,24 +141,21 @@ export default {
                 this.typeid = parseInt(typeid) + 1;
               }
             }
-            console.log(this.typeid);
-            console.log(index);
             selectedgoal = parseInt(this.typeid) + (parseInt(index) * 100);
             goalindex = index;
           }
         }
       }
-      console.log(goalindex);
-      console.log(this.checkboxindex);
-      console.log(this.selectnumbers);
       var is_down = true;
       var k_index1 = 0;
       var k_index2 = 0;
       var k = "";
+      var allvalue = 0;
       for(const index1 in this.selectnumbers){
         const selects = this.selectnumbers[index1];
         for(const index2 in selects){
           const select = selects[index2];
+          allvalue += this.numbers[index1][index2].value
           if(k == ""){
             k += select;
             k_index1 = index1;
@@ -174,17 +171,30 @@ export default {
         if(is_down){
           if(k_index1 > goalindex){
             await API.ExchangeCoinDownAsync(k, selectedgoal, this.scatterAccount);
+          }else{
+            if(this.cointypes[goalindex].value != allvalue){
+              this.$toast.open({
+                message: 'Can\'t Exchange!',
+                type: 'is-danger',
+                duration: 3000,
+                queue: false,
+                position: 'is-bottom',
+              })
+              return;
+            }
+            await API.ExchangeCoinAsync(k, this.scatterAccount);
+          }
+        }else{
+          if(this.cointypes[goalindex].value != allvalue){
             this.$toast.open({
-              message: 'Transaction success!',
-              type: 'is-success',
+              message: 'Can\'t Exchange!',
+              type: 'is-danger',
               duration: 3000,
               queue: false,
               position: 'is-bottom',
             })
-          }else{
-            await API.ExchangeCoinAsync(k, this.scatterAccount);
+            return;
           }
-        }else{
           await API.ExchangeCoinAsync(k, this.scatterAccount);
         }
         this.$toast.open({
