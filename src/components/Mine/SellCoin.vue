@@ -98,6 +98,8 @@ export default {
   data () {
     return {
       coins: [],
+      remainamount: 0,
+      lowest_value: 0,
       //constant sell values
       const_input: 0,
       const_fee: "0.0000 EOS",
@@ -115,7 +117,9 @@ export default {
       change_times:[4,6,8,10,12,14,16,18,20,22,24],
     }
   },
-  created: function () {
+  created: async function () {
+    this.remainamount = await API.getRemainAmountAsync({ accountName: 'chainbankeos' });
+    this.lowest_value = 2 + (parseInt((429600 - this.remainamount) / 200) * 0.012);
     const allcoins = this.existcoins;
     for(const coinid in allcoins){
       const coin = allcoins[coinid];
@@ -126,6 +130,16 @@ export default {
   },
   methods:{
     async const_sell(coin){
+      if(this.const_input < this.lowest_value){
+        this.$toast.open({
+          message: 'Value Too Low, Lowest:' + this.lowest_value,
+          type: 'is-danger',
+          duration: 3000,
+          queue: false,
+          position: 'is-bottom',
+        });
+        return;
+      }
       try{
         await API.SellCoinAsync(this.const_input * 10000, this.const_time + " " + coin.contracttype + " " + 1, this.scatterAccount);
         console.log(this.const_input * 10000);

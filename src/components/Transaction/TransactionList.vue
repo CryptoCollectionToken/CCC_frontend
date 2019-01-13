@@ -59,6 +59,7 @@ export default {
     console.log("----");
     console.log(allcoins);
     this.type = this.$route.params.type;
+    this.cointype = this.$route.params;
     for(const coinid in allcoins){
       const coin = allcoins[coinid];
       console.log(this.$route.params.type + "," + coin.type + "," + this.$route.params.cointype + "," + coin.cointype + "," + this.$route.params.value + "," + coin.value);
@@ -66,7 +67,6 @@ export default {
         this.$route.params.cointype == coin.cointype &&
         this.$route.params.value == coin.value){
           this.coins.push(coin);
-          this.cointype = this.$route.params;
         }
     }
     function sortNumber(a,b)
