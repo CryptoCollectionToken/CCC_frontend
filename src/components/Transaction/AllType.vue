@@ -1,9 +1,9 @@
 <template>
   <div>
     <!-- <img style="margin-left:40%;" alt="" width="20%" srcset="../../../static/pic/纪念币交易页面拍卖主图.png"/> -->
-    <div class="title" style="padding-left:10%;padding-right:10%;padding-top:20px;">{{$t('transaction_all')}}</div>
+    <div class="title" style="text-align: center;padding-top:30px;">{{$t('transaction_all')}}</div>
     <div class="columns is-multiline is-mobile" style="padding-left:10%;padding-right:10%;">
-      <a @click="enter(cointype)" v-for="(cointype,key) in cointypes" key="index" class="column is-one-fifth">
+      <a @click="enter(cointype)" v-for="(cointype,key) in cointypes" key="index" class="column is-one-fourth">
         <span style="padding:5px;">
           <!-- <div style="text-align:center">{{cointype.name}}</div> -->
           <div class="button is-rounded has-text-centered">{{cointype.value}}{{$t('value')}}{{$t(cointype.cointype)}}<span v-if="cointype.type == 2">{{$t('coin')}}</span></div>

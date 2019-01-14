@@ -11,7 +11,13 @@
     <div v-for="(coin, index) in coins" :key="index">
       <br/>
       <div style="text-align: center;">{{coin.name}}</div>
-      <img style="width: 80%;margin-left: 10%;" :src="coin.url" alt="" />
+      <!-- <img style="width: 80%;margin-left: 10%;" :src="coin.url" alt="" /> -->
+      <div class="showing_picture" v-if="coin.type == 1">
+        <img :src="coin.url" alt="" />
+      </div>
+      <div class="showing_picture_coin" v-if="coin.type == 2">
+        <img :src="coin.url" alt="" />
+      </div>
       <div style="text-align: center;">{{$t('mine_serial_number')}}{{coin.coinnumber}}</div>
       <div class="div2">
         <a @click="gotoSellPage(coin.coinnumber)">
@@ -91,5 +97,13 @@ export default {
       left: 0px;/*离左边0像素*/
       text-align: center;
       font-size: 18px;
+  }
+  .showing_picture{
+    width: 80%;
+    margin-left: 10%;
+  }
+  .showing_picture_coin{
+    width: 40%;
+    margin-left: 30%;
   }
 </style>

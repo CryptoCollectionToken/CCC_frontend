@@ -5,8 +5,14 @@
     <div v-for="(coin, index) in coins" :key="index">
       <br/>
       <!-- <div style="text-align: center;">{{coin.name}}</div> -->
-      <img style="width: 30%;margin-left: 35%;" :src="coin.url" alt="" />
-      <!-- <div style="text-align: center;">编号：{{coin.coinnumber}}</div> -->
+      <!-- <img style="width: 30%;margin-left: 35%;" :src="coin.url" alt="" /> -->
+      <div class="showing_picture" v-if="coin.type == 1">
+        <img :src="coin.url" alt="" />
+      </div>
+      <div class="showing_picture_coin" v-if="coin.type == 2">
+        <img :src="coin.url" alt="" />
+      </div>
+      <div style="text-align: center;">编号：{{coin.coinnumber}}</div>
       <br/>
       <div>
         <div class="sellplane">
@@ -173,5 +179,13 @@ export default {
   }
   .line6{
       top: 164px;/*离底下0像素*/
+  }
+  .showing_picture{
+    width: 80%;
+    margin-left: 10%;
+  }
+  .showing_picture_coin{
+    width: 40%;
+    margin-left: 30%;
   }
 </style>

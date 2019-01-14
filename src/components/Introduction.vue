@@ -2,6 +2,7 @@
   <div>
     <div>
       <img style="margin-left:45%;" alt="" width="10%" :srcset="coin.logourl"/>
+      {{$t(coin.cointype)}}{{$t('introduction')}}
     </div>
     <div v-if="this.$i18n.locale == languagezh">
       <div class="introtext" v-if="cointype === coins[0].cointype">

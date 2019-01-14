@@ -81,7 +81,7 @@
                 <div v-if="scatterAccount">{{scatterAccount.name}}</div>
               </div>
               <div class="select" style="margin-top:5px;">
-                <select v-model="$i18n.locale" :placeholder="$t('switch_lang')">
+                <select v-model="language" :placeholder="$t('switch_lang')">
                   <option value="en">{{$t('English')}}</option>
                   <option value="zh">{{$t('Chinese')}}</option>
                   <option value="ko">{{$t('Korean')}}</option>
@@ -120,6 +120,7 @@ export default {
       rewardval: this.$t('reward'),
       rewardpage: ["rankreward","combinereward/1","gloryreward/1"],
       coins: allcoins,
+      language: "zh",
     }
   }, 
   watch: { 
@@ -132,6 +133,12 @@ export default {
       if(val === this.$t("reward")) return;
       this.$router.push({ path: `/${val}`});
     },
+    language: function(val){
+      console.log("language changed");
+      this.$i18n.locale = val;
+      this.introductionval = this.$t("introduction");
+      this.rewardval = this.$t("reward");
+    }
   },
   methods: {
     ...mapActions(['connectScatterAsync', 'loginScatterAsync', 'getCoins']),
@@ -142,6 +149,9 @@ export default {
   mounted(){
     this.connectScatterAsync();
     this.getCoins();
+  },
+  created(){
+    this.language = this.$i18n.locale;
   }
 }
 </script>

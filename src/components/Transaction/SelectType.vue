@@ -1,14 +1,20 @@
 <template>
   <div>
     <img style="margin-left:40%;padding-top:20px;" alt="" width="20%" srcset="../../../static/pic/纪念币交易页面拍卖主图.png"/>
-    <div style="padding-left:40%;padding-right:40%;">
+    <!-- <div style="padding-left:40%;padding-right:40%;"> -->
       <a @click="enter(cointype)" v-for="(cointype,key) in cointypes" key="index">
         <span style="padding:5px;">
-          <div><img alt="" width="100%" :src="cointype.coinurl"/></div>
+          <div class="showing_picture" v-if="cointype.type == 1">
+            <img :src="cointype.coinurl" alt="" />
+          </div>
+          <div class="showing_picture_coin" v-if="cointype.type == 2">
+            <img :src="cointype.coinurl" alt="" />
+          </div>
+          <!-- <div><img alt="" width="100%" :src="cointype.coinurl"/></div> -->
           <div style="text-align:center">{{cointype.value}}{{$t('value')}}{{$t(cointype.cointype)}}<span v-if="cointype.type == 2">{{$t('coin')}}</span></div>
         </span>
       </a>
-    </div>
+    <!-- </div> -->
   </div>
 </template>
 
@@ -48,5 +54,12 @@ export default {
 </script>
 
 <style scoped>
-
+.showing_picture{
+  width: 80%;
+  margin-left: 10%;
+}
+.showing_picture_coin{
+  width: 40%;
+  margin-left: 30%;
+}
 </style>
