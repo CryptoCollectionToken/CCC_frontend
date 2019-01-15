@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <div>
-      <img style="margin-left:45%;" alt="" width="10%" :srcset="coin.logourl"/>
-      {{$t(coin.cointype)}}{{$t('introduction')}}
+  <div class="back">
+    <div style="text-align: center;font-weight:bold;font-size:30px;">
+      <img alt="" width="10%" :srcset="coin.logourl"/>
+      </br>{{$t(coin.cointype)}} {{$t('introduction')}}
     </div>
     <div v-if="this.$i18n.locale == languagezh">
       <div class="introtext" v-if="cointype === coins[0].cointype">
@@ -588,7 +588,7 @@ export default {
 
 <style scoped>
 .back{
-  background-image:url("http://www.deaso40.com/jmjnb/background/backgrounds/new/tenor(1).gif");
+  background-image:url("http://www.deaso40.com/jmjnb/修改图/怎么玩背景.gif");
   background-repeat:no-repeat;
   background-attachment:fixed;
   background-size: 100%;

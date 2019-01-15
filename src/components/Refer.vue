@@ -36,6 +36,8 @@
     </table>
     <br/>{{$t('refer_note')}}
     <br/>{{$t('refer_note_1')}}
+    <br/>{{$t('refer_note_2')}}
+    <div><br/></div>
   </div>
 </template>
 

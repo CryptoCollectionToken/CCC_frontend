@@ -3,12 +3,18 @@
     <img style="margin-left:30%;" alt="" width="40%" srcset="../../../static/pic/我的纪念币页面主图.png"/>
     <!-- <img style="margin-left:35%;" alt="" width="30%" srcset="../../../static/pic/我的纪念币页面按钮图.png"/> -->
     <div v-for="(cointype, index) in cointypes" :key="index">
-      <div class="columns is-mobile">
+      <div class="columns" style="padding-left:6%;padding-right:6%">
         <div class="column">
           <div>
             <nav class="level is-mobile">
               <div class="level-item has-text-centered">
-                <img alt="" width="100px" :src="cointype.coinurl"/>
+                <div v-if="cointype.type == 1">
+                  <img width="400px" :src="cointype.coinurl" alt="" />
+                </div>
+                <div v-if="cointype.type == 2">
+                  <img width="200px" :src="cointype.coinurl" alt="" />
+                </div>
+                <!-- <img alt="" width="300px" :src="cointype.coinurl"/> -->
                 <div>
                   <div class="columns is-mobile is-gapless">
                     <!-- <div class="column">
@@ -48,7 +54,12 @@
           <div>
             <nav class="level is-mobile">
               <div class="level-item has-text-centered">
-                <img alt="" width="100px" :src="cointype.coinurl"/>
+                <div v-if="cointype.type == 1">
+                  <img width="400px" :src="cointype.coinurl" alt="" />
+                </div>
+                <div v-if="cointype.type == 2">
+                  <img width="200px" :src="cointype.coinurl" alt="" />
+                </div>
                 <div>
                   <label class="checkbox" style="padding-left:8px">
                     <input type="checkbox" v-model="checkboxindex[index]">
@@ -266,5 +277,13 @@ export default {
       left: 0px;/*离左边0像素*/
       text-align: center;
       font-size: 18px;
+  }
+  .showing_picture{
+    width: 80%;
+    margin-left: 10%;
+  }
+  .showing_picture_coin{
+    width: 40%;
+    margin-left: 30%;
   }
 </style>

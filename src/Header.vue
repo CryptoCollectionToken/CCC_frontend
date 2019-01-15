@@ -10,6 +10,7 @@
                   {{routes[index]}}
             </router-link> -->
           <!-- </div> -->
+          <!-- <img src="http://www.deaso40.com/jmjnb/修改图/主页图.png" class="img1" alt="" style="height:780px"/> -->
       <section class="section1">
         <nav class="level">
           <!-- Left side -->
@@ -25,7 +26,7 @@
                                 :to="{ name: pages[1]}">
                       {{$t(routes[1])}}
               </router-link>
-              <div class="select" style="margin-top:5px">
+              <div class="select is-info" style="margin-top:5px">
                 <select v-model="introductionval">
                   <option selected>{{$t('introduction')}}</option>
                   <option v-for="coin in coins" :value="coin.cointype">{{$t(coin.cointype)}}</option>
@@ -50,7 +51,7 @@
               </router-link>
             </div>
             <div class="level-item">
-              <div class="select" style="margin-top:5px">
+              <div class="select is-info" style="margin-top:5px">
                 <select v-model="rewardval">
                   <option selected>{{$t('reward')}}</option>
                   <option v-for="(reward,index) in rewards" :key="index" :value="rewardpage[index]">{{$t(reward)}}</option>

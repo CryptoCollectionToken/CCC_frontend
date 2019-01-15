@@ -3,7 +3,7 @@
     <div v-if="page == 1">
       <img style="margin-left:40%;" alt="" width="20%" srcset="../../static/pic/组合奖励主图.png"/>
       <div class="titletext">{{$t('combinereward_edition')}}</div></br>
-      <div style="margin-left:20%;" width="60%">
+      <div style="text-align: center;" width="60%">
   {{$t('combinereward_edition_1_before')}}{{collectionamount}}EOS{{$t('combinereward_edition_1_after')}}</br>
   {{$t('combinereward_edition_2')}}</br>
   {{$t('combinereward_edition_3_before')}}{{getters}}{{$t('combinereward_edition_3_after')}}</br>
@@ -45,7 +45,7 @@
     </div>
     <div v-if="page == 3">
       <img style="margin-left:40%;" alt="" width="20%" srcset="../../static/pic/组合奖励主图.png"/>
-      <div class="titletext">{{$t('combinereward_thematic')}}</div></br>
+      <div class="titletext">{{$t('combinereward_single')}}</div></br>
       <div v-for="(coin, index) in coins" :key="index">
         <div style="text-align:center;">
           <div><img alt="" width="10%" :srcset="coin.logourl"/></div>
@@ -70,7 +70,7 @@
 {{$t('combinereward_rule_3')}}</br>
 {{$t('combinereward_rule_4')}}</br>
 {{$t('combinereward_rule_5')}}</br>
-</br>
+    </br>
     <div style="margin-left:30%;margin-right:30%;" width="40%">
       <nav class="pagination is-centered" role="navigation" aria-label="pagination">
         <ul class="pagination-list">
@@ -82,6 +82,7 @@
         </ul>
       </nav>
     </div>
+    <br/>
   </div>
 </template>
 

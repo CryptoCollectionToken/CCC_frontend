@@ -4,6 +4,7 @@
       <div class="titletext">{{$t('gloryreward_miner_level')}}</div>
       <div class="button" style="margin-left:5px">{{$t('gloryreward_your_level')}} {{$t(minelevel)}}</div>
       <div class="button" style="margin-left:5px">{{$t('gloryreward_mining_times')}}{{minetimes}}</div>
+      <div><br/></div>
       <div v-for="(miner,key) in miners" key="index">
         <div class="columns is-mobile" style="text-align: center;">
           <div class="column">
@@ -31,6 +32,7 @@
       <div class="titletext">{{$t('gloryreward_trade_level')}}</div>
       <div class="button" style="margin-left:5px">{{$t('gloryreward_your_trade_level')}} {{$t(buylevel)}}</div>
       <div class="button" style="margin-left:5px">{{$t('gloryreward_your_buy_times')}} {{buytimes}}</div>
+      <div><br/></div>
       <div v-for="(transactor,key) in transactors" key="index">
         <div class="columns is-mobile" style="text-align: center;">
           <div class="column">
@@ -83,12 +85,12 @@
       </div>
     </div>
 
-    <div>
+    <!-- <div>
       <br/>
       {{$t('gloryreward_rule')}}<br/>
       {{$t('gloryreward_rule_1')}}<br/>
       <br/>
-    </div>
+    </div> -->
 
     <div v-if="page == 1" style="text-align:center">
       <a class="button" @click="gotopage(2)">{{$t('gloryreward_nextpage')}}</a>
@@ -96,6 +98,8 @@
     <div v-if="page == 2" style="text-align:center">
       <a class="button" @click="gotopage(1)">{{$t('gloryreward_prevpage')}}</a>
     </div>
+
+    <div><br/></div>
   </div>
 </template>
 
@@ -123,6 +127,8 @@ export default {
   },
   created: function(){
     this.page = this.$route.params.page;
+    this.minelevel = this.$t('gloryreward_grassroots');
+    this.buylevel = this.$t('gloryreward_second_lieutenant');
   },
   computed: {
     ...mapState(['scatterAccount']),

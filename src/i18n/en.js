@@ -25,7 +25,7 @@ export default {
   XLM: 'XLM',//17
   ADA: 'ADA',//18
   DOGE: 'DOGE',//19
-  RIPPLE: 'RIPPLE',//20
+  RIPPLE: 'XRP',//20
   TRX: 'TRX',//21
   value: ' Face Value ',
   coin: '(Coin Version)',
@@ -64,7 +64,7 @@ export default {
   prepare_mobile_line3: '3. You need to pledge a small amount of EOS in exchange for CPU and NET resources. The mortgaged EOS can be redeemed and you can operate in your wallet.',
   prepare_instruction: 'Playing Instruction',
   prepare_mining: 'Mining',
-  prepare_excel_1: 'I. Collectors can use 1 EOS directly to conduct the mining of Crypto Commemorative TOKENS when they go online, and collectors can gain the corresponding number of game TOKENS according to the amount of EOS of mining expenditure with proportion of 1EOS:10TOKENS, until all the  game TOKENS are assigned. The circulation is basically to refer to the proportion of issuance of real crypto currencies. The total amount of excavated ore is 429600 notes, when they go online. When the total amount decline 5%, the mining costs will increase 10% than the last round, detailed in the following table:',
+  prepare_excel_1: 'I. Collectors can use 2 EOS directly to conduct the mining of Crypto Commemorative TOKENS when they go online, and collectors can gain the corresponding number of game TOKENS according to the amount of EOS of mining expenditure with proportion of 1EOS:10TOKENS, until all the  game TOKENS are assigned. The circulation is basically to refer to the proportion of issuance of real crypto currencies. The total amount of excavated ore is 429600 notes, when they go online. When the total amount decline 5%, the mining costs will increase 10% than the last round, detailed in the following table:',
   prepare_excel_2: 'II. The Crypto Commemorative TOKENS, total amount and probability in drawing are shown in the following table:',
   prepare_excel_1_remain_before_1: 'When the remaining total amount is ',
   prepare_excel_1_remain_before: 'When the remaining total amount is ',

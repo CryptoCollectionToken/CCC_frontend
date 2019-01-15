@@ -3,14 +3,29 @@
     <img style="margin-left:30%;" alt="" width="40%" srcset="../../static/pic/挖矿页面.png"/>
     <img alt="" width="100%" srcset="http://www.deaso40.com/jmjnb/修改图/挖矿页.gif"/>
     <section class="section2">
-      <div style="padding-left:30%">{{$t('mining_canmine_before')}}{{remainamount}}{{$t('mining_canmine_after')}}</div>
-      <div style="padding-left:30%">{{$t('mining_cost_before')}}{{needeos}}EOS{{$t('mining_cost_after')}}</div>
+      <div style="text-align: center;margin-left:10%;margin-right:10%;">{{$t('mining_canmine_before')}}{{remainamount}}{{$t('mining_canmine_after')}}</div>
+      <div style="text-align: center;margin-left:10%;margin-right:10%;">{{$t('mining_cost_before')}}{{needeos}}EOS{{$t('mining_cost_after')}}</div>
       </br>
-      <div style="text-align:center;">
+      <div style="text-align:center;margin-left:10%;margin-right:10%;">
         {{$t('refer_link')}} <input class="input is-small" style="width:80%" type="text" placeholder="" v-model="input">
       </div>
       </br>
-      <div class="div1">
+      <div style="text-align: center;">
+        <div class="button is-large is-link" @click="mining(1)">{{$t('mining_1time')}}</div>
+      </div>
+      </br>
+      <div style="text-align: center;">
+        <div class="button is-large is-success" @click="mining(2)">{{$t('mining_2time')}}</div>
+      </div>
+      </br>
+      <div style="text-align: center;">
+        <div class="button is-large is-dark" @click="mining(5)">{{$t('mining_5time')}}</div>
+      </div>
+      </br>
+      <div style="text-align: center;">
+        <div class="button is-large is-warning" @click="mining(10)">{{$t('mining_10time')}}</div>
+      </div>
+      <!-- <div class="div1">
         <a @click="mining(1)">
           <span class="span1">{{$t('mining_1time')}}</span>
           <img src="http://www.deaso40.com/jmjnb/修改图/挖矿空白1.png" class="img1" alt="" />
@@ -33,7 +48,7 @@
           <span class="span1">{{$t('mining_10time')}}</span>
           <img src="http://www.deaso40.com/jmjnb/修改图/挖矿空白4.png" class="img1" alt="" />
         </a>
-      </div>
+      </div> -->
     </section>
   </div>
 </template>

@@ -65,7 +65,7 @@ export default {
   prepare_mobile_line3: '3.您需要抵押少量EOS用于换取CPU和NET资源，抵押的EOS可以赎回，在您的钱包中就可以操作。',
   prepare_instruction: '玩法说明',
   prepare_mining: '挖矿',
-  prepare_excel_1: '一.上线时收藏家可以使用1EOS直接进行一次加密货币纪念币挖矿，收藏家可根据挖矿支出的EOS数量1:10获得数量相对应的TOKEN，直到所有TOKEN被分配完，发行量基本参照了现实中加密货币的发行量等比例发行，上线时可挖矿总量为429,600张，每当总量递减5%，挖矿成本将比上一轮挖矿成本递增10%，具体如下表:',
+  prepare_excel_1: '一.上线时收藏家可以使用2EOS直接进行一次加密货币纪念币挖矿，收藏家可根据挖矿支出的EOS数量1:10获得数量相对应的TOKEN，直到所有TOKEN被分配完，发行量基本参照了现实中加密货币的发行量等比例发行，上线时可挖矿总量为429,600张，每当总量递减5%，挖矿成本将比上一轮挖矿成本递增10%，具体如下表:',
   prepare_excel_1_remain_before: '剩余总量为',
   prepare_excel_1_remain_after: '张时',
   prepare_excel_1_mining_before_1: '挖矿成本为',

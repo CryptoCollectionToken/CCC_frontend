@@ -98,12 +98,4 @@ export default {
       text-align: center;
       font-size: 18px;
   }
-  .showing_picture{
-    width: 80%;
-    margin-left: 10%;
-  }
-  .showing_picture_coin{
-    width: 40%;
-    margin-left: 30%;
-  }
 </style>
