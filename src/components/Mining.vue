@@ -50,6 +50,18 @@
         </a>
       </div> -->
     </section>
+    <div v-if ="mined || showcoins.length != 0">
+      <br/>
+      <div v-if="mined"></div>
+        <div style="text-align: center;">({{totalTime}})</div>
+      </div>
+      <div class="columns is-multiline is-mobile" style="padding-left:10%;padding-right:10%;" v-if="showcoins.length != 0">
+        <div v-for="(cointype,key) in showcoins" key="index" class="column is-one-fourth">
+          <span>{{cointype.value}}{{$t('value')}}{{$t(cointype.cointype)}}<span v-if="cointype.type == 2">{{$t('coin')}}</span></span>
+        </div>
+      </div>
+      <br/>
+    </div>
   </div>
 </template>
 
@@ -84,9 +96,47 @@ export default {
         [21480,11.1200],
         [0,12.2320]],
       input: '',
+      beforecoins: [],
+      newcoins: [],
+      totalTime: 15,
+      mined: false,
+      showcoins: [],
     }
   },
   methods: {
+    ...mapActions(['getCoins']),
+    aftermining: async function () {
+      if (this.mined){
+        this.totalTime = 15;
+        return;  //改动的是这两行代码
+      }
+      this.mined = true
+      let clock = window.setInterval(async () => {
+        this.totalTime--
+        if (this.totalTime < 0) {
+          window.clearInterval(clock)
+          this.totalTime = 15
+          this.mined = false  //这里重新开启
+          await this.getCoins();
+          console.log(this.existcoins);
+          console.log(this.beforecoins);
+          if(this.existcoins.length != this.beforecoins.length){
+            for(let i = this.beforecoins.length;i<this.existcoins.length;i++){
+              this.newcoins.push(this.existcoins[i]);
+            }
+          }
+          console.log(this.newcoins);
+          for(const coinid in this.newcoins){
+            const coin = this.newcoins[coinid];
+            if(this.scatterAccount.name == coin.owner){
+              this.showcoins.push(coin);
+            }
+          }
+          console.log(this.showcoins)
+          this.beforecoins = this.existcoins;
+        }
+      },1000)
+    },
     mining: async function (times) {
       // console.log(e.toElement.innerText);
       // alert("go mining");
@@ -116,6 +166,9 @@ export default {
           queue: false,
           position: 'is-bottom',
         })
+        console.log(this.beforecoins);
+        console.log(this.existcoins);
+        this.aftermining();
       } catch (error) {
         console.error(error);
         let msg;
@@ -135,9 +188,10 @@ export default {
     }
   },
   computed: {
-    ...mapState(['scatterAccount'])
+    ...mapState(['existcoins', 'scatterAccount'])
   },
   async mounted(){
+    this.beforecoins = this.existcoins;
     this.remainamount = await API.getRemainAmountAsync({ accountName: 'chainbankeos' });
     for(const index in this.mininglist){
       if(this.mininglist[index][0] >= this.remainamount){

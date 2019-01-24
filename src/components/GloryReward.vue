@@ -143,12 +143,24 @@ export default {
     },
     minetimetolevel: function(input){
       for(const level in allminers){
-        if (input < allminers[level].value) return allminers[level].name;
+        if (input < allminers[level].value){
+          if(level == 0){
+            return " ";
+          }else{
+            return allminers[level-1].name;
+          }
+        } 
       }
     },
     buytimetolevel: function(input){
       for(const level in alltransactors){
-        if (input < alltransactors[level].value) return alltransactors[level].name;
+        if (input < alltransactors[level].value){
+          if(level == 0){
+            return " ";
+          }else{
+            return alltransactors[level-1].name;
+          }
+        }
       }
     },
   },

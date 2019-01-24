@@ -125,7 +125,6 @@ export default {
   },
   created: async function () {
     this.remainamount = await API.getRemainAmountAsync({ accountName: 'chainbankeos' });
-    this.lowest_value = 2 + (parseInt((429600 - this.remainamount) / 200) * 0.012);
     const allcoins = this.existcoins;
     for(const coinid in allcoins){
       const coin = allcoins[coinid];
@@ -133,6 +132,7 @@ export default {
           this.coins.push(coin);
         }
     }
+    this.lowest_value = (2 + (parseInt((429600 - this.remainamount) / 200) * 0.012)) * this.coins[0].value;
   },
   methods:{
     async const_sell(coin){

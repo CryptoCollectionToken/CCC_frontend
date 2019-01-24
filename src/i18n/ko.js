@@ -104,6 +104,7 @@ export default {
 
   //mine
   mine_title: '나의 기념화폐',
+  mine_have: '너는 가지고있다',
   mine_nocoin: '당신은 현재 이 기념화폐를 소유하지 못하였기에 빨리 소장하세요!',
   mine_exchange: '교환',
   mine_serial_number: '번호',
