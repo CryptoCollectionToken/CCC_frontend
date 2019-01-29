@@ -106,9 +106,6 @@ const API = {
   async getBalancesByContract({ tokenContract = 'eosio.token', accountName, symbol }) {
     return eos().getCurrencyBalance(tokenContract, accountName, symbol);
   },
-  getNextPrice(land) {
-    return land.price * 1.4;
-  },
   install(Vue) {
     Object.defineProperties(Vue.prototype, {
       $API: {
@@ -233,22 +230,6 @@ const API = {
       },
     );
   },
-  async getCheckInRedeemCodeAsync() {
-    const sha256lib = await import('js-sha256');
-    const token = String(Math.floor(Math.random() * 0xFFFFFF));
-    return sha256lib.sha256(token).slice(0, 10);
-  },
-  async redeemCodeAsync({ code }) {
-    if (code.length !== 10) {
-      throw new Error('Invalid redeem code');
-    }
-    const contract = await eos().contract('cryptomeetup');
-    return contract.checkin(
-      currentEOSAccount().name,
-      '0196d5b5d9ec1bc78ba927d2db2cb327d836f002601c77bd8c3f144a07ddc737',
-      { authorization: [`${currentEOSAccount().name}@${currentEOSAccount().authority}`] },
-    );
-  },
   async getCoinsAsync({ accountName }) {
     const { rows } = await eos().getTableRows({
       json: true,
@@ -284,11 +265,6 @@ const API = {
       table: 'player',
       limit: 1024,
     }));
-    // console.log(await historyeos().getActions({
-    //   account_name: "chainbankeos", 
-    //   pos: -1, 
-    //   offset: -100
-    // }));
     return rows;
   },
 };
