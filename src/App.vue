@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <Header />
-      <router-view class="view" 
+    <!--<Header />-->
+      <router-view class="view"
                   :key="key"></router-view>
-    <Footer />
+    <!--<Footer />-->
   </div>
 </template>
 
@@ -19,7 +19,7 @@ export default {
     Footer
   },
   computed: {
-    key() {
+    key () {
       return this.$route.name !== undefined
         ? this.$route.name + +new Date()
         : this.$route + +new Date();
@@ -29,7 +29,9 @@ export default {
 // @import 'buefy/lib/buefy.css';
 </script>
 <style lang="postcss">
-
+html {
+  overflow: auto;
+}
 /*.view {
   margin-top: 2rem;
   margin-bottom: 2rem;
