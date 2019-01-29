@@ -105,6 +105,7 @@ export default {
   //mine
   mine_title: '我的纪念币',
   mine_have: '目前您拥有',
+  mine_have_after: '张',
   mine_nocoin: '您目前还没有此款纪念币，赶快去收藏吧！',
   mine_exchange: '兑换',
   mine_serial_number: '编号',

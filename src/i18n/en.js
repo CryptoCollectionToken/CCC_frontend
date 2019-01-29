@@ -104,6 +104,7 @@ export default {
   //mine
   mine_title: 'My Crypto Commemorative TOKENS',
   mine_have: 'You have',
+  mine_have_after: 'notes',
   mine_nocoin: 'You haven’t got this Crypto Commemorative TOKEN yet, go and collect it!',
   mine_exchange: 'Exchange',
   mine_serial_number: 'Serial Number',

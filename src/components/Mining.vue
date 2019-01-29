@@ -132,7 +132,7 @@ export default {
               this.showcoins.push(coin);
             }
           }
-          console.log(this.showcoins)
+          console.log(this.showcoins);
           this.beforecoins = this.existcoins;
         }
       },1000)
