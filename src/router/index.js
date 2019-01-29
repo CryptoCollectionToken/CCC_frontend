@@ -18,6 +18,16 @@ const createroute = function(page, str){ //注意，为了复制方便，所有r
   routearray.push(str); //打印输出，供Header使用。
 }
 
+const createMobileRoute = function (page, str) { //注意，为了复制方便，所有router自动转换为小写
+  const pathname = '/m/' + str.toLocaleLowerCase();
+  allroutes.push({
+    name: str,
+    path: pathname,
+    component: page
+  })
+  routearray.push(str); //打印输出，供Header使用。
+}
+
 const createrouteaddid = function(page, str, pathstr){ //自定义path，用于添加id
   const pathname = '/' + pathstr.toLocaleLowerCase();
   allroutes.push({
@@ -84,6 +94,9 @@ createroute(Proof, "Proof");
 
 import Refer from '@/components/Refer';
 createroute(Refer, "Refer");
+
+import MobileHome from '@/mobile/pages/Home';
+createroute(MobileHome, "m/home");
 
 const path = require('path');
 
