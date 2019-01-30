@@ -29,6 +29,8 @@ module.exports = {
     'import/first': 'off',
     'spaced-comment': 'off',
     'comma-dangle': 'off',
-    'semi': 'off'
+    'semi': 'off',
+    'space-before-function-paren': 'off',
+    'space-infix-ops': 'off'
   }
 }
