@@ -61,12 +61,6 @@ export default new Vuex.Store({
       state.landInfo = landInfo;
       state.landInfoUpdateAt = new Date();
     },
-    setMarketInfo(state, marketInfo) {
-      state.marketInfo = marketInfo;
-    },
-    setStakedInfo(state, stakedInfo) {
-      state.stakedInfo = stakedInfo;
-    },
     setCoins(state, Coins){
       state.existcoins = Coins;
     },
@@ -112,48 +106,6 @@ export default new Vuex.Store({
       const [eos, cmu] = balances.flat();
       commit('setMyBalance', { symbol: 'eos', balance: eos });
       commit('setMyBalance', { symbol: 'cmu', balance: cmu });
-    },
-    async updateLandInfoAsync({ commit }) {
-      commit('setIsLoadingData', true);
-      try {
-        const landInfo = {};
-        const rows = await API.getLandsInfoAsync();
-        rows.forEach((row) => {
-          const countryCode = Geo.landIdToCountryCode(row.id);
-          landInfo[countryCode] = {
-            ...row,
-            code: countryCode,
-          };
-        });
-        commit('setLandInfo', landInfo);
-      } catch (err) {
-        console.error('Failed to fetch land info', err);
-      }
-      commit('setIsLoadingData', false);
-    },
-    async updateMarketInfoAsync({ commit, state }) {
-      try {
-        const marketInfoTable = await API.getMarketInfoAsync();
-        const marketInfo = marketInfoTable[0];
-        marketInfo.coin_price = `${((parseFloat(marketInfo.supply.split(' ')[0])) / 10000000000).toFixed(4).toString()} EOS`;
-        marketInfo.supply = `${(parseFloat(marketInfo.supply.split(' ')[0]) - 40000000).toFixed(4).toString()} CMU`;
-        // price, balance, coin_price
-        commit('setMarketInfo', marketInfo);
-      } catch (err) {
-        console.error('Failed to fetch market info', err);
-      }
-    },
-    async getMyStakedInfo({ commit, state }) {
-      try {
-        const stakedInfoList = await API.getMyStakedInfoAsync({accountName: state.scatterAccount.name});
-        if (stakedInfoList[0] == null) {
-          commit('setStakedInfo', {"to":"","staked":0});
-        } else {
-          commit('setStakedInfo', stakedInfoList[0]);
-        }
-      } catch (err) {
-        console.error('Failed to fetch staked info', err);
-      }
     },
     async loginScatterAsync({ commit, dispatch }) {
       commit('setIsScatterLoggingIn', true);
