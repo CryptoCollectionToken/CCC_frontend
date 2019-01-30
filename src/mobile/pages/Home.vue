@@ -8,110 +8,55 @@
           <table>
             <tr>
               <td>
-                <div>
-                  <span>推荐计划</span>
+                <router-link class="nav-box" :to="{name: pages[10]}">
+                  <span>{{$t(routes[10])}}</span>
                   <img src="../assets/recommend.png" alt="">
+                </router-link>
+              </td>
+              <td class="lastCol">
+                <div class="nav-box">
+                  <span>{{$t('reward')}}</span>
+                  <img src="../assets/reward.png" alt="">
                 </div>
               </td>
-              <td>
-                <span>奖励</span>
-                <img src="../assets/reward.png" alt="">
-              </td>
             </tr>
-            <tr>
+            <tr class="lastrow">
               <td>
-                <span>通证</span>
-                <img src="../assets/token.png" alt="">
+                <router-link class="nav-box" :to="{ name: pages[9]}">
+                  <span>{{$t(routes[9])}}</span>
+                  <img src="../assets/token.png" alt="">
+                </router-link>
               </td>
-              <td>
-                <span>纪念币介绍</span>
-                <img src="../assets/introduction.png" alt="">
+              <td class="lastCol">
+                <div class="nav-box">
+                  <span>{{$t('introduction')}}</span>
+                  <img src="../assets/introduction.png" alt="">
+                </div>
               </td>
             </tr>
           </table>
         </div>
+        <div style="padding: 10px;">
+          <div style="background-color: #fff;">
+            <div class="intro-outer">
+              <span class="intro-title">概述</span>
+            </div>
+            <div class="title-pic">
+              {{$t('homepage_introduction')}}
+            </div>
+          </div>
+        </div>
+        <div style="padding: 10px;">
+          <div class="back">
+            <img class="title_picture_coin" src="http://www.deaso40.com/jmjnb/纪念币图png/硬币比特币1.png" alt="" /><br/>
+            <img class="title_picture" src="http://www.deaso40.com/jmjnb/纪念币图png/中本聪纸币1.png" alt="" /><br/>
+            <img class="title_picture" src="http://www.deaso40.com/jmjnb/纪念币图png/阿姨币20.png" alt="" /><br/>
+            <img class="title_picture" src="http://www.deaso40.com/jmjnb/纪念币图png/韭菜币5.png" alt="" /><br/>
+            <img class="title_picture" src="http://www.deaso40.com/jmjnb/纪念币图png/门罗币2.png" alt="" /><br/>
+            <br/>
+          </div>
+        </div>
       </div>
-      <section class="section1">
-        <nav class="level">
-          <!-- Left side -->
-          <div class="level-left">
-            <div class="level-item">
-              <router-link class="navbar-item"
-                                :to="{ name: pages[0]}">
-                      {{$t(routes[0])}}
-              </router-link>
-              <router-link
-                  class="navbar-item"
-                                :to="{ name: pages[1]}">
-                      {{$t(routes[1])}}
-              </router-link>
-              <div class="select is-info" style="margin-top:5px">
-                <select v-model="introductionval">
-                  <option selected>{{$t('introduction')}}</option>
-                  <option v-for="(coin, index) in coins" :value="coin.cointype" :key="index">{{$t(coin.cointype)}}</option>
-                </select>
-              </div>
-            </div>
-            <div class="level-item">
-              <router-link
-                  class="navbar-item"
-                                :to="{ name: pages[3]}">
-                      {{$t(routes[3])}}
-              </router-link>
-              <router-link
-                  class="navbar-item"
-                                :to="{ name: pages[4]}">
-                      {{$t(routes[4])}}
-              </router-link>
-              <router-link
-                  class="navbar-item"
-                                :to="{ name: pages[5]}">
-                      {{$t(routes[5])}}
-              </router-link>
-            </div>
-            <div class="level-item">
-              <div class="select is-info" style="margin-top:5px">
-                <select v-model="rewardval">
-                  <option selected>{{$t('reward')}}</option>
-                  <option v-for="(reward,index) in rewards" :key="index" :value="rewardpage[index]">{{$t(reward)}}</option>
-                </select>
-              </div>
-              <router-link
-                  class="navbar-item"
-                                :to="{ name: pages[9]}">
-                      {{$t(routes[9])}}
-              </router-link>
-              <router-link
-                  class="navbar-item"
-                                :to="{ name: pages[10]}">
-                      {{$t(routes[10])}}
-              </router-link>
-              <router-link
-                  class="navbar-item"
-                                :to="{ name: pages[11]}">
-                      {{$t(routes[11])}}
-              </router-link>
-            </div>
-          </div>
-            <!-- Right side -->
-          <div class="level-right">
-            <div class="level-item">
-              <div class="navbar-item" style="margin-top:5px;">
-                <button @click="loginScatterAsync" v-if="!scatterAccount" class="button">{{$t('login')}}</button>
-                <div v-if="scatterAccount">{{scatterAccount.name}}</div>
-              </div>
-              <div class="select" style="margin-top:5px;">
-                <select v-model="language" :placeholder="$t('switch_lang')">
-                  <option value="en">{{$t('English')}}</option>
-                  <option value="zh">{{$t('Chinese')}}</option>
-                  <option value="ko">{{$t('Korean')}}</option>
-                  <!-- <option value="ja">{{$t('Japanese')}}</option> -->
-                </select>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </section>
     </div>
     <Footer></Footer>
   </div>
@@ -146,21 +91,77 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  table, td, th {
-    border: 1px solid #ccc;
+  $borderColor: #f5f5f5;
+  $baseColor: #5585F9;
+  * {
+    font-size: 14px;
+  }
+  .intro-outer {
+    padding: 10px 20px;
+    .intro-title {
+      padding-left: 10px;
+      border-left: 2px solid $baseColor;
+      color: $baseColor;
+      font-weight: bolder;
+    }
+  }
+  .title-pic {
+    background-image:url("http://www.deaso40.com/jmjnb/background/backgrounds/new/tenor(1).gif");
+    padding: 20px 20px 50px;
+    background-repeat:no-repeat;
+    background-size: 100%;
+    text-shadow:1px 1px 1px #000;
+    color:#fff;
   }
   table {
     border-collapse: collapse;
     background-color: #fff;
     width: 100%;
+    border: 0 solid $borderColor;
   }
-  td {
+  table td {
+    border-top: 0;
+    border-right: 1px solid $borderColor;
+    border-bottom: 1px solid $borderColor;
+    border-left: 0;
+    height: 60px;
+    &:hover {
+      background-color: #f5f5f5;
+    }
+  }
+  table tr.lastrow td {
+    border-bottom: 0;
+  }
+
+  table tr td.lastCol {
+    border-right: 0;
+  }
+  .nav-box {
     padding: 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    color: #4a4a4a;
   }
   .home-page {
     background-color:rgba(239,241,245,1);
   }
   .home-page-inner {
     margin-top: 10px;
+  }
+  .back {
+    background-size: 100%;
+    background-image:url("http://www.deaso40.com/jmjnb/background/backgrounds/new/tenor(1).gif");
+    background-color: #fff;
+  }
+  .title_picture{
+    width: 80%;
+    margin-left: 10%;
+  }
+  .title_picture_coin{
+    width: 40%;
+    margin-left: 30%;
   }
 </style>

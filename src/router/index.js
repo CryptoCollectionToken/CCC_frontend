@@ -95,10 +95,18 @@ createroute(Proof, "Proof");
 import Refer from '@/components/Refer';
 createroute(Refer, "Refer");
 
+/********************移动端页面********************/
 import MobileHome from '@/mobile/pages/Home';
-createroute(MobileHome, "m/home");
+createMobileRoute(MobileHome, "home");
 
-const path = require('path');
+import MobileIntroduction from '@/mobile/pages/Introduction';
+createMobileRoute(MobileIntroduction, "Introduction/:cointype");
+
+import MobileGloryReward from '@/mobile/pages/GloryReward';
+createMobileRoute(MobileGloryReward, "GloryReward/:page");
+
+import MobileRankReward from '@/mobile/pages/RankReward';
+createMobileRoute(MobileRankReward, "RankReward");
 
 Vue.use(Router)
 console.log(routearray)

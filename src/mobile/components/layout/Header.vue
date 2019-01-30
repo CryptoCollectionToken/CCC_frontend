@@ -194,7 +194,7 @@ export default {
     justify-content: center;
     font-size: 14px;
     min-width: 45px;
-    color: #000;
+    color: #4a4a4a;
     &:hover {
       color: $baseColor;
     }
