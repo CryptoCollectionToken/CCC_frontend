@@ -108,6 +108,24 @@ createMobileRoute(MobileGloryReward, "GloryReward/:page");
 import MobileRankReward from '@/mobile/pages/RankReward';
 createMobileRoute(MobileRankReward, "RankReward");
 
+import MobileCombineReward from '@/mobile/pages/CombineReward';
+createMobileRoute(MobileCombineReward, "CombineReward/:page");
+
+import MobileTransaction from '@/mobile/pages/Transaction';
+createMobileRoute(MobileTransaction, "Transaction");
+
+import MobileSelectType from '@/mobile/pages/Transaction/SelectType';
+createMobileRoute(MobileSelectType, "SelectType/:type");
+
+import MobileTransactionList from '@/mobile/pages/Transaction/TransactionList';
+createMobileRoute(MobileTransactionList, "TransactionList/:cointype/:type/:value");
+
+import MobileBuyCoin from '@/mobile/pages/Transaction/BuyCoin';
+createMobileRoute(MobileBuyCoin,"BuyCoin/:sellid");
+
+import MobileAllType from '@/mobile/pages/Transaction/AllType';
+createMobileRoute(MobileAllType, "AllType");
+
 Vue.use(Router)
 console.log(routearray)
 
