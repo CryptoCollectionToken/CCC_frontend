@@ -98,6 +98,7 @@
 import PriceFormatter from '../../util/eosPriceFormatter';
 import { mapActions, mapState } from 'vuex';
 import API, { eos } from '@/util/api';
+const allcointypes = require("../../assets/cointypes.json");
 
 export default {
   name: 'sellcoin',
@@ -132,7 +133,7 @@ export default {
           this.coins.push(coin);
         }
     }
-    this.lowest_value = (2 + (parseInt((429600 - this.remainamount) / 200) * 0.012)) * this.coins[0].value;
+    this.lowest_value = (2 + (parseInt((429600 - this.remainamount) / 200) * 0.012)) * this.coins[0].value / allcointypes[this.coins[0].cointype].types[0].value;
   },
   methods:{
     async const_sell(coin){
