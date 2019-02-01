@@ -126,6 +126,9 @@ createMobileRoute(MobileBuyCoin,"BuyCoin/:sellid");
 import MobileAllType from '@/mobile/pages/Transaction/AllType';
 createMobileRoute(MobileAllType, "AllType");
 
+import MobileProof from '@/mobile/pages/Proof';
+createMobileRoute(MobileProof, "Proof");
+
 Vue.use(Router)
 console.log(routearray)
 
