@@ -111,6 +111,9 @@ createMobileRoute(MobileRankReward, "RankReward");
 import MobilePrepare from '@/mobile/pages/Prepare';
 createMobileRoute(MobilePrepare, "Prepare");
 
+import MobileMine from '@/mobile/pages/Mine';
+createMobileRoute(MobileMine, "Mine");
+
 Vue.use(Router)
 console.log(routearray)
 

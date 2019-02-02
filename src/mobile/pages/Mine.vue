@@ -1,14 +1,37 @@
 <template>
-  <div class="reward-page">
+  <div class="mine-page">
     <Header></Header>
     <div class="home-page-inner">
       <div class="login-card">
-
+        <div class="login-card-account">
+          <img src="http://www.deaso40.com/jmjnb/mobileui/我的纪念币/我 的收藏币/收 藏.png" alt="">
+        </div>
+        <div class="login-card-account">
+          ceshiyongeos
+        </div>
+        <div class="login-card-account">
+          <a class="button is-danger is-rounded is-small">My Account</a>
+        </div>
       </div>
     </div>
     <div class="home-page-inner">
       <div class="login-card">
-        <img src="http://www.deaso40.com/jmjnb/mobileui/我的纪念币/我 的收藏币/收 藏.png" alt="" style="width: 100%;">
+        <div class="login-card-title">
+          <img style="vertical-align:middle;" src="http://www.deaso40.com/jmjnb/mobileui/我的纪念币/我 的收藏币/收 藏.png" alt="" width="32px">
+          <span style="padding-left:8px;">{{$t('mine_have')}}</span>
+        </div>
+        <div class="login-card-mycoins">
+          <div class="columns is-multiline is-mobile">
+            <a @click="enter(coin.cointype)" v-for="(coin,key) in coins" key="index" class="column is-one-quarter">
+              <div class="login-card-mycoins-onecoin">
+                <div class="login-card-mycoins-onecoin-coinpic">
+                  <img :srcset="coin.logourl" style="vertical-align: middle;padding:20%;"/>
+                </div>
+                <div style="text-align:center">{{$t(coin.cointype)}}</div>
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
     <Footer></Footer>
@@ -18,10 +41,15 @@
 <script>
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
-const allcoins = require("../assets/coins.json");
 import { mapActions, mapState } from 'vuex';
 
+const allcoins = require("../../assets/coins.json");
+
 export default {
+  components: {
+    Header,
+    Footer
+  },
   name: 'mine',
   data () {
     return {
@@ -75,10 +103,34 @@ export default {
   .home-page-inner {
     margin-top: 10px;
   }
-  .reward-page {
+  .mine-page {
     background-color:rgba(239,241,245,1);
   }
   .login-card{
     background-color:rgba(255,255,255,255);
+    padding: 10px;
+    margin: 10px;
+    &-account{
+      padding: 5px;
+      text-align: center;
+    }
+    &-title{
+      padding: 10px;
+      color: $baseColor;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    &-mycoins{
+      padding-top:10px;
+      &-onecoin{
+        padding: 10px;
+        &-coinpic{
+          padding: 10px;
+          background-image:url('http://www.deaso40.com/jmjnb/mobileui/我的纪念币/我 的收藏币/椭圆形 copy 11.png');
+          background-size: cover;
+          background-repeat:no-repeat;
+        }
+      }
+    }
   }
 </style>

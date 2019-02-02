@@ -94,5 +94,6 @@ export default {
   }
   .login-card{
     background-color:rgba(255,255,255,255);
+    padding: 10px;
   }
 </style>
