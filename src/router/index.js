@@ -114,6 +114,9 @@ createMobileRoute(MobilePrepare, "Prepare");
 import MobileMine from '@/mobile/pages/Mine';
 createMobileRoute(MobileMine, "Mine");
 
+import MobileMining from '@/mobile/pages/Mining';
+createMobileRoute(MobileMining, "Mining");
+
 Vue.use(Router)
 console.log(routearray)
 
