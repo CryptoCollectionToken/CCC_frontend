@@ -108,6 +108,9 @@ createMobileRoute(MobileGloryReward, "GloryReward/:page");
 import MobileRankReward from '@/mobile/pages/RankReward';
 createMobileRoute(MobileRankReward, "RankReward");
 
+import MobilePrepare from '@/mobile/pages/Prepare';
+createMobileRoute(MobilePrepare, "Prepare");
+
 Vue.use(Router)
 console.log(routearray)
 
