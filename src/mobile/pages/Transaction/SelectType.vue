@@ -50,7 +50,7 @@ export default {
   },
   methods: {
     enter: function (sellid) {
-      this.$router.push({path: `/transactionlist/${sellid.cointype}/${sellid.type}/${sellid.value}`});
+      this.$router.push({path: `/m/transactionlist/${sellid.cointype}/${sellid.type}/${sellid.value}`});
     }
   }
 }

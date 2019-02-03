@@ -6,7 +6,7 @@
         <router-link to="alltype" class="myBtn">{{$t('transaction_found')}}</router-link>
       </div>
       <div class="coinOuter">
-        <router-link class="coinItem" v-for="(coin,key) in coins" :key="key" :to="`selecttype${coin.cointype}`">
+        <router-link class="coinItem" v-for="(coin,key) in coins" :key="key" :to="`selecttype/${coin.cointype}`">
           <div class="coinInner">
             <div class="coin"><img :srcset="coin.logourl"/></div>
             <p>{{$t(coin.cointype)}}</p>
@@ -37,11 +37,11 @@ export default {
   methods: {
     toselect: function (type) {
       console.log(type);
-      this.$router.push({path: `/selecttype/${type}`});
+      this.$router.push({path: `/m/selecttype/${type}`});
     },
     toalltype: function (e) {
       // console.log(e.toElement.innerText);
-      this.$router.push({path: `/alltype`});
+      this.$router.push({path: `/m/alltype`});
     }
   }
 }

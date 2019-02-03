@@ -82,7 +82,7 @@ export default {
   },
   methods: {
     enter: function (sellid) {
-      this.$router.push({path: `/buycoin/${sellid}`});
+      this.$router.push({path: `/m/buycoin/${sellid}`});
     }
   },
   computed: {
