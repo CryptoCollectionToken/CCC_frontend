@@ -14,7 +14,7 @@
                 </router-link>
               </td>
               <td class="lastCol">
-                <div class="nav-box">
+                <div class="nav-box" @click="rewardModal = true">
                   <span>{{$t('reward')}}</span>
                   <img src="../assets/reward.png" alt="">
                 </div>
@@ -22,13 +22,13 @@
             </tr>
             <tr class="lastrow">
               <td>
-                <router-link class="nav-box" :to="{ name: pages[9]}">
+                <router-link class="nav-box" :to="pages[9]">
                   <span>{{$t(routes[9])}}</span>
                   <img src="../assets/token.png" alt="">
                 </router-link>
               </td>
               <td class="lastCol">
-                <div class="nav-box">
+                <div class="nav-box" @click="introductionModal = true">
                   <span>{{$t('introduction')}}</span>
                   <img src="../assets/introduction.png" alt="">
                 </div>
@@ -58,6 +58,36 @@
         </div>
       </div>
     </div>
+    <b-modal :active.sync="introductionModal" has-modal-card>
+      <form action="">
+        <div class="modal-card" style="width: auto">
+          <section class="modal-card-body">
+            <b-field :label="$t('introduction')">
+              <b-select :placeholder="$t('introduction')" v-model="introductionval">
+                <option v-for="(coin, index) in coins" :value="coin.cointype" :key="index">
+                  {{$t(coin.cointype)}}
+                </option>
+              </b-select>
+            </b-field>
+          </section>
+        </div>
+      </form>
+    </b-modal>
+    <b-modal :active.sync="rewardModal" has-modal-card>
+      <form action="">
+        <div class="modal-card" style="width: auto">
+          <section class="modal-card-body">
+            <b-field :label="$t('reward')">
+              <b-select :placeholder="$t('reward')" v-model="rewardval">
+                <option v-for="(reward,index) in rewards" :key="index" :value="rewardpage[index]">
+                  {{$t(reward)}}
+                </option>
+              </b-select>
+            </b-field>
+          </section>
+        </div>
+      </form>
+    </b-modal>
     <Footer></Footer>
   </div>
 </template>
@@ -79,14 +109,26 @@ export default {
       routes: ["homepage", "prepare", "introduction", "mining", "mine", "transaction", "rankreward", "combinereward", "gloryreward", "proof", "refer"],
       // rewards: ["市值排行奖励","组合奖励","衔级奖励"],
       rewards: ["rankreward", "combinereward", "gloryreward"],
-      introductionval: this.$t("introduction"),
+      introductionval: '',
       rewardval: this.$t('reward'),
       rewardpage: ["rankreward", "combinereward/1", "gloryreward/1"],
       coins: allcoins,
       language: "zh",
+      introductionModal: false,
+      rewardModal: false
     }
   },
-  name: 'Home'
+  name: 'Home',
+  watch: {
+    introductionval(val) {
+      if (val === this.$t("introduction")) return;
+      this.$router.push({path: `/m/introduction/${val}`});
+    },
+    rewardval(val) {
+      if (val === this.$t("reward")) return;
+      this.$router.push({path: `/m/${val}`});
+    },
+  }
 }
 </script>
 

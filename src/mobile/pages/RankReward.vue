@@ -1,52 +1,71 @@
 <template>
   <div>
-    <!-- <img alt="" width="100%" style="padding-top: 0px" srcset="../../static/pic/头部条框.png"/>
-    <img alt="" width="100%" style="padding-top: 0px;padding-bottom:0px" srcset="../../static/pic/条框1.png"/>
-    <img alt="" width="100%" style="" srcset="../../static/pic/条框2.png"/>
-    <img alt="" width="100%" style="" srcset="../../static/pic/底部条框.png"/> -->
-    <img style="margin-left:10%;margin-top:-40%;" alt="" width="80%" srcset=""/>
-      <!-- <div class="sellplane"> -->
-      <div>
-        <div>
-          <div v-for="(rank, index) in ranks" :key="index">
-            <div class="columns is-mobile" style="text-align: center; height: 100px">
-              <div class="column">
-                <div v-show="index == 0"><img alt="" width="20%" srcset="/static/pic/金牌.png"/></div>
-                <div v-show="index == 1"><img alt="" width="20%" srcset="/static/pic/银牌.png"/></div>
-                <div v-show="index == 2"><img alt="" width="20%" srcset="/static/pic/铜牌.png"/></div>
-              </div>
-              <div class="column"><img alt="" width="30px" :srcset="rank.logourl"/></div>
-              <div class="column">{{rank.name}}({{rank.cointype}})</div>
-              <div class="column">{{rank.value}}</div>
-            </div>
-            <!-- <div class="selltextright" :style="{'top': gettop(index)}">{{rank.value}}</div> -->
-          </div>
-          <!-- <img src="../../static/pic/43市值排行.png" class="sellpic" alt="" /> -->
-        </div>
-      </div>
-    <div>
-{{$t('rankreward_rule')}}<br>
-{{$t('rankreward_rule_1')}}<br>
-{{$t('rankreward_rule_2')}}<br>
-{{$t('rankreward_rule_3')}}<br>
-{{$t('rankreward_rule_4')}}<br>
-{{$t('rankreward_rule_5')}}<br>
-{{$t('rankreward_rule_6')}}<br>
-{{$t('rankreward_rule_7')}}<br>
-{{$t('rankreward_rule_8')}}<br>
-{{$t('rankreward_rule_9')}}<br>
-{{$t('rankreward_rule_10')}}<br>
-{{$t('rankreward_rule_11')}}<br>
+    <Header></Header>
+    <div style="width: 100%;">
+      <img src="../assets/rankreward.png" >
     </div>
+    <div class="randRewardPage">
+      <div>
+        <table>
+          <thead>
+          <tr>
+            <th>排名</th>
+            <th>纪念币种</th>
+            <th>市值 <p style="font-size: 12px;">(计价单位：EOS)</p></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr v-for="(rank, index) in ranks" :key="index">
+            <td style="font-weight: bolder">
+              <template v-if="index < 3">
+                <div v-show="index == 0"><img alt="" width="20px" srcset="/static/pic/金牌.png"/></div>
+                <div v-show="index == 1"><img alt="" width="20px" srcset="/static/pic/银牌.png"/></div>
+                <div v-show="index == 2"><img alt="" width="20px" srcset="/static/pic/铜牌.png"/></div>
+              </template>
+              <span v-else>{{index + 1}}</span>
+            </td>
+            <td>
+              <div class="tablerow2">
+                <img alt="" width="30px" :srcset="rank.logourl"/>
+                <span>{{rank.name}}({{rank.cointype}})</span>
+              </div>
+            </td>
+            <td>{{rank.value}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="rule">
+        <h2 style="color: #F5A623;">{{$t('rankreward_rule')}}</h2>
+        <p>{{$t('rankreward_rule_1')}}</p>
+        <p>{{$t('rankreward_rule_2')}}</p>
+        <p>{{$t('rankreward_rule_3')}}</p>
+        <p>{{$t('rankreward_rule_4')}}</p>
+        <p>{{$t('rankreward_rule_5')}}</p>
+        <p>{{$t('rankreward_rule_6')}}</p>
+        <p>{{$t('rankreward_rule_7')}}</p>
+        <p>{{$t('rankreward_rule_8')}}</p>
+        <p>{{$t('rankreward_rule_9')}}</p>
+        <p>{{$t('rankreward_rule_10')}}</p>
+        <p>{{$t('rankreward_rule_11')}}</p>
+      </div>
+    </div>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
 const allcoins = require("@/assets/coins.json");
+import Header from '../components/layout/Header';
+import Footer from '../components/layout/Footer';
 
 export default {
   name: 'rankreward',
+  components: {
+    Header,
+    Footer
+  },
   data () {
     return {
       ranks: [],
@@ -79,31 +98,48 @@ export default {
 }
 </script>
 
-<style scoped>
-/* sellbuy */
-  .sellplane{
-      position: relative;/*相对定位*/
-      width: 50%;
-      margin-left: 25%;
+<style lang="scss" scoped>
+  $baseColor: #5585F9;
+  .rule {
+    border: 1px solid #F5A623;
+    padding: 20px;
+    margin-top: 20px;
+    p {
+      font-size: 14px;
+      color: #AFAFAF;
+      word-break: break-all;
+    }
   }
-  /*图片部分的设置*/
-  .sellpic{
-      /*position: static;默认定位,可以省略*/
-      margin-top: -70%;
-      width: 100%;
-      height: 2000px;
+  table {
+    width: 100%;
+    font-size: 16px;
   }
-  /*文字的设置*/
-  .selltextleft{
-      position: absolute;/*绝对定位*/
-      width: 100%;
-      left: 38%;/*离左边0像素*/
-      font-size: 18px;
+  tbody {
+    background-color: #fff;
+    border-radius: 10px;
   }
-  .selltextright{
-      position: absolute;/*绝对定位*/
-      width: 100%;
-      left: 65%;/*离左边0像素*/
-      font-size: 18px;
+  tbody tr:nth-child(odd) {
+    background-color: #F5F7FF;
+  }
+  tbody tr td:first-of-type {
+    color: $baseColor;
+  }
+  th,td {
+    font-weight: normal;
+    text-align: center;
+    vertical-align:middle;
+    padding: 6px;
+  }
+  .randRewardPage {
+    padding: 20px;
+    background-color:rgba(239,241,245,1);
+  }
+  .tablerow2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      margin-right: 10px;
+    }
   }
 </style>

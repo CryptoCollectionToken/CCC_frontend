@@ -19,109 +19,28 @@
     </div>
     <div>
       <div class="nav-container">
-        <router-link class="nav-item" :to="{ name: pages[0]}">
+        <router-link class="nav-item" :to="{ path: '/m/home'}">
           <font-awesome-icon icon="home" size="lg"></font-awesome-icon>
           <span>{{$t(routes[0])}}</span>
         </router-link>
-        <router-link class="nav-item" :to="{ name: pages[1]}">
+        <router-link class="nav-item" :to="{ path: '/m/'+pages[1]}">
           <font-awesome-icon icon="question-circle" size="lg"></font-awesome-icon>
           <span>{{$t(routes[1])}}</span>
         </router-link>
-        <router-link class="nav-item" :to="{ name: pages[3]}">
+        <router-link class="nav-item" :to="{ path: '/m/'+pages[3]}">
           <font-awesome-icon icon="hammer" size="lg"></font-awesome-icon>
           <span>{{$t(routes[3])}}</span>
         </router-link>
-        <router-link class="nav-item" :to="{ name: pages[5]}">
+        <router-link class="nav-item" :to="{ path: '/m/'+pages[5]}">
           <font-awesome-icon icon="wallet" size="lg"></font-awesome-icon>
           <span>{{$t(routes[5])}}</span>
         </router-link>
-        <router-link class="nav-item" :to="{ name: pages[4]}">
+        <router-link class="nav-item" :to="{ path: '/m/'+pages[4]}">
           <font-awesome-icon icon="user-alt" size="lg"></font-awesome-icon>
           <span>{{$t(routes[4])}}</span>
         </router-link>
       </div>
     </div>
-      <!--<section class="section1">
-        <nav class="level">
-          &lt;!&ndash; Left side &ndash;&gt;
-          <div class="level-left">
-            <div class="level-item">
-              <router-link class="navbar-item"
-                                :to="{ name: pages[0]}">
-                      {{$t(routes[0])}}
-              </router-link>
-              <router-link
-                  class="navbar-item"
-                                :to="{ name: pages[1]}">
-                      {{$t(routes[1])}}
-              </router-link>
-              <div class="select is-info" style="margin-top:5px">
-                <select v-model="introductionval">
-                  <option selected>{{$t('introduction')}}</option>
-                  <option v-for="(coin, index) in coins" :value="coin.cointype" :key="index">{{$t(coin.cointype)}}</option>
-                </select>
-              </div>
-            </div>
-            <div class="level-item">
-              <router-link
-                  class="navbar-item"
-                                :to="{ name: pages[3]}">
-                      {{$t(routes[3])}}
-              </router-link>
-              <router-link
-                  class="navbar-item"
-                                :to="{ name: pages[4]}">
-                      {{$t(routes[4])}}
-              </router-link>
-              <router-link
-                  class="navbar-item"
-                                :to="{ name: pages[5]}">
-                      {{$t(routes[5])}}
-              </router-link>
-            </div>
-            <div class="level-item">
-              <div class="select is-info" style="margin-top:5px">
-                <select v-model="rewardval">
-                  <option selected>{{$t('reward')}}</option>
-                  <option v-for="(reward,index) in rewards" :key="index" :value="rewardpage[index]">{{$t(reward)}}</option>
-                </select>
-              </div>
-              <router-link
-                  class="navbar-item"
-                                :to="{ name: pages[9]}">
-                      {{$t(routes[9])}}
-              </router-link>
-              <router-link
-                  class="navbar-item"
-                                :to="{ name: pages[10]}">
-                      {{$t(routes[10])}}
-              </router-link>
-              <router-link
-                  class="navbar-item"
-                                :to="{ name: pages[11]}">
-                      {{$t(routes[11])}}
-              </router-link>
-            </div>
-          </div>
-            &lt;!&ndash; Right side &ndash;&gt;
-          <div class="level-right">
-            <div class="level-item">
-              <div class="navbar-item" style="margin-top:5px;">
-                <button @click="loginScatterAsync" v-if="!scatterAccount" class="button">{{$t('login')}}</button>
-                <div v-if="scatterAccount">{{scatterAccount.name}}</div>
-              </div>
-              <div class="select" style="margin-top:5px;">
-                <select v-model="language" :placeholder="$t('switch_lang')">
-                  <option value="en">{{$t('English')}}</option>
-                  <option value="zh">{{$t('Chinese')}}</option>
-                  <option value="ko">{{$t('Korean')}}</option>
-                  &lt;!&ndash; <option value="ja">{{$t('Japanese')}}</option> &ndash;&gt;
-                </select>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </section>-->
   </header>
 </template>
 
