@@ -144,6 +144,18 @@ createMobileRoute(MobileP_Transaction, "Prepare/Transaction");
 import MobileMine from '@/mobile/pages/Mine';
 createMobileRoute(MobileMine, "Mine");
 
+import MobileExchangeCoin from '@/mobile/pages/Mine/ExchangeCoin';
+createMobileRoute(MobileExchangeCoin, "ExchangeCoin/:type");
+
+import MobileMyCoin from '@/mobile/pages/Mine/MyCoin';
+createMobileRoute(MobileMyCoin, "MyCoin/:cointype/:type/:value");
+
+import MobileSelectCoin from '@/mobile/pages/Mine/SelectCoin';
+createMobileRoute(MobileSelectCoin, "SelectCoin/:type");
+
+import MobileSellCoin from '@/mobile/pages/Mine/SellCoin';
+createMobileRoute(MobileSellCoin, "SellCoin/:coinnumber");
+
 import MobileMining from '@/mobile/pages/Mining';
 createMobileRoute(MobileMining, "Mining");
 
