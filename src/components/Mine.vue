@@ -5,7 +5,7 @@
     <br/>
     <div class="columns is-multiline is-mobile" style="padding-left:10%;padding-right:10%;">
       <div v-for="(cointype,key) in mycoins" key="index" class="column is-one-quarter">
-        <span>{{cointype.value}}{{$t('value')}}{{$t(cointype.cointype)}}{{coinamounts[cointype.value + cointype.cointype]}}{{$t('mine_have_after')}}<span v-if="cointype.type == 2">{{$t('coin')}}</span></span>
+        <span>{{cointype.value}}{{$t('value')}}{{$t(cointype.cointype)}}<span v-if="cointype.type == 2">{{$t('coin')}}</span>{{coinamounts[cointype.contracttype]}}{{$t('mine_have_after')}}</span>
       </div>
     </div>
     <div class="columns is-multiline is-mobile" style="padding-left:20%;padding-right:20%;">
@@ -48,7 +48,7 @@ export default {
       const coin = allcoins[coinid];
       // console.log(this.$route.params.type + "," + coin.type + "," + this.$route.params.cointype + "," + coin.cointype + "," + this.$route.params.value + "," + coin.value);
       if(this.scatterAccount.name == coin.owner){
-        const onecointype = coin.value + coin.cointype;
+        const onecointype = coin.contracttype;
         if(this.coinamounts[onecointype] === undefined){
           this.coinamounts[onecointype] = 1;
           this.mycoins.push(coin);

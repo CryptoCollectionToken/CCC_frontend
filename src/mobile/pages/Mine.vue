@@ -4,13 +4,12 @@
     <div class="home-page-inner">
       <div class="login-card">
         <div class="login-card-account">
-          <img src="http://www.deaso40.com/jmjnb/mobileui/我的纪念币/我 的收藏币/收 藏.png" alt="">
+          {{$t('mine_have')}}
         </div>
-        <div class="login-card-account">
-          ceshiyongeos
-        </div>
-        <div class="login-card-account">
-          <a class="button is-danger is-rounded is-small">My Account</a>
+        <div class="columns is-multiline is-mobile is-gapless" style="font-size:10px;">
+          <div v-for="(cointype,key) in mycoins" key="index" class="column is-one-third">
+            <span>{{coinamounts[cointype.contracttype]}}{{$t('mine_have_after')}}{{cointype.value}}{{$t('value')}}{{$t(cointype.cointype)}}<span v-if="cointype.type == 2">{{$t('coin')}}</span></span>
+          </div>
         </div>
       </div>
     </div>
@@ -18,7 +17,7 @@
       <div class="login-card">
         <div class="login-card-title">
           <img style="vertical-align:middle;" src="http://www.deaso40.com/jmjnb/mobileui/我的纪念币/我 的收藏币/收 藏.png" alt="" width="32px">
-          <span style="padding-left:8px;">{{$t('mine_have')}}</span>
+          <span style="padding-left:8px;">{{$t('mine_title')}}</span>
         </div>
         <div class="login-card-mycoins">
           <div class="columns is-multiline is-mobile">
@@ -72,9 +71,10 @@ export default {
     const allcoins = this.existcoins;
     for(const coinid in allcoins){
       const coin = allcoins[coinid];
-      // console.log(this.$route.params.type + "," + coin.type + "," + this.$route.params.cointype + "," + coin.cointype + "," + this.$route.params.value + "," + coin.value);
+      console.log(this.$route.params.type + "," + coin.type + "," + this.$route.params.cointype + "," + coin.cointype + "," + this.$route.params.value + "," + coin.value);
       if(this.scatterAccount.name == coin.owner){
-        const onecointype = coin.value + coin.cointype;
+        console.log(coin);
+        const onecointype = coin.contracttype;
         if(this.coinamounts[onecointype] === undefined){
           this.coinamounts[onecointype] = 1;
           this.mycoins.push(coin);
