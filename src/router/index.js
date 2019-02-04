@@ -4,7 +4,7 @@ import Router from 'vue-router'
 const allroutes = [{
   name: 'HomePage',
   path: '/',
-  component: HomePage
+  component: MobileHome
 }];
 const routearray = [];
 
