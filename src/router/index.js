@@ -132,6 +132,15 @@ createMobileRoute(MobileProof, "Proof");
 import MobilePrepare from '@/mobile/pages/Prepare';
 createMobileRoute(MobilePrepare, "Prepare");
 
+import MobileP_Mining from '@/mobile/pages/Prepare/P_Mining';
+createMobileRoute(MobileP_Mining, "Prepare/Mining");
+
+import MobileP_Probability from '@/mobile/pages/Prepare/P_Probability';
+createMobileRoute(MobileP_Probability, "Prepare/Probability");
+
+import MobileP_Transaction from '@/mobile/pages/Prepare/P_Transaction';
+createMobileRoute(MobileP_Transaction, "Prepare/Transaction");
+
 import MobileMine from '@/mobile/pages/Mine';
 createMobileRoute(MobileMine, "Mine");
 
