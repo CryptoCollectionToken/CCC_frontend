@@ -42,13 +42,13 @@
         </div>
         <div class="login-card-text">
           <div class="login-card-text-inline">{{$t('prepare_excel_1')}}
-            <span class="login-card-text-linkto">More</span>
+            <a @click="gotoMiningPage()" class="login-card-text-linkto">More</a>
           </div>
         </div>
         <hr class="login-card-line" />
         <div class="login-card-text">
           <div class="login-card-text-inline">{{$t('prepare_excel_2')}}
-            <span class="login-card-text-linkto">More</span>
+            <a @click="gotoProbabilityPage()" class="login-card-text-linkto">More</a>
           </div>
         </div>
         <hr class="login-card-line" />
@@ -66,7 +66,7 @@
         <div class="login-card-subtitle">
           {{$t('prepare_exchange')}}
         </div>
-        <div class="login-card-text-linkto">More</div>
+        <a @click="gotoTransactionPage()" class="login-card-text-linkto">More</a>
       </div>
     </div>
     <Footer></Footer>
@@ -128,7 +128,18 @@ export default {
         [500,"RIPPLE","20,000","4.65%"],
         [500,"TRX","19,800","4.61%"]],
     }
-  }
+  },
+  methods:{
+    gotoMiningPage(){
+      this.$router.push({ path: `/m/prepare/mining`});
+    },
+    gotoProbabilityPage(){
+      this.$router.push({ path: `/m/prepare/probability`});
+    },
+    gotoTransactionPage(){
+      this.$router.push({ path: `/m/prepare/transaction`});
+    }
+  },
 }
 </script>
 

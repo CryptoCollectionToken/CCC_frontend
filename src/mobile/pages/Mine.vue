@@ -61,7 +61,7 @@ export default {
   methods: {
 			enter: function (type) {
         // console.log(e.toElement.innerText);
-        this.$router.push({ path: `/selectcoin/${type}`});
+        this.$router.push({ path: `/m/selectcoin/${type}`});
       }
   },
   computed: {

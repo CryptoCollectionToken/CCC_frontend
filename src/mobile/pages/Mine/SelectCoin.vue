@@ -37,7 +37,7 @@ export default {
   },
   methods:{
     gotoCoinPage(type, cointype, value){
-      this.$router.push({ path: `/mycoin/${type}/${cointype}/${value}`});
+      this.$router.push({ path: `/m/mycoin/${type}/${cointype}/${value}`});
     }
   }
 }

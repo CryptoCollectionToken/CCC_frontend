@@ -62,10 +62,10 @@ export default {
   },
   methods:{
     gotoExchangePage(type){
-      this.$router.push({ path: `/exchangecoin/${type}`});
+      this.$router.push({ path: `/m/exchangecoin/${type}`});
     },
     gotoSellPage(coinnumber){
-      this.$router.push({ path: `/sellcoin/${coinnumber}`});
+      this.$router.push({ path: `/m/sellcoin/${coinnumber}`});
     }
   },
   computed: {
