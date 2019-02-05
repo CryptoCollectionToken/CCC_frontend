@@ -27,7 +27,7 @@
 
     <div class="column has-text-centered">
       <div>Email</div>
-      <div>support@crypto-collection.io</div>
+      <div>cryptocollection1@gmail.com</div>
     </div>
     <div class="container">
       <div class="content has-text-centered">

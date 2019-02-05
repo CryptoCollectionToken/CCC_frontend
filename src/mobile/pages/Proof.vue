@@ -16,7 +16,7 @@
         </div>
         <div class="tokenItem">
           <div class="tokenTop">
-            <span class="blueColor">{{$t('proof_income')}}</span>
+            <span class="blueColor">{{$t('Smart contract account balance')}}</span>
             <span class="orangeColor">{{this.alleos}}</span>
           </div>
           <div class="tokenBottom">
@@ -54,15 +54,9 @@
             <span class="orangeColor">{{buybackamount/allbuyback}}/{{$t('proof')}}</span>
           </div>
         </div>
-        <div class="tokenItem">
-          <div>
-            <div></div>
-            <div></div>
-          </div>
-          <div>
-            <div></div>
-            <div></div>
-          </div>
+        <div class="tokenItem" style="color: #5585F9;">
+          <p>{{$t('Total issue amount')}}</p>
+          <p>{{$t('Total circulation')}}</p>
         </div>
       </div>
     </div>

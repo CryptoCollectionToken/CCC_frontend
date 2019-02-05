@@ -20,7 +20,7 @@ export default {
   QTUM: '量子币',
   BTM: '比原币',
   HT: '火币',
-  EOS: '柚子币',  
+  EOS: '柚子币',
   IOTA: '埃欧塔币',
   ZB: '中币',
   XLM: '恒星币',
@@ -206,7 +206,7 @@ export default {
   combinereward_rule_3: '3.集全6种整版大类纪念币和22种整版单版纪念币以游戏通证作为奖励，即领即取，先兑先得，游戏设定有通证回购机制，当通证奖励兑换完后，收藏家可等到系统中回购到足够通证后再兑换；',
   combinereward_rule_4: '4.各种收藏奖励之间互不冲突，如收藏家领取了整版单版纪念币后依然持有，在以后齐全其他整版单版纪念币后依然可以领取整版大类纪念币奖励；如收藏家领取了整版大类纪念币奖励后依然持有，在以后集全其他整版大类纪念币，依然可以领取整版纪念币奖励；',
   combinereward_rule_5: '5.因游戏设有纪念币兑换机制，为保证游戏公平公正运行，设定了奖励防作弊机制，如收藏家在集齐一套整版比特币纪念币，在领取一次整版比特币纪念币通证奖励后，只有当同时拥有两套整版比特币纪念币时，才能再次领取整版比特币纪念币通证奖励。',
-  
+
   //gloryreward
   gloryreward_title:'挖矿和交易奖励',
   gloryreward_miner_level:'矿工衔级',
@@ -267,7 +267,7 @@ export default {
   proof_reward_for_holder: '本期（每期周期为三天）目前通证持有者收益',
   proof_whole_edition_players: '今日目前累加收益奖励集齐整版纪念币收藏家',
   proof_whole_edition_pool: '目前集齐整版纪念币累计奖池',
-  proof_repurchase: '本期（每期周期为三天）目前收益用于回购通证：',
+  proof_repurchase: '本期（每期周期为七天）目前收益用于回购通证：',
   proof_need: '本期（每期周期为三天）目前需回购通证数量：',
   proof_price: '本期（每期周期为三天）目前通证回购价格',
   proof_sell_amount: '出售数量',
@@ -297,7 +297,10 @@ export default {
   refer_note: '注明:',
   refer_note_1: '1."有效收藏家"指被邀请的玩家至少在游戏中进行过一次纪念币挖矿',
   refer_note_2: '2.被邀请的玩家只需在挖矿页输入您的EOS账号名后进行挖矿，您即可获得奖励',
+  'Smart contract account balance': '合约账户余额',
+  'Total issue amount': '通证总发行量：30,000,000',
+  'Total circulation': '通证流通总量：25,500,000'
 
   // transaction: '纪念币交易',
-  
+
 };
