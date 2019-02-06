@@ -605,11 +605,10 @@ export default {
   }
   .intro_text{
     text-align:center;
-    font-size: 26px;
+    font-size: 18px;
   }
   .intro_picture{
-    width: 80%;
-    margin-left: 10%;
+    width: 100%;
   }
   .intro_picture_coin{
     width: 40%;

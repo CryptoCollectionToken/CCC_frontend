@@ -3,7 +3,7 @@ export default {
   English: 'English',
   Chinese: 'Chinese',
   Korean: 'Korean',
-  
+
   //coins
   BTC: 'BTC',//0
   ETH: 'ETH',//1
@@ -254,7 +254,7 @@ export default {
   gloryreward_rule_1:'As the number of game TOKEN is fixed and will never be additional issued, when the number of TOKEN in the system is insufficient, the collectors can wait until there are tokens in the system to get corresponding rewards. The game sets up the TOKEN repurchase mechanism, which repurchases every 24 hours at 12:00 PM Beijing time.',
   gloryreward_nextpage:'Next Page',
   gloryreward_prevpage:'Prev Page',
-  
+
   //proof
   proof_title: 'TOKEN',
   proof_my: 'My game TOKEN amount',
@@ -266,7 +266,7 @@ export default {
   proof_reward_for_holder: 'This round(each round lasts 3 days) current TOKEN holders\' earnings',
   proof_whole_edition_players: 'Today current accumulation of EOS rewards who has collected the whole edition of Crypto Commemorative TOKENS',
   proof_whole_edition_pool: 'Today current accumulative prize pool of who has collected the whole edition of Crypto Commemorative TOKENS',
-  proof_repurchase: 'This round (each round lasts 3 days) current earnings are used to repurchase TOKEN',
+  proof_repurchase: 'This round (each round lasts 7 days) current earnings are used to repurchase TOKEN',
   proof_need: 'This round (each round lasts 3 days) current TOKEN amount is needed to repurchase',
   proof_price: 'This round(each round lasts 3 days) current TOKEN repurchase price',
   proof_sell_amount: 'Amount',
@@ -296,7 +296,10 @@ export default {
   refer_note: 'Note:',
   refer_note_1: '1."Active Collector" means that invitee conduct mining Crypto Commemorative TOKEN at least once.',
   refer_note_2: '2. Invitee just need to input your EOS account name on the mining site to mine ,and you will obtain TOKEN award.',
+  'Smart contract account balance': 'Smart contract account balance',
+  'Total issue amount': 'Total issue amount :30,000,000',
+  'Total circulation': 'Total circulation:25,500,000'
 
   // transaction: 'Transaction',
-    
+
 };

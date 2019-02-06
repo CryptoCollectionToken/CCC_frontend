@@ -20,7 +20,7 @@ export default {
   QTUM: 'QTUM',
   BTM: 'BTM',
   HT: 'HT',
-  EOS: 'EOS',  
+  EOS: 'EOS',
   IOTA: 'IOTA',
   ZB: 'ZB',
   XLM: 'XLM',
@@ -205,7 +205,7 @@ export default {
   combinereward_rule_3: '3. 6가지 부류 기념화폐 세트와 22가지 단일 기념화폐 세트는 게임 TOKEN을 보너스로 하고 먼저 교환한 사람이 먼저 얻는다. 게임 설정에는 TOKEN환매 시스템이 있는데 TOKEN보너스를 모두 교환한후 수집가는 시스템에서 충분한TOKEN을 환매를 기다린후 다시 교환할수 있다；',
   combinereward_rule_4: '4.각종 수집 보너스는 서로 충돌하지 않는다. 만약 수집가가 단일 기념화폐 세트 보너스를 얻은후 계속하여 소유하다가 후에 기타 기념화폐 세트를 수집한후 여전히 부류 기념화폐 세트 보너스를 얻을수 있다. 만약 수집가가 부류 기념화폐 세트 보너스를 얻은후 계속하여 소유하고 있다가 후에 기타 부류 기념화폐 세트를 수집한후 여전히 전체 기념화폐 세트 보너스를 얻을수 있다；',
   combinereward_rule_5: '5.게임에 기념화폐 교환 시스템이 있기에 게임이 공평하게 운행되는것을 보장할수 있고 보너스 부정행위 방지 시스템도 설정되여 있다. 만약 수집가가 한 세트의 BTC 기념화폐 세트를 수집하여 BTC 기념화폐 TOKEN보너스를 한번 얻은후 동시에 BTC 기념화폐 세트를 2세트를 소유하고 있어야만 다시 BTC기념화폐 TOKEN보너스를 얻을수 있다.',
-  
+
   //gloryreward
   gloryreward_title:'채굴과 거래 보너스',
   gloryreward_miner_level:'광부 등',
@@ -266,7 +266,7 @@ export default {
   proof_reward_for_holder: '당기(매기주기는3일)목전 TOKEN 소유자 수익',
   proof_whole_edition_players: '오늘 지금까지 누적한 수익으로 전체 기념화폐를 소유한 수집가에게 보너스로 준다',
   proof_whole_edition_pool: '현재까지 전체 기념화폐를 수집한 누적 보너스',
-  proof_repurchase: '당기(매기주기는3일)목전 수익은 TOKEN을 다시 사들이는데 사용한다',
+  proof_repurchase: '당기(매기주기는7일)목전 수익은 TOKEN을 다시 사들이는데 사용한다',
   proof_need: '당기(매기주기는3일)목전 다시 사들여야 하는 TOKEN 수량',
   proof_price: '당기(매기주기는3일)목전 TOKEN 의 판매 가격',
   proof_sell_amount: '판매 수량',
@@ -295,8 +295,11 @@ export default {
   refer_note: '설명:',
   refer_note_1: '1.“유효 소장자”는 초대된 게임플레이어가 게임에서 최소 한 번 광물을 캐는 적이 있다는 것이 말합니다.',
   refer_note_2: '2.초대된 게임플레이어는 광물을 캐는 페이지에서 그쪽의 EOS 아이디를 등록하고 광물을 캐면 장려를 받을 수 있습니다. ',
+  'Smart contract account balance': '계약 계정 잔액',
+  'Total issue amount': '발행량: 30,000,000',
+  'Total circulation': '유통량: 25,500,000'
 
   // transaction: '기념화폐 거래',
-  
+
 };
 
