@@ -44,6 +44,9 @@
             </table>
           </div>
         </div>
+        <a @click="Buy(coin)" class="buyBtn">
+          {{$t('transaction_buy_now')}}
+        </a>
       </div>
     </div>
     <Footer></Footer>
@@ -118,6 +121,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .buyBtn {
+    width: 100%;
+    text-align: center;
+    display: block;
+    padding: 10px 0;
+    color: #fff;
+    background-color: #5585F9;
+    &:hover {
+      background-color: #ccc;
+    }
+  }
   .buyCoinPage {
     background-color:rgba(239,241,245,1);
   }
