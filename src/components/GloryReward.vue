@@ -170,7 +170,7 @@ export default {
     if(this.scatterAccount){
       console.log("getting mine times.." + this.scatterAccount.name)
       const body = (await axios.get(
-          `http://www.deaso40.com:8989/api/getplayer/${this.scatterAccount.name}`
+          `http://52.231.196.144:8989/api/getplayer/${this.scatterAccount.name}`
         )).data.result;
       console.log(body);
       this.minetimes = body.minetimes;
@@ -180,7 +180,7 @@ export default {
     }
     console.log("getting mine ranks..")
     const mineranks = (await axios.get(
-          `http://www.deaso40.com:8989/api/getplayermineorder`
+          `http://52.231.196.144:8989/api/getplayermineorder`
         )).data.result;
     console.log(mineranks);
     for(const index in mineranks){
@@ -195,7 +195,7 @@ export default {
     }
     console.log("getting buy times..")
     const buyranks = (await axios.get(
-          `http://www.deaso40.com:8989/api/getplayerbuyorder`
+          `http://52.231.196.144:8989/api/getplayerbuyorder`
         )).data.result;
     console.log(buyranks);
     for(const index in buyranks){

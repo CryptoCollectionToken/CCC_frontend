@@ -65,7 +65,7 @@ export default {
       const num = parseInt(index) + 1;
       console.log(num);
       const body = (await axios.get(
-        `http://www.deaso40.com:8989/api/getmarketvalue/${num}`
+        `http://52.231.196.144:8989/api/getmarketvalue/${num}`
       )).data;
       console.log(body);
       this.ranks.push({
