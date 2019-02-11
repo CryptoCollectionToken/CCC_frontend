@@ -7,13 +7,13 @@
       <div>
         <div v-for="(coin, key) in coins" :key="key">
           <div class="coin">
-            <div style="width: 30%"><img alt="" :srcset="coin.url"/></div>
+            <div style="width: 60%"><img alt="" :srcset="coin.url"/></div>
             <div class="coinInner">
               <div>{{$t('transaction_seller')}}：{{coin.owner}}</div>
               <div>{{$t('transaction_price')}}：{{coin.sellallvalue}}</div>
               <div>{{$t('transaction_countdown')}}：{{coin.selltime}}</div>
               <div>
-                <a class="button is-link"  @click="enter(coin.sellid)">{{$t('transaction_buy')}}</a>
+                <a class="button is-info" style="padding-left:40%;padding-right:40%" @click="enter(coin.sellid)">{{$t('transaction_buy')}}</a>
               </div>
             </div>
           </div>

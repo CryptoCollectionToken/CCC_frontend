@@ -7,7 +7,7 @@
       </div>
       <div>
         <div>White Paper</div>
-        <img src="/static/pic/白皮书图.png" class="img1" alt="" />
+        <img src="/static/pic/白皮书图.png" class="img2" alt="" />
         <div class="columns has-text-centered is-mobile whitePaperLang">
           <a class="column" target="_blank" href="http://www.deaso40.com/jmjnb/whitepaper/%E5%8A%A0%E5%AF%86%E7%BA%AA%E5%BF%B5%E5%B8%81%E2%80%94%E2%80%94%E7%BA%AA%E5%BF%B5%E5%8C%BA%E5%9D%97%E9%93%BE%E6%8A%80%E6%9C%AF%E8%AF%9E%E7%94%9F%E5%8D%81%E5%91%A8%E5%B9%B4%EF%BC%88%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%EF%BC%89.pdf">
             简体中文
@@ -65,6 +65,10 @@
   }
 
   .img1{
+    max-width: 160px;
+    height: 200px;
+  }
+  .img2{
     max-width: 160px;
     height: 100px;
   }

@@ -2,16 +2,35 @@
   <div>
     <Header></Header>
     <div class="transactionPage">
-      <div class="btnContainer">
-        <router-link to="alltype" class="myBtn">{{$t('transaction_found')}}</router-link>
-      </div>
-      <div class="coinOuter">
+      <!-- <div class="coinOuter">
         <router-link class="coinItem" v-for="(coin,key) in coins" :key="key" :to="`selecttype/${coin.cointype}`">
           <div class="coinInner">
             <div class="coin"><img :srcset="coin.logourl"/></div>
             <p>{{$t(coin.cointype)}}</p>
           </div>
         </router-link>
+      </div> -->
+    <!-- <div class="home-page-inner"> -->
+      <div class="login-card">
+        <!-- <div class="login-card-title">
+          <img style="vertical-align:middle;" src="http://www.deaso40.com/jmjnb/mobileui/我的纪念币/我 的收藏币/收 藏.png" alt="" width="32px">
+          <span style="padding-left:8px;">{{$t('mine_title')}}</span>
+        </div> -->
+        <div class="btnContainer">
+          <router-link to="alltype" class="myBtn">{{$t('transaction_found')}}</router-link>
+        </div>
+        <div class="login-card-mycoins">
+          <div class="columns is-multiline is-mobile">
+            <a @click="toselect(coin.cointype)" v-for="(coin,key) in coins" key="index" class="column is-one-quarter">
+              <div class="login-card-mycoins-onecoin">
+                <div class="login-card-mycoins-onecoin-coinpic">
+                  <img :srcset="coin.logourl" style="vertical-align: middle;padding:20%;"/>
+                </div>
+                <div style="text-align:center">{{$t(coin.cointype)}}</div>
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
     <Footer></Footer>
@@ -48,9 +67,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  $baseColor: #5585F9;
   .transactionPage {
     background-color:rgba(239,241,245,1);
-    padding: 20px;
+    margin-top: 10px;
   }
   .btnContainer {
     text-align: center;
@@ -101,6 +121,33 @@ export default {
       margin-top: 5px;
       color: #4a4a4a;
       font-weight: 700;
+    }
+  }
+  .login-card{
+    background-color:rgba(255,255,255,255);
+    padding: 10px;
+    margin: 10px;
+    &-account{
+      padding: 5px;
+      text-align: center;
+    }
+    &-title{
+      padding: 10px;
+      color: $baseColor;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    &-mycoins{
+      padding-top:10px;
+      &-onecoin{
+        padding: 10px;
+        &-coinpic{
+          padding: 10px;
+          background-image:url('http://www.deaso40.com/jmjnb/mobileui/我的纪念币/我 的收藏币/椭圆形 copy 11.png');
+          background-size: cover;
+          background-repeat:no-repeat;
+        }
+      }
     }
   }
 </style>

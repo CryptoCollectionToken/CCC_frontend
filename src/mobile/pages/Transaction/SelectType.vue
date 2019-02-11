@@ -58,11 +58,11 @@ export default {
 
 <style scoped>
 .showing_picture{
-  width: 80%;
-  margin-left: 10%;
+  width: 100%;
+  margin-left: 0%;
 }
 .showing_picture_coin{
-  width: 40%;
-  margin-left: 30%;
+  width: 56%;
+  margin-left: 22%;
 }
 </style>

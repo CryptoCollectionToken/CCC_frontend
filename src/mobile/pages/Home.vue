@@ -3,7 +3,7 @@
     <Header></Header>
     <div class="home-page-inner">
       <div>
-        <div><img src="../assets/homeImg.png" alt="" style="width: 100%;"></div>
+        <div><img src="http://www.deaso40.com/jmjnb/修改图/主页图.png" alt="" style="width: 100%;"></div>
         <div style="padding: 10px;">
           <table>
             <tr>
@@ -39,7 +39,7 @@
         <div style="padding: 10px;">
           <div style="background-color: #fff;">
             <div class="intro-outer">
-              <span class="intro-title">概述</span>
+              <span class="intro-title">{{$t('homepage_overview')}}</span>
             </div>
             <div class="title-pic">
               {{$t('homepage_introduction')}}
@@ -151,7 +151,7 @@ export default {
     background-image:url("http://www.deaso40.com/jmjnb/background/backgrounds/new/tenor(1).gif");
     padding: 20px 20px 50px;
     background-repeat:no-repeat;
-    background-size: 100%;
+    background-size: 100% 100%;
     text-shadow:1px 1px 1px #000;
     color:#fff;
   }

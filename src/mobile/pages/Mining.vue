@@ -151,21 +151,21 @@ export default {
       const need = this.needeos * times * 10000;
       console.log(need);
       try{
-        // if (this.input == ''){
-        //   await API.transferEOSAsync({
-        //     from: this.scatterAccount,
-        //     to: 'chainbankeos',
-        //     memo: 'mining',
-        //     amount: need,
-        //   });
-        // }else{
-        //   await API.transferEOSAsync({
-        //     from: this.scatterAccount,
-        //     to: 'chainbankeos',
-        //     memo: 'mining ref ' + this.input,
-        //     amount: need,
-        //   });
-        // }
+        if (this.input == ''){
+          await API.transferEOSAsync({
+            from: this.scatterAccount,
+            to: 'chainbankeos',
+            memo: 'mining',
+            amount: need,
+          });
+        }else{
+          await API.transferEOSAsync({
+            from: this.scatterAccount,
+            to: 'chainbankeos',
+            memo: 'mining ref ' + this.input,
+            amount: need,
+          });
+        }
         this.$toast.open({
           message: 'Transaction success!',
           type: 'is-success',
@@ -198,7 +198,7 @@ export default {
     ...mapState(['existcoins', 'scatterAccount'])
   },
   async mounted(){
-    this.beforecoins = []//this.existcoins;
+    this.beforecoins = this.existcoins;
     this.remainamount = await API.getRemainAmountAsync({ accountName: 'chainbankeos' });
     for(const index in this.mininglist){
       if(this.mininglist[index][0] >= this.remainamount){
