@@ -8,7 +8,7 @@
           <table>
             <tr>
               <td>
-                <router-link class="nav-box" :to="{name: pages[10]}">
+                <router-link class="nav-box" :to="'/m/' + pages[10]">
                   <span>{{$t(routes[10])}}</span>
                   <img src="../assets/recommend.png" alt="">
                 </router-link>
@@ -22,7 +22,7 @@
             </tr>
             <tr class="lastrow">
               <td>
-                <router-link class="nav-box" :to="pages[9]">
+                <router-link class="nav-box" :to="'/m/' + pages[9]">
                   <span>{{$t(routes[9])}}</span>
                   <img src="../assets/token.png" alt="">
                 </router-link>

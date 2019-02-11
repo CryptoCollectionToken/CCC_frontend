@@ -6,8 +6,8 @@
         <div class="login-card-account">
           {{$t('mine_have')}}
         </div>
-        <div class="columns is-multiline is-mobile is-gapless" style="font-size:10px;">
-          <div v-for="(cointype,key) in mycoins" key="index" class="column is-one-third">
+        <div v-for="(onecoin,key1) in mycoins" key="index1" class="columns is-gapless is-multiline is-mobile" style="font-size:10px;">
+          <div v-for="(cointype,key2) in onecoin" key="index2" class="column is-one-third">
             <span>{{coinamounts[cointype.contracttype]}}{{$t('mine_have_after')}}{{cointype.value}}{{$t('value')}}{{$t(cointype.cointype)}}<span v-if="cointype.type == 2">{{$t('coin')}}</span></span>
           </div>
         </div>
@@ -71,7 +71,7 @@ export default {
     const allcoins = this.existcoins;
     for(const coinid in allcoins){
       const coin = allcoins[coinid];
-      console.log(this.$route.params.type + "," + coin.type + "," + this.$route.params.cointype + "," + coin.cointype + "," + this.$route.params.value + "," + coin.value);
+      // console.log(this.$route.params.type + "," + coin.type + "," + this.$route.params.cointype + "," + coin.cointype + "," + this.$route.params.value + "," + coin.value);
       if(this.scatterAccount.name == coin.owner){
         console.log(coin);
         const onecointype = coin.contracttype;
@@ -83,6 +83,25 @@ export default {
         }
       }
     }
+    function sortNumber(a,b)
+    {
+      if(a.contracttype % 100 != b.contracttype % 100) return (a.contracttype % 100) - (b.contracttype % 100)
+      else return (a.contracttype / 100) - (b.contracttype / 100)
+    }
+    this.mycoins = this.mycoins.sort(sortNumber);
+    var sortedcoins = [];
+    var onecointype = 0;
+    var onecoinindex = -1;
+    for(const coinid in this.mycoins){
+      const coin = this.mycoins[coinid];
+      if (onecointype != coin.contracttype % 100){
+        onecointype = coin.contracttype % 100;
+        onecoinindex += 1;
+        sortedcoins[onecoinindex] = [];
+      }
+      sortedcoins[onecoinindex].push(coin);
+    }
+    this.mycoins = sortedcoins;
     console.log(this.mycoins);
     console.log(this.coinamounts);
   },

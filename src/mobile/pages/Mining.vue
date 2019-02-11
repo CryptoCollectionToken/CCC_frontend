@@ -12,13 +12,37 @@
       <div class="mining-remain-text">
         {{$t('mining_canmine_before')}}
         <span class="mining-remain-text-blue">{{remainamount}}</span>
-        {{$t('mining_canmine_after')}}</div>
+        {{$t('mining_canmine_after')}}
+      </div>
       <div class="mining-remain-text">
         {{$t('mining_cost_before')}}
         <span class="mining-remain-text-blue">{{needeos}}</span>
-        EOS{{$t('mining_cost_after')}}</div>
+        EOS{{$t('mining_cost_after')}}
+      </div>
     </div>
-    <img src="http://www.deaso40.com/jmjnb/mobileui/挖矿/挖矿页GIF图用这张，不用UI效果的那张.gif" alt="">
+    <!-- <img src="http://www.deaso40.com/jmjnb/mobileui/挖矿/挖矿页GIF图用这张，不用UI效果的那张.gif" alt=""/> -->
+    <div v-if ="mined || showcoins.length != 0" class="get_back">
+      <br/>
+      <div v-if="mined">
+        <div style="text-align: center;">({{totalTime}})</div>
+      </div>
+      <div v-if="showcoins.length != 0">
+        <div style="text-align: center;font-size: 30px;font-weight: bold;">{{$t('mining_get')}}</div>
+        <br/>
+        <div class="columns is-multiline is-mobile">
+          <div class="column is-one-third" v-for="(cointype,key) in showcoins" key="index">
+            <div class="showing_picture" v-if="cointype.type == 1">
+              <img :src="cointype.url" alt="" />
+            </div>
+            <div class="showing_picture_coin" v-if="cointype.type == 2">
+              <img :src="cointype.url" alt="" />
+            </div>
+            <div style="text-align: center; font-weight: bold;">{{cointype.value}}{{$t('value')}}{{$t(cointype.cointype)}}<span v-if="cointype.type == 2">{{$t('coin')}}</span></div>
+          </div>
+        </div>
+      </div>
+      <br/>
+    </div>
     <div class="home-page-inner">
       <div class="columns is-mobile">
         <div class="column">
@@ -127,21 +151,21 @@ export default {
       const need = this.needeos * times * 10000;
       console.log(need);
       try{
-        if (this.input == ''){
-          await API.transferEOSAsync({
-            from: this.scatterAccount,
-            to: 'chainbankeos',
-            memo: 'mining',
-            amount: need,
-          });
-        }else{
-          await API.transferEOSAsync({
-            from: this.scatterAccount,
-            to: 'chainbankeos',
-            memo: 'mining ref ' + this.input,
-            amount: need,
-          });
-        }
+        // if (this.input == ''){
+        //   await API.transferEOSAsync({
+        //     from: this.scatterAccount,
+        //     to: 'chainbankeos',
+        //     memo: 'mining',
+        //     amount: need,
+        //   });
+        // }else{
+        //   await API.transferEOSAsync({
+        //     from: this.scatterAccount,
+        //     to: 'chainbankeos',
+        //     memo: 'mining ref ' + this.input,
+        //     amount: need,
+        //   });
+        // }
         this.$toast.open({
           message: 'Transaction success!',
           type: 'is-success',
@@ -149,11 +173,11 @@ export default {
           queue: false,
           position: 'is-bottom',
         })
-        console.log(this.beforecoins);
-        console.log(this.existcoins);
+        // console.log(this.beforecoins);
+        // console.log(this.existcoins);
         this.aftermining();
       } catch (error) {
-        console.error(error);
+        // console.error(error);
         let msg;
         if (error.message === undefined) {
           msg = JSON.parse(error).error.details[0].message;
@@ -174,7 +198,7 @@ export default {
     ...mapState(['existcoins', 'scatterAccount'])
   },
   async mounted(){
-    this.beforecoins = this.existcoins;
+    this.beforecoins = []//this.existcoins;
     this.remainamount = await API.getRemainAmountAsync({ accountName: 'chainbankeos' });
     for(const index in this.mininglist){
       if(this.mininglist[index][0] >= this.remainamount){
@@ -244,5 +268,20 @@ export default {
     width: 100%;
     height: 110%;
     padding-bottom: 10%;
+  }
+  .showing_picture{
+    width: 100%;
+  }
+  .showing_picture_coin{
+    width: 48%;
+    margin-left: 26%;
+  }
+  .get_back{
+    background-image:url("http://www.deaso40.com/jmjnb/mobileui/挖矿/挖矿页GIF图用这张，不用UI效果的那张.gif");
+    background-repeat:no-repeat;
+    // background-attachment:fixed;
+    background-size: 100% 100%;
+    text-shadow:1px 1px 1px #000;
+    color:#fff;
   }
 </style>

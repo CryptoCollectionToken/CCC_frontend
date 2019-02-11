@@ -69,9 +69,9 @@ export default {
   prepare_mining: 'Mining',
   prepare_excel_1: 'I. Collectors can use 2 EOS directly to conduct the mining of Crypto Commemorative TOKENS when they go online, and collectors can gain the corresponding number of game TOKENS according to the amount of EOS of mining expenditure with proportion of 1EOS:10TOKENS, until all the  game TOKENS are assigned. The circulation is basically to refer to the proportion of issuance of real crypto currencies. The total amount of excavated ore is 429600 notes, when they go online. When the total amount decline 5%, the mining costs will increase 10% than the last round, detailed in the following table:',
   prepare_excel_2: 'II. The Crypto Commemorative TOKENS, total amount and probability in drawing are shown in the following table:',
-  prepare_excel_1_remain_before_1: 'When the remaining total amount is ',
   prepare_excel_1_remain_before: 'When the remaining total amount is ',
   prepare_excel_1_remain_after: ' notes',
+  prepare_excel_1_mining_before_1: 'When the remaining total amount is ',
   prepare_excel_1_mining_before: 'Conduct mining one time cost is ',
   prepare_excel_1_mining_after: '',
   prepare_excel_2_1_before: ' face value of ',
@@ -79,18 +79,18 @@ export default {
   prepare_excel_2_2: 'Notes',
   prepare_excel_2_3: 'About',
   prepare_excel_3: 'III.',
-  prepare_excel_3_1: '1. 60% of the EOS paid by collectors for mining will be distributed to all game TOKENS holders on average, which will be distributed every 24 hours automatically at 12:00 PM Beijing time.',
-  prepare_excel_3_2: '2. 30% of the EOS paid by the collectors for mining is used to repurchase the game TOKENS that the game TOKENS holders need to sell, which is allocated automatically every 24 hours at 12:00 PM Beijing time.',
+  prepare_excel_3_1: '1. 60% of the EOS paid by collectors for mining will be distributed to all game TOKENS holders on average, which will be distributed every 3 days automatically at 12:00 PM Beijing time.',
+  prepare_excel_3_2: '2. 30% of the EOS paid by the collectors for mining is used to repurchase the game TOKENS that the game TOKENS holders need to sell, which is allocated automatically every 7 days at 12:00 PM Beijing time.',
   prepare_excel_3_3: '3. 10% of the EOS paid by collectors for mining shall be awarded to all collectors who collect the whole edition of Crypto Commemorative Tokens (including all denominations of banknotes and coins) , and it is distributed every 24 hours automatically at 12:00 PM Beijing time. Collectors make decisions by yourselves to receive EOS reward or not in this round based on EOS Prize Pool amount. If no collector collects a complete edition of Crypto Commemorative Tokens or collectors collect a complete edition of  Crypto Commemorative Tokens not decide to receive EOS reward in this round, the EOS reward will be added to the next round automatically and continuously;',
   prepare_excel_4: 'IV. If collectors want to sell Crypto Commemorative Tokens, they can go to MY Crypto Commemorative Tokens and sell with one-click.',
   prepare_exchange: 'Exchange and Transactions of Crypto Commemorative TOKENS',
   prepare_exchange_1: 'I. Each kind of Crypto Commemorative TOKENS has different face value, and some face value has small existence quantity, with high value. The collectors do not need to sell with equal value according to the increased proportion , and it is a wise choice to take the existence quantity as the reference;',
   prepare_exchange_2: 'II. When accumulates a certain number of Crypto Commemorative TOKENS, the collectors can exchange for a larger face value of banknotes, and the existence quantity of the larger face value of Crypto Commemorative TOKENS of more scarce. You can keep exchanging them until they are all exchanged by collectors;',
   prepare_exchange_3: 'III. The minimum value of each Crypto Commemorative TOKENS are divided into two versions, the paper version and the coin version. The existence quantity of coin version is 50% of the paper version. Collectors can exchange several low-value notes for one high-value note or exchange note for coin;For example, a player holds a 1 face value Bitcoin token (banknote), a 1 face value Bitcoin token (coin), a 2 face value Bitcoin token, which can be exchanged for a 5 face value Bitcoin token;',
-  prepare_exchange_4: 'IV. Collectors can sell Crypto Commemorative TOKENS freely. Trading is valued in EOS currency, and the initial price of selling each time cannot be under 140% of the average market price in recent five times the market of such value Crypto Commemorative TOKEN, such as when on sale, they are only four transactions in the market for such Crypto Commemorative TOKEN’ s value, so the initial price of selling cannot be under 140% of the average market price in recent four times the market of such Crypto Commemorative TOKEN, and so on.',
+  prepare_exchange_4: 'IV. Collectors can sell Crypto Commemorative TOKENS freely. Trading is valued in EOS. The initial upset price is 2 EOS. The upset price varies according to the change of the remaining quantity of the commemorative coins mining pool. When the remaining quantity of commemorative coins mining pool decreases by 200, the auction floor price increases by 0.12 EOS.',
   prepare_exchange_5: 'V. Collectors can set up a constant auction price, which need to set the auction cycle, taking 2 hours as one unit. The shortest auction time is 2 hours, and the longest auction time is 48 hours. If the deal of Crypto Commemorative TOKENS cannot be finished by setting auction cycle deadline, they will be automatically pulled from the shelves. The collectors need to sell Crypto Commemorative TOKENS again.',
   prepare_exchange_6: 'VI. Collectors are not allowed to remove Crypto Commemorative TOKENS being auctioned during the auction time;',
-  prepare_exchange_7: 'VII.The service charge for each deal is 3.5% of transaction price, so the buyers and the sellers shall each pay 1.75% of the transaction price. The buyers shall get game TOKENS reward based on the EOS price with proportion of 1:1 at the time of purchase, until all game tokens have been distributed. 60% of the transaction fee is allocated to all game TOKEN holders, 30% of the transaction fee is used to repurchase the game TOKEN that the game TOKEN holders need to sell, and 10% of the transaction fee is allocated to collectors who collect the whole edition of Crypto Commemorative TOKENS (including all face notes and coins). It is distributed every 24 hours at 12:00 PM Beijing time.',
+  prepare_exchange_7: 'VII.The service charge for each deal is 3.5% of transaction price, so the buyers and the sellers shall each pay 1.75% of the transaction price. The buyers shall get game TOKENS reward based on the EOS price with proportion of 1:1 at the time of purchase, until all game tokens have been distributed. 60% of the transaction fee is allocated to all game TOKEN holders ,and it is distributed every 3 days ; 30% of the transaction fee is used to repurchase the game TOKEN that the game TOKEN holders need to sell, and it is distributed every 7 days; and 10% of the transaction fee is allocated to collectors who collect the whole edition of Crypto Commemorative TOKENS (including all face notes and coins),and it and it is distributed every 24 hours.',
   prepare_exchange_8: 'VIII. If collectors want to sell Crypto Commemorative TOKENS, they can go to MY Crypto Commemorative TOKENS and sell with one-click.',
 
   //mining
@@ -103,6 +103,7 @@ export default {
   mining_2time: 'Conduct mining 2 times',
   mining_5time: 'Conduct mining 5 times',
   mining_10time: 'Conduct mining 10 times',
+  mining_get: 'You obtain',
 
   //mine
   mine_title: 'My Crypto Commemorative TOKENS',
@@ -136,7 +137,7 @@ export default {
   mine_error_samecoin:'Sorry! The same kind of face value of coins cannot be exchanged, please exchange it again.',
   mine_rule:'Exchange rules:',
   mine_rule_1:'1. Two notes of the same denomination with serial number shall not be exchanged, and two coins of the same denomination with serial number shall not be exchanged, and any note of the same denomination shall be exchanged with the same coin;',
-  mine_rule_2:'2. Only one banknote or one coin can be exchanged at a time. If multiple exchanges are needed, please conduct multiple operations;',
+  mine_rule_2:'2. Collector is only able to exchange once each time, please do multiple times if you want to exchange multiple times;',
   mine_rule_3:'3. As the Crypto Commemorative TOKENS excavated from the mine are all the minimum banknotes, which cannot be exchanged into the minimum banknotes that have not been excavated in order to ensure the smooth mining process; When the system has the smallest note recovered from the mine, it can be exchanged.',
 
   //transaction
