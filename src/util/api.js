@@ -73,6 +73,16 @@ const API = {
     });
     return rows[0];
   },
+  async getMyInfoAsync(){
+    const { rows } = await eos().getTableRows({
+      json: true,
+      code: 'chainbankeos',
+      scope: currentEOSAccount().name,
+      table: 'playerinfo',
+      limit: 1024,
+    });
+    return rows[0];
+  },
   async getBuyBackAsync(){
     const { rows } = await eos().getTableRows({
       json: true,

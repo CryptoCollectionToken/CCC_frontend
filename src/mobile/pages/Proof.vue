@@ -7,31 +7,31 @@
         <div class="tokenItem">
           <div class="tokenTop">
             <span class="blueColor">{{$t('proof_my')}}</span>
-            <span class="orangeColor">{{myCCC}}</span>
+            <span class="orangeColor">{{myCCC}} CCC</span>
           </div>
           <div class="tokenBottom">
             <span class="blueColor">{{$t('proof_amount')}}</span>
-            <span class="orangeColor">{{30000000 - allCCC}}</span>
+            <span class="orangeColor">{{30000000 - allCCC}} CCC</span>
           </div>
         </div>
         <div class="tokenItem">
           <div class="tokenTop">
             <span class="blueColor">{{$t('Smart contract account balance')}}</span>
-            <span class="orangeColor">{{this.alleos}}</span>
+            <span class="orangeColor">{{this.alleos}} EOS</span>
           </div>
           <div class="tokenBottom">
             <span class="blueColor">{{$t('proof_reward_for_all')}}</span>
-            <span class="orangeColor">{{this.alleos - collectionamount - buybackamount}}</span>
+            <span class="orangeColor">{{this.alleos - collectionamount - buybackamount}} EOS</span>
           </div>
         </div>
         <div class="tokenItem">
           <div class="tokenTop">
             <span class="blueColor">{{$t('proof_hold')}}</span>
-            <span class="orangeColor">{{allCCC}}</span>
+            <span class="orangeColor">{{allCCC}} CCC</span>
           </div>
           <div class="tokenBottom">
             <span class="blueColor">{{$t('proof_reward_for_holder')}}</span>
-            <span class="orangeColor">{{shareamount}}</span>
+            <span class="orangeColor">{{myclaim}} EOS</span>
           </div>
         </div>
         <div class="tokenItem">
@@ -41,17 +41,17 @@
           </div>
           <div class="tokenBottom">
             <span class="blueColor">{{$t('proof_repurchase')}}</span>
-            <span class="orangeColor">{{buybackamount}}</span>
+            <span class="orangeColor">{{buybackamount}} EOS</span>
           </div>
         </div>
         <div class="tokenItem">
           <div class="tokenTop">
             <span class="blueColor">{{$t('proof_need')}}</span>
-            <span class="orangeColor">{{allbuyback}}</span>
+            <span class="orangeColor">{{allbuyback}} CCC</span>
           </div>
           <div class="tokenBottom">
             <span class="blueColor">{{$t('proof_price')}}</span>
-            <span class="orangeColor">{{buybackamount/allbuyback}}/{{$t('proof')}}</span>
+            <span class="orangeColor">{{buybackamount/allbuyback}} EOS/{{$t('proof')}}</span>
           </div>
         </div>
         <div class="tokenItem" style="color: #5585F9;">
@@ -130,18 +130,21 @@ export default {
       collectionamount: 0,
       allbuyback: 0,
       alleos: 0,
+      myclaim: 0,
     }
   },
   created: async function(){
     // = parseFloat(transaction.bid.substring(0,6));
     this.myCCC = parseFloat((await API.getMyCCCAsync()).balance.substring(0,6));
     this.allCCC = parseFloat((await API.getCCCAsync()).supply.substring(0,6));
+    const myinfo = parseFloat((await API.getMyInfoAsync()).payout.substring(0,6));
     const pool = await API.getPoolAsync();
     // this.shareamount =
     console.log((await API.getEOSAsync()).balance);
     this.alleos = (await API.getEOSAsync()).balance.substring(0,6);
     // console.log((parseInt(pool.earnings_per_share.substr(2).match(/.{1,2}/g).reverse().join(''), 16)/4294967296) * this.allCCC);
     this.shareamount = ((parseInt(pool.earnings_per_share.substr(2).match(/.{1,2}/g).reverse().join(''), 16)/4294967296) || 0);
+    this.myclaim = (this.shareamount * this.myCCC) - myinfo;
     console.log("shareamount");
     console.log(this.allCCC);
     console.log(this.shareamount + "," + pool.earnings_for_buyback + "," + pool.earnings_for_collection);

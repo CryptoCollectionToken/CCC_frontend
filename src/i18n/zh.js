@@ -266,7 +266,7 @@ export default {
   proof_income: ' 本期（每期的周期为三天）目前收益',
   proof_reward_for_all: '本期（每期的周期为三天）目前收益奖励所有通证持有者',
   proof_hold: '目前通证持有者持有量',
-  proof_reward_for_holder: '本期（每期周期为三天）目前通证持有者收益',
+  proof_reward_for_holder: '您本期（每期周期为三天）目前总收益',
   proof_whole_edition_players: '今日目前累加收益奖励集齐整版纪念币收藏家',
   proof_whole_edition_pool: '目前集齐整版纪念币累计奖池',
   proof_repurchase: '本期（每期周期为七天）目前收益用于回购通证：',

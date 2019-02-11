@@ -265,7 +265,7 @@ export default {
   proof_income: 'This round (each round lasts 3 days) current total income',
   proof_reward_for_all: ' This round (each round lasts 3 days) current EOS for all TOKEN holders',
   proof_hold: 'Current quantity of TOKEN holders hold',
-  proof_reward_for_holder: 'This round(each round lasts 3 days) current TOKEN holders\' earnings',
+  proof_reward_for_holder: 'Your current gross income for this round (each round lasts 3 days)',
   proof_whole_edition_players: 'Today current accumulation of EOS rewards who has collected the whole edition of Crypto Commemorative TOKENS',
   proof_whole_edition_pool: 'Today current accumulative prize pool of who has collected the whole edition of Crypto Commemorative TOKENS',
   proof_repurchase: 'This round (each round lasts 7 days) current earnings are used to repurchase TOKEN',

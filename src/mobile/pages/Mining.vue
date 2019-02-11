@@ -19,6 +19,9 @@
         <span class="mining-remain-text-blue">{{needeos}}</span>
         EOS{{$t('mining_cost_after')}}
       </div>
+      <div class="mining-remain-text">
+        <span style="vertical-align: middle;"> {{$t('refer_link')}} </span> <input class="input is-small" style="width:50%" type="text" placeholder="" v-model="input">
+      </div>
     </div>
     <!-- <img src="http://www.deaso40.com/jmjnb/mobileui/挖矿/挖矿页GIF图用这张，不用UI效果的那张.gif" alt=""/> -->
     <div v-if ="mined || showcoins.length != 0" class="get_back">

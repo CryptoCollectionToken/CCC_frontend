@@ -265,7 +265,7 @@ export default {
   proof_income: '당기(매기 주기는 3일) 목전 수익',
   proof_reward_for_all: '오당기(매기주기는3일)목전 수익은 모든 TOKEN 소유자에게 장려한다',
   proof_hold: '목전 TOKEN 소유자 소유량:',
-  proof_reward_for_holder: '당기(매기주기는3일)목전 TOKEN 소유자 수익',
+  proof_reward_for_holder: '당기 (매기주기는3일) 당신의 현재 총수익',
   proof_whole_edition_players: '오늘 지금까지 누적한 수익으로 전체 기념화폐를 소유한 수집가에게 보너스로 준다',
   proof_whole_edition_pool: '현재까지 전체 기념화폐를 수집한 누적 보너스',
   proof_repurchase: '당기(매기주기는7일)목전 수익은 TOKEN을 다시 사들이는데 사용한다',
