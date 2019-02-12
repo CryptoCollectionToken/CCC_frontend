@@ -19,7 +19,15 @@
           <img style="vertical-align:middle;" src="http://www.deaso40.com/jmjnb/mobileui/我的纪念币/我 的收藏币/收 藏.png" alt="" width="32px">
           <span style="padding-left:8px;">{{$t('mine_title')}}</span>
         </div>
-        <div class="login-card-mycoins">
+        <div class="coinOuter">
+          <router-link class="coinItem" v-for="(coin,key) in coins" :key="key" :to="`/m/selectcoin/${coin.cointype}`">
+            <div class="coinInner">
+              <div class="coin"><img :srcset="coin.logourl"/></div>
+              <p>{{$t(coin.cointype)}}</p>
+            </div>
+          </router-link>
+        </div>
+        <!--<div class="login-card-mycoins">
           <div class="columns is-multiline is-mobile">
             <a @click="enter(coin.cointype)" v-for="(coin,key) in coins" key="index" class="column is-one-quarter">
               <div class="login-card-mycoins-onecoin">
@@ -30,7 +38,7 @@
               </div>
             </a>
           </div>
-        </div>
+        </div>-->
       </div>
     </div>
     <Footer></Footer>
@@ -79,7 +87,7 @@ export default {
           this.coinamounts[onecointype] = 1;
           this.mycoins.push(coin);
         }else{
-          this.coinamounts[onecointype] += 1; 
+          this.coinamounts[onecointype] += 1;
         }
       }
     }
@@ -109,6 +117,38 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+  .coinOuter {
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 12px;
+    justify-content: space-between;
+    border-radius: 10px;
+  }
+  .coin {
+    padding: 10px;
+    background-color: rgba(239,241,245,1);
+    width: 60px;
+    border-radius: 50%;
+    img {
+      height: 40px;
+      width: 40px;
+    }
+  }
+  .coinInner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    p {
+      margin-top: 5px;
+      color: #4a4a4a;
+      font-weight: 700;
+    }
+  }
   $baseColor: #5585F9;
   .intro-outer {
     padding: 10px 20px;

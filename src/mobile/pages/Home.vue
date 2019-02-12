@@ -207,3 +207,8 @@ export default {
     margin-left: 30%;
   }
 </style>
+<style>
+  body {
+    overflow-x: hidden;
+  }
+</style>
