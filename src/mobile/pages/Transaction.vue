@@ -19,7 +19,15 @@
         <div class="btnContainer">
           <router-link to="alltype" class="myBtn">{{$t('transaction_found')}}</router-link>
         </div>
-        <div class="login-card-mycoins">
+        <div class="coinOuter">
+          <router-link class="coinItem" v-for="(coin,key) in coins" :key="key" :to="`selecttype/${coin.cointype}`">
+            <div class="coinInner">
+              <div class="coin"><img :srcset="coin.logourl"/></div>
+              <p>{{$t(coin.cointype)}}</p>
+            </div>
+          </router-link>
+        </div>
+        <!--<div class="login-card-mycoins">
           <div class="columns is-multiline is-mobile">
             <a @click="toselect(coin.cointype)" v-for="(coin,key) in coins" key="index" class="column is-one-quarter">
               <div class="login-card-mycoins-onecoin">
@@ -30,7 +38,7 @@
               </div>
             </a>
           </div>
-        </div>
+        </div>-->
       </div>
     </div>
     <Footer></Footer>
@@ -102,13 +110,13 @@ export default {
     border-radius: 10px;
   }
   .coin {
-    padding: 20px;
+    padding: 10px;
     background-color: rgba(239,241,245,1);
     width: 60px;
     border-radius: 50%;
     img {
-      height:20px;
-      width: 20px;
+      height: 40px;
+      width: 40px;
     }
   }
   .coinInner {
@@ -126,7 +134,6 @@ export default {
   .login-card{
     background-color:rgba(255,255,255,255);
     padding: 10px;
-    margin: 10px;
     &-account{
       padding: 5px;
       text-align: center;
