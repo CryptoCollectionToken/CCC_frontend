@@ -14,20 +14,24 @@
         <div style="text-align: center;">{{$t('mine_serial_number')}}{{coin.coinnumber}}</div>
         <br/>
           <div class="selltextleft line1">{{$t('mine_trading_price')}}</div>
-          <div class="selltextright line1"><input class="input is-small" v-model="const_input" style="width:90px" type="text" placeholder="">EOS</div>
+          <div class="selltextcenter line1"><input class="input is-small" v-model="const_input" type="text" placeholder=""></div>
+          <div class="selltextright line1">EOS</div>
           <div class="selltextleft line2">{{$t('mine_trading_fee')}}</div>
-          <div class="selltextright line2">{{const_fee}}</div>
+          <div class="selltextcenter line2">{{const_fee}}</div>
+          <div class="selltextright line1">EOS</div>
           <div class="selltextleft line3">{{$t('mine_net_income')}}</div>
-          <div class="selltextright line3">{{const_income}}</div>
+          <div class="selltextcenter line3">{{const_income}}</div>
+          <div class="selltextright line1">EOS</div>
           <div class="selltextleft line4">{{$t('mine_auction_cycle')}}</div>
-          <div class="selltextright line4">
+          <div class="selltextcenter line4">
             <div class="select is-small">
               <select v-model="const_time">
                 <option selected>2</option>
                 <option v-for="(const_time, index) in const_times" :key="index">{{const_time}}</option>
               </select>
-            </div>{{$t('mine_time')}}
+            </div>
           </div>
+          <div class="selltextright line1">{{$t('mine_time')}}</div>
         </span>
         <div class="exchange-middle">
           <a class="button is-fullwidth is-info" @click="const_sell(coin)">
@@ -61,15 +65,15 @@ export default {
       lowest_value: 0,
       //constant sell values
       const_input: 0,
-      const_fee: "0.0000 EOS",
-      const_income: "0.0000 EOS",
+      const_fee: "0.0000",
+      const_income: "0.0000",
       const_time: 2,
       //changing sell values
       change_input_start: 0,
       change_input_end: 0,
-      change_fee: "0.0000 EOS",
-      change_income: "0.0000 EOS",
-      change_down_perhour: "0.0000 EOS",
+      change_fee: "0.0000",
+      change_income: "0.0000",
+      change_down_perhour: "0.0000",
       change_time: 2,
       
       const_times:[4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48],
@@ -131,13 +135,13 @@ export default {
     },
     const_input_changed(){
       // console.log(this.const_input*0.0175);
-      this.const_fee = PriceFormatter.formatPrice(this.const_input * 175);
-      this.const_income = PriceFormatter.formatPrice(this.const_input * 9825);
+      this.const_fee = PriceFormatter.formatPrice(this.const_input * 175).substring(0,6);
+      this.const_income = PriceFormatter.formatPrice(this.const_input * 9825).substring(0,6);
     },
     change_input_changed(){
-      this.change_fee = PriceFormatter.formatPrice(this.change_input_start * 175)+"~"+PriceFormatter.formatPrice(this.change_input_end * 175);
-      this.change_income = PriceFormatter.formatPrice(this.change_input_start * 9825)+"~"+PriceFormatter.formatPrice(this.change_input_end * 9825);
-      this.change_down_perhour = PriceFormatter.formatPrice((this.change_input_start-this.change_input_end)/this.change_time*10000);
+      this.change_fee = PriceFormatter.formatPrice(this.change_input_start * 175)+"~"+PriceFormatter.formatPrice(this.change_input_end * 175).substring(0,6);
+      this.change_income = PriceFormatter.formatPrice(this.change_input_start * 9825)+"~"+PriceFormatter.formatPrice(this.change_input_end * 9825).substring(0,6);
+      this.change_down_perhour = PriceFormatter.formatPrice((this.change_input_start-this.change_input_end)/this.change_time*10000).substring(0,6);
     }
   },
   watch: { 
@@ -178,15 +182,23 @@ export default {
     padding: 10px
   }
   .selltextleft{
-    padding:5px;
+    padding-bottom:5px;
     display:inline-block;
+    width: 30%;
+    padding-left:10%;
+    text-align: left;
+  }
+  .selltextcenter{
+    padding-bottom:5px;
     width: 40%;
-    text-align: center;
+    padding-left:3%;
+    display:inline-block;
+    text-align: left;
   }
   .selltextright{
-    padding:5px;
-    width: 50%;
+    padding-bottom:5px;
+    width: 20%;
     display:inline-block;
-    text-align: center;
+    text-align: right;
   }
 </style>
