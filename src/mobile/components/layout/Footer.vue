@@ -5,7 +5,7 @@
         <div>Telegram</div>
         <img src="/static/pic/telegram.jpg" class="img1" alt="" />
       </div>
-      <div>
+      <div class="whitePaperContainer">
         <div>White Paper</div>
         <img src="/static/pic/白皮书图.png" class="img2" alt="" />
         <div class="columns has-text-centered is-mobile whitePaperLang">
@@ -65,11 +65,18 @@
   }
 
   .img1{
-    max-width: 160px;
-    height: 200px;
+    max-width: 80px;
   }
   .img2{
-    max-width: 160px;
-    height: 100px;
+    max-width: 120px;
+  }
+  a {
+    padding: 5px 20px 0 0;
+    white-space: nowrap;
+  }
+  .whitePaperContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
 </style>

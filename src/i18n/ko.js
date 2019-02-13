@@ -299,9 +299,10 @@ export default {
   refer_note_2: '2.초대된 게임플레이어는 광물을 캐는 페이지에서 그쪽의 EOS 아이디를 등록하고 광물을 캐면 장려를 받을 수 있습니다. ',
   'Smart contract account balance': '계약 계정 잔액',
   'Total issue amount': '발행량: 30,000,000',
-  'Total circulation': '유통량: 25,500,000'
+  'Total circulation': '유통량: 25,500,000',
+  remaining_total: '잔여 총량',
+  upset_price: '경매 최저가격',
 
   // transaction: '기념화폐 거래',
 
 };
-

@@ -82,7 +82,7 @@ export default {
   prepare_excel_2_3: '约',
   prepare_excel_3: '三、分配说明',
   prepare_excel_3_1: '1.收藏家挖矿所支出EOS的60%将平均分配给所有TOKEN持有者，每3天自动分配一次，北京时间晚上12:00分配；',
-  prepare_excel_3_2: '2.收藏家挖矿所支出EOS的30%用于回购TOKEN持有者需要出售的TOKEN，每七天自动分配一次, 北京时间晚上12:00分配；',
+  prepare_excel_3_2: '2.收藏家挖矿所支出EOS的30%用于回购TOKEN持有者需要出售的TOKEN，每7天自动分配一次, 北京时间晚上12:00分配；',
   prepare_excel_3_3: '3.收藏家挖矿所支出EOS的10%奖励给收藏到整版纪念币（包括所有面值纸币和所有硬币）的所有收藏家，每24小时自动分配一次,北京时间晚上12:00分配，如这一轮没收藏家集齐整版纪念币或者收藏家集齐整版纪念币未打算领取本轮EOS奖励，则奖励自动累加到下一轮，持续累加；',
   prepare_excel_4: '四、收藏家如需出售纪念币，可到我的纪念币一键出售。',
   prepare_exchange: '纪念币兑换和交易',
@@ -106,7 +106,7 @@ export default {
   mining_5time: '挖五次',
   mining_10time: '挖十次',
   mining_get: '您本次挖矿获得',
-  
+
   //mine
   mine_title: '我的纪念币',
   mine_have: '目前您拥有',
@@ -301,7 +301,9 @@ export default {
   refer_note_2: '2.被邀请的玩家只需在挖矿页输入您的EOS账号名后进行挖矿，您即可获得奖励',
   'Smart contract account balance': '合约账户余额',
   'Total issue amount': '通证总发行量：30,000,000',
-  'Total circulation': '通证流通总量：25,500,000'
+  'Total circulation': '通证流通总量：25,500,000',
+  remaining_total: '剩余总量',
+  upset_price: '拍卖底价',
 
   // transaction: '纪念币交易',
 
