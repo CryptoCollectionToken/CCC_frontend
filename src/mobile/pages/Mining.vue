@@ -46,7 +46,13 @@
       </div>
       <br/>
     </div>
-    <div class="home-page-inner">
+    <div class="buttonContainer">
+      <a class="button is-link" @click="mining(1)">{{$t('mining_1time')}}</a>
+      <a class="button is-success" @click="mining(2)">{{$t('mining_2time')}}</a>
+      <a class="button is-dark" @click="mining(5)">{{$t('mining_5time')}}</a>
+      <a class="button is-warning" @click="mining(10)">{{$t('mining_10time')}}</a>
+    </div>
+    <!--<div class="home-page-inner">
       <div class="columns is-mobile">
         <div class="column">
           <div class="button is-link mining-button" @click="mining(1)">{{$t('mining_1time')}}</div>
@@ -64,7 +70,7 @@
           <div class="button is-warning mining-button" @click="mining(10)">{{$t('mining_10time')}}</div>
         </div>
       </div>
-    </div>
+    </div>-->
     <Footer></Footer>
   </div>
 </template>
@@ -216,6 +222,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .buttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #fff;
+    a {
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+  }
   $baseColor: #5585F9;
   .intro-outer {
     padding: 10px 20px;
