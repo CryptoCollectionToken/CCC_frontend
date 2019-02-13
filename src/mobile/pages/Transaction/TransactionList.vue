@@ -4,20 +4,22 @@
     <div>
       <img style="margin-left:40%;padding-top:20px;" alt="" width="20%" srcset="/static/pic/纪念币交易页面拍卖主图.png"/>
       <div style="text-align: center;">{{cointype.value}}{{$t('value')}}{{$t(cointype.cointype)}}</div>
-      <div>
+      <div style="margin-top: 20px;">
         <div v-for="(coin, key) in coins" :key="key">
           <div class="coin">
-            <div style="width: 60%"><img alt="" :srcset="coin.url"/></div>
+            <div class="coinLogo">
+              <img alt="" :srcset="coin.url"/>
+              <div>{{$t('transaction_serial_number')}}：{{coin.coinnumber}}</div>
+            </div>
             <div class="coinInner">
               <div>{{$t('transaction_seller')}}：{{coin.owner}}</div>
               <div>{{$t('transaction_price')}}：{{coin.sellallvalue}}</div>
               <div>{{$t('transaction_countdown')}}：{{coin.selltime}}</div>
               <div>
-                <a class="button is-info" style="padding-left:40%;padding-right:40%" @click="enter(coin.sellid)">{{$t('transaction_buy')}}</a>
+                <a class="button is-info" @click="enter(coin.sellid)">{{$t('transaction_buy')}}</a>
               </div>
             </div>
           </div>
-          <div>{{$t('transaction_serial_number')}}：{{coin.coinnumber}}</div>
         </div>
       </div>
     </div>
@@ -92,10 +94,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .coinLogo {
+    width: 60%;
+    margin-right: 10px;
+  }
+  .button {
+    font-size: 14px;
+    min-width: 100px;
+  }
   .coin {
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    font-size: 14px;
+    margin-bottom: 20px;
     .coinInner {
       display: flex;
       flex-direction: column;

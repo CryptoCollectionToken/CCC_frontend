@@ -20,10 +20,21 @@
         {{$t('prepare_exchange_4')}}</br>
       </div>
       <div class="transaction-card">
+        <table>
+          <tr><td>{{$t('remaining_total')}}</td><td>{{$t('upset_price')}}</td></tr>
+          <tr><td>429,600</td><td>2.000 EOS</td></tr>
+          <tr><td>429,400</td><td>2.012 EOS</td></tr>
+          <tr><td>429,200</td><td>2.024 EOS</td></tr>
+          <tr><td>429,000</td><td>2.036 EOS</td></tr>
+          <tr><td>......</td><td>......</td></tr>
+          <tr><td>......</td><td>......</td></tr>
+        </table>
+      </div>
+      <div class="transaction-card">
         {{$t('prepare_exchange_5')}}</br>
       </div>
       <div class="transaction-card">
-        {{$t('prepare_exchange_6')}}</br> 
+        {{$t('prepare_exchange_6')}}</br>
       </div>
       <div class="transaction-card">
         {{$t('prepare_exchange_7')}}</br>
@@ -67,7 +78,7 @@ export default {
         [" 64,440",5.054],
         [" 42,960",5.560],
         [" 21,480",6.116]],
-      miningcoinlist:[	  
+      miningcoinlist:[
         [1,"BTC","2,100","0.49%"],
         [1,"ETH","10,000","2.32%"],
         [1,"LTC","8,400","1.95%"],
@@ -96,6 +107,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    td {
+      text-align: center;
+      line-height: 30px;
+      border: 1px solid #ccc;
+    }
+  }
   $baseColor: #5585F9;
   .intro-outer {
     padding: 10px 20px;

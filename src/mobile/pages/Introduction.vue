@@ -611,8 +611,8 @@ export default {
     width: 100%;
   }
   .intro_picture_coin{
-    width: 40%;
-    margin-left: 30%;
+    width: 60%;
+    margin-left: 20%;
   }
   .coinImgs {
     background-image:url("http://www.deaso40.com/jmjnb/修改图/怎么玩背景.gif");

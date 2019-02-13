@@ -300,7 +300,9 @@ export default {
   refer_note_2: '2. Invitee just need to input your EOS account name on the mining site to mine ,and you will obtain TOKEN award.',
   'Smart contract account balance': 'Smart contract account balance',
   'Total issue amount': 'Total issue amount :30,000,000',
-  'Total circulation': 'Total circulation:25,500,000'
+  'Total circulation': 'Total circulation:25,500,000',
+  remaining_total: 'Remaining total',
+  upset_price: 'Upset price',
 
   // transaction: 'Transaction',
 
