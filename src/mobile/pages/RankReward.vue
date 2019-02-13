@@ -137,7 +137,8 @@ export default {
   .tablerow2 {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-left: 20px;
     img {
       margin-right: 10px;
     }
