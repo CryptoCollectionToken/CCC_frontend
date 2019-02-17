@@ -48,11 +48,11 @@
         </div>
         <div style="padding: 10px;">
           <div class="back">
-            <img class="title_picture_coin" src="http://www.deaso40.com/jmjnb/纪念币图png/硬币比特币1.png" alt="" /><br/>
-            <img class="title_picture" src="http://www.deaso40.com/jmjnb/纪念币图png/中本聪纸币1.png" alt="" /><br/>
-            <img class="title_picture" src="http://www.deaso40.com/jmjnb/纪念币图png/阿姨币20.png" alt="" /><br/>
-            <img class="title_picture" src="http://www.deaso40.com/jmjnb/纪念币图png/韭菜币5.png" alt="" /><br/>
-            <img class="title_picture" src="http://www.deaso40.com/jmjnb/纪念币图png/门罗币2.png" alt="" /><br/>
+            <img class="title_picture_coin" src="http://www.deaso40.com/jmjnb/mobilepic/比特币/比特币1硬币.png" alt="" /><br/>
+            <img class="title_picture" src="http://www.deaso40.com/jmjnb/mobilepic/比特币/比特币1.jpg" alt="" /><br/>
+            <img class="title_picture" src="http://www.deaso40.com/jmjnb/mobilepic/阿姨币/阿姨币20.jpg" alt="" /><br/>
+            <img class="title_picture" src="http://www.deaso40.com/jmjnb/mobilepic/韭菜币/韭菜币5.jpg" alt="" /><br/>
+            <img class="title_picture" src="http://www.deaso40.com/jmjnb/mobilepic/门罗币/门罗币2.jpg" alt="" /><br/>
             <br/>
           </div>
         </div>
@@ -199,12 +199,12 @@ export default {
     background-color: #fff;
   }
   .title_picture{
-    width: 80%;
-    margin-left: 10%;
+    width: 96%;
+    margin-left: 2%;
   }
   .title_picture_coin{
-    width: 40%;
-    margin-left: 30%;
+    width: 48%;
+    margin-left: 26%;
   }
 </style>
 <style>

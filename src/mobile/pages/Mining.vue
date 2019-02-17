@@ -121,19 +121,22 @@ export default {
   },
   methods: {
     ...mapActions(['getCoins']),
-    aftermining: async function () {
+    aftermining: async function (inputtime) {
       if (this.mined){
-        this.totalTime = 15;
+        this.totalTime = inputtime;
         return;  //改动的是这两行代码
       }
+      this.totalTime = inputtime;
       this.mined = true
       let clock = window.setInterval(async () => {
         this.totalTime--
         if (this.totalTime < 0) {
           window.clearInterval(clock)
-          this.totalTime = 15
+          this.totalTime = inputtime
           this.mined = false  //这里重新开启
           await this.getCoins();
+          this.newcoins = [];
+          this.showcoins = [];
           console.log(this.existcoins);
           console.log(this.beforecoins);
           if(this.existcoins.length != this.beforecoins.length){
@@ -184,7 +187,8 @@ export default {
         })
         // console.log(this.beforecoins);
         // console.log(this.existcoins);
-        this.aftermining();
+        if(times >= 10) this.aftermining(15);
+        else this.aftermining(15);
       } catch (error) {
         // console.error(error);
         let msg;
