@@ -8,7 +8,7 @@
         <div v-for="(coin, key) in coins" :key="key">
           <div class="coin">
             <div class="coinLogo">
-              <img alt="" :srcset="coin.url"/>
+              <img class="previewImg" alt="" :srcset="coin.url"/>
               <div>{{$t('transaction_serial_number')}}：{{coin.coinnumber}}</div>
             </div>
             <div class="coinInner">
@@ -94,8 +94,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .previewImg {
+    width: 150px!important;
+    min-width: 150px!important;
+    max-width: 150px!important;
+  }
   .coinLogo {
-    width: 60%;
     margin-right: 10px;
   }
   .button {
