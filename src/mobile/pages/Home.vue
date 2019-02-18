@@ -3,7 +3,7 @@
     <Header></Header>
     <div class="home-page-inner">
       <div>
-        <div><img src="http://www.deaso40.com/jmjnb/修改图/主页图.png" alt="" style="width: 100%;"></div>
+        <div><img src="http://www.deaso40.com/jmjnb/title/title.jpg" alt="" style="width: 100%;"></div>
         <div style="padding: 10px;">
           <table>
             <tr>
