@@ -135,9 +135,18 @@ export default {
   },
   created: async function(){
     // = parseFloat(transaction.bid.substring(0,6));
-    this.myCCC = parseFloat((await API.getMyCCCAsync()).balance.substring(0,6));
+    try{
+      this.myCCC = parseFloat((await API.getMyCCCAsync()).balance.substring(0,6));
+    }catch(e){
+      this.myCCC = 0;
+    }
     this.allCCC = parseFloat((await API.getCCCAsync()).supply.substring(0,6));
-    const myinfo = parseFloat((await API.getMyInfoAsync()).payout.substring(0,6));
+    var myinfo = 0;
+    try{
+      myinfo = parseFloat((await API.getMyInfoAsync()).payout.substring(0,6));
+    }catch(e){
+      myinfo = 0;
+    }
     const pool = await API.getPoolAsync();
     // this.shareamount =
     console.log((await API.getEOSAsync()).balance);

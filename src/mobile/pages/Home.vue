@@ -148,7 +148,7 @@ export default {
     }
   }
   .title-pic {
-    background-image:url("http://www.deaso40.com/jmjnb/background/backgrounds/new/tenor(1).gif");
+    background-image:url("http://www.deaso40.com/jmjnb/staticpic/首页和挖矿页.png");
     padding: 20px 20px 50px;
     background-repeat:no-repeat;
     background-size: 100% 100%;
@@ -195,7 +195,7 @@ export default {
   }
   .back {
     background-size: 100%;
-    background-image:url("http://www.deaso40.com/jmjnb/background/backgrounds/new/tenor(1).gif");
+    background-image:url("http://www.deaso40.com/jmjnb/staticpic/首页和挖矿页.png");
     background-color: #fff;
   }
   .title_picture{

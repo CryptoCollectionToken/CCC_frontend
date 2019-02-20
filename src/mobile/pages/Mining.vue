@@ -301,7 +301,7 @@ export default {
     margin-left: 26%;
   }
   .get_back{
-    background-image:url("http://www.deaso40.com/jmjnb/mobileui/挖矿/挖矿页GIF图用这张，不用UI效果的那张.gif");
+    background-image:url("http://www.deaso40.com/jmjnb/staticpic/首页和挖矿页.png");
     background-repeat:no-repeat;
     // background-attachment:fixed;
     background-size: 100% 100%;

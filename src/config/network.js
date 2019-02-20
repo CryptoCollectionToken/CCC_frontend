@@ -2,7 +2,7 @@
 // Use EOS Asia for Mainnet https://api1.eosasia.one'
 export const eosOptions = {
   eosasia: {
-    httpEndpoint: 'https://api.eosbeijing.one',
+    httpEndpoint: 'https://mainnet.eoscanada.com',
     verbose: true,
     chainId: 'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906',
   },

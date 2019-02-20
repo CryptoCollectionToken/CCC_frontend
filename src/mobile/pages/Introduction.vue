@@ -615,7 +615,7 @@ export default {
     margin-left: 20%;
   }
   .coinImgs {
-    background-image:url("http://www.deaso40.com/jmjnb/修改图/怎么玩背景.gif");
+    background-image:url("http://www.deaso40.com/jmjnb/staticpic/纪念币介绍页.png");
     background-repeat:no-repeat;
     background-size: 100% 100%;
     text-shadow:1px 1px 1px #000;
