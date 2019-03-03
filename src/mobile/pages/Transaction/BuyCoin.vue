@@ -76,6 +76,7 @@ export default {
     for (const coinid in allcoins) {
       const coin = allcoins[coinid];
       if (this.$route.params.sellid == coin.sellid) {
+        console.log(coin);
         this.coins.push(coin);
       }
     }

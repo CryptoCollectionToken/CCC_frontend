@@ -182,7 +182,7 @@ export default new Vuex.Store({
         const transactionlist = [];
         for(const index in TransactionList){
           const transaction = TransactionList[index];
-          transaction.value = parseFloat(transaction.bid.substring(0,6));
+          transaction.value = parseFloat(transaction.bid.substring(0,7));
           var onetransaction = {};
           for(const eindex in existcoinlist){
             if(existcoinlist[eindex].id == transaction.the_coins_for_sell[0]){

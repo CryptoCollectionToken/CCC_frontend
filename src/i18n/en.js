@@ -43,7 +43,7 @@ export default {
   gloryreward: 'Your Glory',
   rankreward: 'Ranking Award',
   combinereward: 'Combined Award',
-  proof: 'Token',
+  proof: 'Dividends and Buyback',
   refer: 'Promotion',
 
   //homepage

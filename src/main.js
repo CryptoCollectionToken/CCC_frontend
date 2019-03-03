@@ -9,8 +9,8 @@ import Buefy from 'buefy';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faHome, faQuestionCircle, faHammer, faWallet, faUserAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import VConsole from 'vconsole/dist/vconsole.min.js' //import vconsole
-let vConsole = new VConsole() // 初始化
+// import VConsole from 'vconsole/dist/vconsole.min.js' //import vconsole
+// let vConsole = new VConsole() // 初始化
 
 library.add(faHome, faQuestionCircle, faHammer, faWallet, faUserAlt)
 

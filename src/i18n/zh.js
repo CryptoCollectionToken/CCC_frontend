@@ -44,7 +44,7 @@ export default {
   gloryreward: '您的衔级',
   rankreward: '市值排行奖励',
   combinereward: '组合奖励',
-  proof: '通证',
+  proof: '分红和回购',
   refer: '推荐计划',
 
   //homepage

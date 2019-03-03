@@ -51,7 +51,16 @@
           </div>
           <div class="tokenBottom">
             <span class="blueColor">{{$t('proof_price')}}</span>
-            <span class="orangeColor">{{buybackamount/allbuyback}} EOS/{{$t('proof')}}</span>
+            <span class="orangeColor">{{buybackamount/allbuyback}} EOS/CCC</span>
+          </div>
+        </div>
+        <div class="tokenItem">
+          <div style="text-align:center;">
+            <!-- <span style="display: inline-block;vertical-align: middle;"></span> -->
+            <input class="input is-small" style="width:30%" type="text" :placeholder="$t('proof_sell_amount')" v-model="amount">
+            <div>
+              <a @click="buyback(amount)" class="button" style="margin-left:5px;margin-top:15px">{{$t('proof_sell_token')}}</a>
+            </div>
           </div>
         </div>
         <div class="tokenItem" style="color: #5585F9;">
@@ -122,7 +131,7 @@ export default {
   },
   data () {
     return {
-      amount: 0,
+      amount: "",
       allCCC: 0,
       myCCC: 0,
       shareamount: 0,
@@ -136,14 +145,14 @@ export default {
   created: async function(){
     // = parseFloat(transaction.bid.substring(0,6));
     try{
-      this.myCCC = parseFloat((await API.getMyCCCAsync()).balance.substring(0,6));
+      this.myCCC = parseFloat((await API.getMyCCCAsync(this.scatterAccount)).balance.substring(0,6));
     }catch(e){
       this.myCCC = 0;
     }
     this.allCCC = parseFloat((await API.getCCCAsync()).supply.substring(0,6));
     var myinfo = 0;
     try{
-      myinfo = parseFloat((await API.getMyInfoAsync()).payout.substring(0,6));
+      myinfo = parseFloat((await API.getMyInfoAsync(this.scatterAccount)).payout.substring(0,6));
     }catch(e){
       myinfo = 0;
     }

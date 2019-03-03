@@ -3,7 +3,8 @@
     <div class="footerTop has-text-centered is-mobile">
       <div>
         <div>Telegram</div>
-        <img src="/static/pic/telegram.jpg" class="img1" alt="" />
+        <div style="padding-top:25%">https://t.me/ddsirs213</div>
+        <!-- <img src="/static/pic/telegram.jpg" class="img1" alt="" /> -->
       </div>
       <div class="whitePaperContainer">
         <div>White Paper</div>

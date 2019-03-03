@@ -63,21 +63,21 @@ const API = {
     });
     return rows[0];
   },
-  async getMyCCCAsync(){
+  async getMyCCCAsync(eosaccount = currentEOSAccount()){
     const { rows } = await eos().getTableRows({
       json: true,
       code: 'chainbankeos',
-      scope: currentEOSAccount().name,
+      scope: eosaccount.name,
       table: 'accounts',
       limit: 1024,
     });
     return rows[0];
   },
-  async getMyInfoAsync(){
+  async getMyInfoAsync(eosaccount = currentEOSAccount()){
     const { rows } = await eos().getTableRows({
       json: true,
       code: 'chainbankeos',
-      scope: currentEOSAccount().name,
+      scope: eosaccount.name,
       table: 'playerinfo',
       limit: 1024,
     });
