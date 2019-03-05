@@ -43,7 +43,7 @@ export default {
   gloryreward: 'Your Glory',
   rankreward: 'Ranking Award',
   combinereward: 'Combined Award',
-  proof: 'Dividends and Buyback',
+  proof: 'Token',
   refer: 'Promotion',
 
   //homepage
@@ -258,7 +258,7 @@ export default {
   gloryreward_prevpage:'Prev Page',
 
   //proof
-  proof_title: 'TOKEN',
+  proof_title: 'Dividends and Buyback',
   proof_my: 'My game TOKEN amount',
   proof_accumulation: 'My game TOKEN\'S accumulation earnings',
   proof_amount: 'Current game TOKEN amount in the system',

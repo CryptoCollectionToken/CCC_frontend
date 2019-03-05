@@ -44,7 +44,7 @@ export default {
   gloryreward: '채굴과 거래  등급',
   rankreward: '시가 순위 보너스',
   combinereward: '세트 보너스',
-  proof: '배당금 다시 구입',
+  proof: 'TOKEN ',
   refer: '추천기획',
 
   //homepage
@@ -258,7 +258,7 @@ export default {
   gloryreward_prevpage:'이전 페이지',
 
   //proof
-  proof_title: ' TOKEN ',
+  proof_title: '배당금 다시 구입',
   proof_my: '나의TOKEN 수량',
   proof_accumulation: '나의TOKEN 누적 획득 수익',
   proof_amount: '시스템중 현재 TOKEN 수량',

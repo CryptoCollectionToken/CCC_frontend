@@ -9,9 +9,9 @@
         <table>
           <thead>
           <tr>
-            <th>排名</th>
-            <th>纪念币种</th>
-            <th>市值 <p style="font-size: 12px;">(计价单位：EOS)</p></th>
+            <th>{{$t('rankreward_rank')}}</th>
+            <th>{{$t('rankreward_type')}}</th>
+            <th>{{$t('rankreward_value')}} <p style="font-size: 12px;">(EOS)</p></th>
           </tr>
           </thead>
           <tbody>
@@ -27,7 +27,7 @@
             <td>
               <div class="tablerow2">
                 <img alt="" width="30px" :srcset="rank.logourl"/>
-                <span>{{rank.name}}({{rank.cointype}})</span>
+                <span>{{rank.cointype}}</span>
               </div>
             </td>
             <td>{{rank.value}}</td>

@@ -44,7 +44,7 @@ export default {
   gloryreward: '您的衔级',
   rankreward: '市值排行奖励',
   combinereward: '组合奖励',
-  proof: '分红和回购',
+  proof: '通证',
   refer: '推荐计划',
 
   //homepage
@@ -259,7 +259,7 @@ export default {
   gloryreward_prevpage:'上一页',
 
   //proof
-  proof_title: '通证',
+  proof_title: '分红和回购',
   proof_my: '我的通证数量',
   proof_accumulation: '我的通证累积获得收益',
   proof_amount: '系统中目前通证数量',
