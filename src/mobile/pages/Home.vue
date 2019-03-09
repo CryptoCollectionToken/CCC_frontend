@@ -3,7 +3,7 @@
     <Header></Header>
     <div class="home-page-inner">
       <div>
-        <div><img src="http://www.deaso40.com/jmjnb/title/title.jpg" alt="" style="width: 100%;"></div>
+        <div><img src="http://www.deaso40.com/jmjnb/title/newtitles/首页主图用这张.jpg" alt="" style="width: 100%;"></div>
         <div style="padding: 10px;">
           <table>
             <tr>
@@ -48,11 +48,11 @@
         </div>
         <div style="padding: 10px;">
           <div class="back">
-            <img class="title_picture_coin" src="http://www.deaso40.com/jmjnb/mobilepic/比特币/比特币1硬币.png" alt="" /><br/>
-            <img class="title_picture" src="http://www.deaso40.com/jmjnb/mobilepic/比特币/比特币1.jpg" alt="" /><br/>
-            <img class="title_picture" src="http://www.deaso40.com/jmjnb/mobilepic/阿姨币/阿姨币20.jpg" alt="" /><br/>
-            <img class="title_picture" src="http://www.deaso40.com/jmjnb/mobilepic/韭菜币/韭菜币5.jpg" alt="" /><br/>
-            <img class="title_picture" src="http://www.deaso40.com/jmjnb/mobilepic/门罗币/门罗币2.jpg" alt="" /><br/>
+            <img class="title_picture_coin" src="http://www.deaso40.com/jmjnb/whitepaper3/newpicture/比特币/比特币1硬币.png" alt="" /><br/>
+            <img class="title_picture" src="http://www.deaso40.com/jmjnb/whitepaper3/newpicture/比特币/比特币1.jpg" alt="" /><br/>
+            <img class="title_picture" src="http://www.deaso40.com/jmjnb/whitepaper3/newpicture/阿姨币/阿姨币20.jpg" alt="" /><br/>
+            <img class="title_picture" src="http://www.deaso40.com/jmjnb/whitepaper3/newpicture/韭菜币/韭菜币5.jpg" alt="" /><br/>
+            <img class="title_picture" src="http://www.deaso40.com/jmjnb/whitepaper3/newpicture/门罗币/门罗币2.jpg" alt="" /><br/>
             <br/>
           </div>
         </div>
@@ -148,7 +148,7 @@ export default {
     }
   }
   .title-pic {
-    background-image:url("http://www.deaso40.com/jmjnb/staticpic/首页和挖矿页.png");
+    background-image:url("http://www.deaso40.com/jmjnb/newtitles/newtitle.png");
     padding: 20px 20px 50px;
     background-repeat:no-repeat;
     background-size: 100% 100%;
