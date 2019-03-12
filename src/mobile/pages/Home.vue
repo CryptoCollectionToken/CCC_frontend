@@ -3,7 +3,7 @@
     <Header></Header>
     <div class="home-page-inner">
       <div>
-        <div><img src="http://www.deaso40.com/jmjnb/title/newtitles/首页主图用这张.jpg" alt="" style="width: 100%;"></div>
+        <div><img src="http://www.deaso40.com/jmjnb/newtitles/首页主图用这张.jpg" alt="" style="width: 100%;"></div>
         <div style="padding: 10px;">
           <table>
             <tr>
@@ -48,7 +48,7 @@
         </div>
         <div style="padding: 10px;">
           <div class="back">
-            <img class="title_picture_coin" src="http://www.deaso40.com/jmjnb/whitepaper3/newpicture/比特币/比特币1硬币.png" alt="" /><br/>
+            <img class="title_picture_coin" src="http://www.deaso40.com/jmjnb/mobilepic/比特币/比特币1硬币.png" alt="" /><br/>
             <img class="title_picture" src="http://www.deaso40.com/jmjnb/whitepaper3/newpicture/比特币/比特币1.jpg" alt="" /><br/>
             <img class="title_picture" src="http://www.deaso40.com/jmjnb/whitepaper3/newpicture/阿姨币/阿姨币20.jpg" alt="" /><br/>
             <img class="title_picture" src="http://www.deaso40.com/jmjnb/whitepaper3/newpicture/韭菜币/韭菜币5.jpg" alt="" /><br/>

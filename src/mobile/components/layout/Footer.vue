@@ -2,8 +2,10 @@
   <footer class="footer">
     <div class="footerTop has-text-centered is-mobile">
       <div>
-        <div>Telegram</div>
-        <div style="padding-top:25%">https://t.me/ddsirs213</div>
+        <div>{{$t('wechat')}}</div>
+        <div>tiankong829070</div>
+        <div style="padding-top:10%">Telegram</div>
+        <div>https://t.me/ddsirs213</div>
         <!-- <img src="/static/pic/telegram.jpg" class="img1" alt="" /> -->
       </div>
       <div class="whitePaperContainer">
