@@ -1,10 +1,10 @@
 # Crypto Collection Coin<
 
-  https://github.com/flyq/somecoin
+  https://github.com/CryptoCollectionToken/CCC_frontend.git
 
   这是前端
 
-  https://github.com/flyq/cryptocoin-contracts
+  https://github.com/CryptoCollectionToken/CCC_contract.git
 
   这是合约
 

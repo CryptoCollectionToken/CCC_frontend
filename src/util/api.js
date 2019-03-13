@@ -29,7 +29,7 @@ const API = {
       code: 'chainbankeos',
       scope: accountName,
       table: 'coin',
-      limit: 1024,
+      limit: 65536,
     });
     return rows;
   },
@@ -246,7 +246,7 @@ const API = {
       code: 'chainbankeos',
       scope: accountName,
       table: 'coin',
-      limit: 1024,
+      limit: 65536,
     });
     return rows;
   },
