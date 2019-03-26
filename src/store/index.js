@@ -152,6 +152,7 @@ export default new Vuex.Store({
     async getCoins({ commit }) {
       try {
         const CoinList = await API.getCoinsAsync({accountName: 'chainbankeos'});
+        console.log(CoinList);
         const existcoinlist = [];
         for(const index in CoinList){
           try{

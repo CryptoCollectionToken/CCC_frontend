@@ -23,16 +23,6 @@ const API = {
     });
     return rows;
   },
-  async getCoinAsync({ accountName }) {
-    const { rows } = await eos().getTableRows({
-      json: true,
-      code: 'chainbankeos',
-      scope: accountName,
-      table: 'coin',
-      limit: 65536,
-    });
-    return rows;
-  },
   async getRemainAmountAsync({ accountName }) {
     const { rows } = await eos().getTableRows({
       json: true,
@@ -241,13 +231,22 @@ const API = {
     );
   },
   async getCoinsAsync({ accountName }) {
-    const { rows } = await eos().getTableRows({
-      json: true,
-      code: 'chainbankeos',
-      scope: accountName,
-      table: 'coin',
-      limit: 65536,
-    });
+    var rows = [];
+    for(var i = 0; i < 10; i ++ ){
+      // console.log(i);
+      const onerow = await eos().getTableRows({
+        json: true,
+        code: 'chainbankeos',
+        scope: accountName,
+        table: 'coin',
+        limit: 65536,
+        lower_bound: i*1000,
+        upper_bound: i*1000+999,
+      });
+      // console.log(onerow.rows);
+      rows = rows.concat(onerow.rows);
+      // console.log(rows.length);
+    }
     return rows;
   },
   async getPlayersAsync({ accountName }) {
