@@ -42,7 +42,7 @@ export default {
   transaction: '纪念币交易',
   reward: '奖励',
   gloryreward: '您的衔级',
-  rankreward: '市值排行奖励',
+  rankreward: '市值排行',
   combinereward: '组合奖励',
   proof: '通证',
   refer: '推荐计划',
@@ -165,7 +165,7 @@ export default {
   transaction_buy_now:'立即购买',
 
   //rankreward
-  rankreward_title:'市值排行奖励',
+  rankreward_title:'市值排行',
   rankreward_rank:'排名',
   rankreward_type: '纪念币种',
   rankreward_value: '市值',

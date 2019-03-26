@@ -42,7 +42,7 @@ export default {
   transaction: '기념화폐 거래',
   reward: '보너스',
   gloryreward: '채굴과 거래  등급',
-  rankreward: '시가 순위 보너스',
+  rankreward: '시가 순위',
   combinereward: '세트 보너스',
   proof: 'TOKEN ',
   refer: '추천기획',
@@ -165,7 +165,7 @@ export default {
   transaction_buy_now:'바로구매',
 
   //rankreward
-  rankreward_title:'시가 순위 보너스',
+  rankreward_title:'시가 순위',
   rankreward_rank:'순위 ',
   rankreward_type: '기념화폐 종류',
   rankreward_value: '시가',

@@ -41,7 +41,7 @@ export default {
   transaction: 'Exchange',
   reward: 'Award',
   gloryreward: 'Your Glory',
-  rankreward: 'Ranking Award',
+  rankreward: 'Rank',
   combinereward: 'Combined Award',
   proof: 'Token',
   refer: 'Promotion',
@@ -164,7 +164,7 @@ export default {
   transaction_buy_now:'Buy now',
 
   //rankreward
-  rankreward_title:'Market Value Ranking Award',
+  rankreward_title:'Rank',
   rankreward_rank:'Rank',
   rankreward_type: 'Type of Crypto Commemorative TOKENS',
   rankreward_value: 'Market Value',

@@ -35,7 +35,7 @@
           </tbody>
         </table>
       </div>
-      <div class="rule">
+      <!-- <div class="rule">
         <h2 style="color: #F5A623;">{{$t('rankreward_rule')}}</h2>
         <p>{{$t('rankreward_rule_1')}}</p>
         <p>{{$t('rankreward_rule_2')}}</p>
@@ -49,7 +49,7 @@
         <p>{{$t('rankreward_rule_10')}}</p>
         <p>{{$t('rankreward_rule_11')}}</p>
       </div>
-    </div>
+    </div> -->
     <Footer></Footer>
   </div>
 </template>
