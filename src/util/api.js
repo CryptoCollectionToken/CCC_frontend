@@ -233,7 +233,7 @@ const API = {
   async getCoinsAsync({ accountName }) {
     var rows = [];
     for(var i = 0; i < 10; i ++ ){
-      // console.log(i);
+      console.log(i);
       const onerow = await eos().getTableRows({
         json: true,
         code: 'chainbankeos',
@@ -243,7 +243,7 @@ const API = {
         lower_bound: i*1000,
         upper_bound: i*1000+999,
       });
-      // console.log(onerow.rows);
+      console.log(onerow.rows);
       rows = rows.concat(onerow.rows);
       // console.log(rows.length);
     }
