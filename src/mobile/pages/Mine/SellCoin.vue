@@ -135,13 +135,13 @@ export default {
     },
     const_input_changed(){
       // console.log(this.const_input*0.0175);
-      this.const_fee = PriceFormatter.formatPrice(this.const_input * 175).substring(0,6);
-      this.const_income = PriceFormatter.formatPrice(this.const_input * 9825).substring(0,6);
+      this.const_fee = PriceFormatter.formatPrice(this.const_input * 175).slice(0, -4);
+      this.const_income = PriceFormatter.formatPrice(this.const_input * 9825).slice(0, -4);
     },
     change_input_changed(){
-      this.change_fee = PriceFormatter.formatPrice(this.change_input_start * 175)+"~"+PriceFormatter.formatPrice(this.change_input_end * 175).substring(0,6);
-      this.change_income = PriceFormatter.formatPrice(this.change_input_start * 9825)+"~"+PriceFormatter.formatPrice(this.change_input_end * 9825).substring(0,6);
-      this.change_down_perhour = PriceFormatter.formatPrice((this.change_input_start-this.change_input_end)/this.change_time*10000).substring(0,6);
+      this.change_fee = PriceFormatter.formatPrice(this.change_input_start * 175)+"~"+PriceFormatter.formatPrice(this.change_input_end * 175).slice(0, -4);
+      this.change_income = PriceFormatter.formatPrice(this.change_input_start * 9825)+"~"+PriceFormatter.formatPrice(this.change_input_end * 9825).slice(0, -4);
+      this.change_down_perhour = PriceFormatter.formatPrice((this.change_input_start-this.change_input_end)/this.change_time*10000).slice(0, -4);
     }
   },
   watch: { 

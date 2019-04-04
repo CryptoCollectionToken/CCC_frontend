@@ -64,13 +64,13 @@ export default {
     }
   },
   created: async function(){
-    // = parseFloat(transaction.bid.substring(0,6));
-    this.myCCC = parseFloat((await API.getMyCCCAsync()).balance.substring(0,6));
-    this.allCCC = parseFloat((await API.getCCCAsync()).supply.substring(0,6));
+    // = parseFloat(transaction.bid.slice(0, -4));
+    this.myCCC = parseFloat((await API.getMyCCCAsync()).balance.slice(0, -4));
+    this.allCCC = parseFloat((await API.getCCCAsync()).supply.slice(0, -4));
     const pool = await API.getPoolAsync();
     // this.shareamount =  
     console.log((await API.getEOSAsync()).balance);
-    this.alleos = (await API.getEOSAsync()).balance.substring(0,6);
+    this.alleos = (await API.getEOSAsync()).balance.slice(0, -4);
     // console.log((parseInt(pool.earnings_per_share.substr(2).match(/.{1,2}/g).reverse().join(''), 16)/4294967296) * this.allCCC);
     this.shareamount = ((parseInt(pool.earnings_per_share.substr(2).match(/.{1,2}/g).reverse().join(''), 16)/4294967296) || 0);
     console.log("shareamount");
@@ -84,7 +84,7 @@ export default {
     console.log(buybacks);
     for(const buyback in buybacks){
       console.log(buybacks[buyback]);
-      allbuyback += parseFloat(buybacks[buyback].limit.substring(0,6));
+      allbuyback += parseFloat(buybacks[buyback].limit.slice(0, -4));
     }
     this.allbuyback = allbuyback;
   },

@@ -48,8 +48,8 @@
         <p>{{$t('rankreward_rule_9')}}</p>
         <p>{{$t('rankreward_rule_10')}}</p>
         <p>{{$t('rankreward_rule_11')}}</p>
-      </div>
-    </div> -->
+      </div>-->
+    </div>
     <Footer></Footer>
   </div>
 </template>
