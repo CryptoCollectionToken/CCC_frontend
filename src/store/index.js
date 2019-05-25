@@ -170,6 +170,17 @@ export default new Vuex.Store({
             onecoin.coinnumber = onecoin.cointype + String.fromCharCode(parseInt(_A_.charCodeAt()) + parseInt(coinvaluenum)) + onecoin.number;
             onecoin.type = this.state.cointypes[onecoin.cointype].types[coinvaluenum].type;
             onecoin.url = this.state.cointypes[onecoin.cointype].types[coinvaluenum].coinurl;
+            // var showcointypes = ["TRXA361", "TRXA362",
+            // "TRXA363","TRXA364","TRXA365",
+            // "TRXA366","TRXA367","TRXA368",
+            // "TRXA369","TRXA370",
+            // ];
+            // for(const showindex in showcointypes){
+            //   if(onecoin.coinnumber == showcointypes[showindex]){
+            //     console.log("unfreeze " + onecoin.coinnumber);
+            //     console.log(onecoin.id);
+            //   }
+            // }
             existcoinlist.push(onecoin);
           }catch(e){
 

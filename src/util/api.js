@@ -232,7 +232,7 @@ const API = {
   },
   async getCoinsAsync({ accountName }) {
     var rows = [];
-    for(var i = 0; i < 10; i ++ ){
+    for(var i = 0; i < 20; i ++ ){
       console.log(i);
       const onerow = await eos().getTableRows({
         json: true,
@@ -243,9 +243,9 @@ const API = {
         lower_bound: i*1000,
         upper_bound: i*1000+999,
       });
-      console.log(onerow.rows);
+      // console.log(onerow.rows);
       rows = rows.concat(onerow.rows);
-      // console.log(rows.length);
+      console.log(rows.length);
     }
     return rows;
   },

@@ -6,10 +6,16 @@
         <div class="login-card-account">
           {{$t('mine_have')}}
         </div>
-        <div v-for="(onecoin,key1) in mycoins" key="index1" class="columns is-gapless is-multiline is-mobile" style="font-size:10px;">
+        <div v-for="(onecoin,key1) in mycoins" key="index1" class="columns is-gapless is-multiline is-mobile" style="font-size:10px;margin-bottom: 0rem;">
           <div v-for="(cointype,key2) in onecoin" key="index2" class="column is-one-third">
             <span>{{coinamounts[cointype.contracttype]}}{{$t('mine_have_after')}}{{cointype.value}}{{$t('value')}}{{$t(cointype.cointype)}}<span v-if="cointype.type == 2">{{$t('coin')}}</span></span>
           </div>
+        </div>
+        <div style="text-align: center;">
+          <div v-if="mycoins.length == 0">
+            暂无数据
+          </div>
+          <button class="button" @click="refreshcoin">刷新</button>
         </div>
       </div>
     </div>
@@ -63,55 +69,67 @@ export default {
       coins: allcoins,
       mycoins: [],
       coinamounts: {},
+      getting: false,
     }
   },
   methods: {
-			enter: function (type) {
-        // console.log(e.toElement.innerText);
-        this.$router.push({ path: `/m/selectcoin/${type}`});
-      }
-  },
-  computed: {
-    ...mapState(['existcoins','scatterAccount']),
-  },
-  created: function () {
-    this.coinamounts = {};
-    const allcoins = this.existcoins;
-    for(const coinid in allcoins){
-      const coin = allcoins[coinid];
-      // console.log(this.$route.params.type + "," + coin.type + "," + this.$route.params.cointype + "," + coin.cointype + "," + this.$route.params.value + "," + coin.value);
-      if(this.scatterAccount.name == coin.owner){
-        console.log(coin);
-        const onecointype = coin.contracttype;
-        if(this.coinamounts[onecointype] === undefined){
-          this.coinamounts[onecointype] = 1;
-          this.mycoins.push(coin);
-        }else{
-          this.coinamounts[onecointype] += 1;
+    enter: function (type) {
+      // console.log(e.toElement.innerText);
+      this.$router.push({ path: `/m/selectcoin/${type}`});
+    },
+    // clickrefreshcoin: async function(){
+    //   if (!this.getting){
+    //     this.getting = true;
+    //     await this.getCoins();
+    //     this.refreshcoin();
+    //   }
+    // },
+    refreshcoin: function(){
+      this.coinamounts = {};
+      this.mycoins = [];
+      const allcoins = this.existcoins;
+      for(const coinid in allcoins){
+        const coin = allcoins[coinid];
+        // console.log(this.$route.params.type + "," + coin.type + "," + this.$route.params.cointype + "," + coin.cointype + "," + this.$route.params.value + "," + coin.value);
+        if(this.scatterAccount.name == coin.owner){
+          console.log(coin);
+          const onecointype = coin.contracttype;
+          if(this.coinamounts[onecointype] === undefined){
+            this.coinamounts[onecointype] = 1;
+            this.mycoins.push(coin);
+          }else{
+            this.coinamounts[onecointype] += 1;
+          }
         }
       }
-    }
-    function sortNumber(a,b)
-    {
-      if(a.contracttype % 100 != b.contracttype % 100) return (a.contracttype % 100) - (b.contracttype % 100)
-      else return (a.contracttype / 100) - (b.contracttype / 100)
-    }
-    this.mycoins = this.mycoins.sort(sortNumber);
-    var sortedcoins = [];
-    var onecointype = 0;
-    var onecoinindex = -1;
-    for(const coinid in this.mycoins){
-      const coin = this.mycoins[coinid];
-      if (onecointype != coin.contracttype % 100){
-        onecointype = coin.contracttype % 100;
-        onecoinindex += 1;
-        sortedcoins[onecoinindex] = [];
+      function sortNumber(a,b)
+      {
+        if(a.contracttype % 100 != b.contracttype % 100) return (a.contracttype % 100) - (b.contracttype % 100)
+        else return (a.contracttype / 100) - (b.contracttype / 100)
       }
-      sortedcoins[onecoinindex].push(coin);
+      this.mycoins = this.mycoins.sort(sortNumber);
+      var sortedcoins = [];
+      var onecointype = 0;
+      var onecoinindex = -1;
+      for(const coinid in this.mycoins){
+        const coin = this.mycoins[coinid];
+        if (onecointype != coin.contracttype % 100){
+          onecointype = coin.contracttype % 100;
+          onecoinindex += 1;
+          sortedcoins[onecoinindex] = [];
+        }
+        sortedcoins[onecoinindex].push(coin);
+      }
+      this.mycoins = sortedcoins;
+      // console.log(this.mycoins);
+      // console.log(this.coinamounts);
     }
-    this.mycoins = sortedcoins;
-    console.log(this.mycoins);
-    console.log(this.coinamounts);
+  },
+  computed: {
+    ...mapState(['existcoins','scatterAccount', 'getCoins']),
+  },
+  created: function () {
+    this.refreshcoin();
   },
 }
 </script>
