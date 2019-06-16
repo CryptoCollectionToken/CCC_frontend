@@ -244,6 +244,7 @@ const API = {
         upper_bound: i*1000+999,
       });
       // console.log(onerow.rows);
+      // merge.
       rows = rows.concat(onerow.rows);
       console.log(rows.length);
     }
