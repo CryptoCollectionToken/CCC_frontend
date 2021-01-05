@@ -20,7 +20,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.7.0",
     "@fortawesome/free-solid-svg-icons": "^5.7.0",
     "@fortawesome/vue-fontawesome": "^0.1.5",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "buefy": "^0.7.0",
     "bulma": "^0.7.1",
     "eosjs": "^16.0.9",
